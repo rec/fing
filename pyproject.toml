@@ -1,0 +1,20 @@
+[project]
+name = "fing"
+version = "0.1.0"
+description = "🖐️ A universal representation of fingering systems for winds, reeds, and brass 🖐️"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+fing = "fing.__main__:main"
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.uv]
+package = true
