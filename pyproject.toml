@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "🖐️ A universal representation of fingering systems for winds, reeds, and brass 🖐️"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "tomlkit>=0.14.0",
+]
 
 [build-system]
 requires = ["hatchling"]
