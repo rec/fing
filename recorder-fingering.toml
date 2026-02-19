@@ -1,0 +1,70 @@
+fingerings = [
+    'rl  rr  rm  rf  lr  lm  lf  lt ',  # C5 on soprano, for example
+    'rl- rr  rm  rf  lr  lm  lf  lt ',  # C#5
+    '    rr  rm  rf  lr  lm  lf     ',  # D5
+    '    rr- rm  rf  lr  lm  lf  lt ',  # D#5
+    '        rm  rf  lr  lm  lf     ',  # E5
+    'rl  rr      rf  lr  lm  lf     ',  # F5
+    '    rr  rm      lr  lm  lf  lt ',  # F#5
+    '                lr  lm  lf     ',  # G5
+    '    rr- rm  rf      lm  lf  lt ',  # G#5
+    '                    lm  lf     ',  # A5
+    '            rf      lm  lf  lt ',  # A#5
+    '                        lf     ',  # B5
+    '                    lm  lt     ',  # C6
+    '                    lm  lf     ',  # C#6
+    '                    lm         ',  # D6
+    '    rr  rm  rf  lr  lm         ',  # D#6
+    '        rm  rf  lr  lm  lf  oct',  # E6
+    '    rr      rf  lr  lm  lf  oct',  # F6
+    '        rm      lr  lm  lf  oct',  # F#6
+    '                lr  lm  lf  oct',  # G6
+    '            rf      lm  lf  oct',  # G#6
+    '                    lm  lf  oct',  # A6
+    'rl- rr  rm          lm  lf  oct',  # A#6
+    '        rm  rf      lm  lf  oct',  # B6
+    '        rm  rf          lf  oct',  # C7
+    'rl  rr      rf   lr     lf  oct cb',  # C#7
+    'rl  rr      rf   lr     lf  oct',  # D7
+]
+
+[key."right little finger"]
+short_name = 'rl'
+
+[key."right ring finger"]
+short_name = 'rr'
+
+[key."right middle finger"]
+short_name = 'rm'
+
+[key."right first finger"]
+short_name = 'rf'
+
+[key."left ring finger"]
+short_name = 'lr'
+
+[key."left middle finger"]
+short_name = 'lm'
+
+[key."left first finger"]
+short_name = 'lf'
+
+[key."left thumb"]
+short_name = 'lt'
+
+[key."right little fomger half"]
+short_name = 'rl-'
+description = 'Slide the right little finger back to only close the large hole'
+
+[key."right ring finger half"]
+short_name = 'rr-'
+description = 'Slide the right ring finger back to only close the large hole'
+
+[key.octave]
+short_name = 'oct'
+description = 'Half-cover the thumb hole with the nail'
+is_octave = true
+
+[key.close-bell]
+short_name = 'cb'
+description = 'Partly cover the bell of the instrument with the knee'

@@ -1,0 +1,43 @@
+The standard modern saxophone has 23 keys.
+
+The upper section (left hand position) has access to five padded keys, three palm keys, four pinky keys and the octave key.
+
+The right hand has access to three padded keys, two pinky keys and five palm keys which includes the altissimo high F# key.
+
+
+https://www.wfg.woodwind.org/sax/sax_fing.html#a:
+
+
+Left:
+    T Eb D F f 1 Bb 2 3 G# C# B Bb
+Right:
+    E C Bb 1 f# 2 F# 3 Eb C"
+
+
+LEFT
+T: Octave
+Eb palm: Eb palm key
+D palm: D palm key
+F palm: F palm key
+F front: Front f key
+1 L: First finger key left
+Bb bis: Bb bis key
+2 L: Second finger key left
+3 L: Third Finger key left
+G# palm: G# palm key
+C# palm: C# palm key
+B low: Low B key
+Bb low: Low Bb key
+
+RIGHT
+
+E side: E side key
+C side: C side key
+Bb side: Bb side key
+1 R: First finger key right
+F# high: High F# key
+2 R: Second finger key right
+F# alt: Alternate F# key
+3 R: Third Finger key right
+Eb low: Low Eb key
+C low: Low C key
