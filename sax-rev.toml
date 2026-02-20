@@ -141,58 +141,62 @@ press = 'right 4'
 
 [fingerings]
 
+blank = [
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
+]
+
 A0 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc  la  '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 Bb0 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 B0 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 
 # C1
 
 C1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 Db1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 D1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 Eb1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 E1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 F1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 Gb1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 G1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 Ab1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 A1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 Bb1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 B1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 C2 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 Db2 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
 ]
 # Only alternative fingerings for D2 through Db3 because of the octave key
