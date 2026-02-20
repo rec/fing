@@ -1,116 +1,182 @@
+[instrument-lowest-c]
+
+contrabass = 'Eb1'
+bass = 'Bb1'
+baritone = 'Eb2'
+tenor = 'Bb2'
+c-melody = 'C3'
+alto = 'Eb3'
+soprano = 'Bb3'
+sopranino = 'Eb3'
+sopranissimo = 'Bb4'
+
+
+# See https://www.wfg.woodwind.org/sax/sax_fing.html
+
+# Left hand
+
+[key.'Low A key']
+description = 'Low A thumb key'
+short_name = 'la'
+press = 'left thumb'
+only_on = ['baritone']
+
 [key.'Octave']
 description = 'Octave'
 short_name = 'oct'
-presser = 'left thumb'
+press = 'left thumb'
+octave = {lower = D1, upper = Db2}
 
 [key.'Eb palm']
 description = 'Palm Eb key'
 short_name = 'peb'
-presser = 'left palm'
+press = 'left palm'
 
 [key.'D palm']
 description = 'Palm D key'
 short_name = 'pd'
-presser = 'left palm'
+press = 'left palm'
 
 [key.'F palm']
 description = 'Palm F key'
 short_name = 'pf'
-presser = 'left palm'
+press = 'left palm'
 
 [key.'F front']
 description = 'Front f key'
 short_name = 'ff'
-presser = 'left 1'
+press = 'left 1'
 
 [key.'1 left']
 description = 'First left finger key'
 short_name = '1L'
-presser = 'left 1'
+press = 'left 1'
 
 [key.'Bb bis']
 description = 'Bb bis key'
 short_name = 'bbb'
-presser = 'left 2'
+press = 'left 2'
 
 [key.'2 left']
 description = 'Second left finger key'
 short_name = '2L'
-presser = 'left 2'
+press = 'left 2'
 
 [key.'3 left']
 description = 'Third left finger key'
 short_name = '3L'
-presser = 'left 3'
+press = 'left 3'
 
 [key.'G# palm']
 description = 'Palm G# key'
 short_name = 'pgs'
-presser = 'left palm'
+press = 'left palm'
 
 [key.'C# palm']
 description = 'Palm C# key'
 short_name = 'pcs'
-presser = 'left palm'
+press = 'left palm'
 
 [key.'B low']
 description = 'Low B key'
 short_name = 'lb'
-presser = 'left 4'
+press = 'left 4'
 
 [key.'Bb low']
 description = 'Low Bb key'
 short_name = 'lbb'
-presser = 'left 4'
+press = 'left 4'
 
 # Right hand keys
 
 [key.'E side']
 description = 'Side E key'
 short_name = 'se'
-presser = 'right side key'
+press = 'right side key'
 
 [key.'C side']
 description = 'Side C key'
 short_name = 'sc'
-presser = 'right side key'
+press = 'right side key'
 
 [key.'Bb side']
 description = 'Side Bb key'
 short_name = 'sbb'
-presser = 'right side key'
+press = 'right side key'
 
 [key.'1 right']
 description = 'First right finger key'
-short_name = '1r'
-presser = 'right 1'
+short_name = '1R'
+press = 'right 1'
 
 [key.'F# high']
 description = 'High F# key'
 short_name = 'hfs'
-presser = 'right 2'
+press = 'right 2'
 
 [key.'2 right']
 description = 'Second right finger key'
-short_name = '2r'
-presser = 'right 2'
+short_name = '2R'
+press = 'right 2'
 
 [key.'F# alt']
 description = 'Alternate F# key'
 short_name = 'afs'
-presser = 'right 3'
+press = 'right 3'
 
 [key.'3 right']
 description = 'Third right Finger key'
-short_name = '3r'
-presser = 'right 3'
+short_name = '3R'
+press = 'right 3'
 
 [key.'Eb low']
 description = 'Low Eb key'
 short_name = 'leb'
-presser = 'right 4'
+press = 'right 4'
 
 [key.'C low']
 description = 'Low C key'
 short_name = 'lc'
-presser = 'right 4'
+press = 'right 4'
+
+[fingerings]
+
+blank = [
+  'la  oct peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc'
+]
+
+A0 = [
+]
+Bb0 = [
+]
+B0 = [
+]
+
+# C1
+
+C1 = [
+]
+Db1 = [
+]
+D1 = [
+]
+Eb1 = [
+]
+E1 = [
+]
+F1 = [
+]
+Gb1 = [
+]
+G1 = [
+]
+Ab1 = [
+]
+A1 = [
+]
+Bb1 = [
+]
+B1 = [
+]
+
+# For C2
