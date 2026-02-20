@@ -16,16 +16,21 @@ Right:
 
 LEFT
 T: Octave
+
 Eb palm: Eb palm key
 D palm: D palm key
 F palm: F palm key
+
 F front: Front f key
 1 L: First finger key left
+
 Bb bis: Bb bis key
 2 L: Second finger key left
+
 3 L: Third Finger key left
 G# palm: G# palm key
 C# palm: C# palm key
+
 B low: Low B key
 Bb low: Low Bb key
 
@@ -34,10 +39,14 @@ RIGHT
 E side: E side key
 C side: C side key
 Bb side: Bb side key
+
 1 R: First finger key right
 F# high: High F# key
+
 2 R: Second finger key right
 F# alt: Alternate F# key
+
 3 R: Third Finger key right
+
 Eb low: Low Eb key
 C low: Low C key

@@ -1,98 +1,116 @@
-The standard modern saxophone has 23 keys.
+[key.'Octave']
+description = 'Octave'
+short_name = 'oc'
+presser = 'left thumb'
 
-The upper section (left hand position) has access to five padded keys, three palm keys, four pinky keys and the octave key.
+[key.'Eb palm']
+description = 'Eb palm key'
+short_name = 'eb'
+presser = 'left palm'
 
-The right hand has access to three padded keys, two pinky keys and five palm keys which includes the altissimo high F# key.
+[key.'D palm']
+description = 'D palm key'
+short_name = 'dp'
+presser = 'left palm'
 
+[key.'F palm']
+description = 'F palm key'
+short_name = 'fp'
+presser = 'left palm'
 
-https://www.wfg.woodwind.org/sax/sax_fing.html#a:
+[key.'F front']
+description = 'Front f key'
+short_name = 'ff'
+presser = 'left 1'
 
+[key.'1 left']
+description = 'First left finger key'
+short_name = '1L'
+presser = 'left 1'
 
-Left:
-    T Eb D F f 1 Bb 2 3 G# C# B Bb
-Right:
-    E C Bb 1 f# 2 F# 3 Eb C"
+[key.'Bb bis']
+description = 'Bb bis key'
+short_name = 'bb'
+presser = 'left 2'
 
+[key.'2 left']
+description = 'Second left finger key'
+short_name = '2L'
+presser = 'left 2'
 
-LEFT
-T: Octave
-Eb: Eb palm key
-D: D palm key
-F: F palm key
-f: Front f key
-1L: First finger key left
-Bb: Bb bis key
-2L: Second finger key left
-3L: Third Finger key left
-G#: G# palm key
-C#: C# palm key
-B: Low B key
-Bb Low Bb key
+[key.'3 left']
+description = 'Third left finger key'
+short_name = '3L'
+presser = 'left 3'
 
-RIGHT
+[key.'G# palm']
+description = 'G# palm key'
+short_name = 'gp'
+presser = 'left palm'
 
-E: E side key
-C: C side key
-Bb: Bb side key
-1R: First finger key right
-f#: High F# key
-2R: Second finger key right
-F#: Alternate F# key
-3R: Third Finger key right
-Eb: Low Eb key
-C: Low C key
+[key.'C# palm']
+description = 'C# palm key'
+short_name = 'cp'
+presser = 'left palm'
 
+[key.'B low']
+description = 'Low B key'
+short_name = 'lb'
+presser = 'left 4'
 
+[key.'Bb low']
+description = 'Low Bb key'
+short_name = 'lf'
+presser = 'left 4'
 
+# Right hand keys
 
+[key.'E side']
+description = 'E side key'
+short_name = 'es'
+presser = 'right side key'
 
+[key.'C side']
+description = 'C side key'
+short_name = 'cs'
+presser = 'right side key'
 
-Trevor: James Saxophone key chart
+[key.'Bb side']
+description = 'Bb side key'
+short_name = 'bs'
+presser = 'right side key'
 
+[key.'1 right']
+description = 'First right finger key'
+short_name = '1r'
+presser = 'right 1'
 
-# 1 - octave
-Octave thumb key
+[key.'F# high']
+description = 'High F# key'
+short_name = 'fh'
+presser = 'right 2'
 
-Front F key
-B key
-Bb bis key
-A key
-G key
-G# key
+[key.'2 right']
+description = 'Second right finger key'
+short_name = '2r'
+presser = 'right 2'
 
+[key.'F# alt']
+description = 'Alternate F# key'
+short_name = 'af'
+presser = 'right 3'
 
-# 3 Left hand palm keys
+[key.'3 right']
+description = 'Third right Finger key'
+short_name = '3r'
+presser = 'right 3'
 
-Top F key
-Top D# key
-Top D key
+[key.'Eb low']
+description = 'Low Eb key'
+short_name = 'le'
+presser = 'right 4'
 
-
-# 4 Left hand table keys
-
-G# lever
-Low B lever
-Low C# lever
-Low Bb lever
-
-
-X Side C key
-X Side Bb key
-X? F# key
-
-X Top F# key)
-
-X Top E key)
-
-#
-
-# Left hand table keys
-
-F key Side Bb lever E key and touchpiece Top F# lever Side F# key D key and touchpiece
-Low Eb / D# key Low C key Body / Bow brace
-Low C key Low C key guard
-
-Bell
-Top E lever Side C lever Low Bb key Low B / Bb key guard Low B key Low C# key Bow
-Worldwind House, Ashmill Park, Ashford Road, Lenham, Kent, ME17 2GQ
-T: 01622-859590 E: tjj@worldwind.co.uk www.trevorjames.com
+[key.'C low']
+description = 'Low C key'
+short_name = 'lc'
+presser = 'right 4'
