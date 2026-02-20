@@ -8,12 +8,6 @@ The right hand has access to three padded keys, two pinky keys and five palm key
 https://www.wfg.woodwind.org/sax/sax_fing.html#a:
 
 
-Left:
-    T Eb D F f 1 Bb 2 3 G# C# B Bb
-Right:
-    E C Bb 1 f# 2 F# 3 Eb C"
-
-
 LEFT
 T: Octave
 
