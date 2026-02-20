@@ -15,17 +15,11 @@ sopranissimo = 'Bb4'
 
 # Left hand
 
-[key.'Low A key']
-description = 'Low A thumb key'
-short_name = 'la'
-press = 'left thumb'
-only_on = ['baritone']
-
 [key.'Octave']
 description = 'Octave'
 short_name = 'oct'
 press = 'left thumb'
-range = {lower = D2, upper = Db3}
+range = {lower = 'D2', upper = 'Db3'}
 
 [key.'Palm Eb']
 description = 'Palm Eb key'
@@ -67,14 +61,14 @@ description = 'Third left finger key'
 short_name = '3L'
 press = 'left 3'
 
-[key.'Palm# G']
-description = 'Palm G# key'
-short_name = 'pgs'
-press = 'left palm'
+[key.'G#']
+description = 'G# key'
+short_name = 'gs'
+press = 'left 4'
 
-[key.'Palm# C']
-description = 'Palm C# key'
-short_name = 'pcs'
+[key.'C#']
+description = 'C# key'
+short_name = 'cs'
 press = 'left palm'
 
 [key.'Low B']
@@ -139,60 +133,32 @@ description = 'Low C key'
 short_name = 'lc'
 press = 'right 4'
 
+[key.'Low A']
+description = 'Low A key'
+short_name = 'la'
+press = 'left thumb'
+only_on = ['baritone']
+
+
 [fingerings]
-
-A0 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc  la  '
-]
-Bb0 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-B0 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-
-# C1
-
-C1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-Db1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-D1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-Eb1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-E1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-F1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-Gb1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-G1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-Ab1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-A1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-Bb1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-B1 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-C2 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
-Db2 = [
-  '    peb pd  pf  ff  1L  bbb 2L  3L  pgs pcs lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc      '
-]
 # Only alternative fingerings for D2 through Db3 because of the octave key
+
+ALL = 'oct peb pd  pf  ff  1L  bbb 2L  3L  gs  cs  lb  lbb se  sc  sbb 1R  hfs 2R  afs 3R  leb lc  la  '
+
+A_0 = '                    1L      2L  3L          lb  lbb             1R      2R      3R      lc  la  '
+Bb0 = '                    1L      2L  3L          lb  lbb             1R      2R      3R      lc      '
+B_0 = '                    1L      2L  3L          lb                  1R      2R      3R      lc      '
+C_1 = '                    1L      2L  3L                              1R      2R      3R      lc      '
+Db1 = '                    1L      2L  3L      cs                      1R      2R      3R      lc      '
+D_1 = '                    1L      2L  3L                              1R      2R      3R              '
+Eb1 = '                    1L      2L  3L                              1R      2R      3R  leb         '
+E_1 = '                    1L      2L  3L                              1R      2R                      '
+F_1 = '                    1L      2L  3L                              1R                              '
+Gb1 = '                    1L      2L  3L                                      2R                      '
+G_1 = '                    1L      2L  3L                                                              '
+Ab1 = '                    1L      2L  3L  gs                                                          '
+A_1 = '                    1L      2L                                                                  '
+Bb1 = '                    1L  bbb 2L                              sbb                                 '
+B_1 = '                    1L                                                                          '
+C_2 = '                            2L                                                                  '
+Db2 = '                                                                                                '
