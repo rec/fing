@@ -1,91 +1,91 @@
 # Left hand keys
 
 [key."left thumb"]
-short_name = 'lt'
-presser = "left thumb"
+short-name = 'lt'
+press = "left thumb"
 
 [key.octave]
-short_name = 'oct'
-presser = "left thumb"
+hort_name = 'oct'
+press = "left thumb"
 description = 'Half-cover the thumb hole with the nail'
 
 [key."left first finger"]
-short_name = 'lf'
-presser = "left 1"
+short-name = 'lf'
+press = "left 1"
 
 [key."left middle finger"]
-short_name = 'lm'
-presser = "left 2"
+short-name = 'lm'
+press = "left 2"
 
 [key."left ring finger"]
-short_name = 'lr'
-presser = "left 3"
+short-name = 'lr'
+press = "left 3"
 
 # Right-hand keys
 
 [key."right first finger"]
-short_name = 'rf'
-presser = "right 1"
+short-name = 'rf'
+press = "right 1"
 
 [key."right middle finger"]
-short_name = 'rm'
-presser = "right 2"
+short-name = 'rm'
+press = "right 2"
 
 [key."right ring finger"]
-short_name = 'rr'
-presser = "right 3"
+short-name = 'rr'
+press = "right 3"
 
 [key."right ring finger half"]
-short_name = 'rr-'
-presser = "right 4"
+short-name = 'rs'
+press = "right 4"
 description = 'Slide the right ring finger back to only close the large hole'
 
 [key."right little finger"]
-short_name = 'rl'
-presser = "right 4"
+short-name = 'rl'
+press = "right 4"
 
 [key."right little finger half"]
-short_name = 'rl-'
-presser = "right 3"
+short-name = 'rm'
+press = "right 3"
 description = 'Slide the right little finger back to only close the large hole'
 
 # The bell
 
 [key.close-bell]
-short_name = 'cb'
-presser = "knee"
+short-name = 'cb'
+press = 'knee'
 description = 'Partly cover the bell of the instrument with the knee'
 
 [fingerings]
-'C1' = ' rl  rr  rm  rf  lr  lm  lf  lt '
-'C#1' = 'rl- rr  rm  rf  lr  lm  lf  lt '
-'D1' = '     rr  rm  rf  lr  lm  lf     '
-'D#1' = '    rr- rm  rf  lr  lm  lf  lt '
-'E1' = '         rm  rf  lr  lm  lf     '
-'F1' = ' rl  rr      rf  lr  lm  lf     '
-'F#1' = '    rr  rm      lr  lm  lf  lt '
-'G1' = '                 lr  lm  lf     '
-'G#1' = '    rr- rm  rf      lm  lf  lt '
-'A1' = '                     lm  lf     '
-'A#1' = '            rf      lm  lf  lt '
-'B1' = '                         lf     '
-'C2' = '                     lm  lt     '
-'C#2' = '                    lm  lf     '
-'D2' = '                     lm         '
-'D#2' = '    rr  rm  rf  lr  lm         '
-'E2' = '         rm  rf  lr  lm  lf  oct'
-'F2' = '     rr      rf  lr  lm  lf  oct'
-'F#2' = '        rm      lr  lm  lf  oct'
-'G2' = '                 lr  lm  lf  oct'
-'G#2' = '            rf      lm  lf  oct'
-'A2' = '                     lm  lf  oct'
-'A#2' = 'rl- rr  rm          lm  lf  oct'
-'B2' = '         rm  rf      lm  lf  oct'
-'C3' = '         rm  rf          lf  oct'
-'C#3' = 'rl  rr      rf   lr     lf  oct cb'
-'D3' = ' rl  rr      rf   lr     lf  oct'
+C_1 = 'lt  lf  lm  lr  rf  rm  rr  rl  '
+Db1 = 'lt  lf  lm  lr  rf  rm  rr  rm  '
+D_1 = '    lf  lm  lr  rf  rm  rr      '
+Eb1 = 'lt  lf  lm  lr  rf  rm  rs      '
+E_1 = '    lf  lm  lr  rf  rm          '
+F_1 = '    lf  lm  lr  rf      rr  rl  '
+Gb1 = 'lt  lf  lm  lr      rm  rr      '
+G_1 = '    lf  lm  lr                  '
+Ab1 = 'lt  lf  lm      rf  rm  rs      '
+A_1 = '    lf  lm                      '
+Bb1 = 'lt  lf  lm      rf              '
+B_1 = '    lf                          '
+C_2 = '    lt  lm                      '
+Db2 = '    lf  lm                      '
+D_2 = '        lm                      '
+Eb2 = '        lm  lr  rf  rm  rr      '
+E_2 = 'oct lf  lm  lr  rf  rm          '
+F_2 = 'oct lf  lm  lr  rf      rr      '
+Gb2 = 'oct lf  lm  lr      rm          '
+G_2 = 'oct lf  lm  lr                  '
+Ab2 = 'oct lf  lm      rf              '
+A_2 = 'oct lf  lm                      '
+Bb2 = 'oct lf  lm          rm  rr  rm  '
+B_2 = 'oct lf  lm      rf  rm          '
+C_3 = 'oct lf          rf  rm          '
+Db3 = 'oct lf      lr  rf      rr  rl  cb  '
+D_3 = 'oct lf      lr  rf      rr  rl  '
 
-[instrument-lowest-note]
+[instrument-lowest-c]
 
 # From https://www.rochars.org/recorder-freqency-ranges
 
