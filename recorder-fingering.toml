@@ -1,70 +1,99 @@
-fingerings = [
-    'rl  rr  rm  rf  lr  lm  lf  lt ',  # C5 on soprano, for example
-    'rl- rr  rm  rf  lr  lm  lf  lt ',  # C#5
-    '    rr  rm  rf  lr  lm  lf     ',  # D5
-    '    rr- rm  rf  lr  lm  lf  lt ',  # D#5
-    '        rm  rf  lr  lm  lf     ',  # E5
-    'rl  rr      rf  lr  lm  lf     ',  # F5
-    '    rr  rm      lr  lm  lf  lt ',  # F#5
-    '                lr  lm  lf     ',  # G5
-    '    rr- rm  rf      lm  lf  lt ',  # G#5
-    '                    lm  lf     ',  # A5
-    '            rf      lm  lf  lt ',  # A#5
-    '                        lf     ',  # B5
-    '                    lm  lt     ',  # C6
-    '                    lm  lf     ',  # C#6
-    '                    lm         ',  # D6
-    '    rr  rm  rf  lr  lm         ',  # D#6
-    '        rm  rf  lr  lm  lf  oct',  # E6
-    '    rr      rf  lr  lm  lf  oct',  # F6
-    '        rm      lr  lm  lf  oct',  # F#6
-    '                lr  lm  lf  oct',  # G6
-    '            rf      lm  lf  oct',  # G#6
-    '                    lm  lf  oct',  # A6
-    'rl- rr  rm          lm  lf  oct',  # A#6
-    '        rm  rf      lm  lf  oct',  # B6
-    '        rm  rf          lf  oct',  # C7
-    'rl  rr      rf   lr     lf  oct cb',  # C#7
-    'rl  rr      rf   lr     lf  oct',  # D7
-]
-
-[key."right little finger"]
-short_name = 'rl'
-
-[key."right ring finger"]
-short_name = 'rr'
-
-[key."right middle finger"]
-short_name = 'rm'
-
-[key."right first finger"]
-short_name = 'rf'
-
-[key."left ring finger"]
-short_name = 'lr'
-
-[key."left middle finger"]
-short_name = 'lm'
-
-[key."left first finger"]
-short_name = 'lf'
+# Left hand keys
 
 [key."left thumb"]
 short_name = 'lt'
-
-[key."right little fomger half"]
-short_name = 'rl-'
-description = 'Slide the right little finger back to only close the large hole'
-
-[key."right ring finger half"]
-short_name = 'rr-'
-description = 'Slide the right ring finger back to only close the large hole'
+presser = "left thumb"
 
 [key.octave]
 short_name = 'oct'
+presser = "left thumb"
 description = 'Half-cover the thumb hole with the nail'
-is_octave = true
+
+[key."left first finger"]
+short_name = 'lf'
+presser = "left 1"
+
+[key."left middle finger"]
+short_name = 'lm'
+presser = "left 2"
+
+[key."left ring finger"]
+short_name = 'lr'
+presser = "left 3"
+
+# Right-hand keys
+
+[key."right first finger"]
+short_name = 'rf'
+presser = "right 1"
+
+[key."right middle finger"]
+short_name = 'rm'
+presser = "right 2"
+
+[key."right ring finger"]
+short_name = 'rr'
+presser = "right 3"
+
+[key."right ring finger half"]
+short_name = 'rr-'
+presser = "right 4"
+description = 'Slide the right ring finger back to only close the large hole'
+
+[key."right little finger"]
+short_name = 'rl'
+presser = "right 4"
+
+[key."right little finger half"]
+short_name = 'rl-'
+presser = "right 3"
+description = 'Slide the right little finger back to only close the large hole'
+
+# The bell
 
 [key.close-bell]
 short_name = 'cb'
+presser = "knee"
 description = 'Partly cover the bell of the instrument with the knee'
+
+[fingerings]
+'C1' = ' rl  rr  rm  rf  lr  lm  lf  lt '
+'C#1' = 'rl- rr  rm  rf  lr  lm  lf  lt '
+'D1' = '     rr  rm  rf  lr  lm  lf     '
+'D#1' = '    rr- rm  rf  lr  lm  lf  lt '
+'E1' = '         rm  rf  lr  lm  lf     '
+'F1' = ' rl  rr      rf  lr  lm  lf     '
+'F#1' = '    rr  rm      lr  lm  lf  lt '
+'G1' = '                 lr  lm  lf     '
+'G#1' = '    rr- rm  rf      lm  lf  lt '
+'A1' = '                     lm  lf     '
+'A#1' = '            rf      lm  lf  lt '
+'B1' = '                         lf     '
+'C2' = '                     lm  lt     '
+'C#2' = '                    lm  lf     '
+'D2' = '                     lm         '
+'D#2' = '    rr  rm  rf  lr  lm         '
+'E2' = '         rm  rf  lr  lm  lf  oct'
+'F2' = '     rr      rf  lr  lm  lf  oct'
+'F#2' = '        rm      lr  lm  lf  oct'
+'G2' = '                 lr  lm  lf  oct'
+'G#2' = '            rf      lm  lf  oct'
+'A2' = '                     lm  lf  oct'
+'A#2' = 'rl- rr  rm          lm  lf  oct'
+'B2' = '         rm  rf      lm  lf  oct'
+'C3' = '         rm  rf          lf  oct'
+'C#3' = 'rl  rr      rf   lr     lf  oct cb'
+'D3' = ' rl  rr      rf   lr     lf  oct'
+
+[instrument-lowest-note]
+
+# From https://www.rochars.org/recorder-freqency-ranges
+
+contrabass = 'F2'
+great-bass = 'C3'
+bass = 'F3'
+tenor = 'C4'
+alto = 'F4'
+soprano = 'C5'
+sopranino = 'F5'
+garklein = 'C6'
