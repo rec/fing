@@ -15,125 +15,124 @@ sopranissimo = 'Bb4'
 
 # Left hand
 
-[key.'Octave']
+[keys.'Octave']
 description = 'Octave'
 short_name = 'oct'
 press = 'left thumb'
-range = {lower = 'D2', upper = 'Db3'}
 
-[key.'Palm Eb']
+[keys.'Palm Eb']
 description = 'Palm Eb key'
 short_name = 'peb'
 press = 'left palm'
 
-[key.'Palm D']
+[keys.'Palm D']
 description = 'Palm D key'
 short_name = 'pd'
 press = 'left palm'
 
-[key.'Palm F']
+[keys.'Palm F']
 description = 'Palm F key'
 short_name = 'pf'
 press = 'left palm'
 
-[key.'Front F']
+[keys.'Front F']
 description = 'Front f key'
 short_name = 'ff'
 press = 'left 1'
 
-[key.'1 left']
+[keys.'1 left']
 description = 'First left finger key'
 short_name = '1L'
 press = 'left 1'
 
-[key.'Bb bis']
+[keys.'Bb bis']
 description = 'Bb bis key'
 short_name = 'bbb'
 press = 'left 2'
 
-[key.'2 left']
+[keys.'2 left']
 description = 'Second left finger key'
 short_name = '2L'
 press = 'left 2'
 
-[key.'3 left']
+[keys.'3 left']
 description = 'Third left finger key'
 short_name = '3L'
 press = 'left 3'
 
-[key.'G#']
+[keys.'G#']
 description = 'G# key'
 short_name = 'gs'
 press = 'left 4'
 
-[key.'C#']
+[keys.'C#']
 description = 'C# key'
 short_name = 'cs'
 press = 'left palm'
 
-[key.'Low B']
+[keys.'Low B']
 description = 'Low B key'
 short_name = 'lb'
 press = 'left 4'
 
-[key.'Low Bb']
+[keys.'Low Bb']
 description = 'Low Bb key'
 short_name = 'lbb'
 press = 'left 4'
 
 # Right hand keys
 
-[key.'Side E']
+[keys.'Side E']
 description = 'Side E key'
 short_name = 'se'
 press = 'right side key'
 
-[key.'Side C']
+[keys.'Side C']
 description = 'Side C key'
 short_name = 'sc'
 press = 'right side key'
 
-[key.'Side Bb']
+[keys.'Side Bb']
 description = 'Side Bb key'
 short_name = 'sbb'
 press = 'right side key'
 
-[key.'1 right']
+[keys.'1 right']
 description = 'First right finger key'
 short_name = '1R'
 press = 'right 1'
 
-[key.'High# F']
+[keys.'High# F']
 description = 'High F# key'
 short_name = 'hfs'
 press = 'right 2'
 
-[key.'2 right']
+[keys.'2 right']
 description = 'Second right finger key'
 short_name = '2R'
 press = 'right 2'
 
-[key.'Alt F#']
+[keys.'Alt F#']
 description = 'Alternate F# key'
 short_name = 'afs'
 press = 'right 3'
 
-[key.'3 right']
+[keys.'3 right']
 description = 'Third right Finger key'
 short_name = '3R'
 press = 'right 3'
 
-[key.'Low Eb']
+[keys.'Low Eb']
 description = 'Low Eb key'
 short_name = 'leb'
 press = 'right 4'
 
-[key.'Low C']
+[keys.'Low C']
 description = 'Low C key'
 short_name = 'lc'
 press = 'right 4'
 
-[key.'Low A']
+[keys.'Low A']
 description = 'Low A key'
 short_name = 'la'
 press = 'left thumb'
@@ -162,3 +161,15 @@ Bb1 = '                    1L  bbb 2L                              sbb          
 B_1 = '                    1L                                                                          '
 C_2 = '                            2L                                                                  '
 Db2 = '                                                                                                '
+D_2 = 'oct                 1L      2L  3L                              1R      2R      3R              '
+Eb2 = 'oct                 1L      2L  3L                              1R      2R      3R  leb         '
+E_2 = 'oct                 1L      2L  3L                              1R      2R                      '
+F_2 = 'oct                 1L      2L  3L                              1R                              '
+Gb2 = 'oct                 1L      2L  3L                                      2R                      '
+G_2 = 'oct                 1L      2L  3L                                                              '
+Ab2 = 'oct                 1L      2L  3L  gs                                                          '
+A_2 = 'oct                 1L      2L                                                                  '
+Bb2 = 'oct                 1L  bbb 2L                              sbb                                 '
+B_2 = 'oct                 1L                                                                          '
+C_3 = 'oct                         2L                                                                  '
+Db3 = 'oct                                                                                             '

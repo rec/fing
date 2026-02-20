@@ -1,0 +1,134 @@
+[layout]
+width = 125
+height = 1000
+scale = 1
+
+### Parts!
+
+[layout.parts.large-pad]
+draw = 'circle'
+shape = 50
+
+[layout.parts.small-pad]
+draw = 'circle'
+shape = 30
+
+[layout.parts.left-palm-key]
+draw = 'rectangle'
+shape = [15, 40]
+
+[layout.parts.right-palm-key]
+draw = 'rectangle'
+shape = [10, 30]
+
+[layout.parts.thin-key]
+draw = 'rectangle'
+shape = [10, 50]
+
+[layout.parts.left-pinky-horiz]
+draw = 'rectangle'
+shape = [40, 15]
+
+[layout.parts.left-pinky-vert]
+draw = 'rectangle'
+shape = [15, 40]
+
+# Keys!
+
+[layout.keys.'Octave']
+part = 'large-pad'
+xy = [50, 30]
+
+[layout.keys.'Palm Eb']
+part = 'left-palm-key'
+xy = [100, 30]
+
+[layout.keys.'Palm D']
+part = 'left-palm-key'
+xy = [30, 30]
+
+[layout.keys.'Palm F']
+part = 'left-palm-key'
+xy = [30, 30]
+
+[layout.keys.'Front F']
+part = 'small-pad'
+xy = [30, 30]
+
+[layout.keys.'1 left']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'Bb bis']
+part = 'small-pad'
+xy = [30, 30]
+
+[layout.keys.'2 left']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'3 left']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'G#']
+shape = 'rectangle'
+xy = [30, 30]
+
+[layout.keys.'C#']
+shape = 'rectangle'
+xy = [30, 30]
+
+[layout.keys.'Low B']
+shape = 'rectangle'
+xy = [30, 30]
+
+[layout.keys.'Low Bb']
+shape = 'rectangle'
+xy = [30, 30]
+
+# Right hand keys
+
+[layout.keys.'Side E']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'Side C']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'Side Bb']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'1 right']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'High# F']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'2 right']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'Alt F#']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'3 right']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'Low Eb']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'Low C']
+part = 'large-pad'
+xy = [30, 30]
+
+[layout.keys.'Low A']
+part = 'thin-key'
+xy = [30, 30]

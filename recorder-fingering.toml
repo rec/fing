@@ -1,57 +1,57 @@
 # Left hand keys
 
-[key."left thumb"]
+[keys."left thumb"]
 short-name = 'lt'
 press = "left thumb"
 
-[key.octave]
+[keys.octave]
 hort_name = 'oct'
 press = "left thumb"
 description = 'Half-cover the thumb hole with the nail'
 
-[key."left first finger"]
+[keys."left first finger"]
 short-name = 'lf'
 press = "left 1"
 
-[key."left middle finger"]
+[keys."left middle finger"]
 short-name = 'lm'
 press = "left 2"
 
-[key."left ring finger"]
+[keys."left ring finger"]
 short-name = 'lr'
 press = "left 3"
 
 # Right-hand keys
 
-[key."right first finger"]
+[keys."right first finger"]
 short-name = 'rf'
 press = "right 1"
 
-[key."right middle finger"]
+[keys."right middle finger"]
 short-name = 'rm'
 press = "right 2"
 
-[key."right ring finger"]
+[keys."right ring finger"]
 short-name = 'rr'
 press = "right 3"
 
-[key."right ring finger half"]
+[keys."right ring finger half"]
 short-name = 'rs'
 press = "right 4"
 description = 'Slide the right ring finger back to only close the large hole'
 
-[key."right little finger"]
+[keys."right little finger"]
 short-name = 'rl'
 press = "right 4"
 
-[key."right little finger half"]
+[keys."right little finger half"]
 short-name = 'rm'
 press = "right 3"
 description = 'Slide the right little finger back to only close the large hole'
 
 # The bell
 
-[key.close-bell]
+[keys.close-bell]
 short-name = 'cb'
 press = 'knee'
 description = 'Partly cover the bell of the instrument with the knee'
