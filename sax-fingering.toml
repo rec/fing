@@ -1,21 +1,21 @@
 [key.'Octave']
 description = 'Octave'
-short_name = 'oc'
+short_name = 'oct'
 presser = 'left thumb'
 
 [key.'Eb palm']
-description = 'Eb palm key'
-short_name = 'eb'
+description = 'Palm Eb key'
+short_name = 'peb'
 presser = 'left palm'
 
 [key.'D palm']
-description = 'D palm key'
-short_name = 'dp'
+description = 'Palm D key'
+short_name = 'pd'
 presser = 'left palm'
 
 [key.'F palm']
-description = 'F palm key'
-short_name = 'fp'
+description = 'Palm F key'
+short_name = 'pf'
 presser = 'left palm'
 
 [key.'F front']
@@ -30,7 +30,7 @@ presser = 'left 1'
 
 [key.'Bb bis']
 description = 'Bb bis key'
-short_name = 'bb'
+short_name = 'bbb'
 presser = 'left 2'
 
 [key.'2 left']
@@ -44,13 +44,13 @@ short_name = '3L'
 presser = 'left 3'
 
 [key.'G# palm']
-description = 'G# palm key'
-short_name = 'gp'
+description = 'Palm G# key'
+short_name = 'pgs'
 presser = 'left palm'
 
 [key.'C# palm']
-description = 'C# palm key'
-short_name = 'cp'
+description = 'Palm C# key'
+short_name = 'pcs'
 presser = 'left palm'
 
 [key.'B low']
@@ -60,24 +60,24 @@ presser = 'left 4'
 
 [key.'Bb low']
 description = 'Low Bb key'
-short_name = 'lf'
+short_name = 'lbb'
 presser = 'left 4'
 
 # Right hand keys
 
 [key.'E side']
-description = 'E side key'
-short_name = 'es'
+description = 'Side E key'
+short_name = 'se'
 presser = 'right side key'
 
 [key.'C side']
-description = 'C side key'
-short_name = 'cs'
+description = 'Side C key'
+short_name = 'sc'
 presser = 'right side key'
 
 [key.'Bb side']
-description = 'Bb side key'
-short_name = 'bs'
+description = 'Side Bb key'
+short_name = 'sbb'
 presser = 'right side key'
 
 [key.'1 right']
@@ -87,7 +87,7 @@ presser = 'right 1'
 
 [key.'F# high']
 description = 'High F# key'
-short_name = 'fh'
+short_name = 'hfs'
 presser = 'right 2'
 
 [key.'2 right']
@@ -97,7 +97,7 @@ presser = 'right 2'
 
 [key.'F# alt']
 description = 'Alternate F# key'
-short_name = 'af'
+short_name = 'afs'
 presser = 'right 3'
 
 [key.'3 right']
@@ -107,7 +107,7 @@ presser = 'right 3'
 
 [key.'Eb low']
 description = 'Low Eb key'
-short_name = 'le'
+short_name = 'leb'
 presser = 'right 4'
 
 [key.'C low']
