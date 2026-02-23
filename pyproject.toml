@@ -21,3 +21,12 @@ quote-style = "single"
 
 [tool.uv]
 package = true
+
+[dependency-groups]
+dev = [
+    "coverage>=7.13.4",
+    "pytest>=9.0.2",
+    "pyupgrade>=3.21.2",
+    "ruff>=0.15.2",
+    "ty>=0.0.18",
+]
