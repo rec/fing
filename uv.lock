@@ -7,11 +7,24 @@ name = "fing"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "svg-py" },
     { name = "tomlkit" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "tomlkit", specifier = ">=0.14.0" }]
+requires-dist = [
+    { name = "svg-py", specifier = ">=1.10.0" },
+    { name = "tomlkit", specifier = ">=0.14.0" },
+]
+
+[[package]]
+name = "svg-py"
+version = "1.10.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/bc/1e/f36612d46266942c351de904bd9928610c485baee61220892277ac37be65/svg_py-1.10.0.tar.gz", hash = "sha256:2e1391411a205220a0e72ca303f3c2d11dbd564cb1dbc445406c5e11421bcc4b", size = 43808, upload-time = "2025-12-28T09:52:41.124Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/18/9f/77a405e7b2a334ce774835263c3374d4ed307a3473f3925d9990a8c029e0/svg_py-1.10.0-py3-none-any.whl", hash = "sha256:54c7470347d5d79b30d059584a4f449da08b462903e8ce262981338bab755560", size = 15207, upload-time = "2025-12-28T09:52:39.559Z" },
+]
 
 [[package]]
 name = "tomlkit"

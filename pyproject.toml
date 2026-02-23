@@ -5,6 +5,7 @@ description = "🖐️ A universal representation of fingering systems for winds
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "svg-py>=1.10.0",
     "tomlkit>=0.14.0",
 ]
 
