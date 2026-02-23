@@ -1,0 +1,120 @@
+[layout]
+width = 125
+height = 1000
+scale = 1
+
+# Left hand keys
+
+[layout.parts.pad]
+draw = 'circle'
+shape = 50
+
+[layout.parts.large-half-pad]
+draw = 'circle'
+shape = 30
+
+[layout.parts.small-half-pad]
+draw = 'circle'
+shape = 20
+
+[layout.parts.octave]
+draw = 'circle'
+shape = 50
+
+
+
+[keys."left thumb"]
+
+[keys.octave]
+hort_name = 'oct'
+press = "left thumb"
+description = 'Half-cover the thumb hole with the nail'
+
+[keys."left first finger"]
+short-name = 'lf'
+press = "left 1"
+
+[keys."left middle finger"]
+short-name = 'lm'
+press = "left 2"
+
+[keys."left ring finger"]
+short-name = 'lr'
+press = "left 3"
+
+# Right-hand keys
+
+[keys."right first finger"]
+short-name = 'rf'
+press = "right 1"
+
+[keys."right middle finger"]
+short-name = 'rm'
+press = "right 2"
+
+[keys."right ring finger"]
+short-name = 'rr'
+press = "right 3"
+
+[keys."right ring finger half"]
+short-name = 'rs'
+press = "right 4"
+description = 'Slide the right ring finger back to only close the large hole'
+
+[keys."right little finger"]
+short-name = 'rl'
+press = "right 4"
+
+[keys."right little finger half"]
+short-name = 'rm'
+press = "right 3"
+description = 'Slide the right little finger back to only close the large hole'
+
+# The bell
+
+[keys.close-bell]
+short-name = 'cb'
+press = 'knee'
+description = 'Partly cover the bell of the instrument with the knee'
+
+[fingerings]
+C_1 = 'lt  lf  lm  lr  rf  rm  rr  rl  '
+Db1 = 'lt  lf  lm  lr  rf  rm  rr  rm  '
+D_1 = '    lf  lm  lr  rf  rm  rr      '
+Eb1 = 'lt  lf  lm  lr  rf  rm  rs      '
+E_1 = '    lf  lm  lr  rf  rm          '
+F_1 = '    lf  lm  lr  rf      rr  rl  '
+Gb1 = 'lt  lf  lm  lr      rm  rr      '
+G_1 = '    lf  lm  lr                  '
+Ab1 = 'lt  lf  lm      rf  rm  rs      '
+A_1 = '    lf  lm                      '
+Bb1 = 'lt  lf  lm      rf              '
+B_1 = '    lf                          '
+C_2 = '    lt  lm                      '
+Db2 = '    lf  lm                      '
+D_2 = '        lm                      '
+Eb2 = '        lm  lr  rf  rm  rr      '
+E_2 = 'oct lf  lm  lr  rf  rm          '
+F_2 = 'oct lf  lm  lr  rf      rr      '
+Gb2 = 'oct lf  lm  lr      rm          '
+G_2 = 'oct lf  lm  lr                  '
+Ab2 = 'oct lf  lm      rf              '
+A_2 = 'oct lf  lm                      '
+Bb2 = 'oct lf  lm          rm  rr  rm  '
+B_2 = 'oct lf  lm      rf  rm          '
+C_3 = 'oct lf          rf  rm          '
+Db3 = 'oct lf      lr  rf      rr  rl  cb  '
+D_3 = 'oct lf      lr  rf      rr  rl  '
+
+[instrument-lowest-c]
+
+# From https://www.rochars.org/recorder-freqency-ranges
+
+contrabass = 'F2'
+great-bass = 'C3'
+bass = 'F3'
+tenor = 'C4'
+alto = 'F4'
+soprano = 'C5'
+sopranino = 'F5'
+garklein = 'C6'
