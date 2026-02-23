@@ -1,5 +1,11 @@
 # Left hand keys
 
+[metadata]
+author = 'Tom Ritchford (tom@swirly.com)'
+version = 'v0.1.0'
+name = 'Baroque fingering system for the recorder'
+tags = ['recorder', 'baroque']
+
 [keys."left thumb"]
 short-name = 'lt'
 press = "left thumb"
@@ -57,38 +63,38 @@ press = 'knee'
 description = 'Partly cover the bell of the instrument with the knee'
 
 [fingerings]
-C_1 = 'lt  lf  lm  lr  rf  rm  rr  rl  '
-Db1 = 'lt  lf  lm  lr  rf  rm  rr  rm  '
-D_1 = '    lf  lm  lr  rf  rm  rr      '
-Eb1 = 'lt  lf  lm  lr  rf  rm  rs      '
-E_1 = '    lf  lm  lr  rf  rm          '
-F_1 = '    lf  lm  lr  rf      rr  rl  '
-Gb1 = 'lt  lf  lm  lr      rm  rr      '
-G_1 = '    lf  lm  lr                  '
-Ab1 = 'lt  lf  lm      rf  rm  rs      '
-A_1 = '    lf  lm                      '
-Bb1 = 'lt  lf  lm      rf              '
-B_1 = '    lf                          '
-C_2 = '    lt  lm                      '
-Db2 = '    lf  lm                      '
-D_2 = '        lm                      '
-Eb2 = '        lm  lr  rf  rm  rr      '
-E_2 = 'oct lf  lm  lr  rf  rm          '
-F_2 = 'oct lf  lm  lr  rf      rr      '
-Gb2 = 'oct lf  lm  lr      rm          '
-G_2 = 'oct lf  lm  lr                  '
-Ab2 = 'oct lf  lm      rf              '
-A_2 = 'oct lf  lm                      '
-Bb2 = 'oct lf  lm          rm  rr  rm  '
-B_2 = 'oct lf  lm      rf  rm          '
-C_3 = 'oct lf          rf  rm          '
+#      lt  lf  lm  lr  rf  rm  rr  rl  cb
+C_1 = 'lt  lf  lm  lr  rf  rm  rr  rl      '
+Db1 = 'lt  lf  lm  lr  rf  rm  rr  rm      '
+D_1 = '    lf  lm  lr  rf  rm  rr          '
+Eb1 = 'lt  lf  lm  lr  rf  rm  rs          '
+E_1 = '    lf  lm  lr  rf  rm              '
+F_1 = '    lf  lm  lr  rf      rr  rl      '
+Gb1 = 'lt  lf  lm  lr      rm  rr          '
+G_1 = '    lf  lm  lr                      '
+Ab1 = 'lt  lf  lm      rf  rm  rs          '
+A_1 = '    lf  lm                          '
+Bb1 = 'lt  lf  lm      rf                  '
+B_1 = '    lf                              '
+C_2 = '    lt  lm                          '
+Db2 = '    lf  lm                          '
+D_2 = '        lm                          '
+Eb2 = '        lm  lr  rf  rm  rr          '
+E_2 = 'oct lf  lm  lr  rf  rm              '
+F_2 = 'oct lf  lm  lr  rf      rr          '
+Gb2 = 'oct lf  lm  lr      rm              '
+G_2 = 'oct lf  lm  lr                      '
+Ab2 = 'oct lf  lm      rf                  '
+A_2 = 'oct lf  lm                          '
+Bb2 = 'oct lf  lm          rm  rr  rm      '
+B_2 = 'oct lf  lm      rf  rm              '
+C_3 = 'oct lf          rf  rm              '
 Db3 = 'oct lf      lr  rf      rr  rl  cb  '
-D_3 = 'oct lf      lr  rf      rr  rl  '
+D_3 = 'oct lf      lr  rf      rr  rl      '
 
-[instrument-lowest-c]
+[lowest_c]
 
 # From https://www.rochars.org/recorder-freqency-ranges
-
 contrabass = 'F2'
 great-bass = 'C3'
 bass = 'F3'
