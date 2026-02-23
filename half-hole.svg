@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
-   sodipodi:docname="half-hole.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs1" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+   viewBox="0 0 210 300"
+   xmlns="http://www.w3.org/2000/svg">
+  <g>
     <circle
        style="fill:#000000"
-       id="path1"
-       cx="115.0114"
-       cy="36.702168"
-       r="30" />
-    <circle
-       style="fill:#000000"
-       id="path1-7"
-       cx="57.378944"
-       cy="53.35297"
+       id="little-half"
+       cx="80"
+       cy="55"
        r="20" />
+    <circle
+       style="fill: gold; stroke: maroon; stroke-width: 2px;"
+       id="big-half"
+       cx="30"
+       cy="30"
+       r="30" />
   </g>
 </svg>
