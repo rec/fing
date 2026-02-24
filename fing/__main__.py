@@ -1,5 +1,6 @@
 import sys
-from tomlkit import load, exceptions
+
+from tomlkit import exceptions, load
 
 
 def check(files: list[str]) -> int | None:
@@ -10,8 +11,10 @@ def check(files: list[str]) -> int | None:
             return str(e)
 
         count = {}
-        for k in keys.values():
-            s = k['short_name']
+        assert isinstance(keys, dict)
+        for v in keys.values():
+            assert isinstance(v, dict)
+            s = v['short_name']  # ty: ignore[invalid-argument-type]  WHY
             count[s] = 1 + count.get(s, 0)
 
         if dupes := [k for k, v in count.items() if v > 1]:
@@ -26,5 +29,5 @@ def main():
     sys.exit(check(sys.argv[1:]))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
