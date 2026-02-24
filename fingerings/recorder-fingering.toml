@@ -43,7 +43,7 @@ press = "right 3"
 
 [keys."right ring finger half"]
 short_name = 'rrh'
-press = "right 4"
+press = "right 3"
 description = 'Slide the right ring finger back to only close the large hole'
 
 [keys."right little finger"]
@@ -52,7 +52,7 @@ press = "right 4"
 
 [keys."right little finger half"]
 short_name = 'rlh'
-press = "right 3"
+press = "right 4"
 description = 'Slide the right little finger back to only close the large hole'
 
 # The bell
