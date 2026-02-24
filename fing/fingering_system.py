@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import dataclasses as dc
-from collections.abc import (
-    Sequence,
-)
+from collections.abc import Sequence
+from typing import Any
+
+import tomlkit
 
 NOTE_TO_OFFSET = {
     'C': 0,
@@ -53,6 +54,7 @@ class FingeringSystem:
     lowest_c: dict[str, Note]
     to_key: dict[str, Key]
     metadata: dict[str, str]
+    document: tomlkit.TOMLDocument | None = None
 
 
 @dc.dataclass(frozen=True)
@@ -61,17 +63,29 @@ class FingeringSpec:
     keys: dict[str, dict[str, str]]
     lowest_c: dict[str, str]
     metadata: dict[str, str]
+    document: tomlkit.TOMLDocument | None = None
+
+    @staticmethod
+    def make(filename: str) -> FingeringSpec:
+        with open(filename) as fp:
+            doc: dict[str, Any] = tomlkit.load(fp)
+
+        names = {f.name for f in dc.fields(FingeringSpec)}
+        if bad := [k for k in doc if k == 'document' or k not in names]:
+            raise ValueError(f'Do not understand field{"s" * (len(bad) != 1)} {bad}')
+
+        assert isinstance(doc, dict) and all(isinstance(i, str) for i in doc), doc
+        return FingeringSpec(document=doc, **doc)  # ty: ignore[invalid-argument-type]
 
 
-def make_fingering_system(spec: FingeringSpec, reraise: bool = True) -> FingeringSystem:
-    all_: Sequence[Key] = ()
-    fingerings: dict[Note, Sequence[Key]] = {}
-    keys: dict[str, Key] = {}
-    lowest_c: dict[str, Note] = {}
-    to_key: dict[str, Key] = {}
-
+def make(filename: str, reraise: bool = True) -> FingeringSystem:
     bad: dict[str, list[str]] = {}
+
+    to_key: dict[str, Key] = {}
+    keys: dict[str, Key] = {}
     dupes: dict[str, int] = {}
+
+    spec = FingeringSpec.make(filename)
     for k, v in spec.keys.items():
         try:
             key = Key(**v)
@@ -88,6 +102,9 @@ def make_fingering_system(spec: FingeringSpec, reraise: bool = True) -> Fingerin
     if dupe_names := [k for k, v in dupes.items() if v > 1]:
         bad['Duplicate short_name'] = dupe_names
 
+    all_: Sequence[Key] = ()
+    fingerings: dict[Note, Sequence[Key]] = {}
+    lowest_c: dict[str, Note] = {}
     for k, v in spec.fingerings.items():
         try:
             note = None if k == 'all' else Note(k)
@@ -116,9 +133,6 @@ def make_fingering_system(spec: FingeringSpec, reraise: bool = True) -> Fingerin
         lowest_c[k] = note
 
     if bad:
-        import pprint
-
-        pprint.pprint(bad)
         err = '\n'.join(
             f'{k}{"s" * (len(v) != 1)}: {", ".join(v)}' for k, v in bad.items()
         )
@@ -126,6 +140,7 @@ def make_fingering_system(spec: FingeringSpec, reraise: bool = True) -> Fingerin
 
     return FingeringSystem(
         all=all_,
+        document=spec.document,
         fingerings=fingerings,
         keys=keys,
         lowest_c=lowest_c,
