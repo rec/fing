@@ -1,11 +1,8 @@
 from __future__ import annotations
 
-import tomlkit
-
-from fing.fingering_system import FingeringSpec, make_fingering_system
+from fing import fingering_system as fs
 
 
-def test_read_fingering():
-    rspec = tomlkit.load(open('recorder-fingering.toml'))
-    fs = make_fingering_system(FingeringSpec(**rspec))
-    assert fs
+def test_read_recorder():
+    fingering = fs.make('fingerings/recorder-fingering.toml')
+    assert fingering
