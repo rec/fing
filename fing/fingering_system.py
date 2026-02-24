@@ -74,7 +74,7 @@ def make(filename: str, reraise: bool = True) -> FingeringSystem:
         except Exception:
             if reraise:
                 raise
-            bad.setdefault('Invalid keys', []).append(str(v))
+            bad.setdefault('Invalid key', []).append(str(v))
             continue
         to_key[k] = keys[k] = key
         if s := key.short_name:
