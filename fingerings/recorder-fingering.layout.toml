@@ -1,7 +1,55 @@
-[layout.svg.defs]
-# TODO: Add cx="0" cy="0" and id= fields
-pad-pressed = '<circle r="50" />'
-pad = '<circle r="50" style="fill:white; stroke: black; stroke-width: 1; />'
+[layout]
+size = [100, 800]
+spacing = [0, 80]
+
+[layout.pieces.left-thumb.image]
+off = 'pad'
+oct = 'octave'
+left-thumb = 'pad-pressed'
+
+[layout.pieces.separator.image]
+off = 'separator'
+
+[layout.pieces.left-1.image]
+off = 'pad'
+left-1 = 'pad-pressed'
+
+[layout.pieces.left-2.image]
+off = 'pad'
+left-2 = 'pad-pressed'
+
+[layout.pieces.left-3.image]
+off = 'pad'
+left-3 = 'pad-pressed'
+
+[layout.pieces.separator.image]
+off = 'separator'
+
+[layout.pieces.right-1.image]
+off = 'pad'
+right-1 = 'pad-pressed'
+
+[layout.pieces.right-2.image]
+off = 'pad'
+right-2 = 'pad-pressed'
+
+[layout.pieces.right-3.image]
+off = 'split-pad'
+right-3 = 'split-pad-pressed'
+right-3-half = 'split-pad-pressed-half'
+
+[layout.pieces.right-4.image]
+off = split-pad
+right-4 = split-pad-pressed
+right-4-half = split-pad-pressed-half
+
+[layout.defs]
+pad-pressed = """
+<circle r="50" />"""
+
+pad = """
+<circle r="50" style="fill:white; stroke: black; stroke-width: 1"; />"""
+
 split-pad-pressed = """
 <g>
    <circle cx="80" cy="55" r="20" />
@@ -14,7 +62,7 @@ split-pad = """
    <circle cx="30" cy="30" r="30" />
 </g>"""
 
-split-pad-half = """
+split-pad-half-pressed = """
 <g>
    <circle cx="80" cy="55" r="20" />
    <circle cx="30" cy="30" r="30" style="fill: white; stroke: back; stroke-width: 1;" />
@@ -22,118 +70,6 @@ split-pad-half = """
 
 octave = """
 <g>
-   <circle cx="0" cy="0" r="50" />'
+   <circle r="50" />'
    <rect x="-25" y="0" width="50" height="50" style="fill: green;"/>'
 </g>"""
-
-
-[layout.svg]
-viewbox = '0 0 100 800'
-
-[layout.keys.left-thumb]
-
-left-thumb = 0
-left-1 = 80
-left-2 = 140
-left-3 = 200
-right-1 = 80
-right-2 = 140
-right-3 = 200
-
-
-# Left hand keys
-
-
-[keys.octave]
-hort_name = 'oct'
-press = "left thumb"
-description = 'Half-cover the thumb hole with the nail'
-
-[keys."left first finger"]
-short-name = 'lf'
-press = "left 1"
-
-[keys."left middle finger"]
-short-name = 'lm'
-press = "left 2"
-
-[keys."left ring finger"]
-short-name = 'lr'
-press = "left 3"
-
-# Right-hand keys
-
-[keys."right first finger"]
-short-name = 'rf'
-press = "right 1"
-
-[keys."right middle finger"]
-short-name = 'rm'
-press = "right 2"
-
-[keys."right ring finger"]
-short-name = 'rr'
-press = "right 3"
-
-[keys."right ring finger half"]
-short-name = 'rs'
-press = "right 4"
-description = 'Slide the right ring finger back to only close the large hole'
-
-[keys."right little finger"]
-short-name = 'rl'
-press = "right 4"
-
-[keys."right little finger half"]
-short-name = 'rm'
-press = "right 3"
-description = 'Slide the right little finger back to only close the large hole'
-
-# The bell
-
-[keys.close-bell]
-short-name = 'cb'
-press = 'knee'
-description = 'Partly cover the bell of the instrument with the knee'
-
-[fingerings]
-C_1 = 'lt  lf  lm  lr  rf  rm  rr  rl  '
-Db1 = 'lt  lf  lm  lr  rf  rm  rr  rm  '
-D_1 = '    lf  lm  lr  rf  rm  rr      '
-Eb1 = 'lt  lf  lm  lr  rf  rm  rs      '
-E_1 = '    lf  lm  lr  rf  rm          '
-F_1 = '    lf  lm  lr  rf      rr  rl  '
-Gb1 = 'lt  lf  lm  lr      rm  rr      '
-G_1 = '    lf  lm  lr                  '
-Ab1 = 'lt  lf  lm      rf  rm  rs      '
-A_1 = '    lf  lm                      '
-Bb1 = 'lt  lf  lm      rf              '
-B_1 = '    lf                          '
-C_2 = '    lt  lm                      '
-Db2 = '    lf  lm                      '
-D_2 = '        lm                      '
-Eb2 = '        lm  lr  rf  rm  rr      '
-E_2 = 'oct lf  lm  lr  rf  rm          '
-F_2 = 'oct lf  lm  lr  rf      rr      '
-Gb2 = 'oct lf  lm  lr      rm          '
-G_2 = 'oct lf  lm  lr                  '
-Ab2 = 'oct lf  lm      rf              '
-A_2 = 'oct lf  lm                      '
-Bb2 = 'oct lf  lm          rm  rr  rm  '
-B_2 = 'oct lf  lm      rf  rm          '
-C_3 = 'oct lf          rf  rm          '
-Db3 = 'oct lf      lr  rf      rr  rl  cb  '
-D_3 = 'oct lf      lr  rf      rr  rl  '
-
-[instrument-lowest-c]
-
-# From https://www.rochars.org/recorder-freqency-ranges
-
-contrabass = 'F2'
-great-bass = 'C3'
-bass = 'F3'
-tenor = 'C4'
-alto = 'F4'
-soprano = 'C5'
-sopranino = 'F5'
-garklein = 'C6'
