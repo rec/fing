@@ -1,29 +1,48 @@
-[layout]
-width = 125
-height = 1000
-scale = 1
+[layout.svg.defs]
+# TODO: Add cx="0" cy="0" and id= fields
+pad-pressed = '<circle r="50" />'
+pad = '<circle r="50" style="fill:white; stroke: black; stroke-width: 1; />'
+split-pad-pressed = """
+<g>
+   <circle cx="80" cy="55" r="20" />
+   <circle cx="30" cy="30" r="30" />
+</g>"""
+
+split-pad = """
+<g style="fill: white; stroke: back; stroke-width: 1;">
+   <circle cx="80" cy="55" r="20" />
+   <circle cx="30" cy="30" r="30" />
+</g>"""
+
+split-pad-half = """
+<g>
+   <circle cx="80" cy="55" r="20" />
+   <circle cx="30" cy="30" r="30" style="fill: white; stroke: back; stroke-width: 1;" />
+</g>"""
+
+octave = """
+<g>
+   <circle cx="0" cy="0" r="50" />'
+   <rect x="-25" y="0" width="50" height="50" style="fill: green;"/>'
+</g>"""
+
+
+[layout.svg]
+viewbox = '0 0 100 800'
+
+[layout.keys.left-thumb]
+
+left-thumb = 0
+left-1 = 80
+left-2 = 140
+left-3 = 200
+right-1 = 80
+right-2 = 140
+right-3 = 200
+
 
 # Left hand keys
 
-[layout.parts.pad]
-draw = 'circle'
-shape = 50
-
-[layout.parts.large-half-pad]
-draw = 'circle'
-shape = 30
-
-[layout.parts.small-half-pad]
-draw = 'circle'
-shape = 20
-
-[layout.parts.octave]
-draw = 'circle'
-shape = 50
-
-
-
-[keys."left thumb"]
 
 [keys.octave]
 hort_name = 'oct'
