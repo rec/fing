@@ -2,16 +2,15 @@
 <svg
    viewBox="0 0 210 300"
    xmlns="http://www.w3.org/2000/svg">
-  <g>
+  <g
+      style="fill: gold; stroke: maroon; stroke-width: 2px;"
+      >
     <circle
-       style="fill:#000000"
-       id="little-half"
+       style="stroke: black; stroke-width: 0.5;"
        cx="80"
        cy="55"
        r="20" />
     <circle
-       style="fill: gold; stroke: maroon; stroke-width: 2px;"
-       id="big-half"
        cx="30"
        cy="30"
        r="30" />
