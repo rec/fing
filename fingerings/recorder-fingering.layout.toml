@@ -7,7 +7,7 @@ off = 'pad'
 oct = 'octave'
 left-thumb = 'pad-pressed'
 
-[layout.pieces.separator.image]
+[layout.pieces._separator-1.image]
 off = 'separator'
 
 [layout.pieces.left-1.image]
@@ -22,7 +22,7 @@ left-2 = 'pad-pressed'
 off = 'pad'
 left-3 = 'pad-pressed'
 
-[layout.pieces.separator.image]
+[layout.pieces._separator-2.image]
 off = 'separator'
 
 [layout.pieces.right-1.image]
@@ -39,16 +39,16 @@ right-3 = 'split-pad-pressed'
 right-3-half = 'split-pad-pressed-half'
 
 [layout.pieces.right-4.image]
-off = split-pad
-right-4 = split-pad-pressed
-right-4-half = split-pad-pressed-half
+off = 'split-pad'
+right-4 = 'split-pad-pressed'
+right-4-half = 'split-pad-pressed-half'
 
 [layout.defs]
 pad-pressed = """
 <circle r="50" />"""
 
 pad = """
-<circle r="50" style="fill:white; stroke: black; stroke-width: 1"; />"""
+<circle r="50" style="fill:white; stroke: black; stroke-width: 1;" />"""
 
 split-pad-pressed = """
 <g>
@@ -62,7 +62,7 @@ split-pad = """
    <circle cx="30" cy="30" r="30" />
 </g>"""
 
-split-pad-half-pressed = """
+split-pad-pressed-half = """
 <g>
    <circle cx="80" cy="55" r="20" />
    <circle cx="30" cy="30" r="30" style="fill: white; stroke: back; stroke-width: 1;" />
@@ -70,6 +70,9 @@ split-pad-half-pressed = """
 
 octave = """
 <g>
-   <circle r="50" />'
-   <rect x="-25" y="0" width="50" height="50" style="fill: green;"/>'
+   <circle r="50" />
+   <rect x="-25" y="0" width="50" height="50" style="fill: green;"/>
 </g>"""
+
+separator = """
+<rect x="-25" y="0" width="50" height="50" style="fill: orange;"/>"""

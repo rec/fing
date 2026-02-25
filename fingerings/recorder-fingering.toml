@@ -23,7 +23,7 @@ press = "left-1"
 short_name = 'l2'
 press = "left-2"
 
-[keys.left-ring]
+[keys.left-3]
 short_name = 'l3'
 press = "left-3"
 
@@ -37,11 +37,11 @@ press = "right-1"
 short_name = 'r2'
 press = "right-2"
 
-[keys.3]
+[keys.right-3]
 short_name = 'r3'
 press = "right-3"
 
-[keys.3-half]
+[keys.right-3-half]
 short_name = 'r3h'
 press = "right-3"
 description = 'Slide the right ring finger back to only close the large hole'
