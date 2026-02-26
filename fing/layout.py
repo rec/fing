@@ -33,8 +33,9 @@ class ChartPiece:
 class Layout:
     defs: Sequence[Element]
     pieces: Sequence[ChartPiece]
-    size: tuple[int, int] = (100, 800)
-    style: str = ''
+    size: tuple[int, int]
+    spacing: int
+    style: str
 
     def render(self, fingering: Sequence[str], name: str) -> ET.ElementTree:
         w, h = self.size
@@ -49,6 +50,10 @@ class Layout:
 
         pieces = ET.SubElement(svg, 'g')
         pieces.extend(p.render(fingering) for p in self.pieces)
+        w, h = self.size
+
+        attrs = {'x': '40', 'y': str(20 + h - self.spacing), 'font-size': '60'}
+        ET.SubElement(svg, 'text', attrs).text = name
 
         tree = ET.ElementTree(svg)
         return tree
@@ -125,7 +130,11 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
             y += dy
 
         return Layout(
-            list(defs.values()), list(pieces.values()), (spec.width, y), spec.style
+            defs=list(defs.values()),
+            pieces=list(pieces.values()),
+            size=(spec.width, y + dy + 20),  # TODO for the caption
+            spacing=spec.spacing,
+            style=spec.style,
         )
 
 

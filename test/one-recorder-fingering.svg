@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 100 1200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 100 1340" xmlns="http://www.w3.org/2000/svg">
   <style>.outline { fill: white; stroke: black; stroke-width: 1; }</style>
   <defs>
     <circle cx="50" cy="50" r="50" id="pad" />
     <circle cx="80" cy="55" r="20" id="little" />
     <circle cx="30" cy="30" r="30" id="big" />
-    <rect x="-25" y="0" width="50" height="50" style="fill: green;" id="octave" />
+    <rect x="-25" y="0" width="50" height="50" style="fill: green;" id="octave-cover" />
     <rect x="0" y="50" width="120" height="1" style="fill: black;" id="separator" />
   </defs>
   <g>
@@ -26,4 +26,5 @@
       <use x="0" y="1080" href="#big" class="outline" />
     </g>
   </g>
+  <text x="40" y="1240" font-size="60">D</text>
 </svg>
