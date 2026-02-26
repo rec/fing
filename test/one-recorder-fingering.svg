@@ -1,47 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg viewBox="0 0 100 1200" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .outline {
-        fill: white;
-        stroke: black;
-        stroke-width: 1;
-    }
-  </style>
+  <style>.outline { fill: white; stroke: black; stroke-width: 1; }</style>
   <defs>
-    <circle cx="50" cy="50" r="50" id="pad-pressed" />
-    <use href="#pad-pressed" style="fill:white; stroke: black; stroke-width: 1;" id="pad" />
-    <circle cx="80" cy="55" r="20" id="little-pressed" />
-    <circle cx="30" cy="30" r="30" id="big-pressed" />
-    <use href="#little-pressed" style="fill: white; stroke: black; stroke-width: 1;" id="little" />
-    <use href="#big-pressed" style="fill: white; stroke: black; stroke-width: 1;" id="big" />
-    <g id="split-pad">
-      <use href="#little" />
-      <use href="#big" />
-    </g>
-    <g id="split-pad-pressed">
-      <use href="#little-pressed" />
-      <use href="#big-pressed" />
-    </g>
-    <g id="split-pad-pressed-half">
-      <use href="#little" />
-      <use href="#big-pressed" />
-    </g>
-    <g id="octave">
-      <use href="#pad-pressed" />
-      <rect x="-25" y="0" width="50" height="50" style="fill: green;" />
-    </g>
+    <circle cx="50" cy="50" r="50" id="pad" />
+    <circle cx="80" cy="55" r="20" id="little" />
+    <circle cx="30" cy="30" r="30" id="big" />
+    <rect x="-25" y="0" width="50" height="50" style="fill: green;" id="octave" />
     <rect x="0" y="50" width="120" height="1" style="fill: black;" id="separator" />
   </defs>
   <g>
-    <use href="#pad" x="0" y="0" />
-    <use href="#separator" x="0" y="120" />
-    <use href="#pad" x="0" y="240" />
-    <use href="#pad" x="0" y="360" />
-    <use href="#pad" x="0" y="480" />
-    <use href="#separator" x="0" y="600" />
-    <use href="#pad" x="0" y="720" />
-    <use href="#pad" x="0" y="840" />
-    <use href="#split-pad" x="0" y="960" />
-    <use href="#split-pad" x="0" y="1080" />
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#separator" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#separator" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <g>
+      <use x="0" y="960" href="#little" class="outline" />
+      <use x="0" y="960" href="#big" class="outline" />
+    </g>
+    <g>
+      <use x="0" y="1080" href="#little" class="outline" />
+      <use x="0" y="1080" href="#big" class="outline" />
+    </g>
   </g>
 </svg>

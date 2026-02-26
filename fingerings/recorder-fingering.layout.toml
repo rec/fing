@@ -1,94 +1,54 @@
 [layout]
 spacing = 120
 width = 100
-style = """
-<style>
-    .outline {
-        fill: white;
-        stroke: black;
-        stroke-width: 1;
-    }
-  </style>
-"""
+style = '.outline { fill: white; stroke: black; stroke-width: 1; }'
+
+[layout.defs]
+
+pad = '<circle cx="50" cy="50" r="50" />'
+little = '<circle cx="80" cy="55" r="20" />'
+big = '<circle cx="30" cy="30" r="30" />'
+
+octave-cover = '<rect x="-25" y="0" width="50" height="50" style="fill: green;"/>'
+separator = '<rect x="0" y="50" width="120" height="1" style="fill: black;"/>'
 
 [layout.pieces.left-thumb.image]
-off = 'pad'
-oct = 'octave'
-left-thumb = 'pad-pressed'
+off = 'pad @ outline'
+oct = 'pad + octave-cover'
+left-thumb = 'pad'
 
 [layout.pieces._separator-1.image]
 off = 'separator'
 
 [layout.pieces.left-1.image]
-off = 'pad'
-left-1 = 'pad-pressed'
+off = 'pad @ outline'
+left-1 = 'pad'
 
 [layout.pieces.left-2.image]
-off = 'pad'
-left-2 = 'pad-pressed'
+off = 'pad @ outline'
+left-2 = 'pad'
 
 [layout.pieces.left-3.image]
-off = 'pad'
-left-3 = 'pad-pressed'
+off = 'pad @ outline'
+left-3 = 'pad'
 
 [layout.pieces._separator-2.image]
 off = 'separator'
 
 [layout.pieces.right-1.image]
-off = 'pad'
-right-1 = 'pad-pressed'
+off = 'pad @ outline'
+right-1 = 'pad'
 
 [layout.pieces.right-2.image]
-off = 'pad'
-right-2 = 'pad-pressed'
+off = 'pad @ outline'
+right-2 = 'pad'
 
 [layout.pieces.right-3.image]
-off = 'split-pad'
-right-3 = 'split-pad-pressed'
-right-3-half = 'split-pad-pressed-half'
+off = 'little @ outline + big @ outline'
+right-3 = 'little + big'
+right-3-half = 'little @ outline + big'
 
 [layout.pieces.right-4.image]
-off = 'split-pad'
-right-4 = 'split-pad-pressed'
-right-4-half = 'split-pad-pressed-half'
-
-[layout.defs]
-
-pad-pressed = """
-<circle cx="50" cy="50" r="50" />"""
-
-pad = """
-<use href="#pad-pressed" style="fill:white; stroke: black; stroke-width: 1;" />"""
-
-little-pressed = '<circle cx="80" cy="55" r="20" />'
-big-pressed = '<circle cx="30" cy="30" r="30" />'
-
-little ='<use href="#little-pressed" style="fill: white; stroke: black; stroke-width: 1;" />'
-big ='<use href="#big-pressed" style="fill: white; stroke: black; stroke-width: 1;" />'
-
-split-pad = """
-<g>
-  <use href="#little" />
-  <use href="#big" />
-</g>
-"""
-split-pad-pressed = """
-<g>
-  <use href="#little-pressed" />
-  <use href="#big-pressed" />
-</g>"""
-
-split-pad-pressed-half = """
-<g>
-  <use href="#little" />
-  <use href="#big-pressed" />
-</g>"""
-
-octave = """
-<g>
-  <use href="#pad-pressed" />
-   <rect x="-25" y="0" width="50" height="50" style="fill: green;"/>
-</g>"""
-
-separator = """
-<rect x="0" y="50" width="120" height="1" style="fill: black;"/>"""
+off = 'little @ outline + big @ outline'
+right-4 = 'little + big'
+right-4-half = 'little @ outline + big'
