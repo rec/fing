@@ -44,33 +44,40 @@ right-4 = 'split-pad-pressed'
 right-4-half = 'split-pad-pressed-half'
 
 [layout.defs]
+
 pad-pressed = """
 <circle cx="50" cy="50" r="50" />"""
 
 pad = """
-<circle cx="50" cy="50" r="50" style="fill:white; stroke: black; stroke-width: 1;" />"""
+<use href="#pad-pressed" style="fill:white; stroke: black; stroke-width: 1;" />"""
 
-split-pad-pressed = """
-<g>
-   <circle cx="80" cy="55" r="20" />
-   <circle cx="30" cy="30" r="30" />
-</g>"""
+little-pressed = '<circle cx="80" cy="55" r="20" />'
+big-pressed = '<circle cx="30" cy="30" r="30" />'
+
+little ='<use href="#little-pressed" style="fill: white; stroke: black; stroke-width: 1;" />'
+big ='<use href="#big-pressed" style="fill: white; stroke: black; stroke-width: 1;" />'
 
 split-pad = """
-<g style="fill: white; stroke: black; stroke-width: 1;">
-   <circle cx="80" cy="55" r="20" />
-   <circle cx="30" cy="30" r="30" />
+<g>
+  <use href="#little" />
+  <use href="#big" />
+</g>
+"""
+split-pad-pressed = """
+<g>
+  <use href="#little-pressed" />
+  <use href="#big-pressed" />
 </g>"""
 
 split-pad-pressed-half = """
 <g>
-   <circle cx="80" cy="55" r="20" />
-   <circle cx="30" cy="30" r="30" style="fill: white; stroke: black; stroke-width: 1;" />
+  <use href="#little" />
+  <use href="#big-pressed" />
 </g>"""
 
 octave = """
 <g>
-   <circle cx="50" cy="50" r="50" />
+  <use href="#pad-pressed" />
    <rect x="-25" y="0" width="50" height="50" style="fill: green;"/>
 </g>"""
 
