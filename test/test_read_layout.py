@@ -19,8 +19,6 @@ def test_read_layout():
 
     tree = lay.render([])
     ET.indent(tree.getroot())
-    # print(ET.tostring(root, encoding='unicode', method='xml'))
-
     f = StringIO()
     tree.write(f, encoding='unicode', xml_declaration=True)
     actual = f.getvalue()

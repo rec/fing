@@ -1,6 +1,6 @@
 [layout]
-size = [100, 1200]
-spacing = [0, 120]
+spacing = 120
+width = 100
 
 [layout.pieces.left-thumb.image]
 off = 'pad'

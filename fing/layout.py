@@ -29,7 +29,7 @@ class Layout:
     pieces: Sequence[ChartPiece]
     size: tuple[int, int] = (100, 800)
 
-    def render(self, fingering: Sequence[str]) -> ET.ElementTree:
+    def render(self, fingering: Sequence[str], name: str) -> ET.ElementTree:
         w, h = self.size
         svg = ET.Element(
             'svg', {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
@@ -49,8 +49,8 @@ class Layout:
 class LayoutSpec:
     defs: dict[str, Any]
     pieces: dict[str, dict[str, Any]]
-    size: Sequence[int] = (100, 800)
-    spacing: int | list[int] = 0
+    spacing: int = 0
+    width: int = 0
 
     @staticmethod
     def make(filename: str) -> LayoutSpec:
@@ -82,11 +82,7 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
             defs[k].set('id', k)
 
         pieces = {}
-        x, y = 0, 0
-        if isinstance(spec.spacing, int):
-            dx, dy = 0, spec.spacing
-        else:
-            dx, dy = spec.spacing
+        x, y, dy = 0, 0, spec.spacing
 
         for name, piece in spec.pieces.items():
             try:
@@ -106,13 +102,9 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
             x = x if (x_ := piece.get('x')) is None else x_
             y = y if (y_ := piece.get('y')) is None else y_
             pieces[name] = ChartPiece(image, x, y)
-            x += dx
             y += dy
 
-        if len(spec.size) != 2:
-            err('Bad spec size', spec.size)
-
-        return Layout(list(defs.values()), list(pieces.values()), tuple(spec.size)[:2])
+        return Layout(list(defs.values()), list(pieces.values()), (spec.width, y))
 
 
 if __name__ == '__main__':
