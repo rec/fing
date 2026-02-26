@@ -24,7 +24,7 @@ def test_read_layout():
     actual = f.getvalue()
 
     if REWRITE_TEST_DATA or not TEST_FILE.exists():
-        TEST_FILE.write_text(actual)
+        TEST_FILE.write_text(actual + '\n')
     else:
         expected = TEST_FILE.read_text()
         assert actual == expected
