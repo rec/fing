@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 100 800" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 100 1200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <circle r="50" id="pad-pressed" />
-    <circle r="50" style="fill:white; stroke: black; stroke-width: 1;" id="pad" />
+    <circle cx="50" cy="50" r="50" id="pad-pressed" />
+    <circle cx="50" cy="50" r="50" style="fill:white; stroke: black; stroke-width: 1;" id="pad" />
     <g id="split-pad-pressed">
       <circle cx="80" cy="55" r="20" />
       <circle cx="30" cy="30" r="30" />
     </g>
-    <g style="fill: white; stroke: back; stroke-width: 1;" id="split-pad">
+    <g style="fill: white; stroke: black; stroke-width: 1;" id="split-pad">
       <circle cx="80" cy="55" r="20" />
       <circle cx="30" cy="30" r="30" />
     </g>
@@ -16,21 +16,21 @@
       <circle cx="30" cy="30" r="30" style="fill: white; stroke: black; stroke-width: 1;" />
     </g>
     <g id="octave">
-      <circle r="50" />
+      <circle cx="50" cy="50" r="50" />
       <rect x="-25" y="0" width="50" height="50" style="fill: green;" />
     </g>
-    <rect x="-25" y="0" width="50" height="50" style="fill: orange;" id="separator" />
+    <rect x="0" y="50" width="120" height="1" style="fill: black;" id="separator" />
   </defs>
   <g>
     <use href="#pad" x="0" y="0" />
-    <use href="#separator" x="0" y="80" />
-    <use href="#pad" x="0" y="160" />
+    <use href="#separator" x="0" y="120" />
     <use href="#pad" x="0" y="240" />
-    <use href="#pad" x="0" y="320" />
-    <use href="#separator" x="0" y="400" />
+    <use href="#pad" x="0" y="360" />
     <use href="#pad" x="0" y="480" />
-    <use href="#pad" x="0" y="560" />
-    <use href="#split-pad" x="0" y="640" />
-    <use href="#split-pad" x="0" y="720" />
+    <use href="#separator" x="0" y="600" />
+    <use href="#pad" x="0" y="720" />
+    <use href="#pad" x="0" y="840" />
+    <use href="#split-pad" x="0" y="960" />
+    <use href="#split-pad" x="0" y="1080" />
   </g>
 </svg>

@@ -66,7 +66,7 @@ class LayoutSpec:
                 err('Unknown name', *bad)
             if missing := {'defs', 'pieces'} - set(d):
                 err('missing', *missing)
-            return LayoutSpec(**d)
+        return LayoutSpec(**d)
 
 
 def make(filename: str, key_names: dict[str, Any]) -> Layout:

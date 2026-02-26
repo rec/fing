@@ -1,6 +1,6 @@
 [layout]
-size = [100, 800]
-spacing = [0, 80]
+size = [100, 1200]
+spacing = [0, 120]
 
 [layout.pieces.left-thumb.image]
 off = 'pad'
@@ -45,10 +45,10 @@ right-4-half = 'split-pad-pressed-half'
 
 [layout.defs]
 pad-pressed = """
-<circle r="50" />"""
+<circle cx="50" cy="50" r="50" />"""
 
 pad = """
-<circle r="50" style="fill:white; stroke: black; stroke-width: 1;" />"""
+<circle cx="50" cy="50" r="50" style="fill:white; stroke: black; stroke-width: 1;" />"""
 
 split-pad-pressed = """
 <g>
@@ -57,7 +57,7 @@ split-pad-pressed = """
 </g>"""
 
 split-pad = """
-<g style="fill: white; stroke: back; stroke-width: 1;">
+<g style="fill: white; stroke: black; stroke-width: 1;">
    <circle cx="80" cy="55" r="20" />
    <circle cx="30" cy="30" r="30" />
 </g>"""
@@ -70,9 +70,9 @@ split-pad-pressed-half = """
 
 octave = """
 <g>
-   <circle r="50" />
+   <circle cx="50" cy="50" r="50" />
    <rect x="-25" y="0" width="50" height="50" style="fill: green;"/>
 </g>"""
 
 separator = """
-<rect x="-25" y="0" width="50" height="50" style="fill: orange;"/>"""
+<rect x="0" y="50" width="120" height="1" style="fill: black;"/>"""
