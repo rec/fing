@@ -17,7 +17,7 @@ def test_read_layout():
     lay = layout.make('fingerings/recorder-fingering.layout.toml', fingering.to_key)
     assert lay
 
-    tree = lay.render([])
+    tree = lay.render([], 'D')
     ET.indent(tree.getroot())
     f = StringIO()
     tree.write(f, encoding='unicode', xml_declaration=True)

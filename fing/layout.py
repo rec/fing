@@ -28,12 +28,16 @@ class Layout:
     defs: Sequence[Element]
     pieces: Sequence[ChartPiece]
     size: tuple[int, int] = (100, 800)
+    style: str = ''
 
     def render(self, fingering: Sequence[str], name: str) -> ET.ElementTree:
         w, h = self.size
         svg = ET.Element(
             'svg', {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
         )
+        assert self.style
+        if self.style:
+            svg.append(ET.fromstring(self.style))
 
         defs = ET.SubElement(svg, 'defs')
         defs.extend(self.defs)
@@ -50,6 +54,7 @@ class LayoutSpec:
     defs: dict[str, Any]
     pieces: dict[str, dict[str, Any]]
     spacing: int = 0
+    style: str = ''
     width: int = 0
 
     @staticmethod
@@ -104,7 +109,9 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
             pieces[name] = ChartPiece(image, x, y)
             y += dy
 
-        return Layout(list(defs.values()), list(pieces.values()), (spec.width, y))
+        return Layout(
+            list(defs.values()), list(pieces.values()), (spec.width, y), spec.style
+        )
 
 
 if __name__ == '__main__':

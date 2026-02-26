@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg viewBox="0 0 100 1200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .outline {
+        fill: white;
+        stroke: black;
+        stroke-width: 1;
+    }
+  </style>
   <defs>
     <circle cx="50" cy="50" r="50" id="pad-pressed" />
     <use href="#pad-pressed" style="fill:white; stroke: black; stroke-width: 1;" id="pad" />

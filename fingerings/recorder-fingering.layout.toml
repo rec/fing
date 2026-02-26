@@ -1,6 +1,15 @@
 [layout]
 spacing = 120
 width = 100
+style = """
+<style>
+    .outline {
+        fill: white;
+        stroke: black;
+        stroke-width: 1;
+    }
+  </style>
+"""
 
 [layout.pieces.left-thumb.image]
 off = 'pad'
