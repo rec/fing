@@ -8,7 +8,7 @@ from xml.etree import ElementTree as ET
 from fing import fingering_system as fs
 from fing import layout
 
-TEST_FILE = Path(__file__).parent / 'test.svg'
+TEST_FILE = Path(__file__).parent / 'one-recorder-fingering.svg'
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 
 
