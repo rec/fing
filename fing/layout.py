@@ -30,15 +30,18 @@ class Layout:
     size: tuple[int, int] = (100, 800)
 
     def render(self, fingering: Sequence[str]) -> ET.ElementTree:
-        tree = ET.ElementTree()
-        root = tree.getroot()
-        assert root is not None
+        w, h = self.size
+        svg = ET.Element(
+            'svg', {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
+        )
 
-        defs = ET.SubElement(root, 'defs')
+        defs = ET.SubElement(svg, 'defs')
         defs.extend(self.defs)
 
-        pieces = ET.SubElement(root, 'g')
+        pieces = ET.SubElement(svg, 'g')
         pieces.extend(p.render(fingering) for p in self.pieces)
+
+        tree = ET.ElementTree(svg)
         return tree
 
 

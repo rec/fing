@@ -65,7 +65,7 @@ split-pad = """
 split-pad-pressed-half = """
 <g>
    <circle cx="80" cy="55" r="20" />
-   <circle cx="30" cy="30" r="30" style="fill: white; stroke: back; stroke-width: 1;" />
+   <circle cx="30" cy="30" r="30" style="fill: white; stroke: black; stroke-width: 1;" />
 </g>"""
 
 octave = """
