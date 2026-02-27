@@ -22,7 +22,7 @@ class Layout:
     spacing: int
     style: str
 
-    def render(self, fingering: Sequence[str], name: str) -> ET.ElementTree:
+    def render(self, fingering: Sequence[str], name: str) -> ET.Element:
         w, h = self.size
         attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
         svg = ET.Element('svg', attrs)
@@ -35,9 +35,7 @@ class Layout:
         h = self.size[1]
         attrs = {'x': '40', 'y': str(20 + h - self.spacing), 'font-size': '60'}
         ET.SubElement(svg, 'text', attrs).text = name
-
-        tree = ET.ElementTree(svg)
-        return tree
+        return svg
 
 
 @dc.dataclass(frozen=True)
@@ -48,29 +46,34 @@ class LayoutSpec:
     style: str = ''
     width: int = 0
 
-    @staticmethod
-    def make(filename: str) -> LayoutSpec:
-        with open(filename) as fp:
-            data = tomlkit.load(fp)
 
-        with ErrorMaker() as err:
-            if not isinstance(d := data.get('layout'), dict):
-                err.fail('No layout dictionary')
-            assert isinstance(d, dict)
-            names = {f.name for f in dc.fields(LayoutSpec)}
-            if bad := set(d) - names:
-                err('Unknown name', *bad)
-            if missing := {'defs', 'keys'} - set(d):
-                err('missing', *missing)
-        return LayoutSpec(**d)
+_NAMES = {f.name for f in dc.fields(LayoutSpec)}
+_REQUIRED = {
+    f.name
+    for f in dc.fields(LayoutSpec)
+    if f.default == dc.MISSING and f.default_factory == dc.MISSING
+}
 
 
 def make(filename: str, key_names: dict[str, Any]) -> Layout:
-    spec = LayoutSpec.make(filename)
     defs, keys = {}, {}
-    x, y, dy = 0, 0, spec.spacing
 
     with ErrorMaker() as err:
+        with open(filename) as fp:
+            data = tomlkit.load(fp)
+        if not isinstance(d := data.get('layout'), dict):
+            err.fail('No layout dictionary')
+
+        assert isinstance(d, dict)
+        if bad := set(d) - _NAMES:
+            err('Unknown arg', *bad)
+        if missing := _REQUIRED - set(d):
+            err('Missing arg', *missing)
+        err.check()
+
+        assert isinstance(d, dict)
+        spec = LayoutSpec(**d)
+
         for k, v in spec.defs.items():
             try:
                 defs[k] = ET.fromstring(v)
@@ -79,6 +82,7 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
             else:
                 defs[k].set('id', k)
 
+        x, y, dy = 0, 0, spec.spacing
         for name, key in spec.keys.items():
             if not isinstance(key.get('parts'), dict):
                 err('Missing parts section', name, key)
