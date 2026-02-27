@@ -99,13 +99,12 @@ def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
             inv = {k: i for i, k in enumerate(all_)}
             for fingering in fingerings.values():
                 previous = -1
-                for ii, key in enumerate(fingering):
+                for key in fingering:
                     last = previous
                     previous = inv[key]
                     if last >= previous:
                         err('Key out of order', key.short_name)
                         break
-                    previous_key = key
 
         lowest_c: dict[str, Note] = {}
         for k, v in spec.lowest_c.items():
