@@ -12,43 +12,43 @@ big = '<circle cx="30" cy="30" r="30" />'
 octave-cover = '<rect x="-25" y="0" width="50" height="50" style="fill: green;"/>'
 separator = '<rect x="0" y="50" width="120" height="1" style="fill: black;"/>'
 
-[layout.keys.left-thumb.parts]
+[layout.pieces.left-thumb.parts]
 _off = 'pad @ outline'
 oct = 'pad + octave-cover'
 left-thumb = 'pad'
 
-[layout.keys._separator-1.parts]
+[layout.pieces._separator-1.parts]
 _off = 'separator'
 
-[layout.keys.left-1.parts]
+[layout.pieces.left-1.parts]
 _off = 'pad @ outline'
 left-1 = 'pad'
 
-[layout.keys.left-2.parts]
+[layout.pieces.left-2.parts]
 _off = 'pad @ outline'
 left-2 = 'pad'
 
-[layout.keys.left-3.parts]
+[layout.pieces.left-3.parts]
 _off = 'pad @ outline'
 left-3 = 'pad'
 
-[layout.keys._separator-2.parts]
+[layout.pieces._separator-2.parts]
 _off = 'separator'
 
-[layout.keys.right-1.parts]
+[layout.pieces.right-1.parts]
 _off = 'pad @ outline'
 right-1 = 'pad'
 
-[layout.keys.right-2.parts]
+[layout.pieces.right-2.parts]
 _off = 'pad @ outline'
 right-2 = 'pad'
 
-[layout.keys.right-3.parts]
+[layout.pieces.right-3.parts]
 _off = 'little @ outline + big @ outline'
 right-3 = 'little + big'
 right-3-half = 'little @ outline + big'
 
-[layout.keys.right-4.parts]
+[layout.pieces.right-4.parts]
 _off = 'little @ outline + big @ outline'
 right-4 = 'little + big'
 right-4-half = 'little @ outline + big'

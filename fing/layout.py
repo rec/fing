@@ -17,7 +17,7 @@ Element: TypeAlias = ET.Element
 @dc.dataclass(frozen=True)
 class Layout:
     defs: Sequence[Element]
-    keys: Sequence[ChartPiece]
+    pieces: Sequence[ChartPiece]
     size: tuple[int, int]
     spacing: int
     style: str
@@ -26,7 +26,7 @@ class Layout:
 @dc.dataclass(frozen=True)
 class LayoutSpec:
     defs: dict[str, Any]
-    keys: dict[str, dict[str, Any]]
+    pieces: dict[str, dict[str, Any]]
     spacing: int = 0
     style: str = ''
     width: int = 0
@@ -41,7 +41,7 @@ _REQUIRED = {
 
 
 def make(filename: str, key_names: dict[str, Any]) -> Layout:
-    defs, keys = {}, {}
+    defs, pieces = {}, {}
 
     with ErrorMaker() as err:
         with open(filename) as fp:
@@ -68,7 +68,7 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
                 defs[k].set('id', k)
 
         x, y, dy = 0, 0, spec.spacing
-        for name, key in spec.keys.items():
+        for name, key in spec.pieces.items():
             if not isinstance(key.get('parts'), dict):
                 err('Missing parts section', name, key)
                 continue
@@ -84,12 +84,12 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
 
             x = x if (x_ := key.get('x')) is None else x_
             y = y if (y_ := key.get('y')) is None else y_
-            keys[name] = ChartPiece(parts, x, y)
+            pieces[name] = ChartPiece(parts, x, y)
             y += dy
 
     return Layout(
         defs=list(defs.values()),
-        keys=list(keys.values()),
+        pieces=list(pieces.values()),
         size=(spec.width, y + dy + 20),
         spacing=spec.spacing,
         style=spec.style,

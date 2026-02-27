@@ -15,7 +15,7 @@ def render(layout: Layout, fingering: Sequence[str], name: str) -> ET.Element:
     style.text = layout.style
 
     ET.SubElement(svg, 'defs').extend(layout.defs)
-    ET.SubElement(svg, 'g').extend(p.render(fingering) for p in layout.keys)
+    ET.SubElement(svg, 'g').extend(p.render(fingering) for p in layout.pieces)
 
     h = layout.size[1]
     attrs = {'x': '40', 'y': str(20 + h - layout.spacing), 'font-size': '60'}
