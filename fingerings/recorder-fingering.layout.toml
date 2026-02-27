@@ -1,7 +1,10 @@
 [layout]
 spacing = 120
 width = 100
-style = '.outline { fill: white; stroke: black; stroke-width: 1; }'
+style = """
+.outline { fill: white; stroke: black; stroke-width: 1; }
+.caption { font-size: 60 }
+"""
 
 [layout.defs]
 

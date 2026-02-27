@@ -40,24 +40,29 @@ _REQUIRED = {
 }
 
 
+def make_layout_spec(filename: str, err: ErrorMaker):
+    with open(filename) as fp:
+        data = tomlkit.load(fp)
+
+    if not isinstance(d := data.get('layout'), dict):
+        raise err.fail('No layout dictionary')
+
+    assert isinstance(d, dict)
+    if bad := set(d) - _NAMES:
+        err('Unknown arg', *bad)
+    if missing := _REQUIRED - set(d):
+        err('Missing arg', *missing)
+    err.check()
+
+    assert isinstance(d, dict)
+    return LayoutSpec(**d)
+
+
 def make(filename: str, key_names: dict[str, Any]) -> Layout:
     defs, pieces = {}, {}
 
     with ErrorMaker() as err:
-        with open(filename) as fp:
-            data = tomlkit.load(fp)
-        if not isinstance(d := data.get('layout'), dict):
-            err.fail('No layout dictionary')
-
-        assert isinstance(d, dict)
-        if bad := set(d) - _NAMES:
-            err('Unknown arg', *bad)
-        if missing := _REQUIRED - set(d):
-            err('Missing arg', *missing)
-        err.check()
-
-        assert isinstance(d, dict)
-        spec = LayoutSpec(**d)
+        spec = make_layout_spec(filename, err)
 
         for k, v in spec.defs.items():
             try:

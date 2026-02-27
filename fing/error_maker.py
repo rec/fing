@@ -4,6 +4,8 @@ import dataclasses as dc
 from collections.abc import Iterable
 from typing import Any
 
+from typing_extensions import Never
+
 
 class ErrorMakerException(ValueError):
     pass
@@ -20,10 +22,14 @@ class ErrorMaker:
         msg = self.joiner.join(str(a) for a in args)
         self.errors.setdefault(label, []).append(msg)
 
+    @property
+    def exception(self) -> Exception:
+        m = '\n' + '\n'.join(f'{k}: {", ".join(v)}' for k, v in self.errors.items())
+        return self.exception_type(m)
+
     def check(self) -> None:
         if self.errors:
-            m = '\n' + '\n'.join(f'{k}: {", ".join(v)}' for k, v in self.errors.items())
-            raise self.exception_type(m)
+            raise self.exception
 
     def test_dupes(self, message: str, items: Iterable[str], *args: Any) -> bool:
         dupes = {}
@@ -34,9 +40,9 @@ class ErrorMaker:
             return False
         return True
 
-    def fail(self, label: str, *args: Any) -> None:
+    def fail(self, label: str, *args: Any) -> Never:
         self(label, *args)
-        self.check()
+        raise self.exception
 
     def __enter__(self) -> ErrorMaker:
         return self
