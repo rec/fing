@@ -40,37 +40,12 @@ _REQUIRED = {
 }
 
 
-def make_layout_spec(filename: str, err: ErrorMaker):
-    with open(filename) as fp:
-        data = tomlkit.load(fp)
-
-    if not isinstance(d := data.get('layout'), dict):
-        raise err.fail('No layout dictionary')
-
-    assert isinstance(d, dict)
-    if bad := set(d) - _NAMES:
-        err('Unknown arg', *bad)
-    if missing := _REQUIRED - set(d):
-        err('Missing arg', *missing)
-    err.check()
-
-    assert isinstance(d, dict)
-    return LayoutSpec(**d)
-
-
 def make(filename: str, key_names: dict[str, Any]) -> Layout:
     defs, pieces = {}, {}
 
     with ErrorMaker() as err:
-        spec = make_layout_spec(filename, err)
-
-        for k, v in spec.defs.items():
-            try:
-                defs[k] = ET.fromstring(v)
-            except Exception as e:
-                err('Bad XML in def', e, k, v)
-            else:
-                defs[k].set('id', k)
+        spec = _make_layout_spec(filename, err)
+        defs = _defs(spec.defs, err)
 
         x, y, dy = 0, 0, spec.spacing
         for name, key in spec.pieces.items():
@@ -99,6 +74,36 @@ def make(filename: str, key_names: dict[str, Any]) -> Layout:
         spacing=spec.spacing,
         style=spec.style,
     )
+
+
+def _make_layout_spec(filename: str, err: ErrorMaker) -> LayoutSpec:
+    with open(filename) as fp:
+        data = tomlkit.load(fp)
+
+    if not isinstance(d := data.get('layout'), dict):
+        raise err.fail('No layout dictionary')
+
+    assert isinstance(d, dict)
+    if bad := set(d) - _NAMES:
+        err('Unknown arg', *bad)
+    if missing := _REQUIRED - set(d):
+        err('Missing arg', *missing)
+    err.check()
+
+    assert isinstance(d, dict)
+    return LayoutSpec(**d)
+
+
+def _defs(defs: dict[str, str], err: ErrorMaker) -> dict[str, ET.Element]:
+    defs_ = {}
+    for k, v in defs.items():
+        try:
+            defs_[k] = ET.fromstring(v)
+        except Exception as e:
+            err('Bad XML in def', e, k, v)
+        else:
+            defs_[k].set('id', k)
+    return defs_
 
 
 if __name__ == '__main__':
