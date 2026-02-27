@@ -7,6 +7,7 @@ requires-python = ">=3.10"
 dependencies = [
     "svg-py>=1.10.0",
     "tomlkit>=0.14.0",
+    "typing-extensions>=4.15.0",
 ]
 
 [build-system]
