@@ -6,6 +6,8 @@ from typing import Any
 
 import tomlkit
 
+from .error_maker import ErrorMaker
+
 
 @dc.dataclass(frozen=True)
 class Key:
@@ -60,65 +62,59 @@ class FingeringSpec:
         return FingeringSpec(document=doc, **doc)  # ty: ignore[invalid-argument-type]
 
 
-def make(filename: str, reraise: bool = True) -> FingeringSystem:
-    bad: dict[str, list[str]] = {}
+def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
+    with ErrorMaker() as err:
+        spec = FingeringSpec.make(filename)
 
-    to_key: dict[str, Key] = {}
-    keys: dict[str, Key] = {}
-    dupes: dict[str, int] = {}
+        keys: dict[str, Key] = {}
+        for k, v in spec.keys.items():
+            try:
+                keys[k] = Key(**v)
+            except Exception as e:
+                err('Invalid key', v, e)
+        err.test_dupes('Duplicate short_name', (k.short_name for k in keys.values()))
 
-    spec = FingeringSpec.make(filename)
-    for k, v in spec.keys.items():
-        try:
-            key = Key(**v)
-        except Exception:
-            if reraise:
-                raise
-            bad.setdefault('Invalid key', []).append(str(v))
-            continue
-        to_key[k] = keys[k] = key
-        if s := key.short_name:
-            to_key[s] = key
-            dupes[s] = 1 + dupes.get(s, 0)
+        all_: Sequence[Key] = ()
+        to_key = {v.short_name: v for v in keys.values()} | keys
 
-    if dupe_names := [k for k, v in dupes.items() if v > 1]:
-        bad['Duplicate short_name'] = dupe_names
+        fingerings: dict[Note, Sequence[Key]] = {}
+        for k, fingering in spec.fingerings.items():
+            pressed = fingering.split()
+            err.test_dupes('Duplicate keys in fingering', pressed, k)
+            if bad_notes := [i for i in pressed if i not in to_key]:
+                err('Unknown note', k, bad_notes)
+                continue
+            keys_pressed = [to_key[n] for n in pressed]
+            if k == 'all':
+                all_ = keys_pressed
+                continue
+            try:
+                note = Note(k)
+            except Exception as e:
+                err('Invalid note', k, e)
+            else:
+                fingerings[note] = keys_pressed
 
-    all_: Sequence[Key] = ()
-    fingerings: dict[Note, Sequence[Key]] = {}
-    lowest_c: dict[str, Note] = {}
-    for k, v in spec.fingerings.items():
-        try:
-            note = None if k == 'all' else Note(k)
-        except Exception:
-            if reraise:
-                raise
-            bad.setdefault('Invalid note', []).append(k)
-            continue
-        if bad_keys := [i for i in v.split() if i not in to_key]:
-            bad.setdefault('Unknown key', []).extend(bad_keys)
-            continue
-        f = [to_key[i] for i in v.split()]
-        if isinstance(note, Note):
-            fingerings[note] = f
-        else:
-            all_ = f
+        if check_key_order:
+            inv = {k: i for i, k in enumerate(all_)}
+            for fingering in fingerings.values():
+                previous = -1
+                for ii, key in enumerate(fingering):
+                    last = previous
+                    previous = inv[key]
+                    if last >= previous:
+                        err('Key out of order', key.short_name)
+                        break
+                    previous_key = key
 
-    for k, v in spec.lowest_c.items():
-        try:
-            note = Note(v)
-        except Exception:
-            if reraise:
-                raise
-            bad.setdefault('Invalid note', []).append(k)
-            continue
-        lowest_c[k] = note
-
-    if bad:
-        err = '\n'.join(
-            f'{k}{"s" * (len(v) != 1)}: {", ".join(v)}' for k, v in bad.items()
-        )
-        raise ValueError(err)
+        lowest_c: dict[str, Note] = {}
+        for k, v in spec.lowest_c.items():
+            try:
+                note = Note(v)
+            except Exception:
+                err('Invalid note', k)
+                continue
+            lowest_c[k] = note
 
     return FingeringSystem(
         all=all_,
@@ -131,7 +127,7 @@ def make(filename: str, reraise: bool = True) -> FingeringSystem:
     )
 
 
-REPLACEMENTS = {'_': '', '-': '', '♭': 'b', '♯': '#'}
+REPLACEMENTS = {'_': '', '-': '', ' ': '', '♭': 'b', '♯': '#'}
 NOTE_TO_OFFSET = {
     'C': 0,
     'C#': 1,

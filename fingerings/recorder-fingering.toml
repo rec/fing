@@ -69,7 +69,7 @@ Db1 = '    lt  l1  l2  l3  r1  r2  r3          r4h     '
 D_1 = '    lt  l1  l2  l3  r1  r2  r3                  '
 Eb1 = '    lt  l1  l2  l3  r1  r2      r3h             '
 E_1 = '    lt  l1  l2  l3  r1  r2                      '
-F_1 = '    lt  l1  l2  l3  r1      r3      r3          '
+F_1 = '    lt  l1  l2  l3  r1      r3      r4          '
 Gb1 = '    lt  l1  l2  l3      r2  r3                  '
 G_1 = '    lt  l1  l2  l3                              '
 Ab1 = '    lt  l1  l2      r1  r2      r3h             '
@@ -89,8 +89,8 @@ A_2 = 'oct     l1  l2                                  '
 Bb2 = 'oct     l1  l2          r2  r3                  ' # CHECK THIS
 B_2 = 'oct     l1  l2      r1  r2                      '
 C_3 = 'oct     l1          r1  r2                      '
-Db3 = 'oct     l1      l3  r1      r3      r3      cb  '
-D_3 = 'oct     l1      l3  r1      r3      r3          '
+Db3 = 'oct     l1      l3  r1      r3      r4      cb  '
+D_3 = 'oct     l1      l3  r1      r3      r4          '
 
 [lowest_c]
 

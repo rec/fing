@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import dataclasses as dc
+from collections.abc import Iterable
 from typing import Any
 
 
@@ -23,6 +24,15 @@ class ErrorMaker:
         if self.errors:
             m = '\n' + '\n'.join(f'{k}: {", ".join(v)}' for k, v in self.errors.items())
             raise self.exception_type(m)
+
+    def test_dupes(self, message: str, items: Iterable[str], *args: Any) -> bool:
+        dupes = {}
+        for i in items:
+            dupes[i] = 1 + dupes.get(i, 0)
+        if d := [k for k, v in dupes.items() if v > 1]:
+            self(message, *d, *args)
+            return False
+        return True
 
     def fail(self, label: str, *args: Any) -> None:
         self(label, *args)
