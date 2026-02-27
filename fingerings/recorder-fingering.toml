@@ -63,9 +63,9 @@ press = 'knee'
 description = 'Partly cover the bell of the instrument with the knee'
 
 [fingerings]
-all = 'oct lt  l1  l2  l3  r1  r2  r3  r3h r3  r3h cb  '
-C_1 = '    lt  l1  l2  l3  r1  r2  r3      r3          '
-Db1 = '    lt  l1  l2  l3  r1  r2  r3          r3h     '
+all = 'oct lt  l1  l2  l3  r1  r2  r3  r3h r4  r4h cb  '
+C_1 = '    lt  l1  l2  l3  r1  r2  r3      r4          '
+Db1 = '    lt  l1  l2  l3  r1  r2  r3          r4h     '
 D_1 = '    lt  l1  l2  l3  r1  r2  r3                  '
 Eb1 = '    lt  l1  l2  l3  r1  r2      r3h             '
 E_1 = '    lt  l1  l2  l3  r1  r2                      '
