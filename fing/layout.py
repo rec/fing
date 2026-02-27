@@ -17,7 +17,7 @@ Element: TypeAlias = ET.Element
 @dc.dataclass(frozen=True)
 class Layout:
     defs: Sequence[Element]
-    pieces: Sequence[ChartPiece]
+    pieces: list[ChartPiece]
     size: tuple[int, int]
     spacing: int
     style: str
@@ -41,42 +41,22 @@ _REQUIRED = {
 
 
 def make(filename: str, key_names: dict[str, Any]) -> Layout:
-    defs, pieces = {}, {}
-
     with ErrorMaker() as err:
-        spec = _make_layout_spec(filename, err)
+        spec = _layout_spec(filename, err)
         defs = _defs(spec.defs, err)
-
-        x, y, dy = 0, 0, spec.spacing
-        for name, key in spec.pieces.items():
-            if not isinstance(key.get('parts'), dict):
-                err('Missing parts section', name, key)
-                continue
-            if not (name.startswith('_') or name in key_names):
-                err('Unknown key name', name)
-
-            parts = {k: Part.to_parts(v) for k, v in key['parts'].items()}
-
-            if '_off' not in parts:
-                err('Missing parts.off section', name)
-            if u := [p for pp in parts.values() for p in pp if p.def_ not in defs]:
-                err('Unknown def in parts', name, u)
-
-            x = x if (x_ := key.get('x')) is None else x_
-            y = y if (y_ := key.get('y')) is None else y_
-            pieces[name] = ChartPiece(parts, x, y)
-            y += dy
+        pieces = _pieces(spec.pieces, defs, spec.spacing, key_names, err)
+        size = spec.width, (len(pieces) + 1) * spec.spacing + 20
 
     return Layout(
         defs=list(defs.values()),
-        pieces=list(pieces.values()),
-        size=(spec.width, y + dy + 20),
+        pieces=pieces,
+        size=size,
         spacing=spec.spacing,
         style=spec.style,
     )
 
 
-def _make_layout_spec(filename: str, err: ErrorMaker) -> LayoutSpec:
+def _layout_spec(filename: str, err: ErrorMaker) -> LayoutSpec:
     with open(filename) as fp:
         data = tomlkit.load(fp)
 
@@ -104,6 +84,37 @@ def _defs(defs: dict[str, str], err: ErrorMaker) -> dict[str, ET.Element]:
         else:
             defs_[k].set('id', k)
     return defs_
+
+
+def _pieces(
+    pieces: dict[str, dict[str, Any]],
+    defs: dict[str, ET.Element],
+    spacing: int,
+    key_names: dict[str, Any],
+    err: ErrorMaker,
+) -> list[ChartPiece]:
+    pieces_ = []
+    x, y = 0, 0
+    for name, key in pieces.items():
+        if not isinstance(key.get('parts'), dict):
+            err('Missing parts section', name, key)
+            continue
+        if not (name.startswith('_') or name in key_names):
+            err('Unknown key name', name)
+
+        parts = {k: Part.to_parts(v) for k, v in key['parts'].items()}
+
+        if '_off' not in parts:
+            err('Missing parts.off section', name)
+        if u := [p for pp in parts.values() for p in pp if p.def_ not in defs]:
+            err('Unknown def in parts', name, u)
+
+        x = x if (x_ := key.get('x')) is None else x_
+        y = y if (y_ := key.get('y')) is None else y_
+        pieces_.append(ChartPiece(parts, x, y))
+        y += spacing
+
+    return pieces_
 
 
 if __name__ == '__main__':
