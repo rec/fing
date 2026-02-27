@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import dataclasses as dc
 from collections.abc import Sequence
-from typing import Any, TypeAlias
+from typing import Any, NamedTuple, TypeAlias
 from xml.etree import ElementTree as ET
 
 import tomlkit
@@ -12,15 +12,35 @@ from .error_maker import ErrorMaker
 Element: TypeAlias = ET.Element
 
 
+class Part(NamedTuple):
+    def_: str
+    style: str = ''
+
+    def asdict(self) -> dict[str, str]:
+        return {'href': f'#{self.def_}'} | ({'class': self.style} if self.style else {})
+
+    @staticmethod
+    def to_parts(s: str) -> list[Part]:
+        pieces = s.split('+')
+        return [Part(*(i.strip() for i in p.split('@', maxsplit=1))) for p in pieces]
+
+
 @dc.dataclass(frozen=True)
 class ChartPiece:
-    image: dict[str, list[dict[str, str]]]
+    parts: dict[str, list[Part]]
     x: int
     y: int
 
+    def asdict(self) -> dict[str, str]:
+        return {'x': str(self.x), 'y': str(self.y)}
+
     def render(self, fingering: Sequence[str]) -> Element:
-        it = next((v for p in fingering if (v := self.image.get(p))), self.image['off'])
-        elems = [Element('use', {'x': str(self.x), 'y': str(self.y)} | d) for d in it]
+        for p in fingering:
+            if parts := self.parts.get(p):
+                break
+        else:
+            parts = self.parts['_off']
+        elems = [Element('use', self.asdict() | p.asdict()) for p in parts]
         if len(elems) == 1:
             return elems[0]
 
@@ -32,26 +52,22 @@ class ChartPiece:
 @dc.dataclass(frozen=True)
 class Layout:
     defs: Sequence[Element]
-    pieces: Sequence[ChartPiece]
+    keys: Sequence[ChartPiece]
     size: tuple[int, int]
     spacing: int
     style: str
 
     def render(self, fingering: Sequence[str], name: str) -> ET.ElementTree:
         w, h = self.size
-        svg = ET.Element(
-            'svg', {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
-        )
+        attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
+        svg = ET.Element('svg', attrs)
         style = ET.SubElement(svg, 'style')
         style.text = self.style
 
-        defs = ET.SubElement(svg, 'defs')
-        defs.extend(self.defs)
+        ET.SubElement(svg, 'defs').extend(self.defs)
+        ET.SubElement(svg, 'g').extend(p.render(fingering) for p in self.keys)
 
-        pieces = ET.SubElement(svg, 'g')
-        pieces.extend(p.render(fingering) for p in self.pieces)
-        w, h = self.size
-
+        h = self.size[1]
         attrs = {'x': '40', 'y': str(20 + h - self.spacing), 'font-size': '60'}
         ET.SubElement(svg, 'text', attrs).text = name
 
@@ -62,7 +78,7 @@ class Layout:
 @dc.dataclass(frozen=True)
 class LayoutSpec:
     defs: dict[str, Any]
-    pieces: dict[str, dict[str, Any]]
+    keys: dict[str, dict[str, Any]]
     spacing: int = 0
     style: str = ''
     width: int = 0
@@ -79,63 +95,51 @@ class LayoutSpec:
             names = {f.name for f in dc.fields(LayoutSpec)}
             if bad := set(d) - names:
                 err('Unknown name', *bad)
-            if missing := {'defs', 'pieces'} - set(d):
+            if missing := {'defs', 'keys'} - set(d):
                 err('missing', *missing)
         return LayoutSpec(**d)
 
 
 def make(filename: str, key_names: dict[str, Any]) -> Layout:
-    def split_svg_attrib(s: str) -> list[dict[str, str]]:
-        def attr(s: str) -> dict[str, str]:
-            def_, _, style = (i.strip() for i in s.partition('@'))
-            return {'href': f'#{def_}'} | ({'class': style} if style else {})
-
-        return [attr(i) for i in s.split('+')]
+    spec = LayoutSpec.make(filename)
+    defs, keys = {}, {}
+    x, y, dy = 0, 0, spec.spacing
 
     with ErrorMaker() as err:
-        spec = LayoutSpec.make(filename)
-        defs = {}
         for k, v in spec.defs.items():
             try:
                 defs[k] = ET.fromstring(v)
-            except Exception:
-                err('Bad def', f'{k}: {v}')
-                continue
-            defs[k].set('id', k)
+            except Exception as e:
+                err('Bad XML in def', e, k, v)
+            else:
+                defs[k].set('id', k)
 
-        pieces = {}
-        x, y, dy = 0, 0, spec.spacing
-
-        for name, piece in spec.pieces.items():
-            try:
-                image = piece['image']
-            except KeyError:
-                err('No image section', name, piece)
+        for name, key in spec.keys.items():
+            if not isinstance(key.get('parts'), dict):
+                err('Missing parts section', name, key)
                 continue
-            if not isinstance(image, dict):
-                err('Bad image section', name, piece)
-                continue
-            if not (off := image.get('off')):
-                err('Missing image.off section', name, off)
-            image_ = {k: split_svg_attrib(v) for k, v in image.items()}
-            if unknown := [
-                i for v in image_.values() for i in v if i['href'][1:] not in defs
-            ]:
-                err('Unknown def in image', name, unknown)
             if not (name.startswith('_') or name in key_names):
                 err('Unknown key name', name)
-            x = x if (x_ := piece.get('x')) is None else x_
-            y = y if (y_ := piece.get('y')) is None else y_
-            pieces[name] = ChartPiece(image_, x, y)
+
+            parts = {k: Part.to_parts(v) for k, v in key['parts'].items()}
+
+            if '_off' not in parts:
+                err('Missing parts.off section', name)
+            if u := [p for pp in parts.values() for p in pp if p.def_ not in defs]:
+                err('Unknown def in parts', name, u)
+
+            x = x if (x_ := key.get('x')) is None else x_
+            y = y if (y_ := key.get('y')) is None else y_
+            keys[name] = ChartPiece(parts, x, y)
             y += dy
 
-        return Layout(
-            defs=list(defs.values()),
-            pieces=list(pieces.values()),
-            size=(spec.width, y + dy + 20),  # TODO for the caption
-            spacing=spec.spacing,
-            style=spec.style,
-        )
+    return Layout(
+        defs=list(defs.values()),
+        keys=list(keys.values()),
+        size=(spec.width, y + dy + 20),
+        spacing=spec.spacing,
+        style=spec.style,
+    )
 
 
 if __name__ == '__main__':
