@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import dataclasses as dc
-from collections.abc import Sequence
 from typing import Any, TypeAlias
 from xml.etree import ElementTree as ET
 
@@ -16,8 +15,8 @@ Element: TypeAlias = ET.Element
 
 @dc.dataclass(frozen=True)
 class Layout:
-    defs: Sequence[Element]
-    pieces: list[ChartPiece]
+    defs_: list[Element]
+    pieces_: list[ChartPiece]
     size: tuple[int, int]
     spacing: int
     style: str
@@ -31,6 +30,22 @@ class LayoutSpec:
     style: str = ''
     width: int = 0
 
+    @staticmethod
+    def make(filename: str, err: ErrorMaker) -> LayoutSpec:
+        with open(filename) as fp:
+            data = tomlkit.load(fp)
+
+        if not isinstance(d := data.get('layout'), dict):
+            raise err.fail('No layout dictionary')
+
+        assert isinstance(d, dict)
+        if bad := set(d) - _NAMES:
+            err('Unknown arg', *bad)
+        if missing := _REQUIRED - set(d):
+            err('Missing arg', *missing)
+        err.check()
+        return LayoutSpec(**d)
+
 
 _NAMES = {f.name for f in dc.fields(LayoutSpec)}
 _REQUIRED = {
@@ -42,36 +57,18 @@ _REQUIRED = {
 
 def make(filename: str, key_names: dict[str, Any]) -> Layout:
     with ErrorMaker() as err:
-        spec = _layout_spec(filename, err)
+        spec = LayoutSpec.make(filename, err)
         defs = _defs(spec.defs, err)
         pieces = _pieces(spec.pieces, defs, spec.spacing, key_names, err)
         size = spec.width, (len(pieces) + 1) * spec.spacing + 20
 
     return Layout(
-        defs=list(defs.values()),
-        pieces=pieces,
+        defs_=list(defs.values()),
+        pieces_=pieces,
         size=size,
         spacing=spec.spacing,
         style=spec.style,
     )
-
-
-def _layout_spec(filename: str, err: ErrorMaker) -> LayoutSpec:
-    with open(filename) as fp:
-        data = tomlkit.load(fp)
-
-    if not isinstance(d := data.get('layout'), dict):
-        raise err.fail('No layout dictionary')
-
-    assert isinstance(d, dict)
-    if bad := set(d) - _NAMES:
-        err('Unknown arg', *bad)
-    if missing := _REQUIRED - set(d):
-        err('Missing arg', *missing)
-    err.check()
-
-    assert isinstance(d, dict)
-    return LayoutSpec(**d)
 
 
 def _defs(defs: dict[str, str], err: ErrorMaker) -> dict[str, ET.Element]:

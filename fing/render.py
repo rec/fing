@@ -14,8 +14,8 @@ def render(layout: Layout, fingering: Sequence[str], name: str) -> ET.Element:
     style = ET.SubElement(svg, 'style')
     style.text = '\n' + layout.style
 
-    ET.SubElement(svg, 'defs').extend(layout.defs)
-    ET.SubElement(svg, 'g').extend(p.render(fingering) for p in layout.pieces)
+    ET.SubElement(svg, 'defs').extend(layout.defs_)
+    ET.SubElement(svg, 'g').extend(p.render(fingering) for p in layout.pieces_)
 
     h = layout.size[1]
     attrs = {'x': '40', 'y': str(20 + h - layout.spacing), 'font-size': '60'}
@@ -30,7 +30,7 @@ def render_all(fs: FingeringSystem, layout: Layout) -> None:
     style = ET.SubElement(svg, 'style')
     style.text = '\n' + layout.style
 
-    ET.SubElement(svg, 'defs').extend(layout.defs)
+    ET.SubElement(svg, 'defs').extend(layout.defs_)
     g = ET.SubElement(svg, 'g')
     note_fingerings = [(n, f) for n, ff in fs.fingerings.items() for f in ff]
 
