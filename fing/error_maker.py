@@ -21,6 +21,8 @@ class ErrorMaker:
     def __call__(self, label: str, *args: Any) -> None:
         msg = self.joiner.join(str(a) for a in args)
         self.errors.setdefault(label, []).append(msg)
+        if self.reraise:
+            self.check()
 
     @property
     def exception(self) -> Exception:

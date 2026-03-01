@@ -6,7 +6,8 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 from fing import fingering_system as fs
-from fing import layout, render
+from fing import render
+from fing.layout import Layout
 
 TEST_FILE = Path(__file__).parent / 'one-recorder-fingering.svg'
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
@@ -14,7 +15,7 @@ REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 
 def test_read_layout():
     fingering = fs.make('fingerings/recorder-fingering.toml')
-    lay = layout.make('fingerings/recorder-fingering.layout.toml', fingering.to_key)
+    lay = Layout.make('fingerings/recorder-fingering.layout.toml', fingering.to_key)
 
     svg = render.render(lay, [], 'D')
     ET.indent(svg)
