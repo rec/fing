@@ -28,16 +28,10 @@ class ChartPiece:
     def asdict(self) -> dict[str, str]:
         return {'x': str(self.x), 'y': str(self.y)}
 
-    def render(self, fingering: Sequence[str]) -> Element:
+    def render(self, fingering: Sequence[str]) -> list[Element]:
         for p in fingering:
             if parts := self.parts.get(p):
                 break
         else:
             parts = self.parts['_off']
-        elems = [Element('use', self.asdict() | p.asdict()) for p in parts]
-        if len(elems) == 1:
-            return elems[0]
-
-        g = Element('g')
-        g.extend(elems)
-        return g
+        return [Element('use', self.asdict() | p.asdict()) for p in parts]

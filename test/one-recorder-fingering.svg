@@ -1,9 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg viewBox="0 0 100 1340" xmlns="http://www.w3.org/2000/svg">
-  <style>
-.outline { fill: white; stroke: black; stroke-width: 1; }
-.caption { font-size: 60 }
-</style>
   <defs>
     <circle cx="50" cy="50" r="50" id="pad" />
     <circle cx="80" cy="55" r="20" id="little" />
@@ -11,23 +7,21 @@
     <rect x="-25" y="0" width="50" height="50" style="fill: green;" id="octave-cover" />
     <rect x="0" y="50" width="120" height="1" style="fill: black;" id="separator" />
   </defs>
-  <g>
-    <use x="0" y="0" href="#pad" class="outline" />
-    <use x="0" y="120" href="#separator" />
-    <use x="0" y="240" href="#pad" class="outline" />
-    <use x="0" y="360" href="#pad" class="outline" />
-    <use x="0" y="480" href="#pad" class="outline" />
-    <use x="0" y="600" href="#separator" />
-    <use x="0" y="720" href="#pad" class="outline" />
-    <use x="0" y="840" href="#pad" class="outline" />
-    <g>
-      <use x="0" y="960" href="#little" class="outline" />
-      <use x="0" y="960" href="#big" class="outline" />
-    </g>
-    <g>
-      <use x="0" y="1080" href="#little" class="outline" />
-      <use x="0" y="1080" href="#big" class="outline" />
-    </g>
-  </g>
+  <style>
+.outline { fill: white; stroke: black; stroke-width: 1; }
+.caption { font-size: 60 }
+</style>
+  <use x="0" y="0" href="#pad" class="outline" />
+  <use x="0" y="120" href="#separator" />
+  <use x="0" y="240" href="#pad" class="outline" />
+  <use x="0" y="360" href="#pad" class="outline" />
+  <use x="0" y="480" href="#pad" class="outline" />
+  <use x="0" y="600" href="#separator" />
+  <use x="0" y="720" href="#pad" class="outline" />
+  <use x="0" y="840" href="#pad" class="outline" />
+  <use x="0" y="960" href="#little" class="outline" />
+  <use x="0" y="960" href="#big" class="outline" />
+  <use x="0" y="1080" href="#little" class="outline" />
+  <use x="0" y="1080" href="#big" class="outline" />
   <text x="40" y="1240" font-size="60">D</text>
 </svg>

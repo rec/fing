@@ -8,29 +8,17 @@ from .layout import Layout
 
 
 def render(layout: Layout, fingering: Sequence[str], name: str) -> ET.Element:
-    w, h = layout.size
-    attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
-    svg = ET.Element('svg', attrs)
-    style = ET.SubElement(svg, 'style')
-    style.text = '\n' + layout.style
+    svg = _svg(layout)
+    for p in layout.pieces_:
+        svg.extend(p.render(fingering))
 
-    ET.SubElement(svg, 'defs').extend(layout.defs_)
-    ET.SubElement(svg, 'g').extend(p.render(fingering) for p in layout.pieces_)
-
-    h = layout.size[1]
-    attrs = {'x': '40', 'y': str(20 + h - layout.spacing), 'font-size': '60'}
-    ET.SubElement(svg, 'text', attrs).text = name
+    y = 20 + layout.size[1] - layout.spacing
+    ET.SubElement(svg, 'text', {'x': '40', 'y': str(y), 'font-size': '60'}).text = name
     return svg
 
 
 def render_all(fs: FingeringSystem, layout: Layout) -> None:
-    w, h = layout.size
-    attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
-    svg = ET.Element('svg', attrs)
-    style = ET.SubElement(svg, 'style')
-    style.text = '\n' + layout.style
-
-    ET.SubElement(svg, 'defs').extend(layout.defs_)
+    svg = _svg(layout)
     g = ET.SubElement(svg, 'g')
     note_fingerings = [(n, f) for n, ff in fs.fingerings.items() for f in ff]
 
@@ -42,3 +30,12 @@ def render_all(fs: FingeringSystem, layout: Layout) -> None:
     w, h = layout.size
 
     assert w and h and g
+
+
+def _svg(layout: Layout) -> ET.Element:
+    w, h = layout.size
+    attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
+    svg = ET.Element('svg', attrs)
+    ET.SubElement(svg, 'defs').extend(layout.defs_)
+    ET.SubElement(svg, 'style').text = f'\n{layout.style.strip()}\n'
+    return svg
