@@ -7,14 +7,18 @@ from .fingering_system import FingeringSystem
 from .layout import Layout
 
 
-def render(layout: Layout, fingering: Sequence[str], caption: str) -> ET.Element:
+def render(layout: Layout, fingering: Sequence[str], note: str) -> ET.Element:
     svg = _svg(layout)
+    _add(svg, layout, fingering, note)
+    return svg
+
+
+def _add(e: ET.Element, layout: Layout, fingering: Sequence[str], note: str) -> None:
     for p in layout.pieces_:
-        svg.extend(p.render(fingering))
+        e.extend(p.render(fingering))
 
     y = layout.size[1] - layout.spacing
-    ET.SubElement(svg, 'text', layout.caption_.asdict(y)).text = caption
-    return svg
+    ET.SubElement(e, 'text', layout.caption_.asdict(y)).text = note
 
 
 def render_all(fs: FingeringSystem, layout: Layout) -> None:
