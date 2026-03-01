@@ -37,5 +37,9 @@ def _svg(layout: Layout) -> ET.Element:
     attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
     svg = ET.Element('svg', attrs)
     ET.SubElement(svg, 'defs').extend(layout.defs_)
-    ET.SubElement(svg, 'style').text = f'\n{layout.style.strip()}\n'
+    ET.SubElement(svg, 'style').text = _fix_style(layout.style)
     return svg
+
+
+def _fix_style(s: str) -> str:
+    return '\n    '.join(('', *s.strip().split('\n'))) + '\n  '
