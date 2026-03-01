@@ -1,19 +1,22 @@
 [layout]
 spacing = 120
 width = 100
-style = """
+styles = """
 .outline { fill: white; stroke: black; stroke-width: 1; }
-.caption { font-size: 60 }
 """
 
-[layout.defs]
+[layout.caption]
+font_size = 60
+pad = 20
+x = 40
 
+[layout.defs]
 pad = '<circle cx="50" cy="50" r="50" />'
-little = '<circle cx="80" cy="55" r="20" />'
-big = '<circle cx="30" cy="30" r="30" />'
+little-hole = '<circle cx="80" cy="55" r="20" />'
+big-hole = '<circle cx="30" cy="30" r="30" />'
 
 octave-cover = '<rect x="-25" y="0" width="50" height="50" style="fill: green;"/>'
-separator = '<rect x="0" y="50" width="120" height="1" style="fill: black;"/>'
+horizontal-line = '<rect x="0" y="50" width="120" height="1" style="fill: black;"/>'
 
 [layout.pieces.left-thumb.parts]
 _off = 'pad @ outline'
@@ -21,7 +24,7 @@ oct = 'pad + octave-cover'
 left-thumb = 'pad'
 
 [layout.pieces._separator-1.parts]
-_off = 'separator'
+_off = 'horizontal-line'
 
 [layout.pieces.left-1.parts]
 _off = 'pad @ outline'
@@ -36,7 +39,7 @@ _off = 'pad @ outline'
 left-3 = 'pad'
 
 [layout.pieces._separator-2.parts]
-_off = 'separator'
+_off = 'horizontal-line'
 
 [layout.pieces.right-1.parts]
 _off = 'pad @ outline'
@@ -47,11 +50,11 @@ _off = 'pad @ outline'
 right-2 = 'pad'
 
 [layout.pieces.right-3.parts]
-_off = 'little @ outline + big @ outline'
-right-3 = 'little + big'
-right-3-half = 'little @ outline + big'
+_off = 'little-hole @ outline + big-hole @ outline'
+right-3 = 'little-hole + big-hole'
+right-3-half = 'little-hole @ outline + big-hole'
 
 [layout.pieces.right-4.parts]
-_off = 'little @ outline + big @ outline'
-right-4 = 'little + big'
-right-4-half = 'little @ outline + big'
+_off = 'little-hole @ outline + big-hole @ outline'
+right-4 = 'little-hole + big-hole'
+right-4-half = 'little-hole @ outline + big-hole'
