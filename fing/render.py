@@ -7,13 +7,13 @@ from .fingering_system import FingeringSystem
 from .layout import Layout
 
 
-def render(layout: Layout, fingering: Sequence[str], name: str) -> ET.Element:
+def render(layout: Layout, fingering: Sequence[str], caption: str) -> ET.Element:
     svg = _svg(layout)
     for p in layout.pieces_:
         svg.extend(p.render(fingering))
 
-    y = 20 + layout.size[1] - layout.spacing
-    ET.SubElement(svg, 'text', {'x': '40', 'y': str(y), 'font-size': '60'}).text = name
+    y = layout.size[1] - layout.spacing
+    ET.SubElement(svg, 'text', layout.caption_.asdict(y)).text = caption
     return svg
 
 
@@ -37,9 +37,9 @@ def _svg(layout: Layout) -> ET.Element:
     attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
     svg = ET.Element('svg', attrs)
     ET.SubElement(svg, 'defs').extend(layout.defs_)
-    ET.SubElement(svg, 'style').text = _fix_style(layout.style)
+    ET.SubElement(svg, 'style').text = _fix_styles(layout.styles)
     return svg
 
 
-def _fix_style(s: str) -> str:
+def _fix_styles(s: str) -> str:
     return '\n    '.join(('', *s.strip().split('\n'))) + '\n  '

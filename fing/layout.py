@@ -15,13 +15,25 @@ Element: TypeAlias = ET.Element
 
 
 @dc.dataclass(frozen=True)
+class Caption:
+    pad: int = 20
+    x: int = 40
+    font_size: int = 60
+
+    def asdict(self, y: int) -> dict[str, str]:
+        y += self.pad
+        return {'x': str(self.x), 'y': str(y), 'font-size': str(self.font_size)}
+
+
+@dc.dataclass(frozen=True)
 class Layout:
     defs: dict[str, Any]
     key_names: dict[str, Any]
     pieces: dict[str, dict[str, Any]]
     spacing: int = 0
-    style: str = ''
+    styles: str = ''
     width: int = 0
+    caption: dict[str, int] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     @staticmethod
@@ -40,6 +52,11 @@ class Layout:
                 err('Missing arg', *missing)
 
         return Layout(err=err, key_names=key_names, **d)
+
+    @cached_property
+    def caption_(self) -> Caption:
+        ## TODO: more checking or more general checking
+        return Caption(**self.caption)
 
     @cached_property
     def defs_(self) -> list[ET.Element]:
@@ -80,7 +97,7 @@ class Layout:
 
     @cached_property
     def size(self) -> tuple[int, int]:
-        return self.width, (len(self.pieces) + 1) * self.spacing + 20
+        return self.width, (len(self.pieces) + 1) * self.spacing + self.caption_.pad
 
 
 _NAMES = {f.name for f in dc.fields(Layout)}
