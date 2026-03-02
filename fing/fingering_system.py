@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import dataclasses as dc
 from collections.abc import Sequence
-from functools import cached_property, total_ordering
+from functools import cached_property
 from typing import Any
 
 import tomlkit
 
 from .error_maker import ErrorMaker
 from .fix_input_variables import fix_input_variables
+from .note import Note
 
 
 @dc.dataclass(frozen=True)
@@ -17,32 +18,6 @@ class Key:
     short_name: str
     press: str
     description: str = ''
-
-
-@total_ordering
-class Note:
-    def __init__(self, s: str) -> None:
-        for k, v in REPLACEMENTS.items():
-            s = s.replace(k, v)
-        self.name = s
-        self.note = s[: 1 if s[1].isnumeric() else 2]
-        self.octave = int(s[len(self.note) :])
-        self.note_number = 12 * self.octave + NOTE_TO_OFFSET[self.note]
-
-    def __eq__(self, other: Any) -> bool:
-        return self.name == other.name
-
-    def __lt__(self, other: Any) -> bool:
-        return self.name < other.name
-
-    def __hash__(self) -> int:
-        return hash((Note, self.name))
-
-    def __str__(self) -> str:
-        return self.name
-
-    def __repr__(self) -> str:
-        return f"Note('{self.name}')"
 
 
 @dc.dataclass(frozen=True)
@@ -148,25 +123,3 @@ def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
         fs = FingeringSystem(err=err, document=doc, **doc)  # ty: ignore[invalid-argument-type]
         fs.check(check_key_order)
         return fs
-
-
-REPLACEMENTS = {'_': '', '-': '', ' ': '', '♭': 'b', '♯': '#'}
-NOTE_TO_OFFSET = {
-    'C': 0,
-    'C#': 1,
-    'Db': 1,
-    'D': 2,
-    'D#': 3,
-    'Eb': 3,
-    'E': 4,
-    'F': 5,
-    'F#': 6,
-    'Gb': 6,
-    'G': 7,
-    'G#': 8,
-    'Ab': 8,
-    'A': 9,
-    'A#': 10,
-    'Bb': 10,
-    'B': 11,
-}

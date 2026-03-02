@@ -39,7 +39,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" />
-    <text x="20" y="1230" class="caption">Db1</text>
+    <text x="20" y="1230" class="caption">D♭1</text>
   </g>
   <g transform="translate(240,0)">
     <use x="0" y="0" href="#pad" />
@@ -69,7 +69,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Eb1</text>
+    <text x="20" y="1230" class="caption">E♭1</text>
   </g>
   <g transform="translate(480,0)">
     <use x="0" y="0" href="#pad" />
@@ -114,7 +114,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Gb1</text>
+    <text x="20" y="1230" class="caption">G♭1</text>
   </g>
   <g transform="translate(840,0)">
     <use x="0" y="0" href="#pad" />
@@ -144,7 +144,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Ab1</text>
+    <text x="20" y="1230" class="caption">A♭1</text>
   </g>
   <g transform="translate(1080,0)">
     <use x="0" y="0" href="#pad" />
@@ -174,7 +174,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Bb1</text>
+    <text x="20" y="1230" class="caption">B♭1</text>
   </g>
   <g transform="translate(1320,0)">
     <use x="0" y="0" href="#pad" />
@@ -219,7 +219,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Db2</text>
+    <text x="20" y="1230" class="caption">D♭2</text>
   </g>
   <g transform="translate(0,1370)">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -249,7 +249,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Eb2</text>
+    <text x="20" y="1230" class="caption">E♭2</text>
   </g>
   <g transform="translate(240,1370)">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -297,7 +297,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Gb2</text>
+    <text x="20" y="1230" class="caption">G♭2</text>
   </g>
   <g transform="translate(600,1370)">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -329,7 +329,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Ab2</text>
+    <text x="20" y="1230" class="caption">A♭2</text>
   </g>
   <g transform="translate(840,1370)">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -361,7 +361,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" />
-    <text x="20" y="1230" class="caption">Bb2</text>
+    <text x="20" y="1230" class="caption">B♭2</text>
   </g>
   <g transform="translate(1080,1370)">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -409,7 +409,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="20" y="1230" class="caption">Db3</text>
+    <text x="20" y="1230" class="caption">D♭3</text>
   </g>
   <g transform="translate(1440,1370)">
     <use x="0" y="0" href="#pad" class="outline" />
