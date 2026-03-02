@@ -2,43 +2,47 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 from xml.etree import ElementTree as ET
+from xml.etree.ElementTree import Element
 
 from .fingering_system import FingeringSystem
 from .layout import Layout
 
 
-def render(layout: Layout, fingering: Sequence[str], note: str) -> ET.Element:
-    svg = _svg(layout)
-    _add(svg, layout, fingering, note)
-    return svg
+def render(layout: Layout, fingering: Sequence[str], note: str) -> Element:
+    return _add(_svg(layout, layout.width, layout.height), layout, fingering, note)
 
 
-def _add(e: ET.Element, layout: Layout, fingering: Sequence[str], note: str) -> None:
+def _add(e: Element, layout: Layout, fingering: Sequence[str], note: str) -> Element:
     for p in layout.pieces_:
         e.extend(p.render(fingering))
 
-    y = layout.size[1] - layout.spacing
+    y = layout.height - layout.spacing
     ET.SubElement(e, 'text', layout.caption_.asdict(y)).text = note
+    return e
 
 
-def render_all(fs: FingeringSystem, layout: Layout) -> None:
-    svg = _svg(layout)
-    g = ET.SubElement(svg, 'g')
-    note_fingerings = [(n, f) for n, ff in fs.fingerings.items() for f in ff]
-
-    N = len(note_fingerings)
-    rows = 3  # :-)
+def render_all(fs: FingeringSystem, layout: Layout) -> Element:
+    N = len(fs.fingerings)
+    rows = 2  # :-)
     columns = N // rows
     columns += columns * rows < N
 
-    w, h = layout.size
+    dx = layout.width + layout.pad
+    dy = layout.height + layout.pad
 
-    assert w and h and g
+    svg = _svg(layout, dx * columns, dy * rows)
+    elements = []
+
+    for i, (note, fingering) in enumerate(fs.fingerings.items()):
+        fi = [f.short_name for f in fingering]
+        row, column = divmod(i, columns)
+        attrs = {'transform': f'translate({column * dx},{row * dy})'}
+        elements.append(_add(ET.SubElement(svg, 'g', attrs), layout, fi, str(note)))
+    return svg
 
 
-def _svg(layout: Layout) -> ET.Element:
-    w, h = layout.size
-    attrs = {'viewBox': f'0 0 {w} {h}', 'xmlns': 'http://www.w3.org/2000/svg'}
+def _svg(layout: Layout, width: int, height: int) -> ET.Element:
+    attrs = {'viewBox': f'0 0 {width} {height}', 'xmlns': 'http://www.w3.org/2000/svg'}
     svg = ET.Element('svg', attrs)
     ET.SubElement(svg, 'defs').extend(layout.defs_)
     ET.SubElement(svg, 'style').text = _fix_styles(layout.styles)

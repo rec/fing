@@ -2,25 +2,32 @@
 spacing = 120
 width = 100
 styles = """
-.outline { fill: white; stroke: black; stroke-width: 1; }
+.outline { fill: white; stroke: black; stroke-width: 1.5; }
+.caption { font-size: 40; text-align: center; }
 """
 
 [layout.caption]
-font_size = 60
-pad = 20
-x = 40
+pad = 30
+x = 20
 
 [layout.defs]
 pad = '<circle cx="50" cy="50" r="50" />'
 little-hole = '<circle cx="80" cy="55" r="20" />'
 big-hole = '<circle cx="30" cy="30" r="30" />'
 
-octave-cover = '<rect x="-25" y="0" width="50" height="50" style="fill: green;"/>'
 horizontal-line = '<rect x="0" y="50" width="120" height="1" style="fill: black;"/>'
+octave = '''
+  <path d="M 0,50
+           A 50,50 0 0 0 100,50
+           Z"
+        fill="black"
+        stroke="black"
+        stroke-width="1.5" />
+'''
 
 [layout.pieces.left-thumb.parts]
 _off = 'pad @ outline'
-oct = 'pad + octave-cover'
+oct = 'pad @ outline + octave'
 left-thumb = 'pad'
 
 [layout.pieces._separator-1.parts]

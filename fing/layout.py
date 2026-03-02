@@ -16,13 +16,11 @@ Element: TypeAlias = ET.Element
 
 @dc.dataclass(frozen=True)
 class Caption:
-    pad: int = 20
-    x: int = 40
-    font_size: int = 60
+    pad: int = 30  # TODO: not used now?
+    x: int = 20
 
     def asdict(self, y: int) -> dict[str, str]:
-        y += self.pad
-        return {'x': str(self.x), 'y': str(y), 'font-size': str(self.font_size)}
+        return {'x': str(self.x), 'y': str(y), 'class': 'caption'}
 
 
 @dc.dataclass(frozen=True)
@@ -33,6 +31,7 @@ class Layout:
     spacing: int = 0
     styles: str = ''
     width: int = 0
+    pad: int = 20  # Between individual charts
     caption: dict[str, int] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
@@ -96,8 +95,8 @@ class Layout:
         return pieces
 
     @cached_property
-    def size(self) -> tuple[int, int]:
-        return self.width, (len(self.pieces) + 1) * self.spacing + self.caption_.pad
+    def height(self) -> int:
+        return (len(self.pieces) + 1) * self.spacing + self.caption_.pad
 
 
 _NAMES = {f.name for f in dc.fields(Layout)}

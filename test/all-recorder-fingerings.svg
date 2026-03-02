@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg viewBox="0 0 1680 2740" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <circle cx="50" cy="50" r="50" id="pad" />
+    <circle cx="80" cy="55" r="20" id="little-hole" />
+    <circle cx="30" cy="30" r="30" id="big-hole" />
+    <rect x="0" y="50" width="120" height="1" style="fill: black;" id="horizontal-line" />
+    <path d="M 0,50            A 50,50 0 0 0 100,50            Z" fill="black" stroke="black" stroke-width="1.5" id="octave" />
+  </defs>
+  <style>
+    .outline { fill: white; stroke: black; stroke-width: 1.5; }
+    .caption { font-size: 40; text-align: center; }
+  </style>
+  <g transform="translate(0,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">C1</text>
+  </g>
+  <g transform="translate(120,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Db1</text>
+  </g>
+  <g transform="translate(240,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">D1</text>
+  </g>
+  <g transform="translate(360,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Eb1</text>
+  </g>
+  <g transform="translate(480,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">E1</text>
+  </g>
+  <g transform="translate(600,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">F1</text>
+  </g>
+  <g transform="translate(720,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Gb1</text>
+  </g>
+  <g transform="translate(840,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">G1</text>
+  </g>
+  <g transform="translate(960,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Ab1</text>
+  </g>
+  <g transform="translate(1080,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">A1</text>
+  </g>
+  <g transform="translate(1200,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Bb1</text>
+  </g>
+  <g transform="translate(1320,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">B1</text>
+  </g>
+  <g transform="translate(1440,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">C2</text>
+  </g>
+  <g transform="translate(1560,0)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Db2</text>
+  </g>
+  <g transform="translate(0,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">D2</text>
+  </g>
+  <g transform="translate(120,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Eb2</text>
+  </g>
+  <g transform="translate(240,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">E2</text>
+  </g>
+  <g transform="translate(360,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">F2</text>
+  </g>
+  <g transform="translate(480,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Gb2</text>
+  </g>
+  <g transform="translate(600,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">G2</text>
+  </g>
+  <g transform="translate(720,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Ab2</text>
+  </g>
+  <g transform="translate(840,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">A2</text>
+  </g>
+  <g transform="translate(960,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Bb2</text>
+  </g>
+  <g transform="translate(1080,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">B2</text>
+  </g>
+  <g transform="translate(1200,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">C3</text>
+  </g>
+  <g transform="translate(1320,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">Db3</text>
+  </g>
+  <g transform="translate(1440,1370)">
+    <use x="0" y="0" href="#pad" class="outline" />
+    <use x="0" y="0" href="#octave" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" class="outline" />
+    <use x="0" y="360" href="#pad" class="outline" />
+    <use x="0" y="480" href="#pad" class="outline" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" class="outline" />
+    <use x="0" y="840" href="#pad" class="outline" />
+    <use x="0" y="960" href="#little-hole" class="outline" />
+    <use x="0" y="960" href="#big-hole" class="outline" />
+    <use x="0" y="1080" href="#little-hole" class="outline" />
+    <use x="0" y="1080" href="#big-hole" class="outline" />
+    <text x="20" y="1230" class="caption">D3</text>
+  </g>
+</svg>
