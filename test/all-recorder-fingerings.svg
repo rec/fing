@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 2600 2890" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2900 2980" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <circle cx="50" cy="50" r="50" id="pad" />
     <circle cx="80" cy="55" r="20" id="little-hole" />
@@ -10,7 +10,7 @@
   <style>
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
   </style>
-  <g transform="translate(80,150)">
+  <g transform="translate(100,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -25,7 +25,7 @@
     <use x="0" y="1080" href="#big-hole" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C1 </text>
   </g>
-  <g transform="translate(260,150)">
+  <g transform="translate(300,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -40,7 +40,7 @@
     <use x="0" y="1080" href="#big-hole" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭1</text>
   </g>
-  <g transform="translate(440,150)">
+  <g transform="translate(500,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -55,7 +55,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D1 </text>
   </g>
-  <g transform="translate(620,150)">
+  <g transform="translate(700,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -70,7 +70,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">D♯/E♭1</text>
   </g>
-  <g transform="translate(800,150)">
+  <g transform="translate(900,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -85,7 +85,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  E1 </text>
   </g>
-  <g transform="translate(980,150)">
+  <g transform="translate(1100,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -100,7 +100,7 @@
     <use x="0" y="1080" href="#big-hole" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  F1 </text>
   </g>
-  <g transform="translate(1160,150)">
+  <g transform="translate(1300,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -115,7 +115,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">F♯/G♭1</text>
   </g>
-  <g transform="translate(1340,150)">
+  <g transform="translate(1500,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -130,7 +130,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  G1 </text>
   </g>
-  <g transform="translate(1520,150)">
+  <g transform="translate(1700,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -145,7 +145,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">G♯/A♭1</text>
   </g>
-  <g transform="translate(1700,150)">
+  <g transform="translate(1900,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -160,7 +160,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  A1 </text>
   </g>
-  <g transform="translate(1880,150)">
+  <g transform="translate(2100,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -175,7 +175,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">A♯/B♭1</text>
   </g>
-  <g transform="translate(2060,150)">
+  <g transform="translate(2300,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -190,7 +190,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  B1 </text>
   </g>
-  <g transform="translate(2240,150)">
+  <g transform="translate(2500,180)">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" class="outline" />
@@ -205,7 +205,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C2 </text>
   </g>
-  <g transform="translate(2420,150)">
+  <g transform="translate(2700,180)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
@@ -220,8 +220,8 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭2</text>
   </g>
-  <rect x="80" y="1445" width="2600" height="3" />
-  <g transform="translate(80,1520)">
+  <rect x="100" y="1490" width="2900" height="3" />
+  <g transform="translate(100,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" class="outline" />
@@ -236,7 +236,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D2 </text>
   </g>
-  <g transform="translate(260,1520)">
+  <g transform="translate(300,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" class="outline" />
@@ -251,7 +251,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">D♯/E♭2</text>
   </g>
-  <g transform="translate(440,1520)">
+  <g transform="translate(500,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -267,7 +267,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  E2 </text>
   </g>
-  <g transform="translate(620,1520)">
+  <g transform="translate(700,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -283,7 +283,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  F2 </text>
   </g>
-  <g transform="translate(800,1520)">
+  <g transform="translate(900,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -299,7 +299,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">F♯/G♭2</text>
   </g>
-  <g transform="translate(980,1520)">
+  <g transform="translate(1100,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -315,7 +315,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  G2 </text>
   </g>
-  <g transform="translate(1160,1520)">
+  <g transform="translate(1300,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -331,7 +331,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">G♯/A♭2</text>
   </g>
-  <g transform="translate(1340,1520)">
+  <g transform="translate(1500,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -347,7 +347,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  A2 </text>
   </g>
-  <g transform="translate(1520,1520)">
+  <g transform="translate(1700,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -363,7 +363,7 @@
     <use x="0" y="1080" href="#big-hole" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">A♯/B♭2</text>
   </g>
-  <g transform="translate(1700,1520)">
+  <g transform="translate(1900,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -379,7 +379,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  B2 </text>
   </g>
-  <g transform="translate(1880,1520)">
+  <g transform="translate(2100,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -395,7 +395,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C3 </text>
   </g>
-  <g transform="translate(2060,1520)">
+  <g transform="translate(2300,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />
@@ -411,7 +411,7 @@
     <use x="0" y="1080" href="#big-hole" class="outline" />
     <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭3</text>
   </g>
-  <g transform="translate(2240,1520)">
+  <g transform="translate(2500,1580)">
     <use x="0" y="0" href="#pad" class="outline" />
     <use x="0" y="0" href="#octave" />
     <use x="0" y="120" href="#horizontal-line" />

@@ -19,11 +19,12 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
     columns = N // rows
     columns += columns * rows < N
 
+    start_x, start_y = layout.pad_x, layout.pad_y
     dx = layout.width + layout.pad_x
     dy = layout.height + layout.pad_y
 
     def scale(c: int, r: int) -> tuple[int, int]:
-        return c * dx + layout.pad_x, r * dy + layout.pad_y
+        return c * dx + start_x, r * dy + start_y
 
     width, height = scale(columns, rows)
     svg = _svg(layout, width, height)
@@ -50,7 +51,7 @@ def _add(e: Element, layout: Layout, fingering: Sequence[Key], note: str) -> Ele
     for p in layout.pieces:
         e.extend(p.render(fingering))
 
-    y = layout.height
+    y = 0 if layout.caption.above else layout.height
     ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note.center(5)
     return e
 

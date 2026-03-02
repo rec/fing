@@ -21,6 +21,7 @@ class Caption:
     pad: int = 20
     x: int = 50
     font_size: int = 40
+    above: bool = False
 
     def asdict(self, y: int) -> dict[str, str]:
         # TODO: why does this work in a stylesheet in emacs, but not for Chrome and FF?
@@ -43,9 +44,9 @@ class Layout:
     spacing: int = 0
     styles: str = ''
     width: int = 0  # TODO: do we use this?
-    pad_x: int = 80
-    pad_y: int = 150
-    caption_: dict[str, int] = dc.field(default_factory=dict)
+    pad_x: int = 100
+    pad_y: int = 180
+    caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     @staticmethod
@@ -71,7 +72,7 @@ class Layout:
     @cached_property
     def caption(self) -> Caption:
         ## TODO: more checking or more general checking
-        return Caption(**self.caption_)
+        return Caption(**self.caption_)  # ty: ignore[invalid-argument-type]
 
     @cached_property
     def defs(self) -> list[ET.Element]:
