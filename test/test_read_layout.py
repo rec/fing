@@ -13,6 +13,8 @@ from fing.layout import Layout
 TEST_ALL_FINGERINGS = Path(__file__).parent / 'all-recorder-fingerings.svg'
 TEST_ONE_FINGERING = Path(__file__).parent / 'one-recorder-fingering.svg'
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
+FS = fingering_system.make('fingerings/recorder-fingering.toml')
+LAYOUT = Layout.make('fingerings/recorder-fingering.layout.toml', FS.to_key)
 
 
 def _xml_to_str(e: ET.element) -> str:
@@ -24,7 +26,15 @@ def _xml_to_str(e: ET.element) -> str:
 
 
 def render_one(fs, layout):
-    return render.render(layout, [], 'D')
+    assert fs.fingerings, fs.fingerings
+    a, *_ = fs.fingerings
+    assert isinstance(a, fingering_system.Note), type(a)
+    fs.fingerings[a]
+    b = fingering_system.Note('C1')
+    assert str(a) == str(b)
+    assert a == b, (a, type(a), b, type(b))
+    fs.fingerings[fingering_system.Note('C1')]
+    return render.render(layout, fs.fingerings[fingering_system.Note('C1')], 'C1')
 
 
 @pytest.mark.parametrize(
@@ -32,10 +42,7 @@ def render_one(fs, layout):
     ((TEST_ONE_FINGERING, render_one), (TEST_ALL_FINGERINGS, render.render_all)),
 )
 def test_fingering(renderer, expected_file):
-    fs = fingering_system.make('fingerings/recorder-fingering.toml')
-    layout = Layout.make('fingerings/recorder-fingering.layout.toml', fs.to_key)
-
-    actual = _xml_to_str(renderer(fs, layout))
+    actual = _xml_to_str(renderer(FS, LAYOUT))
 
     if REWRITE_TEST_DATA or not expected_file.exists():
         expected_file.write_text(actual)

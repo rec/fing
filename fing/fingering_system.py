@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import dataclasses as dc
 from collections.abc import Sequence
-from functools import cached_property
+from functools import cached_property, total_ordering
 from typing import Any
 
 import tomlkit
@@ -13,11 +13,13 @@ from .fix_input_variables import fix_input_variables
 
 @dc.dataclass(frozen=True)
 class Key:
+    name: str
     short_name: str
     press: str
     description: str = ''
 
 
+@total_ordering
 class Note:
     def __init__(self, s: str) -> None:
         for k, v in REPLACEMENTS.items():
@@ -27,8 +29,20 @@ class Note:
         self.octave = int(s[len(self.note) :])
         self.note_number = 12 * self.octave + NOTE_TO_OFFSET[self.note]
 
+    def __eq__(self, other: Any) -> bool:
+        return self.name == other.name
+
+    def __lt__(self, other: Any) -> bool:
+        return self.name < other.name
+
+    def __hash__(self) -> int:
+        return hash((Note, self.name))
+
     def __str__(self) -> str:
         return self.name
+
+    def __repr__(self) -> str:
+        return f"Note('{self.name}')"
 
 
 @dc.dataclass(frozen=True)
@@ -53,7 +67,7 @@ class FingeringSystem:
         keys: dict[str, Key] = {}
         for k, v in self.keys_.items():
             try:
-                keys[k] = Key(**v)
+                keys[k] = Key(name=k, **v)
             except Exception as e:
                 self.err('Invalid key', v, e)
         return keys
@@ -80,12 +94,12 @@ class FingeringSystem:
             self.err.test_dupes('Duplicate short_name', shorts)
 
             if check_key_order:
-                self.check_key_order()
+                self.test_key_order()
             for v in vars(self).values():
                 if isinstance(v, cached_property):
                     getattr(self, v)
 
-    def check_key_order(self) -> None:
+    def test_key_order(self) -> None:
         inv = {k: i for i, k in enumerate(self.all)}
         for fingering in self.fingerings.values():
             previous = -1

@@ -11,17 +11,17 @@
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
     .caption { font-size: 40; text-align: center; }
   </style>
-  <use x="0" y="0" href="#pad" class="outline" />
+  <use x="0" y="0" href="#pad" />
   <use x="0" y="120" href="#horizontal-line" />
-  <use x="0" y="240" href="#pad" class="outline" />
-  <use x="0" y="360" href="#pad" class="outline" />
-  <use x="0" y="480" href="#pad" class="outline" />
+  <use x="0" y="240" href="#pad" />
+  <use x="0" y="360" href="#pad" />
+  <use x="0" y="480" href="#pad" />
   <use x="0" y="600" href="#horizontal-line" />
-  <use x="0" y="720" href="#pad" class="outline" />
-  <use x="0" y="840" href="#pad" class="outline" />
-  <use x="0" y="960" href="#little-hole" class="outline" />
-  <use x="0" y="960" href="#big-hole" class="outline" />
-  <use x="0" y="1080" href="#little-hole" class="outline" />
-  <use x="0" y="1080" href="#big-hole" class="outline" />
-  <text x="20" y="1230" class="caption">D</text>
+  <use x="0" y="720" href="#pad" />
+  <use x="0" y="840" href="#pad" />
+  <use x="0" y="960" href="#little-hole" />
+  <use x="0" y="960" href="#big-hole" />
+  <use x="0" y="1080" href="#little-hole" />
+  <use x="0" y="1080" href="#big-hole" />
+  <text x="20" y="1230" class="caption">C1</text>
 </svg>

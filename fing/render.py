@@ -4,11 +4,11 @@ from collections.abc import Sequence
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element
 
-from .fingering_system import FingeringSystem
+from .fingering_system import FingeringSystem, Key
 from .layout import Layout
 
 
-def render(layout: Layout, fingering: Sequence[str], note: str) -> Element:
+def render(layout: Layout, fingering: Sequence[Key], note: str) -> Element:
     svg = _svg(layout, layout.width, layout.height)
     return _add(svg, layout, fingering, note)
 
@@ -26,15 +26,14 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
     elements = []
 
     for i, (note, fingering) in enumerate(fs.fingerings.items()):
-        fi = [f.short_name for f in fingering]
         row, column = divmod(i, columns)
         attrs = {'transform': f'translate({column * dx},{row * dy})'}
         g = ET.SubElement(svg, 'g', attrs)
-        elements.append(_add(g, layout, fi, str(note)))
+        elements.append(_add(g, layout, fingering, str(note)))
     return svg
 
 
-def _add(e: Element, layout: Layout, fingering: Sequence[str], note: str) -> Element:
+def _add(e: Element, layout: Layout, fingering: Sequence[Key], note: str) -> Element:
     for p in layout.pieces:
         e.extend(p.render(fingering))
 
