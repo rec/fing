@@ -28,7 +28,7 @@ class Caption:
         return {
             'x': str(self.x),
             'y': str(y),
-            'class': 'caption',
+            # 'class': 'caption',
             'font-size': str(self.font_size),
             'font-family': 'monospace',
             'text-anchor': 'middle',

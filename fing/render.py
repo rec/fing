@@ -40,9 +40,8 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
                 'height': '3',
             }
             ET.SubElement(svg, 'rect', attr)
-        attrs = {'transform': f'translate({x},{y})'}
-        g = ET.SubElement(svg, 'g', attrs)
-        _add(g, layout, fingering, str(note))
+        sub = ET.SubElement(svg, 'svg', {'x': str(x), 'y': str(y)})
+        _add(sub, layout, fingering, str(note))
 
     return svg
 
