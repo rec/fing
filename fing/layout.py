@@ -18,14 +18,16 @@ Element: TypeAlias = ET.Element
 
 @dc.dataclass(frozen=True)
 class Caption:
-    pad: int = 30  # TODO: not used now?
+    pad: int = 20
     x: int = 50
     font_size: int = 40
 
     def asdict(self, y: int) -> dict[str, str]:
+        # TODO: why does this work in a stylesheet in emacs, but not for Chrome and FF?
         return {
             'x': str(self.x),
             'y': str(y),
+            'class': 'caption',
             'font-size': str(self.font_size),
             'font-family': 'monospace',
             'text-anchor': 'middle',
@@ -40,8 +42,9 @@ class Layout:
     to_key: dict[str, Key]
     spacing: int = 0
     styles: str = ''
-    width: int = 0
-    pad: int = 50  # Between individual charts
+    width: int = 0  # TODO: do we use this?
+    pad_x: int = 80
+    pad_y: int = 120
     caption_: dict[str, int] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
@@ -84,6 +87,14 @@ class Layout:
 
     @cached_property
     def pieces(self) -> list[ChartPiece]:
+        return self._pieces_and_height[0]
+
+    @cached_property
+    def height(self) -> int:
+        return self._pieces_and_height[1]
+
+    @cached_property
+    def _pieces_and_height(self) -> tuple[list[ChartPiece], int]:
         pieces = []
         x, y = 0, 0
         for name, key in self.pieces_.items():
@@ -105,11 +116,7 @@ class Layout:
             pieces.append(ChartPiece(parts, x, y))
             y += self.spacing
 
-        return pieces
-
-    @cached_property
-    def height(self) -> int:
-        return (len(self.pieces) + 1) * self.spacing + self.caption.pad
+        return pieces, y + self.caption.pad
 
 
 _NAMES = {f.name for f in dc.fields(Layout)}

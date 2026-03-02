@@ -19,17 +19,21 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
     columns = N // rows
     columns += columns * rows < N
 
-    dx = layout.width + layout.pad
-    dy = layout.height + layout.pad
+    dx = layout.width + layout.pad_x
+    dy = layout.height + layout.pad_y
 
-    svg = _svg(layout, dx * columns, dy * rows)
-    elements = []
+    def scale(c: int, r: int) -> tuple[int, int]:
+        return c * dx + layout.pad_x, r * dy + layout.pad_y
+
+    svg = _svg(layout, *scale(columns, rows))
 
     for i, (note, fingering) in enumerate(fs.fingerings.items()):
         row, column = divmod(i, columns)
-        attrs = {'transform': f'translate({column * dx},{row * dy})'}
+        x, y = scale(column, row)
+        attrs = {'transform': f'translate({x},{y})'}
         g = ET.SubElement(svg, 'g', attrs)
-        elements.append(_add(g, layout, fingering, str(note)))
+        _add(g, layout, fingering, str(note))
+
     return svg
 
 
@@ -37,8 +41,7 @@ def _add(e: Element, layout: Layout, fingering: Sequence[Key], note: str) -> Ele
     for p in layout.pieces:
         e.extend(p.render(fingering))
 
-    y = layout.height - layout.spacing
-
+    y = layout.height
     ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note.center(5)
     return e
 
