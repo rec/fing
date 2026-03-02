@@ -10,6 +10,7 @@ import tomlkit
 from fing.chart_piece import ChartPiece, Part
 
 from .error_maker import ErrorMaker
+from .fingering_system import Key
 from .fix_input_variables import fix_input_variables
 
 Element: TypeAlias = ET.Element
@@ -27,8 +28,8 @@ class Caption:
 @dc.dataclass(frozen=True)
 class Layout:
     defs_: dict[str, Any]
-    key_names: dict[str, Any]
     pieces_: dict[str, dict[str, Any]]
+    to_key: dict[str, Key]
     spacing: int = 0
     styles: str = ''
     width: int = 0
@@ -37,7 +38,7 @@ class Layout:
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     @staticmethod
-    def make(filename: str, key_names: dict[str, Any]) -> Layout:
+    def make(filename: str, to_key: dict[str, Any]) -> Layout:
         with open(filename) as fp:
             data = tomlkit.load(fp)
 
@@ -49,10 +50,10 @@ class Layout:
             fix_input_variables(d, Layout)
             if bad := set(d) - _NAMES:
                 err('Unknown arg', *bad)
-            if missing := _REQUIRED - set(d) - {'key_names'}:
+            if missing := _REQUIRED - set(d) - {'to_key'}:
                 err('Missing arg', *missing)
 
-        layout = Layout(err=err, key_names=key_names, **d)
+        layout = Layout(err=err, to_key=to_key, **d)
         layout.err.check()
         return layout
 
@@ -81,7 +82,7 @@ class Layout:
             if not isinstance(key.get('parts'), dict):
                 self.err('Missing parts section', name, key)
                 continue
-            if not (name.startswith('_') or name in self.key_names):
+            if not (name.startswith('_') or name in self.to_key):
                 self.err('Unknown key name', name)
 
             parts = {k: Part.to_parts(v) for k, v in key['parts'].items()}
