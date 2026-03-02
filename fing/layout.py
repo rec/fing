@@ -10,6 +10,7 @@ import tomlkit
 from fing.chart_piece import ChartPiece, Part
 
 from .error_maker import ErrorMaker
+from .fix_input_variables import fix_input_variables
 
 Element: TypeAlias = ET.Element
 
@@ -45,10 +46,7 @@ class Layout:
                 raise err.fail('No layout dictionary')
             assert isinstance(d, dict)
 
-            for r in _REWRITES:
-                if old := d.pop(r[:-1], None):
-                    d[r] = old
-
+            fix_input_variables(d, Layout)
             if bad := set(d) - _NAMES:
                 err('Unknown arg', *bad)
             if missing := _REQUIRED - set(d) - {'key_names'}:
@@ -111,4 +109,3 @@ _REQUIRED = {
     for f in dc.fields(Layout)
     if f.default == dc.MISSING and f.default_factory == dc.MISSING
 }
-_REWRITES = {n for n in _NAMES if n.endswith('_')}
