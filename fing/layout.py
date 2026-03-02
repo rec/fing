@@ -44,7 +44,7 @@ class Layout:
     styles: str = ''
     width: int = 0  # TODO: do we use this?
     pad_x: int = 80
-    pad_y: int = 120
+    pad_y: int = 150
     caption_: dict[str, int] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
