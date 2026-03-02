@@ -23,18 +23,19 @@ def _xml_to_str(e: ET.element) -> str:
     return f.getvalue() + '\n'
 
 
+def render_one(fs, layout):
+    return render.render(layout, [], 'D')
+
+
 @pytest.mark.parametrize(
     'expected_file, renderer',
-    (
-        (TEST_ONE_FINGERING, lambda layout, fs: render.render(layout, [], 'D')),
-        (TEST_ALL_FINGERINGS, lambda layout, fs: render.render_all(fs, layout)),
-    ),
+    ((TEST_ONE_FINGERING, render_one), (TEST_ALL_FINGERINGS, render.render_all)),
 )
 def test_fingering(renderer, expected_file):
     fs = fingering_system.make('fingerings/recorder-fingering.toml')
     layout = Layout.make('fingerings/recorder-fingering.layout.toml', fs.to_key)
 
-    actual = _xml_to_str(renderer(layout, fs))
+    actual = _xml_to_str(renderer(fs, layout))
 
     if REWRITE_TEST_DATA or not expected_file.exists():
         expected_file.write_text(actual)

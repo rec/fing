@@ -9,16 +9,8 @@ from .layout import Layout
 
 
 def render(layout: Layout, fingering: Sequence[str], note: str) -> Element:
-    return _add(_svg(layout, layout.width, layout.height), layout, fingering, note)
-
-
-def _add(e: Element, layout: Layout, fingering: Sequence[str], note: str) -> Element:
-    for p in layout.pieces:
-        e.extend(p.render(fingering))
-
-    y = layout.height - layout.spacing
-    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note
-    return e
+    svg = _svg(layout, layout.width, layout.height)
+    return _add(svg, layout, fingering, note)
 
 
 def render_all(fs: FingeringSystem, layout: Layout) -> Element:
@@ -37,8 +29,22 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
         fi = [f.short_name for f in fingering]
         row, column = divmod(i, columns)
         attrs = {'transform': f'translate({column * dx},{row * dy})'}
-        elements.append(_add(ET.SubElement(svg, 'g', attrs), layout, fi, str(note)))
+        g = ET.SubElement(svg, 'g', attrs)
+        elements.append(_add(g, layout, fi, str(note)))
     return svg
+
+
+def _add(e: Element, layout: Layout, fingering: Sequence[str], note: str) -> Element:
+    for p in layout.pieces:
+        e.extend(p.render(fingering))
+
+    y = layout.height - layout.spacing
+    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note
+    return e
+
+
+def _fix_styles(s: str) -> str:
+    return '\n    '.join(('', *s.strip().split('\n'))) + '\n  '
 
 
 def _svg(layout: Layout, width: int, height: int) -> ET.Element:
@@ -47,7 +53,3 @@ def _svg(layout: Layout, width: int, height: int) -> ET.Element:
     ET.SubElement(svg, 'defs').extend(layout.defs)
     ET.SubElement(svg, 'style').text = _fix_styles(layout.styles)
     return svg
-
-
-def _fix_styles(s: str) -> str:
-    return '\n    '.join(('', *s.strip().split('\n'))) + '\n  '
