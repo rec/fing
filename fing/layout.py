@@ -50,7 +50,9 @@ class Layout:
             if missing := _REQUIRED - set(d) - {'key_names'}:
                 err('Missing arg', *missing)
 
-        return Layout(err=err, key_names=key_names, **d)
+        layout = Layout(err=err, key_names=key_names, **d)
+        layout.check()
+        return layout
 
     @cached_property
     def caption_(self) -> Caption:
