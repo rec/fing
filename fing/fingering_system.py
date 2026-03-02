@@ -7,6 +7,7 @@ from typing import Any
 import tomlkit
 
 from .error_maker import ErrorMaker
+from .fix_input_variables import fix_input_variables
 
 
 @dc.dataclass(frozen=True)
@@ -43,9 +44,9 @@ class FingeringSystem:
 
 @dc.dataclass(frozen=True)
 class FingeringSpec:
-    fingerings: dict[str, str]
-    keys: dict[str, dict[str, str]]
-    lowest_c: dict[str, str]
+    fingerings_: dict[str, str]
+    keys_: dict[str, dict[str, str]]
+    lowest_c_: dict[str, str]
     metadata: dict[str, str]
     document: tomlkit.TOMLDocument | None = None
 
@@ -54,6 +55,7 @@ class FingeringSpec:
         with open(filename) as fp:
             doc: dict[str, Any] = tomlkit.load(fp)
 
+        fix_input_variables(doc, FingeringSpec)
         names = {f.name for f in dc.fields(FingeringSpec)}
         if bad := [k for k in doc if k == 'document' or k not in names]:
             raise ValueError(f'Do not understand field{"s" * (len(bad) != 1)} {bad}')
@@ -67,7 +69,7 @@ def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
         spec = FingeringSpec.make(filename)
 
         keys: dict[str, Key] = {}
-        for k, v in spec.keys.items():
+        for k, v in spec.keys_.items():
             try:
                 keys[k] = Key(**v)
             except Exception as e:
@@ -78,7 +80,7 @@ def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
         to_key = {v.short_name: v for v in keys.values()} | keys
 
         fingerings: dict[Note, Sequence[Key]] = {}
-        for k, fingering in spec.fingerings.items():
+        for k, fingering in spec.fingerings_.items():
             pressed = fingering.split()
             err.test_dupes('Duplicate keys in fingering', pressed, k)
             if bad_notes := [i for i in pressed if i not in to_key]:
@@ -107,7 +109,7 @@ def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
                         break
 
         lowest_c: dict[str, Note] = {}
-        for k, v in spec.lowest_c.items():
+        for k, v in spec.lowest_c_.items():
             try:
                 note = Note(v)
             except Exception:
