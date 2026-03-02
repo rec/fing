@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from functools import total_ordering
+from functools import cache, total_ordering
 from typing import Any
 
 
@@ -16,7 +16,8 @@ class Note:
 
     @property
     def full_name(self) -> str:
-        return self.name
+        name = '/'.join(_offset_to_notes()[self.note_number % 12])
+        return f'{name}{self.octave}'
 
     def __eq__(self, other: Any) -> bool:
         return self.note_number == other.note_number
@@ -28,7 +29,7 @@ class Note:
         return hash((Note, self.note_number))
 
     def __str__(self) -> str:
-        return self.name
+        return self.full_name
 
     def __repr__(self) -> str:
         return f"Note('{self.name}')"
@@ -54,3 +55,11 @@ NOTE_TO_OFFSET = {
     'B♭': 10,
     'B': 11,
 }
+
+
+@cache
+def _offset_to_notes() -> dict[int, list[str]]:
+    d = {}
+    for n, o in NOTE_TO_OFFSET.items():
+        d.setdefault(o, []).append(n)
+    return d

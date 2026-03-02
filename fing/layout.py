@@ -19,10 +19,18 @@ Element: TypeAlias = ET.Element
 @dc.dataclass(frozen=True)
 class Caption:
     pad: int = 30  # TODO: not used now?
-    x: int = 20
+    x: int = 50
+    font_size: int = 40
 
     def asdict(self, y: int) -> dict[str, str]:
-        return {'x': str(self.x), 'y': str(y), 'class': 'caption'}
+        return {
+            'x': str(self.x),
+            'y': str(y),
+            'font-size': str(self.font_size),
+            'font-family': 'monospace',
+            'text-anchor': 'middle',
+            'dominant-baseline': 'middle',
+        }
 
 
 @dc.dataclass(frozen=True)
@@ -33,7 +41,7 @@ class Layout:
     spacing: int = 0
     styles: str = ''
     width: int = 0
-    pad: int = 20  # Between individual charts
+    pad: int = 50  # Between individual charts
     caption_: dict[str, int] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 

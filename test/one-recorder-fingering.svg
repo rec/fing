@@ -9,7 +9,6 @@
   </defs>
   <style>
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
-    .caption { font-size: 40; text-align: center; }
   </style>
   <use x="0" y="0" href="#pad" />
   <use x="0" y="120" href="#horizontal-line" />
@@ -23,5 +22,5 @@
   <use x="0" y="960" href="#big-hole" />
   <use x="0" y="1080" href="#little-hole" />
   <use x="0" y="1080" href="#big-hole" />
-  <text x="20" y="1230" class="caption">C1</text>
+  <text x="50" y="1230" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C1 </text>
 </svg>

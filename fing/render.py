@@ -38,7 +38,8 @@ def _add(e: Element, layout: Layout, fingering: Sequence[Key], note: str) -> Ele
         e.extend(p.render(fingering))
 
     y = layout.height - layout.spacing
-    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note
+
+    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note.center(5)
     return e
 
 
