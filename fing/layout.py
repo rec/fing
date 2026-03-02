@@ -25,14 +25,14 @@ class Caption:
 
 @dc.dataclass(frozen=True)
 class Layout:
-    defs: dict[str, Any]
+    defs_: dict[str, Any]
     key_names: dict[str, Any]
-    pieces: dict[str, dict[str, Any]]
+    pieces_: dict[str, dict[str, Any]]
     spacing: int = 0
     styles: str = ''
     width: int = 0
     pad: int = 20  # Between individual charts
-    caption: dict[str, int] = dc.field(default_factory=dict)
+    caption_: dict[str, int] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     @staticmethod
@@ -43,26 +43,30 @@ class Layout:
         with ErrorMaker(reraise=True) as err:
             if not isinstance(d := data.get('layout'), dict):
                 raise err.fail('No layout dictionary')
-
             assert isinstance(d, dict)
+
+            for r in _REWRITES:
+                if old := d.pop(r[:-1], None):
+                    d[r] = old
+
             if bad := set(d) - _NAMES:
                 err('Unknown arg', *bad)
             if missing := _REQUIRED - set(d) - {'key_names'}:
                 err('Missing arg', *missing)
 
         layout = Layout(err=err, key_names=key_names, **d)
-        layout.check()
+        layout.err.check()
         return layout
 
     @cached_property
-    def caption_(self) -> Caption:
+    def caption(self) -> Caption:
         ## TODO: more checking or more general checking
-        return Caption(**self.caption)
+        return Caption(**self.caption_)
 
     @cached_property
-    def defs_(self) -> list[ET.Element]:
+    def defs(self) -> list[ET.Element]:
         defs = []
-        for k, v in self.defs.items():
+        for k, v in self.defs_.items():
             try:
                 defs.append(ET.fromstring(v))
             except Exception as e:
@@ -72,10 +76,10 @@ class Layout:
         return defs
 
     @cached_property
-    def pieces_(self) -> list[ChartPiece]:
+    def pieces(self) -> list[ChartPiece]:
         pieces = []
         x, y = 0, 0
-        for name, key in self.pieces.items():
+        for name, key in self.pieces_.items():
             if not isinstance(key.get('parts'), dict):
                 self.err('Missing parts section', name, key)
                 continue
@@ -86,7 +90,7 @@ class Layout:
 
             if '_off' not in parts:
                 self.err('Missing parts.off section', name)
-            if u := [p for pp in parts.values() for p in pp if p.def_ not in self.defs]:
+            if u := [q for p in parts.values() for q in p if q.def_ not in self.defs_]:
                 self.err('Unknown def in parts', name, u)
 
             x = x if (x_ := key.get('x')) is None else x_
@@ -98,7 +102,7 @@ class Layout:
 
     @cached_property
     def height(self) -> int:
-        return (len(self.pieces) + 1) * self.spacing + self.caption_.pad
+        return (len(self.pieces) + 1) * self.spacing + self.caption.pad
 
 
 _NAMES = {f.name for f in dc.fields(Layout)}
@@ -107,3 +111,4 @@ _REQUIRED = {
     for f in dc.fields(Layout)
     if f.default == dc.MISSING and f.default_factory == dc.MISSING
 }
+_REWRITES = {n for n in _NAMES if n.endswith('_')}

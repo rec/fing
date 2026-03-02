@@ -13,11 +13,11 @@ def render(layout: Layout, fingering: Sequence[str], note: str) -> Element:
 
 
 def _add(e: Element, layout: Layout, fingering: Sequence[str], note: str) -> Element:
-    for p in layout.pieces_:
+    for p in layout.pieces:
         e.extend(p.render(fingering))
 
     y = layout.height - layout.spacing
-    ET.SubElement(e, 'text', layout.caption_.asdict(y)).text = note
+    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note
     return e
 
 
@@ -44,7 +44,7 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
 def _svg(layout: Layout, width: int, height: int) -> ET.Element:
     attrs = {'viewBox': f'0 0 {width} {height}', 'xmlns': 'http://www.w3.org/2000/svg'}
     svg = ET.Element('svg', attrs)
-    ET.SubElement(svg, 'defs').extend(layout.defs_)
+    ET.SubElement(svg, 'defs').extend(layout.defs)
     ET.SubElement(svg, 'style').text = _fix_styles(layout.styles)
     return svg
 
