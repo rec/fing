@@ -24,12 +24,20 @@ https://github.com/rec/fing/blob/main/fingerings/recorder-fingering.toml
 It's written in a format called TOML designed to be straight-forward for both humans
 and computers to read and write.
 
-This is a specification format, and it isn't great for learners, but `fing` also
-provides a general system for making fingering charts without writing Python programs.
+It isn't trying to be good for learners, but `fing` also provides a general system for
+making fingering charts without writing Python programs.
 
-[This formatting document](https://github.com/rec/fing/blob/main/fingerings/recorder-fingering.layout.toml), together with the specification above, created this image:
+[This short layout
+document](https://github.com/rec/fing/blob/main/fingerings/recorder-fingering.layout.toml),
+together with the specification above, created this image:
 
 ![alt text](https://github.com/rec/fing/blob/main/charts/all-recorder-fingerings.svg?raw=True)
+
+A final chart would have more instruction
+
+You can have as many separate layout documents for one fingering system as you like,
+each of which might make a totally different sort of chart, and you can do pretty well
+any graphical thing you can conceive of with it.
 
 
 ## What am I looking at? Some quick definitions

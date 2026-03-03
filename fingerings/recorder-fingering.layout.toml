@@ -1,6 +1,4 @@
 [layout]
-spacing = 120
-width = 100
 styles = '''
 .outline { fill: white; stroke: black; stroke-width: 1.5; }
 '''

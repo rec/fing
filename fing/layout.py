@@ -19,7 +19,7 @@ Element: TypeAlias = ET.Element
 @dc.dataclass(frozen=True)
 class Caption:
     pad: int = 20
-    x: int = 50
+    x: int = 70
     font_size: int = 40
     above: bool = False
 
@@ -41,9 +41,9 @@ class Layout:
     defs_: dict[str, Any]
     pieces_: dict[str, dict[str, Any]]
     to_button: dict[str, Button]
-    spacing: int = 0
+    spacing: int = 120
     styles: str = ''
-    width: int = 0  # TODO: do we use this?
+    width: int = 150
     pad_x: int = 100
     pad_y: int = 180
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
