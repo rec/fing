@@ -1,14 +1,6 @@
 # This file contains a formal specification for the Baroque or English fingering
 # of the recorder family, using a system called `fing` designed to represent
 # any fingering for any wind instrument or similar device.
-#
-# It's written in a format called TOML designed to be straight-forward for both humans
-# and computers to read and write.
-#
-# Comments are line like this one that start with a # and are just used to communicate
-# with the reader - they are ignored by computers.
-#
-
 
 [metadata]
 author = 'Tom Ritchford (tom@swirly.com)'
@@ -16,26 +8,6 @@ version = 'v0.1.0'
 name = 'Baroque fingering system for the recorder'
 tags = ['recorder', 'baroque']
 language = 'en'
-
-# A **key** is an affordance like a key, pad, hole, button, or lever
-# that controls a wind instrument.
-#
-# A key has three parts:
-#
-#  * "short name": usually 2 or 3 characters, for text-based fingering charts
-#
-#  * "press": the finger or other thing that presses or actuates this key
-#
-#  * "description": an optional field with more text information for the player
-#
-# Multiple keys might share the same physical location.
-
-# For example, the thumb hole on the recorder can be covered in two different ways:
-#
-# * fullly to produce the lower octave
-# * half-covered for the upper octave
-#
-# This is represented by having two different keys: "left-thumb" and "octave".
 
 #
 #            ******* Left hand *******
@@ -136,11 +108,7 @@ C_3 = 'oct l1          r1  r2              '
 Db3 = 'oct l1      l3  r1      r3      cb  '
 D_3 = 'oct l1      l3  r1      r3          '
 
-# The lowest_c section is where we assign the actual octave ranges
-# to the specific instruments in the family.
-#
-# The `lowest_c` for an instrument is the pitch of the lowest C
-# within its tuning.
+# `lowest_c` for an instrument in a family is the pitch of the lowest C in its range.
 
 [lowest_c]
 
@@ -153,8 +121,3 @@ alto = 'F4'
 soprano = 'C5'
 sopranino = 'F5'
 garklein = 'C6'
-
-# TO MOVE elsewhere
-# Wind instruments are played by blowing and fingering. Players control the pictch of
-# their instrument using fingering, breath, embouchure and perhaps other actions like
-# covering the bell.
