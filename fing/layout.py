@@ -10,7 +10,7 @@ import tomlkit
 from fing.chart_piece import ChartPiece, Part
 
 from .error_maker import ErrorMaker
-from .fingering_system import Key
+from .fingering_system import Button
 from .fix_input_variables import fix_input_variables
 
 Element: TypeAlias = ET.Element
@@ -40,7 +40,7 @@ class Caption:
 class Layout:
     defs_: dict[str, Any]
     pieces_: dict[str, dict[str, Any]]
-    to_key: dict[str, Key]
+    to_button: dict[str, Button]
     spacing: int = 0
     styles: str = ''
     width: int = 0  # TODO: do we use this?
@@ -50,7 +50,7 @@ class Layout:
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     @staticmethod
-    def make(filename: str, to_key: dict[str, Any]) -> Layout:
+    def make(filename: str, to_button: dict[str, Any]) -> Layout:
         with open(filename) as fp:
             data = tomlkit.load(fp)
 
@@ -62,10 +62,10 @@ class Layout:
             fix_input_variables(d, Layout)
             if bad := set(d) - _NAMES:
                 err('Unknown arg', *bad)
-            if missing := _REQUIRED - set(d) - {'to_key'}:
+            if missing := _REQUIRED - set(d) - {'to_button'}:
                 err('Missing arg', *missing)
 
-        layout = Layout(err=err, to_key=to_key, **d)
+        layout = Layout(err=err, to_button=to_button, **d)
         layout.err.check()
         return layout
 
@@ -98,22 +98,22 @@ class Layout:
     def _pieces_and_height(self) -> tuple[list[ChartPiece], int]:
         pieces = []
         x, y = 0, 0
-        for name, key in self.pieces_.items():
-            if not isinstance(key.get('parts'), dict):
-                self.err('Missing parts section', name, key)
+        for name, button in self.pieces_.items():
+            if not isinstance(button.get('parts'), dict):
+                self.err('Missing parts section', name, button)
                 continue
-            if not (name.startswith('_') or name in self.to_key):
-                self.err('Unknown key name', name)
+            if not (name.startswith('_') or name in self.to_button):
+                self.err('Unknown button name', name)
 
-            parts = {k: Part.to_parts(v) for k, v in key['parts'].items()}
+            parts = {k: Part.to_parts(v) for k, v in button['parts'].items()}
 
             if '_off' not in parts:
                 self.err('Missing parts.off section', name)
             if u := [q for p in parts.values() for q in p if q.def_ not in self.defs_]:
                 self.err('Unknown def in parts', name, u)
 
-            x = x if (x_ := key.get('x')) is None else x_
-            y = y if (y_ := key.get('y')) is None else y_
+            x = x if (x_ := button.get('x')) is None else x_
+            y = y if (y_ := button.get('y')) is None else y_
             pieces.append(ChartPiece(parts, x, y))
             y += self.spacing
 

@@ -17,7 +17,7 @@ TEST_ONE_FINGERING = ROOT / 'one-recorder-fingering.svg'
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 
 FS = fingering_system.make('fingerings/recorder-fingering.toml')
-LAYOUT = Layout.make('fingerings/recorder-fingering.layout.toml', FS.to_key)
+LAYOUT = Layout.make('fingerings/recorder-fingering.layout.toml', FS.to_button)
 
 
 def _xml_to_str(e: ET.element) -> str:

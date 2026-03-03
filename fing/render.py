@@ -4,11 +4,11 @@ from collections.abc import Sequence
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element
 
-from .fingering_system import FingeringSystem, Key
+from .fingering_system import Button, FingeringSystem
 from .layout import Layout
 
 
-def render(layout: Layout, fingering: Sequence[Key], note: str) -> Element:
+def render(layout: Layout, fingering: Sequence[Button], note: str) -> Element:
     svg = _svg(layout, layout.width, layout.height)
     return _add(svg, layout, fingering, note)
 
@@ -46,7 +46,7 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
     return svg
 
 
-def _add(e: Element, layout: Layout, fingering: Sequence[Key], note: str) -> Element:
+def _add(e: Element, layout: Layout, fingering: Sequence[Button], note: str) -> Element:
     for p in layout.pieces:
         e.extend(p.render(fingering))
 

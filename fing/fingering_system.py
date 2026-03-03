@@ -13,7 +13,7 @@ from .note import Note
 
 
 @dc.dataclass(frozen=True)
-class Key:
+class Button:
     name: str
     short_name: str
     press: str
@@ -23,29 +23,29 @@ class Key:
 @dc.dataclass(frozen=True)
 class FingeringSystem:
     fingerings_: dict[str, str]
-    keys_: dict[str, dict[str, str]]
+    buttons_: dict[str, dict[str, str]]
     lowest_c_: dict[str, str]
     metadata: dict[str, str]
     document: tomlkit.TOMLDocument | None = None
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     @cached_property
-    def all(self) -> Sequence[Key]:
+    def all(self) -> Sequence[Button]:
         return self._all_fingerings[0]
 
     @cached_property
-    def fingerings(self) -> dict[Note, Sequence[Key]]:
+    def fingerings(self) -> dict[Note, Sequence[Button]]:
         return self._all_fingerings[1]
 
     @cached_property
-    def keys(self) -> dict[str, Key]:
-        keys: dict[str, Key] = {}
-        for k, v in self.keys_.items():
+    def buttons(self) -> dict[str, Button]:
+        buttons: dict[str, Button] = {}
+        for k, v in self.buttons_.items():
             try:
-                keys[k] = Key(name=k, **v)
+                buttons[k] = Button(name=k, **v)
             except Exception as e:
-                self.err('Invalid key', v, e)
-        return keys
+                self.err('Invalid button', v, e)
+        return buttons
 
     @cached_property
     def lowest_c(self) -> dict[str, Note]:
@@ -60,56 +60,56 @@ class FingeringSystem:
         return lowest_c
 
     @cached_property
-    def to_key(self) -> dict[str, Key]:
-        return {v.short_name: v for v in self.keys.values()} | self.keys
+    def to_button(self) -> dict[str, Button]:
+        return {v.short_name: v for v in self.buttons.values()} | self.buttons
 
-    def check(self, check_key_order: bool = False) -> None:
+    def check(self, check_button_order: bool = False) -> None:
         with self.err:
-            shorts = (k.short_name for k in self.keys.values())
+            shorts = (k.short_name for k in self.buttons.values())
             self.err.test_dupes('Duplicate short_name', shorts)
 
-            if check_key_order:
-                self.test_key_order()
+            if check_button_order:
+                self.test_button_order()
             for v in vars(self).values():
                 if isinstance(v, cached_property):
                     getattr(self, v)
 
-    def test_key_order(self) -> None:
+    def test_button_order(self) -> None:
         inv = {k: i for i, k in enumerate(self.all)}
         for fingering in self.fingerings.values():
             previous = -1
-            for key in fingering:
+            for button in fingering:
                 last = previous
-                previous = inv[key]
+                previous = inv[button]
                 if last >= previous:
-                    self.err('Key out of order', key.short_name)
+                    self.err('Button out of order', button.short_name)
                     break
 
     @cached_property
-    def _all_fingerings(self) -> tuple[Sequence[Key], dict[Note, Sequence[Key]]]:
-        all_: Sequence[Key] = ()
-        fingerings: dict[Note, Sequence[Key]] = {}
+    def _all_fingerings(self) -> tuple[Sequence[Button], dict[Note, Sequence[Button]]]:
+        all_: Sequence[Button] = ()
+        fingerings: dict[Note, Sequence[Button]] = {}
 
         for k, fingering in self.fingerings_.items():
             pressed = fingering.split()
-            self.err.test_dupes('Duplicate keys in fingering', pressed, k)
-            if bad_notes := [i for i in pressed if i not in self.to_key]:
+            self.err.test_dupes('Duplicate buttons in fingering', pressed, k)
+            if bad_notes := [i for i in pressed if i not in self.to_button]:
                 self.err('Unknown note', k, bad_notes)
                 continue
-            keys_pressed = [self.to_key[n] for n in pressed]
+            buttons_pressed = [self.to_button[n] for n in pressed]
             if k == 'all':
-                all_ = keys_pressed
+                all_ = buttons_pressed
                 continue
             try:
                 note = Note(k)
             except Exception as e:
                 self.err('Invalid note', k, e)
             else:
-                fingerings[note] = keys_pressed
+                fingerings[note] = buttons_pressed
         return all_, fingerings
 
 
-def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
+def make(filename: str, check_button_order: bool = True) -> FingeringSystem:
     with ErrorMaker() as err:
         with open(filename) as fp:
             doc: dict[str, Any] = tomlkit.load(fp)
@@ -121,5 +121,5 @@ def make(filename: str, check_key_order: bool = True) -> FingeringSystem:
 
         assert isinstance(doc, dict)
         fs = FingeringSystem(err=err, document=doc, **doc)  # ty: ignore[invalid-argument-type]
-        fs.check(check_key_order)
+        fs.check(check_button_order)
         return fs

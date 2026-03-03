@@ -13,24 +13,24 @@ language = 'en'
 #            ******* Left hand *******
 #
 
-[keys.left-thumb]
+[buttons.left-thumb]
 short_name = 'lt'
 press = "left-thumb"
 
-[keys.octave]
+[buttons.octave]
 short_name = 'oct'
 press = "left-thumb"
 description = 'Half-cover the thumb hole with the nail'
 
-[keys.left-1]
+[buttons.left-1]
 short_name = 'l1'
 press = "left-1"
 
-[keys.left-2]
+[buttons.left-2]
 short_name = 'l2'
 press = "left-2"
 
-[keys.left-3]
+[buttons.left-3]
 short_name = 'l3'
 press = "left-3"
 
@@ -38,33 +38,33 @@ press = "left-3"
 #            ******* Right hand *******
 #
 
-[keys.right-1]
+[buttons.right-1]
 short_name = 'r1'
 press = "right-1"
 
-[keys.right-2]
+[buttons.right-2]
 short_name = 'r2'
 press = "right-2"
 
-[keys.right-3]
+[buttons.right-3]
 short_name = 'r3'
 press = "right-3"
 
-[keys.right-3-half]
+[buttons.right-3-half]
 short_name = 'r3h'
 press = "right-3"
 description = 'Slide the right ring finger back to only close the large hole'
 
-[keys.right-4]
+[buttons.right-4]
 short_name = 'r4'
 press = "right-4"
 
-[keys.right-4-half]
+[buttons.right-4-half]
 short_name = 'r4h'
 press = "right-4"
 description = 'Slide the right little finger back to only close the large hole'
 
-[keys.cover-bell]
+[buttons.cover-bell]
 short_name = 'cb'
 press = 'knee'
 description = 'Partly cover the bell of the instrument with the knee'
@@ -72,10 +72,10 @@ description = 'Partly cover the bell of the instrument with the knee'
 # Here's where the real action is: the fingering chart.
 #
 # Fingering charts always start with a special value `all` which
-# lists all of the keys used in the chart in order.
+# lists all of the buttons used in the chart in order.
 #
 # Indentation, whitespace, and the `_` in note names like `C_1` are ignored
-# and in fact you can enter the keys in any order if you like.
+# and in fact you can enter the buttons in any order if you like.
 
 [fingerings]
 all = 'oct lt l1 l2 l3 r1 r2 r3 r3h r4 r4h cb  '

@@ -5,7 +5,7 @@ from collections.abc import Sequence
 from typing import NamedTuple
 from xml.etree.ElementTree import Element
 
-from .fingering_system import Key
+from .fingering_system import Button
 
 
 class Part(NamedTuple):
@@ -30,7 +30,7 @@ class ChartPiece:
     def asdict(self) -> dict[str, str]:
         return {'x': str(self.x), 'y': str(self.y)}
 
-    def render(self, fingering: Sequence[Key]) -> list[Element]:
+    def render(self, fingering: Sequence[Button]) -> list[Element]:
         for f in fingering:
             if parts := self.parts.get(f.name) or self.parts.get(f.short_name):
                 break
