@@ -1,3 +1,20 @@
+A Fingering Chart is made up of Pieces. Each Piece corresponds to one separate visual
+ara on a fingering chart, like "the thumb". Multiple Buttons can appear in the same
+Piece, particularly if they are pressed by the same finger.
+
+Pieces have one or more Parts, exactly one of which gets displayed at any time.
+
+A Part is a Def and an optional Style.
+
+
+A Def is a little bit of SVG looking
+
+Pieces
+
+of a simple, standard text-based graphical language called
+
+
+
 # 🖐️ fing: A universal representation of fingering systems for winds, reeds, and brass 🖐️
 
 ## Abstract
