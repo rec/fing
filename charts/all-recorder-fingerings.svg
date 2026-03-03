@@ -23,7 +23,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" />
     <use x="0" y="1080" href="#big-hole" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C1 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C1  </text>
   </svg>
   <svg x="300" y="180">
     <use x="0" y="0" href="#pad" />
@@ -38,7 +38,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭1</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭1</text>
   </svg>
   <svg x="500" y="180">
     <use x="0" y="0" href="#pad" />
@@ -53,7 +53,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D1 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D1  </text>
   </svg>
   <svg x="700" y="180">
     <use x="0" y="0" href="#pad" />
@@ -68,7 +68,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">D♯/E♭1</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">D♯/E♭1</text>
   </svg>
   <svg x="900" y="180">
     <use x="0" y="0" href="#pad" />
@@ -83,7 +83,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  E1 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  E1  </text>
   </svg>
   <svg x="1100" y="180">
     <use x="0" y="0" href="#pad" />
@@ -98,7 +98,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" />
     <use x="0" y="1080" href="#big-hole" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  F1 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  F1  </text>
   </svg>
   <svg x="1300" y="180">
     <use x="0" y="0" href="#pad" />
@@ -113,7 +113,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">F♯/G♭1</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">F♯/G♭1</text>
   </svg>
   <svg x="1500" y="180">
     <use x="0" y="0" href="#pad" />
@@ -128,7 +128,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  G1 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  G1  </text>
   </svg>
   <svg x="1700" y="180">
     <use x="0" y="0" href="#pad" />
@@ -143,7 +143,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">G♯/A♭1</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">G♯/A♭1</text>
   </svg>
   <svg x="1900" y="180">
     <use x="0" y="0" href="#pad" />
@@ -158,7 +158,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  A1 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  A1  </text>
   </svg>
   <svg x="2100" y="180">
     <use x="0" y="0" href="#pad" />
@@ -173,7 +173,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">A♯/B♭1</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">A♯/B♭1</text>
   </svg>
   <svg x="2300" y="180">
     <use x="0" y="0" href="#pad" />
@@ -188,7 +188,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  B1 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  B1  </text>
   </svg>
   <svg x="2500" y="180">
     <use x="0" y="0" href="#pad" />
@@ -203,7 +203,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C2 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C2  </text>
   </svg>
   <svg x="2700" y="180">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -218,7 +218,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭2</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭2</text>
   </svg>
   <rect x="100" y="1490" width="2900" height="3" />
   <svg x="100" y="1580">
@@ -234,7 +234,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D2 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D2  </text>
   </svg>
   <svg x="300" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -249,7 +249,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">D♯/E♭2</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">D♯/E♭2</text>
   </svg>
   <svg x="500" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -265,7 +265,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  E2 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  E2  </text>
   </svg>
   <svg x="700" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -281,7 +281,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  F2 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  F2  </text>
   </svg>
   <svg x="900" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -297,7 +297,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">F♯/G♭2</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">F♯/G♭2</text>
   </svg>
   <svg x="1100" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -313,7 +313,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  G2 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  G2  </text>
   </svg>
   <svg x="1300" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -329,7 +329,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">G♯/A♭2</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">G♯/A♭2</text>
   </svg>
   <svg x="1500" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -345,7 +345,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  A2 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  A2  </text>
   </svg>
   <svg x="1700" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -361,7 +361,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">A♯/B♭2</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">A♯/B♭2</text>
   </svg>
   <svg x="1900" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -377,7 +377,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  B2 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  B2  </text>
   </svg>
   <svg x="2100" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -393,7 +393,7 @@
     <use x="0" y="960" href="#big-hole" class="outline" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C3 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C3  </text>
   </svg>
   <svg x="2300" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -409,7 +409,7 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭3</text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">C♯/D♭3</text>
   </svg>
   <svg x="2500" y="1580">
     <use x="0" y="0" href="#pad" class="outline" />
@@ -425,6 +425,6 @@
     <use x="0" y="960" href="#big-hole" />
     <use x="0" y="1080" href="#little-hole" class="outline" />
     <use x="0" y="1080" href="#big-hole" class="outline" />
-    <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D3 </text>
+    <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  D3  </text>
   </svg>
 </svg>

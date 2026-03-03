@@ -51,7 +51,7 @@ def _add(e: Element, layout: Layout, fingering: Sequence[Key], note: str) -> Ele
         e.extend(p.render(fingering))
 
     y = 0 if layout.caption.above else layout.height
-    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note.center(5)
+    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note.center(6)
     return e
 
 

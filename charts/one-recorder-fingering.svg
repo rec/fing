@@ -22,5 +22,5 @@
   <use x="0" y="960" href="#big-hole" />
   <use x="0" y="1080" href="#little-hole" />
   <use x="0" y="1080" href="#big-hole" />
-  <text x="50" y="1220" class="caption" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C1 </text>
+  <text x="50" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C1  </text>
 </svg>

@@ -10,9 +10,12 @@ import pytest
 from fing import fingering_system, render
 from fing.layout import Layout
 
-TEST_ALL_FINGERINGS = Path(__file__).parent / 'all-recorder-fingerings.svg'
-TEST_ONE_FINGERING = Path(__file__).parent / 'one-recorder-fingering.svg'
+ROOT = Path(__file__).parents[1] / 'charts'
+TEST_ALL_FINGERINGS = ROOT / 'all-recorder-fingerings.svg'
+TEST_ONE_FINGERING = ROOT / 'one-recorder-fingering.svg'
+
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
+
 FS = fingering_system.make('fingerings/recorder-fingering.toml')
 LAYOUT = Layout.make('fingerings/recorder-fingering.layout.toml', FS.to_key)
 
