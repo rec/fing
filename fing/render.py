@@ -10,7 +10,8 @@ from .layout import Layout
 
 def render(layout: Layout, fingering: Sequence[Button], note: str) -> Element:
     svg = _svg(layout, layout.width, layout.height)
-    return _add(svg, layout, fingering, note)
+    _render_one_fingering(svg, layout, fingering, note)
+    return svg
 
 
 def render_all(fs: FingeringSystem, layout: Layout) -> Element:
@@ -27,7 +28,7 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
         return c * dx + start_x, r * dy + start_y
 
     width, height = scale(columns, rows)
-    svg = _svg(layout, width, height)
+    svg = _svg(layout, width + layout.buttons_inset, height)
 
     for i, (note, fingering) in enumerate(fs.fingerings.items()):
         row, column = divmod(i, columns)
@@ -41,18 +42,26 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
             }
             ET.SubElement(svg, 'rect', attr)
         sub = ET.SubElement(svg, 'svg', {'x': str(x), 'y': str(y)})
-        _add(sub, layout, fingering, str(note))
+        _render_one_fingering(sub, layout, fingering, str(note))
 
     return svg
 
 
-def _add(e: Element, layout: Layout, fingering: Sequence[Button], note: str) -> Element:
-    for p in layout.pieces:
-        e.extend(p.render(fingering))
+def _render_one_fingering(
+    e: Element, layout: Layout, fingering: Sequence[Button], note: str
+) -> None:
+    pieces = ET.SubElement(e, 'svg', {'x': str(layout.buttons_inset)})
+    for piece in layout.pieces:
+        pieces.extend(piece.render(fingering))
 
-    y = 0 if layout.caption.above else layout.height
-    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note.center(6)
-    return e
+    text = ET.SubElement(e, 'text', layout.caption.asdict())
+    text.text = note.center(6)
+    caption_size = layout.spacing
+    if layout.caption.above:
+        text.set('y', str(layout.spacing - layout.caption.pad))
+        pieces.set('y', str(caption_size))
+    else:
+        text.set('y', str(layout.height))
 
 
 def _fix_styles(s: str) -> str:
