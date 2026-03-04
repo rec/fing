@@ -10,7 +10,7 @@
   <style>
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
   </style>
-  <svg>
+  <svg x="15">
     <use x="0" y="0" href="#pad" />
     <use x="0" y="120" href="#horizontal-line" />
     <use x="0" y="240" href="#pad" />
