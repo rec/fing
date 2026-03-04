@@ -10,7 +10,8 @@ from .layout import Layout
 
 def render(layout: Layout, fingering: Sequence[Button], note: str) -> Element:
     svg = _svg(layout, layout.width, layout.height)
-    return _add(svg, layout, fingering, note)
+    _render_one_fingering(svg, layout, fingering, note)
+    return svg
 
 
 def render_all(fs: FingeringSystem, layout: Layout) -> Element:
@@ -41,18 +42,21 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
             }
             ET.SubElement(svg, 'rect', attr)
         sub = ET.SubElement(svg, 'svg', {'x': str(x), 'y': str(y)})
-        _add(sub, layout, fingering, str(note))
+        _render_one_fingering(sub, layout, fingering, str(note))
 
     return svg
 
 
-def _add(e: Element, layout: Layout, fingering: Sequence[Button], note: str) -> Element:
-    for p in layout.pieces:
-        e.extend(p.render(fingering))
+def _render_one_fingering(
+    e: Element, layout: Layout, fingering: Sequence[Button], note: str
+) -> None:
+    pieces = ET.SubElement(e, 'svg')
+    for piece in layout.pieces:
+        pieces.extend(piece.render(fingering))
 
     y = 0 if layout.caption.above else layout.height
-    ET.SubElement(e, 'text', layout.caption.asdict(y)).text = note.center(6)
-    return e
+    d = layout.caption.asdict() | {'y': str(y)}
+    ET.SubElement(e, 'text', d).text = note.center(6)
 
 
 def _fix_styles(s: str) -> str:

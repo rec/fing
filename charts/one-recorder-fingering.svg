@@ -10,17 +10,19 @@
   <style>
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
   </style>
-  <use x="0" y="0" href="#pad" />
-  <use x="0" y="120" href="#horizontal-line" />
-  <use x="0" y="240" href="#pad" />
-  <use x="0" y="360" href="#pad" />
-  <use x="0" y="480" href="#pad" />
-  <use x="0" y="600" href="#horizontal-line" />
-  <use x="0" y="720" href="#pad" />
-  <use x="0" y="840" href="#pad" />
-  <use x="0" y="960" href="#little-hole" />
-  <use x="0" y="960" href="#big-hole" />
-  <use x="0" y="1080" href="#little-hole" />
-  <use x="0" y="1080" href="#big-hole" />
-  <text x="70" y="1220" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle">  C1  </text>
+  <svg>
+    <use x="0" y="0" href="#pad" />
+    <use x="0" y="120" href="#horizontal-line" />
+    <use x="0" y="240" href="#pad" />
+    <use x="0" y="360" href="#pad" />
+    <use x="0" y="480" href="#pad" />
+    <use x="0" y="600" href="#horizontal-line" />
+    <use x="0" y="720" href="#pad" />
+    <use x="0" y="840" href="#pad" />
+    <use x="0" y="960" href="#little-hole" />
+    <use x="0" y="960" href="#big-hole" />
+    <use x="0" y="1080" href="#little-hole" />
+    <use x="0" y="1080" href="#big-hole" />
+  </svg>
+  <text x="70" font-size="40" font-family="monospace" text-anchor="middle" dominant-baseline="middle" y="1220">  C1  </text>
 </svg>

@@ -23,12 +23,10 @@ class Caption:
     font_size: int = 40
     above: bool = False
 
-    def asdict(self, y: int) -> dict[str, str]:
+    def asdict(self) -> dict[str, str]:
         # TODO: why does this work in a stylesheet in emacs, but not for Chrome and FF?
         return {
             'x': str(self.x),
-            'y': str(y),
-            # 'class': 'caption',
             'font-size': str(self.font_size),
             'font-family': 'monospace',
             'text-anchor': 'middle',
