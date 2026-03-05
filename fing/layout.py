@@ -30,7 +30,7 @@ class Caption:
             'font-size': str(self.font_size),
             'font-family': 'monospace',
             'text-anchor': 'middle',
-            'dominant-baseline': 'middle',
+            # 'dominant-baseline': 'middle',  # what is this?
         }
 
 

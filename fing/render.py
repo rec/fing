@@ -56,9 +56,9 @@ def _render_one_fingering(
 
     text = ET.SubElement(e, 'text', layout.caption.asdict())
     text.text = note.center(6)
-    caption_size = layout.spacing + layout.caption.pad
+    caption_size = layout.spacing
     if layout.caption.above:
-        text.set('y', str(layout.caption.pad))
+        text.set('y', str(layout.spacing - layout.caption.pad))
         pieces.set('y', str(caption_size))
     else:
         text.set('y', str(layout.height))
