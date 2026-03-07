@@ -45,6 +45,7 @@ class Layout:
     pad_x: int = 100
     pad_y: int = 180
     buttons_inset: int = 15
+    rows: int = 2
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
