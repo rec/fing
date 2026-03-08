@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
+from typing import Any
 from xml.etree import ElementTree as ET
 
 from .fingering_system import Button, FingeringSystem
@@ -25,26 +26,34 @@ def render_all(fs: FingeringSystem, layout: Layout) -> ET.Element:
         row, column = divmod(i, columns)
         x, y = layout.scale(column, row)
         if row and not column:
-            attr = {
-                'x': str(x),
-                'y': str(y - layout.pad_y // 2),
-                'width': str(width),
-                'height': '3',
-            }
-            ET.SubElement(svg, 'rect', attr)
-        sub = ET.SubElement(svg, 'svg', {'x': str(x), 'y': str(y)})
+            _add_rule(layout, svg, width, x, y)
+        sub = ET.SubElement(svg, 'svg', _to_str_dict(x=x, y=y))
         _render_one_fingering(sub, layout, fingering, str(note))
 
     return svg
 
 
+def _add_rule(layout: Layout, svg: ET.Element, width: int, x: int, y: int) -> None:
+    attrs = _to_str_dict(x=x, y=y - layout.pad_y // 2, width=width, height=3)
+    ET.SubElement(svg, 'rect', attrs)
+
+
 def _render_one_fingering(
     e: ET.Element, layout: Layout, fingering: Sequence[Button], note: str
 ) -> None:
-    pieces = ET.SubElement(e, 'svg', {'x': str(layout.buttons_inset)})
+    _add_caption(e, layout, note, _add_pieces(e, fingering, layout))
+
+
+def _add_pieces(
+    e: ET.Element, fingering: Sequence[Button], layout: Layout
+) -> ET.Element:
+    pieces = ET.SubElement(e, 'svg', _to_str_dict(x=str(layout.buttons_inset)))
     for piece in layout.pieces:
         pieces.extend(piece.render(fingering))
+    return pieces
 
+
+def _add_caption(e: ET.Element, layout: Layout, note: str, pieces: ET.Element) -> None:
     text = ET.SubElement(e, 'text', layout.caption.asdict())
     text.text = note.center(6)
     caption_size = layout.spacing
@@ -65,3 +74,7 @@ def _svg(layout: Layout, width: int, height: int) -> ET.Element:
     ET.SubElement(svg, 'defs').extend(layout.defs)
     ET.SubElement(svg, 'style').text = _fix_styles(layout.styles)
     return svg
+
+
+def _to_str_dict(**kwargs: Any) -> dict[str, str]:
+    return {k: str(v) for k, v in kwargs.items()}
