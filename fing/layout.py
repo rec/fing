@@ -49,6 +49,12 @@ class Layout:
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
+    # New layout params: see drawing
+    # TODO: make these `_` params
+    margin: tuple[int, int] = (15, 15)  # On the Document
+    pad: tuple[int, int] = (10, 10)  # On the Page
+    inset: tuple[int, int] = (5, 5)  # On the Fingering
+
     @cached_property
     def delta(self) -> tuple[int, int]:
         return (self.width + self.pad_x), (self.height + self.pad_y)

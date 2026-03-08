@@ -2,19 +2,18 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 from xml.etree import ElementTree as ET
-from xml.etree.ElementTree import Element
 
 from .fingering_system import Button, FingeringSystem
 from .layout import Layout
 
 
-def render(layout: Layout, fingering: Sequence[Button], note: str) -> Element:
+def render(layout: Layout, fingering: Sequence[Button], note: str) -> ET.Element:
     svg = _svg(layout, layout.width, layout.height)
     _render_one_fingering(svg, layout, fingering, note)
     return svg
 
 
-def render_all(fs: FingeringSystem, layout: Layout) -> Element:
+def render_all(fs: FingeringSystem, layout: Layout) -> ET.Element:
     N = len(fs.fingerings)
     columns = N // layout.rows
     columns += N > (columns * layout.rows)
@@ -40,7 +39,7 @@ def render_all(fs: FingeringSystem, layout: Layout) -> Element:
 
 
 def _render_one_fingering(
-    e: Element, layout: Layout, fingering: Sequence[Button], note: str
+    e: ET.Element, layout: Layout, fingering: Sequence[Button], note: str
 ) -> None:
     pieces = ET.SubElement(e, 'svg', {'x': str(layout.buttons_inset)})
     for piece in layout.pieces:
