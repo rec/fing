@@ -5,14 +5,11 @@ from io import StringIO
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-import pytest
-
 from fing import fingering_system, render
 from fing.layout import Layout
 
 ROOT = Path(__file__).parents[1] / 'charts'
-TEST_ALL_FINGERINGS = ROOT / 'all-recorder-fingerings.svg'
-TEST_ONE_FINGERING = ROOT / 'one-recorder-fingering.svg'
+TEST_FINGERINGS = ROOT / 'recorder-fingerings.svg'
 
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 
@@ -28,27 +25,22 @@ def _xml_to_str(e: ET.element) -> str:
     return f.getvalue() + '\n'
 
 
-def render_one(fs, layout):
-    assert fs.fingerings, fs.fingerings
-    a, *_ = fs.fingerings
+def test_fingerings():
+    assert FS.fingerings, FS.fingerings
+    a, *_ = FS.fingerings
     assert isinstance(a, fingering_system.Note), type(a)
-    fs.fingerings[a]
+    FS.fingerings[a]
     b = fingering_system.Note('C1')
     assert str(a) == str(b)
     assert a == b, (a, type(a), b, type(b))
-    fs.fingerings[fingering_system.Note('C1')]
-    return render.render(layout, fs.fingerings[fingering_system.Note('C1')], 'C1')
+    FS.fingerings[fingering_system.Note('C1')]
 
 
-@pytest.mark.parametrize(
-    'expected_file, renderer',
-    ((TEST_ONE_FINGERING, render_one), (TEST_ALL_FINGERINGS, render.render_all)),
-)
-def test_fingering(renderer, expected_file):
-    actual = _xml_to_str(renderer(FS, LAYOUT))
+def test_rendering():
+    actual = _xml_to_str(render.render_all(LAYOUT, FS))
 
-    if REWRITE_TEST_DATA or not expected_file.exists():
-        expected_file.write_text(actual)
+    if REWRITE_TEST_DATA or not TEST_FINGERINGS.exists():
+        TEST_FINGERINGS.write_text(actual)
     else:
-        expected = expected_file.read_text()
+        expected = TEST_FINGERINGS.read_text()
         assert actual == expected

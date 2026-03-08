@@ -8,13 +8,7 @@ from .fingering_system import Button, FingeringSystem
 from .layout import Layout
 
 
-def render(layout: Layout, fingering: Sequence[Button], note: str) -> ET.Element:
-    svg = _svg(layout, layout.width, layout.height)
-    _render_one_fingering(svg, layout, fingering, note)
-    return svg
-
-
-def render_all(fs: FingeringSystem, layout: Layout) -> ET.Element:
+def render_all(layout: Layout, fs: FingeringSystem) -> ET.Element:
     N = len(fs.fingerings)
     columns = N // layout.rows
     columns += N > (columns * layout.rows)
@@ -28,7 +22,7 @@ def render_all(fs: FingeringSystem, layout: Layout) -> ET.Element:
         if row and not column:
             _add_rule(layout, svg, width, x, y)
         sub = ET.SubElement(svg, 'svg', _to_str_dict(x=x, y=y))
-        _render_one_fingering(sub, layout, fingering, str(note))
+        _render_one_fingering(layout, sub, str(note), fingering)
 
     return svg
 
@@ -39,13 +33,13 @@ def _add_rule(layout: Layout, svg: ET.Element, width: int, x: int, y: int) -> No
 
 
 def _render_one_fingering(
-    e: ET.Element, layout: Layout, fingering: Sequence[Button], note: str
+    layout: Layout, e: ET.Element, note: str, fingering: Sequence[Button]
 ) -> None:
-    _add_caption(e, layout, note, _add_pieces(e, fingering, layout))
+    _add_caption(layout, e, note, _add_pieces(layout, e, fingering))
 
 
 def _add_pieces(
-    e: ET.Element, fingering: Sequence[Button], layout: Layout
+    layout: Layout, e: ET.Element, fingering: Sequence[Button]
 ) -> ET.Element:
     pieces = ET.SubElement(e, 'svg', _to_str_dict(x=str(layout.buttons_inset)))
     for piece in layout.pieces:
@@ -53,7 +47,7 @@ def _add_pieces(
     return pieces
 
 
-def _add_caption(e: ET.Element, layout: Layout, note: str, pieces: ET.Element) -> None:
+def _add_caption(layout: Layout, e: ET.Element, note: str, pieces: ET.Element) -> None:
     text = ET.SubElement(e, 'text', layout.caption.asdict())
     text.text = note.center(6)
     caption_size = layout.spacing
