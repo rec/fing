@@ -38,7 +38,7 @@ def test_fingerings():
 
 
 def test_rendering():
-    actual = _xml_to_str(Renderer(LAYOUT, FS)())
+    actual = _xml_to_str(Renderer(LAYOUT, FS.fingerings)())
 
     if REWRITE_TEST_DATA or not TEST_FINGERINGS.exists():
         TEST_FINGERINGS.write_text(actual)

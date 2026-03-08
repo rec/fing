@@ -248,7 +248,6 @@
     </svg>
     <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="1220">C♯/D♭2</text>
   </svg>
-  <rect x="100" y="1490" width="3600" height="3" />
   <svg x="100" y="1580">
     <svg x="15">
       <use x="0" y="0" href="#pad" class="outline" />
@@ -481,4 +480,5 @@
     </svg>
     <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="1220">  D3  </text>
   </svg>
+  <rect x="0" y="1490" width="3600" height="3" />
 </svg>

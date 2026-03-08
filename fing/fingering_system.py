@@ -3,7 +3,7 @@ from __future__ import annotations
 import dataclasses as dc
 from collections.abc import Sequence
 from functools import cached_property
-from typing import Any
+from typing import Any, TypeAlias
 
 import tomlkit
 
@@ -20,6 +20,10 @@ class Button:
     description: str = ''
 
 
+Fingering: TypeAlias = Sequence[Button]
+Fingerings: TypeAlias = dict[Note, Fingering]
+
+
 @dc.dataclass(frozen=True)
 class FingeringSystem:
     fingerings_: dict[str, str]
@@ -30,11 +34,11 @@ class FingeringSystem:
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     @cached_property
-    def all(self) -> Sequence[Button]:
+    def all(self) -> Fingering:
         return self._all_fingerings[0]
 
     @cached_property
-    def fingerings(self) -> dict[Note, Sequence[Button]]:
+    def fingerings(self) -> Fingerings:
         return self._all_fingerings[1]
 
     @cached_property
@@ -86,9 +90,9 @@ class FingeringSystem:
                     break
 
     @cached_property
-    def _all_fingerings(self) -> tuple[Sequence[Button], dict[Note, Sequence[Button]]]:
-        all_: Sequence[Button] = ()
-        fingerings: dict[Note, Sequence[Button]] = {}
+    def _all_fingerings(self) -> tuple[Fingering, Fingerings]:
+        all_: Fingering = ()
+        fingerings: dict[Note, Fingering] = {}
 
         for k, fingering in self.fingerings_.items():
             pressed = fingering.split()
