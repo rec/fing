@@ -22,7 +22,11 @@ class Caption:
     pad: int = 20
     x: int = 70
     font_size: int = 40
-    above: bool = False
+    above: bool = True
+
+    @cached_property
+    def height(self) -> int:
+        return self.font_size + self.pad
 
     def asdict(self) -> dict[str, Any]:
         return {'x': self.x, 'font-size': self.font_size} | _TEXT_DEFAULTS
@@ -41,13 +45,34 @@ class Layout:
     buttons_inset: int = 15
     rows: int = 2
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
+    title_: str = ''
+    title_height: int = 200
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
-    # New layout params: see drawing
-    # TODO: make these `_` params
-    margin: tuple[int, int] = (15, 15)  # On the Document
-    pad: tuple[int, int] = (10, 10)  # On the Page
-    inset: tuple[int, int] = (5, 5)  # On the Fingering
+    @cached_property
+    def caption(self) -> Caption:
+        ## TODO: more checking or more general checking
+        return Caption(**self.caption_)  # ty: ignore[invalid-argument-type]
+
+    @cached_property
+    def defs(self) -> list[Element]:
+        defs = []
+        for k, v in self.defs_.items():
+            try:
+                defs.append(fromstring(v))
+            except Exception as e:
+                self.err('Bad XML in def', e, k, v)
+            else:
+                defs[-1].set('id', k)
+        return defs
+
+    @cached_property
+    def pieces(self) -> list[ChartPiece]:
+        return self._pieces_and_height[0]
+
+    @cached_property
+    def height(self) -> int:
+        return self._pieces_and_height[1]
 
     @cached_property
     def delta(self) -> tuple[int, int]:
@@ -76,31 +101,6 @@ class Layout:
         layout = Layout(err=err, to_button=to_button, **d)
         layout.err.check()
         return layout
-
-    @cached_property
-    def caption(self) -> Caption:
-        ## TODO: more checking or more general checking
-        return Caption(**self.caption_)  # ty: ignore[invalid-argument-type]
-
-    @cached_property
-    def defs(self) -> list[Element]:
-        defs = []
-        for k, v in self.defs_.items():
-            try:
-                defs.append(fromstring(v))
-            except Exception as e:
-                self.err('Bad XML in def', e, k, v)
-            else:
-                defs[-1].set('id', k)
-        return defs
-
-    @cached_property
-    def pieces(self) -> list[ChartPiece]:
-        return self._pieces_and_height[0]
-
-    @cached_property
-    def height(self) -> int:
-        return self._pieces_and_height[1]
 
     @cached_property
     def _pieces_and_height(self) -> tuple[list[ChartPiece], int]:

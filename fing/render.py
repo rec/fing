@@ -35,16 +35,17 @@ class Renderer:
     def svg(self) -> Element:
         width, height = self.dims
         d = {'viewBox': f'0 0 {width} {height}', 'xmlns': 'http://www.w3.org/2000/svg'}
-        return Element('svg', d)
+        svg = Element('svg', d)
+        self._add(svg, 'defs').extend(self.layout.defs)
+
+        styles = '\n    '.join(('', *self.layout.styles.strip().split('\n'))) + '\n  '
+        self._add(svg, 'style').text = styles
+        return svg
 
     def _add(self, parent: Element, tag: str = 'svg', **kwargs: Any) -> Element:
         return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
 
     def __call__(self) -> Element:
-        self._add(self.svg, 'defs').extend(self.layout.defs)
-        styles = '\n    '.join(('', *self.layout.styles.strip().split('\n'))) + '\n  '
-        self._add(self.svg, 'style').text = styles
-
         for i, (note, fingering) in enumerate(self.fingerings.items()):
             self._note_fingering(i, note, fingering)
 
@@ -67,7 +68,7 @@ class Renderer:
         text.text = str(note).center(6)
 
         if self.layout.caption.above:
-            text.set('y', str(self.layout.spacing - self.layout.caption.pad))
-            pieces.set('y', str(self.layout.spacing))
+            text.set('y', str(self.layout.caption.font_size))
+            pieces.set('y', str(self.layout.caption.height))
         else:
             text.set('y', str(self.layout.height))
