@@ -5,12 +5,15 @@ from io import StringIO
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
+import pytest
+
 from fing import fingering_system
 from fing.layout import Layout
 from fing.render import Renderer
 
 ROOT = Path(__file__).parents[1] / 'charts'
 TEST_FINGERINGS = ROOT / 'recorder-fingerings.svg'
+TEST_FINGERINGS_ABOVE = ROOT / 'recorder-fingerings-above.svg'
 
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 
@@ -37,11 +40,19 @@ def test_fingerings():
     FS.fingerings[fingering_system.Note('C1')]
 
 
-def test_rendering():
+@pytest.mark.parametrize(
+    'above, output_file',
+    (
+        (False, TEST_FINGERINGS),
+        (True, TEST_FINGERINGS_ABOVE),
+    ),
+)
+def test_rendering(above, output_file):
+    LAYOUT.caption.__dict__['above'] = above
     actual = _xml_to_str(Renderer(LAYOUT, FS.fingerings)())
 
-    if REWRITE_TEST_DATA or not TEST_FINGERINGS.exists():
-        TEST_FINGERINGS.write_text(actual)
+    if REWRITE_TEST_DATA or not output_file.exists():
+        output_file.write_text(actual)
     else:
-        expected = TEST_FINGERINGS.read_text()
+        expected = output_file.read_text()
         assert actual == expected

@@ -37,14 +37,13 @@ class Renderer:
         d = {'viewBox': f'0 0 {width} {height}', 'xmlns': 'http://www.w3.org/2000/svg'}
         return Element('svg', d)
 
-    def _add(self, tag: str, parent: Element | None = None, **kwargs: Any) -> Element:
-        parent = self.svg if parent is None else parent
+    def _add(self, parent: Element, tag: str = 'svg', **kwargs: Any) -> Element:
         return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
 
     def __call__(self) -> Element:
-        self._add('defs').extend(self.layout.defs)
+        self._add(self.svg, 'defs').extend(self.layout.defs)
         styles = '\n    '.join(('', *self.layout.styles.strip().split('\n'))) + '\n  '
-        self._add('style').text = styles
+        self._add(self.svg, 'style').text = styles
 
         for i, (note, fingering) in enumerate(self.fingerings.items()):
             self._note_fingering(i, note, fingering)
@@ -52,19 +51,19 @@ class Renderer:
         assert self.rows == 2, self.rows
         for row in range(1, self.rows):
             y = self.layout.scale(0, row)[1] - self.layout.pad_y // 2
-            self._add('rect', x=0, y=y, width=self.dims[0], height=3)
+            self._add(self.svg, 'rect', x=0, y=y, width=self.dims[0], height=3)
 
         return self.svg
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
         x, y = self.layout.scale(column, row)
-        sub = self._add('svg', x=x, y=y)
-        pieces = self._add('svg', sub, x=str(self.layout.buttons_inset))
+        note_fingering = self._add(self.svg, x=x, y=y)
+        pieces = self._add(note_fingering, x=self.layout.buttons_inset)
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))
 
-        text = self._add('text', sub, **self.layout.caption.asdict())
+        text = self._add(note_fingering, 'text', **self.layout.caption.asdict())
         text.text = str(note).center(6)
 
         if self.layout.caption.above:
