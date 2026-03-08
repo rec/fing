@@ -17,21 +17,14 @@ def render(layout: Layout, fingering: Sequence[Button], note: str) -> Element:
 def render_all(fs: FingeringSystem, layout: Layout) -> Element:
     N = len(fs.fingerings)
     columns = N // layout.rows
-    columns += columns * layout.rows < N
+    columns += N > (columns * layout.rows)
 
-    start_x, start_y = layout.pad_x, layout.pad_y
-    dx = layout.width + layout.pad_x
-    dy = layout.height + layout.pad_y
-
-    def scale(c: int, r: int) -> tuple[int, int]:
-        return c * dx + start_x, r * dy + start_y
-
-    width, height = scale(columns, layout.rows)
+    width, height = layout.scale(columns, layout.rows)
     svg = _svg(layout, width + layout.buttons_inset, height)
 
     for i, (note, fingering) in enumerate(fs.fingerings.items()):
         row, column = divmod(i, columns)
-        x, y = scale(column, row)
+        x, y = layout.scale(column, row)
         if row and not column:
             attr = {
                 'x': str(x),

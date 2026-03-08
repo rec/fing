@@ -49,6 +49,14 @@ class Layout:
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
+    @cached_property
+    def delta(self) -> tuple[int, int]:
+        return (self.width + self.pad_x), (self.height + self.pad_y)
+
+    def scale(self, columns: int, rows: int) -> tuple[int, int]:
+        dx, dy = self.delta
+        return columns * dx + self.pad_x, rows * dy + self.pad_y
+
     @staticmethod
     def make(filename: str, to_button: dict[str, Any]) -> Layout:
         with open(filename) as fp:
