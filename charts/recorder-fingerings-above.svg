@@ -10,475 +10,477 @@
   <style>
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
   </style>
-  <svg x="100" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" />
-      <use x="0" y="1080" href="#big-hole" />
+  <svg x="20" y="20">
+    <svg x="100" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" />
+        <use x="0" y="1080" href="#big-hole" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  C1  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  C1  </text>
-  </svg>
-  <svg x="350" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" />
+    <svg x="350" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">C♯/D♭1</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">C♯/D♭1</text>
-  </svg>
-  <svg x="600" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="600" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  D1  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  D1  </text>
-  </svg>
-  <svg x="850" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="850" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">D♯/E♭1</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">D♯/E♭1</text>
-  </svg>
-  <svg x="1100" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="1100" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  E1  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  E1  </text>
-  </svg>
-  <svg x="1350" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" />
-      <use x="0" y="1080" href="#big-hole" />
+    <svg x="1350" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" />
+        <use x="0" y="1080" href="#big-hole" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  F1  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  F1  </text>
-  </svg>
-  <svg x="1600" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="1600" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">F♯/G♭1</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">F♯/G♭1</text>
-  </svg>
-  <svg x="1850" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="1850" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  G1  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  G1  </text>
-  </svg>
-  <svg x="2100" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="2100" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">G♯/A♭1</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">G♯/A♭1</text>
-  </svg>
-  <svg x="2350" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="2350" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  A1  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  A1  </text>
-  </svg>
-  <svg x="2600" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="2600" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">A♯/B♭1</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">A♯/B♭1</text>
-  </svg>
-  <svg x="2850" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" class="outline" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="2850" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" class="outline" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  B1  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  B1  </text>
-  </svg>
-  <svg x="3100" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" class="outline" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="3100" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" class="outline" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  C2  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  C2  </text>
-  </svg>
-  <svg x="3350" y="180">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="3350" y="180">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">C♯/D♭2</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">C♯/D♭2</text>
-  </svg>
-  <svg x="100" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" class="outline" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="100" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" class="outline" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  D2  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  D2  </text>
-  </svg>
-  <svg x="350" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" class="outline" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="350" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" class="outline" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">D♯/E♭2</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">D♯/E♭2</text>
-  </svg>
-  <svg x="600" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="600" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  E2  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  E2  </text>
-  </svg>
-  <svg x="850" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="850" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  F2  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  F2  </text>
-  </svg>
-  <svg x="1100" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="1100" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">F♯/G♭2</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">F♯/G♭2</text>
-  </svg>
-  <svg x="1350" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="1350" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  G2  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  G2  </text>
-  </svg>
-  <svg x="1600" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="1600" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">G♯/A♭2</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">G♯/A♭2</text>
-  </svg>
-  <svg x="1850" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="1850" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  A2  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  A2  </text>
-  </svg>
-  <svg x="2100" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" class="outline" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" />
+    <svg x="2100" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" class="outline" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">A♯/B♭2</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">A♯/B♭2</text>
-  </svg>
-  <svg x="2350" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="2350" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  B2  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  B2  </text>
-  </svg>
-  <svg x="2600" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" class="outline" />
-      <use x="0" y="480" href="#pad" class="outline" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" />
-      <use x="0" y="960" href="#little-hole" class="outline" />
-      <use x="0" y="960" href="#big-hole" class="outline" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="2600" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" class="outline" />
+        <use x="0" y="480" href="#pad" class="outline" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" />
+        <use x="0" y="960" href="#little-hole" class="outline" />
+        <use x="0" y="960" href="#big-hole" class="outline" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  C3  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  C3  </text>
-  </svg>
-  <svg x="2850" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" class="outline" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="2850" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" class="outline" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">C♯/D♭3</text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">C♯/D♭3</text>
-  </svg>
-  <svg x="3100" y="1580">
-    <svg x="15" y="60">
-      <use x="0" y="0" href="#pad" class="outline" />
-      <use x="0" y="0" href="#octave" />
-      <use x="0" y="120" href="#horizontal-line" />
-      <use x="0" y="240" href="#pad" />
-      <use x="0" y="360" href="#pad" class="outline" />
-      <use x="0" y="480" href="#pad" />
-      <use x="0" y="600" href="#horizontal-line" />
-      <use x="0" y="720" href="#pad" />
-      <use x="0" y="840" href="#pad" class="outline" />
-      <use x="0" y="960" href="#little-hole" />
-      <use x="0" y="960" href="#big-hole" />
-      <use x="0" y="1080" href="#little-hole" class="outline" />
-      <use x="0" y="1080" href="#big-hole" class="outline" />
+    <svg x="3100" y="1580">
+      <svg x="15" y="60">
+        <use x="0" y="0" href="#pad" class="outline" />
+        <use x="0" y="0" href="#octave" />
+        <use x="0" y="120" href="#horizontal-line" />
+        <use x="0" y="240" href="#pad" />
+        <use x="0" y="360" href="#pad" class="outline" />
+        <use x="0" y="480" href="#pad" />
+        <use x="0" y="600" href="#horizontal-line" />
+        <use x="0" y="720" href="#pad" />
+        <use x="0" y="840" href="#pad" class="outline" />
+        <use x="0" y="960" href="#little-hole" />
+        <use x="0" y="960" href="#big-hole" />
+        <use x="0" y="1080" href="#little-hole" class="outline" />
+        <use x="0" y="1080" href="#big-hole" class="outline" />
+      </svg>
+      <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  D3  </text>
     </svg>
-    <text x="70" font-size="40" font-family="monospace" text-anchor="middle" y="40">  D3  </text>
+    <rect x="0" y="1490" width="3600" height="3" />
   </svg>
-  <rect x="0" y="1490" width="3600" height="3" />
 </svg>

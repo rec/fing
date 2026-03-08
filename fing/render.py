@@ -42,6 +42,10 @@ class Renderer:
         self._add(svg, 'style').text = styles
         return svg
 
+    @cached_property
+    def page(self) -> Element:
+        return self._add(self.svg, x=self.layout.margin, y=self.layout.margin)
+
     def _add(self, parent: Element, tag: str = 'svg', **kwargs: Any) -> Element:
         return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
 
@@ -52,14 +56,14 @@ class Renderer:
         assert self.rows == 2, self.rows
         for row in range(1, self.rows):
             y = self.layout.scale(0, row)[1] - self.layout.pad_y // 2
-            self._add(self.svg, 'rect', x=0, y=y, width=self.dims[0], height=3)
+            self._add(self.page, 'rect', x=0, y=y, width=self.dims[0], height=3)
 
         return self.svg
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
         x, y = self.layout.scale(column, row)
-        note_fingering = self._add(self.svg, x=x, y=y)
+        note_fingering = self._add(self.page, x=x, y=y)
         pieces = self._add(note_fingering, x=self.layout.buttons_inset)
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))

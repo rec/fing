@@ -48,6 +48,7 @@ class Layout:
     title_: str = ''
     title_height: int = 200
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
+    margin: int = 20
 
     @cached_property
     def caption(self) -> Caption:
@@ -73,6 +74,10 @@ class Layout:
     @cached_property
     def height(self) -> int:
         return self._pieces_and_height[1]
+
+    @cached_property
+    def title(self) -> Element:
+        return fromstring(self.title_)
 
     @cached_property
     def delta(self) -> tuple[int, int]:
