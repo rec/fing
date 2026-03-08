@@ -5,8 +5,9 @@ from io import StringIO
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-from fing import fingering_system, render
+from fing import fingering_system
 from fing.layout import Layout
+from fing.render import Renderer
 
 ROOT = Path(__file__).parents[1] / 'charts'
 TEST_FINGERINGS = ROOT / 'recorder-fingerings.svg'
@@ -37,7 +38,7 @@ def test_fingerings():
 
 
 def test_rendering():
-    actual = _xml_to_str(render.render_all(LAYOUT, FS))
+    actual = _xml_to_str(Renderer(LAYOUT, FS)())
 
     if REWRITE_TEST_DATA or not TEST_FINGERINGS.exists():
         TEST_FINGERINGS.write_text(actual)
