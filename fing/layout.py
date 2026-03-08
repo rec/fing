@@ -46,9 +46,9 @@ class Layout:
     rows: int = 2
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     title_: str = ''
-    title_height: int = 200
+    title_height: int = 250
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
-    margin: int = 20
+    margin: int = 10
 
     @cached_property
     def caption(self) -> Caption:
@@ -130,7 +130,7 @@ class Layout:
             pieces.append(ChartPiece(parts, x, y))
             y += self.spacing
 
-        return pieces, y + self.caption.pad
+        return pieces, y + self.caption.pad + self.title_height
 
 
 _NAMES = {f.name for f in dc.fields(Layout)}

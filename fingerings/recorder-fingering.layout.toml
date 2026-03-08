@@ -2,6 +2,11 @@
 styles = '''
 .outline { fill: white; stroke: black; stroke-width: 1.5; }
 '''
+title = '''
+<text font-size="100" font-family="monospace" text-anchor="middle" x="1750" y="200">
+      Fingering chart for the Baroque family of recorders
+</text>
+'''
 
 [layout.caption]
 
