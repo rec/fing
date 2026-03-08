@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import dataclasses as dc
 from functools import cached_property
-from typing import Any, TypeAlias
-from xml.etree import ElementTree as ET
+from typing import Any
+from xml.etree.ElementTree import Element, fromstring
 
 import tomlkit
 
@@ -13,7 +13,8 @@ from .error_maker import ErrorMaker
 from .fingering_system import Button
 from .fix_input_variables import fix_input_variables
 
-Element: TypeAlias = ET.Element
+_TEXT_DEFAULTS = {'font-family': 'monospace', 'text-anchor': 'middle'}
+# TODO: why does this work in a stylesheet in emacs, but not for Chrome and FF?
 
 
 @dc.dataclass(frozen=True)
@@ -23,15 +24,8 @@ class Caption:
     font_size: int = 40
     above: bool = False
 
-    def asdict(self) -> dict[str, str]:
-        # TODO: why does this work in a stylesheet in emacs, but not for Chrome and FF?
-        return {
-            'x': str(self.x),
-            'font-size': str(self.font_size),
-            'font-family': 'monospace',
-            'text-anchor': 'middle',
-            # 'dominant-baseline': 'middle',  # what is this?
-        }
+    def asdict(self) -> dict[str, Any]:
+        return {'x': self.x, 'font-size': self.font_size} | _TEXT_DEFAULTS
 
 
 @dc.dataclass(frozen=True)
@@ -89,11 +83,11 @@ class Layout:
         return Caption(**self.caption_)  # ty: ignore[invalid-argument-type]
 
     @cached_property
-    def defs(self) -> list[ET.Element]:
+    def defs(self) -> list[Element]:
         defs = []
         for k, v in self.defs_.items():
             try:
-                defs.append(ET.fromstring(v))
+                defs.append(fromstring(v))
             except Exception as e:
                 self.err('Bad XML in def', e, k, v)
             else:
