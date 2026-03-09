@@ -1,17 +1,22 @@
 # 🖐️ fing: Represent all fingering systems for wind instruments 🖐️
 
-`fing` is a general representation of fingering systems for woodwinds, reeds, and
-keyed brass.
+`fing` is a general representation of fingering systems for woodwinds, reeds, and keyed
+brass.
+
+It's primarily aimed at electronic wind instrument programmers and users, and wind
+players wanting to notate alternative fingering systems such as multiphonics, but could
+be useful to almost any instrumentalist wanting to teach others, or to delve deeply into
+fingering patterns.
 
 `fing` has three goals:
 
-1. To represent existing and new fingering systems as documents that can easily be
-   created, read and understood by humans and computers alike.
+1. To represent new and existing fingering systems as documents that can easily be
+   written, read and understood by humans and computers alike.
 
-2. To easily create classic and new types of fingering charts, tables, images and even
-   animations, for existing and new fingering systems.
+2. To easily create classic and new types of fingering charts - tables, images and even
+   animations - for players at all levels.
 
-3. To be adaptable to any keyed monophonic instrument, any human language, and any
+3. To be usable on any keyed monophonic instrument, any human language, and any
    definition of note.
 
 
@@ -24,23 +29,20 @@ https://github.com/rec/fing/blob/main/fingerings/recorder-fingering.toml
 It's written in a format called TOML designed to be straight-forward for both humans
 and computers to read and write.
 
-It isn't trying to be good for learners, but `fing` also provides a general system for
-making fingering charts without writing Python programs.
-
 [This short layout document](https://github.com/rec/fing/blob/main/fingerings/recorder-fingering.layout.toml)
 together with the specification above, created this image:
 
-![Complete but sparse fingering chart for the recorder](https://github.com/rec/fing/blob/main/charts/all-recorder-fingerings.svg?raw=True)
+![Complete but sparse fingering chart for the recorder](https://github.com/rec/fing/blob/main/charts/recorder-fingerings.svg?raw=True)
 
-A final chart would have "more stuff" on it; this shows how it can be done in one page
-of layout.
+## How does `fing` work?
 
-# How does `fing` work, in 90 seconds?
+### `Button`s and `Fingering`s
 
-`fing` represents fingering systems using Buttons: keys, pads, buttons, or switches that
-can be pressed, holes that can be covered, etc.
+A `Button` is a key, pad, button, switch or lever that can be pressed, or a hole that
+can be covered fully or partially, and a `Fingering` is a collection of zero or more
+pressed `Button`s.
 
-A Button definition looks like this:
+here's the `Button` definition for the octave hole on the recorder:
 
 ```
 [buttons.octave]
@@ -64,17 +66,70 @@ Eb1 = 'lt  l1  l2  l3  r1  r2  r3h         '
 ... many more ...
 ```
 
-General "modifier" Buttons like in electronic wind instruments are also possible.
+General modifier `Button`s which lower or raise all notes by a semitone, an
+octave or some other value are also possible. It appears that every electronic
+wind instrument has at least one modifier `Button`, if only an octave key.
 
-There's a separate layout system to describe how to render a Fingering System into
-graphical Fingering Charts in a simple, standard text-based graphical language called
+### The `Layout`
+
+There's a separate layout system to describe how to render a `FingeringSystem` into
+graphical fingering `Chart`s using a simple, standard text-based graphical language called
 Scalable Vector Graphics or [SVG](https://en.wikipedia.org/wiki/SVG).
 
-The result can be displayed in any browser or web page, edited by hand as text or with
-free and open source tools, embeded in a PDF, Illustrator, Photoshop or other graphical
-document, and printed at any resolution.
+You can have many different `Charts` for one fingering system and it's open-ended, so any
+conceivable `Chart` can be created.
 
-### Appendix: notes on SVG
+The resulting SVG can be displayed in any browser or web page, edited by hand as text or
+with free and open source tools, embeded in a PDF, Illustrator, Photoshop or other
+graphical document, and printed at any resolution.
+
+## Development roadmap
+
+### A change of plans
+
+As of this writing, the representation of `Fingering` is stable and unlikely to change
+in such a way as to break existing things.
+
+One instrument, the recorder, has been completely specified, and also has a `Layout` that's
+fairly neat and near completion.
+
+The initial plan was to next go to saxophone next, but this is "more of the same", much
+more graphic work, and doesn't bring any new features to the table.
+
+And the primary motivation for this project was to represent new electronic wind
+instrument fingerings.
+
+### WX-7 and then "Simple"
+
+The new plan is to first represent the WX-7 fingering, because it has _three_ types of
+modifier `Button`s: "up or down N octaves", "up a semitone", and what I call a "lift":
+in this case, where lifting the right index finger raises the pitch by an octave in
+certain fingerings.
+
+(On a personal note, even though I have played the WX-7 for almost forty years and feel
+I know every detail of the fingering, I still expect to learn some details - like, what
+does happen if you hold down multiple octave keys?)
+
+Once all the modifier `Button` types exist, the next step is `Simple` - a general
+fingering that is a perfect or close superset of almost every wind instrument that has
+an octave key that goes up by an octave. excluding the clarinet, for example.
+("Superset" means "the fingering you know works, but there are many others".)
+
+As a teaser, `Simple` has three characteristics:
+
+* Octave keys
+* Each `Button` is either a "pad" or a modifier `Button`
+* All "lifts" work as extra octave keys
+
+Full definitions later!
+
+Thanks for reading.
+
+Feel free to start a discussion [here](https://github.com/rec/fing/discussions) or [open
+an issue here](https://github.com/rec/fing/issues).
+
+
+### Appendix: poorly-organized notes on SVG
 
 If you're thinking of creating new fingering chart formats, the SVG snippets aren't so
 terrible - here's all of them from the recorder fingering chart.
