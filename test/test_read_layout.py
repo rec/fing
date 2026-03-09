@@ -13,7 +13,7 @@ from fing.render import Renderer
 
 ROOT = Path(__file__).parents[1] / 'charts'
 TEST_FINGERINGS = ROOT / 'recorder-fingerings.svg'
-TEST_FINGERINGS_ABOVE = ROOT / 'recorder-fingerings-above.svg'
+TEST_FINGERINGS_BELOW = ROOT / 'recorder-fingerings-below.svg'
 
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 
@@ -43,8 +43,8 @@ def test_fingerings():
 @pytest.mark.parametrize(
     'above, output_file',
     (
-        (False, TEST_FINGERINGS),
-        (True, TEST_FINGERINGS_ABOVE),
+        (False, TEST_FINGERINGS_BELOW),
+        (True, TEST_FINGERINGS),
     ),
 )
 def test_rendering(above, output_file):
