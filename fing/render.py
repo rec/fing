@@ -49,13 +49,16 @@ class Renderer:
 
     @cached_property
     def page(self) -> Element:
-        return self._add(self.svg, 'svg', x=self.layout.margin, y=self.layout.margin)
+        x, y = self.layout.margin
+        return self._add(self.svg, 'svg', 'page', x=x, y=y)
 
     @cached_property
     def body(self) -> Element:
-        return self._add(self.page, 'svg', y=self.layout.title_height)
+        return self._add(self.page, 'svg', 'body', y=self.layout.title_height)
 
-    def _add(self, parent: Element, tag: str, **kwargs: Any) -> Element:
+    def _add(self, parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
+        if classes:
+            kwargs['class'] = ' '.join(classes)
         r = SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
         if tag == 'svg' and HIGHLIGHT_SVGS:
             global COLOR
@@ -74,19 +77,22 @@ class Renderer:
         assert self.rows == 2, self.rows
         for row in range(1, self.rows):
             y = self.layout.scale(0, row)[1] - self.layout.pad_y // 2
-            self._add(self.body, 'rect', x=0, y=y, width=self.dims[0], height=3)
+            width = self.dims[0]
+            self._add(self.body, 'rect', 'large-separator', y=y, width=width, height=3)
 
         return self.svg
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
         x, y = self.layout.scale(column, row)
-        note_fingering = self._add(self.body, 'svg', x=x, y=y)
-        pieces = self._add(note_fingering, 'svg', x=self.layout.buttons_inset)
+        note_fingering = self._add(self.body, 'svg', 'note-fingering', x=x, y=y)
+        pieces = self._add(note_fingering, 'svg', 'pieces', x=self.layout.buttons_inset)
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))
 
-        text = self._add(note_fingering, 'text', **self.layout.caption.asdict())
+        text = self._add(
+            note_fingering, 'text', 'caption', **self.layout.caption.asdict()
+        )
         text.text = str(note).center(6)
 
         if self.layout.caption.above:

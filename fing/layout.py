@@ -48,7 +48,7 @@ class Layout:
     title_: str = ''
     title_height: int = 250
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
-    margin: int = 10
+    margin: tuple[int, int] = (10, 10)
 
     @cached_property
     def caption(self) -> Caption:
