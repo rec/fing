@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import dataclasses as dc
+import os
 from collections.abc import Sequence
 from functools import cached_property
 from typing import Any
@@ -10,9 +11,11 @@ from .fingering_system import Button, Fingerings
 from .layout import Layout
 from .note import Note
 
-HIGHLIGHT_SVGS = False
+HIGHLIGHT_SVGS = 'HIGHLIGHT_SVGS' in os.environ
 
 COLORS = '#FDD', '#DFD', '#DDF', '#FFA', '#FAF', '#AFF'
+CLASSES = 'page', 'body', 'note-fingering', 'pieces'
+
 COLOR = 0
 
 
@@ -62,9 +65,12 @@ class Renderer:
         r = SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
         if tag == 'svg' and HIGHLIGHT_SVGS:
             global COLOR
-            color = COLORS[COLOR]
+            try:
+                ci = CLASSES.index(classes[0])
+            except IndexError:
+                ci = COLOR
+            color = COLORS[ci]
             COLOR = (COLOR + 1) % len(COLORS)
-
             SubElement(r, 'rect', {'width': '100%', 'height': '100%', 'fill': color})
         return r
 
