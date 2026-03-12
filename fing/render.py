@@ -10,11 +10,12 @@ from xml.etree.ElementTree import Element, SubElement
 from .fingering_system import Button, Fingerings
 from .layout import Inset, Layout
 from .note import Note
+from .sizes import Sizes
 
 HIGHLIGHT_SVGS = 'HIGHLIGHT_SVGS' in os.environ
 
 COLORS = '#FDD', '#DFD', '#DDF', '#FFA', '#DDD', '#AFF'
-CONTAINERS = 'document', 'page', 'body', 'note-fingering', 'fingering'
+CONTAINERS = 'page', 'body', 'charts', 'note-fingering', 'fingering'
 
 COLOR = 0
 NOTE_WIDTH = len('C#/D-1')
@@ -41,7 +42,7 @@ class Renderer:
 
     @cached_property
     def dims(self) -> tuple[int, int]:
-        w, h = self.layout.scale(self.columns, self.rows)
+        w, h = self.layout.width * self.columns, self.layout.height * self.rows
         return w + 500, h + 500
 
     @cached_property
@@ -56,45 +57,26 @@ class Renderer:
         return svg
 
     @cached_property
-    def document(self) -> Element:
-        return self._add(self.svg, 'svg', 'document')
+    def body(self) -> Element:
+        return self._add(self.svg, 'svg', 'body')
 
     @cached_property
     def page(self) -> Element:
-        return self._add(self.document, 'svg', 'page')
+        return self._add(self.body, 'svg', 'page')
 
     @cached_property
-    def body(self) -> Element:
-        return self._add(self.page, 'svg', 'body', y=self.layout.title_height)
+    def charts(self) -> Element:
+        return self._add(self.page, 'svg', 'charts', y=self.layout.title_height)
 
     @cached_property
-    def document_size(self) -> tuple[int, int]:
-        w, h = self.page_size
-        dw, dh = self.inset.document
-        return w + 2 * dw, h + 2 * dh
-
-    @cached_property
-    def page_size(self) -> tuple[int, int]:
-        w, h = self.body_size
-        dw, dh = self.inset.page
-        return w + 2 * dw, h + 2 * dh + self.layout.title_height
-
-    @cached_property
-    def body_size(self) -> tuple[int, int]:
-        w, h = self.note_fingering_size
-        dw, dh = self.inset.body
-        r, c = self.rows, self.columns
-        return w * r + 2 * dw, h * c + 2 * dh
-
-    @cached_property
-    def note_fingering_size(self) -> tuple[int, int]:
-        w, h = self.layout.width, self.layout.height
-        dw, dh = self.inset.note_fingering
-        return w + 2 * dw, h + 2 * dh
+    def sizes(self) -> Sizes:
+        return Sizes(self.layout, self.columns, self.rows)
 
     def _add(self, parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
         if classes:
             kwargs['class'] = ' '.join(classes)
+            if size := getattr(self.sizes, classes[0], None):
+                kwargs = kwargs | size.asdict()
         r = SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
         if tag == 'svg' and HIGHLIGHT_SVGS:
             global COLOR
@@ -115,16 +97,18 @@ class Renderer:
 
         assert self.rows == 2, self.rows
         for row in range(1, self.rows):
-            y = self.layout.scale(0, row)[1]
+            y = row * self.layout.height
             width = self.dims[0]
-            self._add(self.body, 'rect', 'large-separator', y=y, width=width, height=3)
+            self._add(
+                self.charts, 'rect', 'large-separator', y=y, width=width, height=3
+            )
 
         return self.svg
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
-        x, y = self.layout.scale(column, row)
-        note_fingering = self._add(self.body, 'svg', 'note-fingering', x=x, y=y)
+        x, y = self.layout.width * column, self.layout.height * row
+        note_fingering = self._add(self.charts, 'svg', 'note-fingering', x=x, y=y)
         pieces = self._add(note_fingering, 'svg', 'fingering')
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))

@@ -32,10 +32,11 @@ class Caption:
 
 @dc.dataclass(frozen=True)
 class Inset:
-    document: tuple[int, int] = (10, 10)
     page: tuple[int, int] = (10, 10)
     body: tuple[int, int] = (10, 10)
+    charts: tuple[int, int] = (10, 10)
     note_fingering: tuple[int, int] = (10, 10)
+    fingering: tuple[int, int] = (10, 10)
 
 
 @dc.dataclass(frozen=True)
@@ -106,9 +107,6 @@ class Layout:
     @cached_property
     def title(self) -> Element:
         return fromstring(self.title_)
-
-    def scale(self, columns: int, rows: int) -> tuple[int, int]:
-        return columns * self.width, rows * self.height
 
     @staticmethod
     def make(filename: str, to_button: dict[str, Any]) -> Layout:
