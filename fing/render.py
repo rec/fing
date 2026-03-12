@@ -57,13 +57,11 @@ class Renderer:
 
     @cached_property
     def document(self) -> Element:
-        x, y = self.layout.margin
-        return self._add(self.svg, 'svg', 'document', x=x, y=y)
+        return self._add(self.svg, 'svg', 'document')
 
     @cached_property
     def page(self) -> Element:
-        x, y = self.layout.margin
-        return self._add(self.document, 'svg', 'page', x=x, y=y)
+        return self._add(self.document, 'svg', 'page')
 
     @cached_property
     def body(self) -> Element:

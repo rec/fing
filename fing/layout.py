@@ -22,13 +22,9 @@ Dims: TypeAlias = int | tuple[int, int]
 
 @dc.dataclass(frozen=True)
 class Caption:
-    pad: int = 20
+    height: int = 60
     x: int = 70
     font_size: int = 40
-
-    @cached_property
-    def height(self) -> int:
-        return self.font_size + self.pad
 
     def asdict(self) -> dict[str, Any]:
         return {'x': self.x, 'font-size': self.font_size} | _TEXT_DEFAULTS
@@ -58,8 +54,6 @@ class Layout:
     button_height: int = 120
     width: int = 150
     title_height: int = 250
-    margin: tuple[int, int] = (20, 20)
-    pad: tuple[int, int] = (20, 20)
 
     inset: Inset = Inset()
 
