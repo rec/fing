@@ -8,7 +8,7 @@ from typing import Any
 from xml.etree.ElementTree import Element, SubElement
 
 from .fingering_system import Button, Fingerings
-from .layout import Layout
+from .layout import Inset, Layout
 from .note import Note
 
 HIGHLIGHT_SVGS = 'HIGHLIGHT_SVGS' in os.environ
@@ -32,6 +32,10 @@ class Renderer:
         return columns + (N > columns * self.rows)
 
     @cached_property
+    def inset(self) -> Inset:
+        return self.inset
+
+    @cached_property
     def rows(self) -> int:
         return self.layout.rows
 
@@ -53,17 +57,40 @@ class Renderer:
 
     @cached_property
     def document(self) -> Element:
-        x, y = self.layout.margin
-        return self._add(self.svg, 'svg', 'document', x=x, y=y)
+        return self._add(self.svg, 'svg', 'document')
 
     @cached_property
     def page(self) -> Element:
-        x, y = self.layout.margin
-        return self._add(self.document, 'svg', 'page', x=x, y=y)
+        return self._add(self.document, 'svg', 'page')
 
     @cached_property
     def body(self) -> Element:
         return self._add(self.page, 'svg', 'body', y=self.layout.title_height)
+
+    @cached_property
+    def document_size(self) -> tuple[int, int]:
+        w, h = self.page_size
+        dw, dh = self.inset.document
+        return w + 2 * dw, h + 2 * dh
+
+    @cached_property
+    def page_size(self) -> tuple[int, int]:
+        w, h = self.body_size
+        dw, dh = self.inset.page
+        return w + 2 * dw, h + 2 * dh + self.layout.title_height
+
+    @cached_property
+    def body_size(self) -> tuple[int, int]:
+        w, h = self.note_fingering_size
+        dw, dh = self.inset.body
+        r, c = self.rows, self.columns
+        return w * r + 2 * dw, h * c + 2 * dh
+
+    @cached_property
+    def note_fingering_size(self) -> tuple[int, int]:
+        w, h = self.layout.width, self.layout.height
+        dw, dh = self.inset.note_fingering
+        return w + 2 * dw, h + 2 * dh
 
     def _add(self, parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
         if classes:
