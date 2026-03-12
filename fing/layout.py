@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import dataclasses as dc
 from functools import cached_property
-from typing import Any, TypeAlias
+from typing import Any, NamedTuple, TypeAlias
 from xml.etree.ElementTree import Element, fromstring
 
 import tomlkit
@@ -22,20 +22,26 @@ Dims: TypeAlias = int | tuple[int, int]
 
 @dc.dataclass(frozen=True)
 class Caption:
-    height: int = 60
-    x: int = 70
+    height: int = 70
+    x: int = 80
     font_size: int = 40
 
     def asdict(self) -> dict[str, Any]:
         return {'x': self.x, 'font-size': self.font_size} | _TEXT_DEFAULTS
 
 
+class XY(NamedTuple):
+    x: int
+    y: int
+
+
 @dc.dataclass(frozen=True)
 class Inset:
-    document: tuple[int, int] = (10, 10)
-    page: tuple[int, int] = (10, 10)
-    body: tuple[int, int] = (10, 10)
-    note_fingering: tuple[int, int] = (10, 10)
+    page: XY = XY(30, 30)
+    body: XY = XY(30, 30)
+    charts: XY = XY(30, 30)
+    note_fingering: XY = XY(30, 30)
+    fingering: XY = XY(30, 30)
 
 
 @dc.dataclass(frozen=True)
@@ -52,8 +58,9 @@ class Layout:
     rows: int = 2
 
     button_height: int = 120
-    width: int = 150
-    title_height: int = 250
+    width: int = 135
+    title_height: int = 150
+    fingering_pad: int = 150
 
     inset: Inset = Inset()
 
@@ -77,7 +84,7 @@ class Layout:
     @cached_property
     def pieces(self) -> list[ChartPiece]:
         pieces = []
-        x, y = 0, 0
+        x, y = 1, 1
         for name, button in self.pieces_.items():
             if not isinstance(button.get('parts'), dict):
                 self.err('Missing parts section', name, button)
@@ -101,14 +108,11 @@ class Layout:
 
     @cached_property
     def height(self) -> int:
-        return sum(p.height for p in self.pieces)
+        return sum(p.height for p in self.pieces) + self.caption.height
 
     @cached_property
     def title(self) -> Element:
         return fromstring(self.title_)
-
-    def scale(self, columns: int, rows: int) -> tuple[int, int]:
-        return columns * self.width, rows * self.height
 
     @staticmethod
     def make(filename: str, to_button: dict[str, Any]) -> Layout:
