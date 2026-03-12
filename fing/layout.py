@@ -36,10 +36,10 @@ class Caption:
 
 @dc.dataclass(frozen=True)
 class Inset:
-    document: tuple[int, int] = (0, 0)
-    page: tuple[int, int] = (0, 0)
-    body: tuple[int, int] = (0, 0)
-    note_fingering: tuple[int, int] = (0, 0)
+    document: tuple[int, int] = (10, 10)
+    page: tuple[int, int] = (10, 10)
+    body: tuple[int, int] = (10, 10)
+    note_fingering: tuple[int, int] = (10, 10)
 
 
 @dc.dataclass(frozen=True)
@@ -82,11 +82,32 @@ class Layout:
 
     @cached_property
     def pieces(self) -> list[ChartPiece]:
-        return self._pieces_and_height[0]
+        pieces = []
+        x, y = 0, 0
+        for name, button in self.pieces_.items():
+            if not isinstance(button.get('parts'), dict):
+                self.err('Missing parts section', name, button)
+                continue
+            if not (name.startswith('_') or name in self.to_button):
+                self.err('Unknown button name', name)
+
+            parts = {k: Part.to_parts(v) for k, v in button['parts'].items()}
+
+            if '_off' not in parts:
+                self.err('Missing parts.off section', name)
+            if u := [q for p in parts.values() for q in p if q.def_ not in self.defs_]:
+                self.err('Unknown def in parts', name, u)
+
+            x = button.get('x', x)
+            y = button.get('y', y)
+            height = button.get('height', self.button_height)
+            pieces.append(ChartPiece(parts, x, y, height))
+            y += height
+        return pieces
 
     @cached_property
     def height(self) -> int:
-        return self._pieces_and_height[1]
+        return sum(p.height for p in self.pieces)
 
     @cached_property
     def title(self) -> Element:
@@ -114,33 +135,6 @@ class Layout:
         layout = Layout(err=err, to_button=to_button, **d)
         layout.err.check()
         return layout
-
-    @cached_property
-    def _pieces_and_height(self) -> tuple[list[ChartPiece], int]:
-        pieces = []
-        x, y = 0, 0
-        for name, button in self.pieces_.items():
-            if not isinstance(button.get('parts'), dict):
-                self.err('Missing parts section', name, button)
-                continue
-            if not (name.startswith('_') or name in self.to_button):
-                self.err('Unknown button name', name)
-
-            parts = {k: Part.to_parts(v) for k, v in button['parts'].items()}
-
-            if '_off' not in parts:
-                self.err('Missing parts.off section', name)
-            if u := [q for p in parts.values() for q in p if q.def_ not in self.defs_]:
-                self.err('Unknown def in parts', name, u)
-
-            x = x if (x_ := button.get('x')) is None else x_
-            y = y if (y_ := button.get('y')) is None else y_
-            pieces.append(ChartPiece(parts, x, y))
-            y += self.button_height
-
-        pad = self.caption.pad + 2 * (self.pad[1] + self.margin[1])
-        h = y + pad
-        return pieces, h
 
 
 _NAMES = {f.name for f in dc.fields(Layout)}

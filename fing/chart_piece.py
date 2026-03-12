@@ -26,6 +26,7 @@ class ChartPiece:
     parts: dict[str, list[Part]]
     x: int
     y: int
+    height: int = 0
 
     def render(self, fingering: Sequence[Button]) -> list[Element]:
         for f in fingering:
