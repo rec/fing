@@ -3,7 +3,7 @@ styles = '''
 .outline { fill: white; stroke: black; stroke-width: 1.5; }
 '''
 title = '''
-<text font-size="80" font-family="monospace" text-anchor="middle" x="1250" y="100">
+<text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
       Fingering chart for the Baroque family of recorders
 </text>
 '''

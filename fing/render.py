@@ -14,17 +14,23 @@ from .sizes import Sizes
 
 HIGHLIGHT_SVGS = 'HIGHLIGHT_SVGS' in os.environ
 
-COLORS = '#FDD', '#DFD', '#DDF', '#FFA', '#DDD', '#AFF'
-CONTAINERS = 'page', 'body', 'charts', 'note-fingering', 'fingering'
-
+CONTAINERS = {
+    'page': 'pink',
+    'body': 'lightgreen',
+    'charts': 'lightblue',
+    'note-fingering': 'lightgray',
+    'fingering:': 'orange',
+}
 COLOR = 0
 NOTE_WIDTH = len('C#/D-1')
+_SVG = {'xmlns': 'http://www.w3.org/2000/svg'}
 
 
 @dc.dataclass(frozen=True)
 class Renderer:
     layout: Layout
     fingerings: Fingerings
+    highlight_svgs: bool = HIGHLIGHT_SVGS
 
     @cached_property
     def columns(self) -> int:
@@ -41,15 +47,9 @@ class Renderer:
         return self.layout.rows
 
     @cached_property
-    def dims(self) -> tuple[int, int]:
-        w, h = self.layout.width * self.columns, self.layout.height * self.rows
-        return w + 500, h + 500
-
-    @cached_property
     def svg(self) -> Element:
-        width, height = self.dims
-        d = {'viewBox': f'0 0 {width} {height}', 'xmlns': 'http://www.w3.org/2000/svg'}
-        svg = Element('svg', d)
+        s = self.sizes.document
+        svg = Element('svg', {'viewBox': f'0 0 {s.width} {s.height}'} | _SVG)
         self._add(svg, 'defs').extend(self.layout.defs)
 
         styles = '\n    '.join(('', *self.layout.styles.strip().split('\n'))) + '\n  '
@@ -76,16 +76,10 @@ class Renderer:
         if classes:
             kwargs['class'] = ' '.join(classes)
             if size := getattr(self.sizes, classes[0], None):
-                kwargs = kwargs | size.asdict()
+                kwargs = kwargs | dc.asdict(size)
         r = SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
-        if tag == 'svg' and HIGHLIGHT_SVGS:
-            global COLOR
-            try:
-                ci = CONTAINERS.index(classes[0])
-            except IndexError:
-                ci = COLOR
-            color = COLORS[ci]
-            COLOR = (COLOR + 1) % len(COLORS)
+        if tag == 'svg' and self.highlight_svgs:
+            color = CONTAINERS.get(classes[0], 'gray')
             SubElement(r, 'rect', {'width': '100%', 'height': '100%', 'fill': color})
         return r
 
@@ -95,19 +89,21 @@ class Renderer:
         for i, (note, fingering) in enumerate(self.fingerings.items()):
             self._note_fingering(i, note, fingering)
 
-        assert self.rows == 2, self.rows
+        self._draw_rules()
+        return self.svg
+
+    def _draw_rules(self):
         for row in range(1, self.rows):
-            y = row * self.layout.height
-            width = self.dims[0]
+            y = row * (self.layout.height + self.layout.fingering_pad)
+            width = self.sizes.page.width
             self._add(
                 self.charts, 'rect', 'large-separator', y=y, width=width, height=3
             )
 
-        return self.svg
-
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
-        x, y = self.layout.width * column, self.layout.height * row
+        x = self.layout.width * column
+        y = (self.layout.height + self.layout.fingering_pad) * row
         note_fingering = self._add(self.charts, 'svg', 'note-fingering', x=x, y=y)
         pieces = self._add(note_fingering, 'svg', 'fingering')
         for piece in self.layout.pieces:

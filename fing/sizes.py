@@ -2,19 +2,16 @@ from __future__ import annotations
 
 import dataclasses as dc
 from functools import cached_property
-from typing import (
-    NamedTuple,
-)
 
-from .layout import Layout
+from .layout import Inset, Layout
 
 
-class Dims(NamedTuple):
+@dc.dataclass
+class Rect:
+    x: int
+    y: int
     width: int
     height: int
-
-    def asdict(self) -> dict[str, int]:
-        return {'width': self.width, 'height': self.height}
 
 
 @dc.dataclass(frozen=True)
@@ -24,36 +21,42 @@ class Sizes:
     rows: int
 
     @cached_property
-    def document(self) -> Dims:
-        w, h = self.page
-        dw, dh = self.layout.inset.page
-        return Dims(w + 2 * dw, h + 2 * dh)
+    def inset(self) -> Inset:
+        return self.layout.inset
 
     @cached_property
-    def page(self) -> Dims:
-        w, h = self.body
-        dw, dh = self.layout.inset.body
-        return Dims(w + 2 * dw, h + 2 * dh)
+    def document(self) -> Rect:
+        return Rect(0, 0, *self._col_row('page'))
 
     @cached_property
-    def body(self) -> Dims:
-        w, h = self.charts
-        dw, dh = self.layout.inset.charts
-        return Dims(w + 2 * dw, h + 2 * dh + self.layout.title_height)
+    def page(self) -> Rect:
+        return Rect(*self.inset.page, *self._col_row('body'))
 
     @cached_property
-    def charts(self) -> Dims:
-        w, h = self.note_fingering
-        dw, dh = self.layout.inset.note_fingering
-        c, r = self.columns, self.rows
-        return Dims(w * c + 2 * dw, h * r + 2 * dh)
+    def body(self) -> Rect:
+        w, h = self._col_row('charts')
+        return Rect(*self.inset.body, w, h + self.layout.title_height)
 
     @cached_property
-    def note_fingering(self) -> Dims:
-        w, h = self.fingering
-        dw, dh = self.layout.inset.fingering
-        return Dims(w + 2 * dw, h + 2 * dh + self.layout.caption.height)
+    def charts(self) -> Rect:
+        r = self.note_fingering
+        dw, dh = self.inset.note_fingering
+        w = r.width * self.columns + 2 * dw
+        h = r.height * self.rows + 2 * dh + self.layout.fingering_pad * (self.rows - 1)
+        x, y = self.inset.charts
+
+        return Rect(x, y + self.layout.title_height, w, h)
 
     @cached_property
-    def fingering(self) -> Dims:
-        return Dims(self.layout.width, self.layout.height)
+    def note_fingering(self) -> Rect:
+        w, h = self._col_row('fingering')
+        return Rect(*self.inset.note_fingering, w, h + self.layout.caption.height)
+
+    @cached_property
+    def fingering(self) -> Rect:
+        return Rect(*self.inset.fingering, self.layout.width, self.layout.height)
+
+    def _col_row(self, name: str, columns: int = 1, rows: int = 1) -> tuple[int, int]:
+        r = getattr(self, name)
+        dw, dh = getattr(self.inset, name)
+        return r.width * columns + 2 * dw, r.height * rows + 2 * dh
