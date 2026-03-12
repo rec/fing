@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import dataclasses as dc
 from functools import cached_property
-from typing import Any
+from typing import Any, TypeAlias
 from xml.etree.ElementTree import Element, fromstring
 
 import tomlkit
@@ -15,6 +15,9 @@ from .fix_input_variables import fix_input_variables
 
 _TEXT_DEFAULTS = {'font-family': 'monospace', 'text-anchor': 'middle'}
 # TODO: why does this work in a stylesheet in emacs, but not for Chrome and FF?
+
+
+Dims: TypeAlias = int | tuple[int, int]
 
 
 @dc.dataclass(frozen=True)
@@ -32,26 +35,38 @@ class Caption:
 
 
 @dc.dataclass(frozen=True)
+class Inset:
+    document: tuple[int, int] = (0, 0)
+    page: tuple[int, int] = (0, 0)
+    body: tuple[int, int] = (0, 0)
+    note_fingering: tuple[int, int] = (0, 0)
+
+
+@dc.dataclass(frozen=True)
 class Layout:
     defs_: dict[str, Any]
     pieces_: dict[str, dict[str, Any]]
     to_button: dict[str, Button]
-    spacing: int = 120
     styles: str = ''
-    width: int = 150
-    rows: int = 2
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     caption_above: bool = True
     title_: str = ''
-    title_height: int = 250
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
+
+    rows: int = 2
+
+    button_height: int = 120
+    width: int = 150
+    title_height: int = 250
     margin: tuple[int, int] = (20, 20)
     pad: tuple[int, int] = (20, 20)
+
+    inset: Inset = Inset()
 
     @cached_property
     def caption(self) -> Caption:
         ## TODO: more checking or more general checking
-        return Caption(**self.caption_)  # ty: ignore[invalid-argument-type]
+        return Caption(**self.caption_)
 
     @cached_property
     def defs(self) -> list[Element]:
@@ -121,7 +136,7 @@ class Layout:
             x = x if (x_ := button.get('x')) is None else x_
             y = y if (y_ := button.get('y')) is None else y_
             pieces.append(ChartPiece(parts, x, y))
-            y += self.spacing
+            y += self.button_height
 
         pad = self.caption.pad + 2 * (self.pad[1] + self.margin[1])
         h = y + pad

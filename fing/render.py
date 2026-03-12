@@ -4,7 +4,7 @@ import dataclasses as dc
 import os
 from collections.abc import Sequence
 from functools import cached_property
-from typing import Any, NamedTuple
+from typing import Any
 from xml.etree.ElementTree import Element, SubElement
 
 from .fingering_system import Button, Fingerings
@@ -13,45 +13,11 @@ from .note import Note
 
 HIGHLIGHT_SVGS = 'HIGHLIGHT_SVGS' in os.environ
 
-COLORS = '#FDD', '#DFD', '#DDF', '#FFA', '#FAF', '#AFF'
-
-COLOR = 0
-NOTE_WIDTH = len('C#/D1')
-
-
+COLORS = '#FDD', '#DFD', '#DDF', '#FFA', '#DDD', '#AFF'
 CONTAINERS = 'document', 'page', 'body', 'note-fingering', 'fingering'
 
-
-@dc.dataclass(frozen=True)
-class Inset:
-    document: int = 0
-    page: int = 0
-    body: int = 0
-    note_fingering: int = 0
-
-
-@dc.dataclass(frozen=True)
-class Size:
-    inset: Contain
-    offset: Contain
-    row: int
-    columns: int
-    width: int
-    height: int
-
-    @cached_property
-    def to_size(self) -> dict[str, tuple[int, int]]:
-        t = {}
-        for f in reversed(dc.fields(Inset)):
-            if f.name = 'note_fingering':
-                w, h = self.width, self.height
-            elif f.name == 'body':
-                w, h = self.columns * w, self.rows * h
-            di = 2 * getattr(self.inset(f.name))
-            w, h = w + di`, h + di
-            t[f.name] = (w, h)
-
-        return dict(it())
+COLOR = 0
+NOTE_WIDTH = len('C#/D-1')
 
 
 @dc.dataclass(frozen=True)
