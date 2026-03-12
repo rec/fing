@@ -27,13 +27,11 @@ class ChartPiece:
     x: int
     y: int
 
-    def asdict(self) -> dict[str, str]:
-        return {'x': str(self.x), 'y': str(self.y)}
-
     def render(self, fingering: Sequence[Button]) -> list[Element]:
         for f in fingering:
             if parts := self.parts.get(f.name) or self.parts.get(f.short_name):
                 break
         else:
             parts = self.parts['_off']
-        return [Element('use', self.asdict() | p.asdict()) for p in parts]
+        d = {'x': str(self.x), 'y': str(self.y)}
+        return [Element('use', d | p.asdict()) for p in parts]

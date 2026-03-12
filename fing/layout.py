@@ -22,7 +22,6 @@ class Caption:
     pad: int = 20
     x: int = 70
     font_size: int = 40
-    above: bool = True
 
     @cached_property
     def height(self) -> int:
@@ -40,15 +39,14 @@ class Layout:
     spacing: int = 120
     styles: str = ''
     width: int = 150
-    pad_x: int = 100
-    pad_y: int = 180
-    buttons_inset: int = 15
     rows: int = 2
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
+    caption_above: bool = True
     title_: str = ''
     title_height: int = 250
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
-    margin: tuple[int, int] = (10, 10)
+    margin: tuple[int, int] = (20, 20)
+    pad: tuple[int, int] = (20, 20)
 
     @cached_property
     def caption(self) -> Caption:
@@ -79,13 +77,8 @@ class Layout:
     def title(self) -> Element:
         return fromstring(self.title_)
 
-    @cached_property
-    def delta(self) -> tuple[int, int]:
-        return (self.width + self.pad_x), (self.height + self.pad_y)
-
     def scale(self, columns: int, rows: int) -> tuple[int, int]:
-        dx, dy = self.delta
-        return columns * dx + self.pad_x, rows * dy + self.pad_y
+        return columns * self.width, rows * self.height
 
     @staticmethod
     def make(filename: str, to_button: dict[str, Any]) -> Layout:
@@ -130,7 +123,9 @@ class Layout:
             pieces.append(ChartPiece(parts, x, y))
             y += self.spacing
 
-        return pieces, y + self.caption.pad + self.title_height
+        pad = self.caption.pad + 2 * (self.pad[1] + self.margin[1])
+        h = y + pad
+        return pieces, h
 
 
 _NAMES = {f.name for f in dc.fields(Layout)}
