@@ -9,6 +9,7 @@ dependencies = [
     "tomlkit>=0.14.0",
     "ty>=0.0.19",
     "typing-extensions>=4.15.0",
+    "tyro>=1.0.9",
 ]
 
 [build-system]
