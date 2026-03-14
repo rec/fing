@@ -4,8 +4,8 @@ import dataclasses as dc
 from typing import Any
 
 
-def fix_input_variables(d: dict[str, Any], dc_type: type) -> None:
+def fix_input_variables(dv: dict[str, Any], dc_type: type) -> None:
     for f in dc.fields(dc_type):
         if f.name.endswith('_'):
-            if (v := d.pop(f.name[:-1], d)) is not d:
-                d[f.name] = v
+            if (v := dv.pop(f.name[:-1], dv)) is not dv:
+                dv[f.name] = v
