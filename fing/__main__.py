@@ -1,6 +1,8 @@
 from pathlib import Path
 import sys
 
+from fing import fingering_system
+
 import tomlkit
 import tyro
 
@@ -28,16 +30,15 @@ def tyro_main(config_files: list[Path], /) -> None:
 
     if len(bases) != 1:
         sys.exit(f'{len(bases)} fingering files found in {" ,".join(loaded)}')
-
-    if not layouts:
-        pass
-    elif not non_styles:
+    if layouts and not non_styles:
         sys.exit(f'Styles without layouts found in {" ,".join(loaded)}')
-    elif non_styles > 1:
+    if layouts and non_styles > 1:
         sys.exit(f'Too many layouts found in {" ,".join(loaded)}')
-    else:
-        pass
 
+    base, = bases
+
+
+    if layouts:
 
 def main():
     tyro.cli(tyro_main)
