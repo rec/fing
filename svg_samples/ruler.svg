@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 1010" xmlns="http://www.w3.org/2000/svg" height="800">
+  <defs>
+    <pattern id="differentiatedRuler" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <line x1="30" y1="0" x2="30" y2="100" stroke="black" stroke-width="2" />
+      <line x1="30" y1="0" x2="80" y2="0" stroke="black" stroke-width="3" />
+      <line x1="30" y1="50" x2="65" y2="50" stroke="black" stroke-width="2" />
+
+      <path d="M 30 10 H 50 M 30 20 H 50 M 30 30 H 50 M 30 40 H 50
+               M 30 60 H 50 M 30 70 H 50 M 30 80 H 50 M 30 90 H 50"
+            stroke="black" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="100" height="1001" fill="url(#differentiatedRuler)" />
+
+  <line x1="30" y1="1000" x2="80" y2="1000" stroke="black" stroke-width="3" />
+</svg>
