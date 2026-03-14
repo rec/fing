@@ -33,6 +33,12 @@ class FingeringSystem:
     document: tomlkit.TOMLDocument | None = None
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
+    allow_impossible_fingerings: bool = False
+
+    # A press group is a "press" where any or all of the buttons
+    # can be pressed at one time, the example being palm keys
+    press_groups: list[str] = dc.field(default_factory=list)
+
     @cached_property
     def all(self) -> Fingering:
         return self._all_fingerings[0]
@@ -97,20 +103,35 @@ class FingeringSystem:
         for k, fingering in self.fingerings_.items():
             pressed = fingering.split()
             self.err.test_dupes('Duplicate buttons in fingering', pressed, k)
+
             if bad_notes := [i for i in pressed if i not in self.to_button]:
                 self.err('Unknown note', k, bad_notes)
                 continue
+
             buttons_pressed = [self.to_button[n] for n in pressed]
             if k == 'all':
                 all_ = buttons_pressed
                 continue
+
+            if not self.allow_impossible_fingerings:
+                if conflicts := self._fingering_conflicts(buttons_pressed):
+                    self.err('Impossive fingerings', k, conflicts)
+
             try:
                 note = Note(k)
             except Exception as e:
                 self.err('Invalid note', k, e)
-            else:
-                fingerings[note] = buttons_pressed
+                continue
+
+            fingerings[note] = buttons_pressed
         return all_, fingerings
+
+    def _fingering_conflicts(self, fingering: Fingering) -> dict[str, list[Button]]:
+        d = {}
+        for b in fingering:
+            if b not in self.press_groups:
+                d.setdefault(b.press, []).append(b)
+        return {k: v for k, v in d.items() if len(v) > 1}
 
 
 def make(filename: str, check_button_order: bool = True) -> FingeringSystem:
