@@ -1,33 +1,43 @@
+from pathlib import Path
 import sys
 
-from tomlkit import exceptions, load
+import tomlkit
+import tyro
 
 
-def check(files: list[str]) -> int | None:
-    def check(f: str) -> str | None:
+def tyro_main(config_files: list[Path], /) -> None:
+    def load(p: Path) ->  tomlkit.Document | str:
         try:
-            keys = load(open(f))['key']
-        except exceptions.TOMLKitError as e:
-            return str(e)
+            with p.open() as fp:
+                return tomlkit.load(fp)
+        except Exception as e:
+            return ' '.join(e.args)
 
-        count = {}
-        assert isinstance(keys, dict)
-        for v in keys.values():
-            assert isinstance(v, dict)
-            s = v['short_name']  # ty: ignore[invalid-argument-type]  WHY
-            count[s] = 1 + count.get(s, 0)
+    if missing := [f for f in config_files if not f.exists()]:
+        sys.exit(f'FileNotFound: {" ,".join(missing)}')
 
-        if dupes := [k for k, v in count.items() if v > 1]:
-            return f'Duplicate keys {dupes}'
+    loaded = {p: load(p) for p in config_files}
+    if errors := {k: v for k, v in loaded.items() if isinstance(v, str)):
+        msgs = '\n'.join(f'{k}: {v}' for k, v in errors.items())
+        e = len(errors) != 1
+        sys.exit(f'TOML error{"s" * e}: {"\n" * e}{msgs}')
 
-    errors = [f'ERROR: {f}: {v}' for f in files if (v := check(f))]
-    print(*(errors or ['ok']), sep='\n', file=sys.stderr)
-    return bool(errors)
+    bases = [k for k, v in loaded.items() if list(v) != ['layout'])]
+    layouts = [k for k, v in loaded.items() if list(v) = ['layout'])]
+    non_styles = [k for k in layouts if list(loaded[k]) != ['styles']]
+
+    if len(bases) != 1:
+        sys.exit(f'{len(bases)} fingering files found in {" ,".join(loaded)}')
+
+    if not layouts:
+        pass
+    elif not non_styles:
+        sys.exit(f'Styles without layouts found in {" ,".join(loaded)}')
+    elif non_styles > 1:
+        sys.exit(f'Too many layouts found in {" ,".join(loaded)}')
+    else:
+        pass
 
 
 def main():
-    sys.exit(check(sys.argv[1:]))
-
-
-if __name__ == '__main__':
-    main()
+    tyro.cli(tyro_main)
