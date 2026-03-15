@@ -112,13 +112,12 @@ class Renderer:
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))
 
-        d = self.layout.caption.asdict()
         g = self._add(note_fingering, 'g', 'caption')
-        text = self._add(g, 'text', **d)
+        text = self._add(g, 'text', x=self.layout.caption.x)
         text.text = str(note).center(NOTE_WIDTH)
 
         if self.layout.caption_above:
-            text.set('y', str(self.layout.caption.font_size))
+            text.set('y', str(self.layout.caption.height))
             pieces.set('y', str(self.layout.caption.height))
         else:
             text.set('y', str(self.layout.height))

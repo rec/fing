@@ -13,10 +13,6 @@ from .error_maker import ErrorMaker
 from .fingering_system import Button
 from .fix_input_variables import fix_input_variables
 
-_TEXT_DEFAULTS = {'font-family': 'monospace', 'text-anchor': 'middle'}
-# TODO: why does this work in a stylesheet in emacs, but not for Chrome and FF?
-
-
 Dims: TypeAlias = int | tuple[int, int]
 
 
@@ -24,10 +20,6 @@ Dims: TypeAlias = int | tuple[int, int]
 class Caption:
     height: int = 70
     x: int = 80
-    font_size: int = 40
-
-    def asdict(self) -> dict[str, Any]:
-        return {'x': self.x, 'font-size': self.font_size} | _TEXT_DEFAULTS
 
 
 class XY(NamedTuple):
