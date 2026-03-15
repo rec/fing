@@ -1,6 +1,7 @@
 [layout]
 styles = '''
 .outline { fill: white; stroke: black; stroke-width: 1.5; }
+.caption { fill: black; font-size: 40; font-family: monospace; text-anchor: middle; }
 '''
 title = '''
 <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">

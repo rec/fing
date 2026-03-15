@@ -97,6 +97,8 @@ class Renderer:
         for row in range(1, self.rows):
             y = row * (self.layout.height + self.layout.fingering_pad)
             width = self.sizes.page.width
+            y -= 80  # HACK!
+            width -= 950  # HACK!
             self._add(
                 self.charts, 'rect', 'large-separator', y=y, width=width, height=3
             )
@@ -111,7 +113,8 @@ class Renderer:
             pieces.extend(piece.render(fingering))
 
         d = self.layout.caption.asdict()
-        text = self._add(note_fingering, 'text', 'caption', **d)
+        g = self._add(note_fingering, 'g', 'caption')
+        text = self._add(g, 'text', **d)
         text.text = str(note).center(NOTE_WIDTH)
 
         if self.layout.caption_above:
