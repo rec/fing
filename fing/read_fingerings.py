@@ -1,4 +1,3 @@
-import dataclasses as dc
 import sys
 from io import StringIO
 from pathlib import Path
@@ -14,16 +13,30 @@ from fing.render import Renderer
 
 
 def process_files(config_files: list[Path], /) -> None:
-    def exit(*msgs: Any) -> Never:
-        sys.exit(' '.join(str(i) for i in ('ERROR:', *msgs)))
+    fingering, *layouts = _get_configs(config_files)
 
-    def load(p: Path) -> tomlkit.TOMLDocument | str:
-        try:
-            with p.open() as fp:
-                return tomlkit.load(fp)
-        except Exception as e:
-            return ' '.join(e.args)
+    fs = fingering_system.make(fingering)
+    msg = f'Found {len(fs.buttons)} buttons and {len(fs.fingerings)} fingerings'
+    print(msg, file=sys.stderr)
+    if not layouts:
+        return
 
+    sd = {}
+    for la in layouts:
+        for line in la['layout'].get('styles', '').split('\n'):
+            if line := line.strip():
+                name, _, value = line.partition(' ')
+                sd[name] = value
+
+    lay = layouts[0]
+    lay['layout']['styles'] = '\n'.join(f'{k} {v}' for k, v in sd.items())
+
+    layout = Layout.make(lay, fs.to_button)
+    r = Renderer(layout, fs.fingerings)
+    print(_xml_to_str(r()))
+
+
+def _get_configs(config_files: list[Path]) -> list[Any]:
     if not config_files:
         exit('No files')
 
@@ -39,10 +52,10 @@ def process_files(config_files: list[Path], /) -> None:
         s, n = 's' * e, '\n' * e
         exit(f'TOML error{s}: {n}{msgs}')
 
-    bases = [k for k, v in loaded.items() if list(v) != ['layout']]
-    layouts = [k for k, v in loaded.items() if list(v) == ['layout']]
-    styles = [k for k in layouts if list(loaded[k]) == ['styles']]
-    non_styles = [k for k in layouts if list(loaded[k]) != ['styles']]
+    bases = [v for v in loaded.values() if list(v) != ['layout']]
+    layouts = [v for v in loaded.values() if list(v) == ['layout']]
+    non_styles = [v for v in layouts if list(v) != ['styles']]
+    styles = [v for v in layouts if list(v) == ['styles']]
 
     if len(bases) != 1:
         exit(f'{len(bases)} fingering files found')
@@ -51,24 +64,23 @@ def process_files(config_files: list[Path], /) -> None:
     if layouts and len(non_styles) > 1:
         exit('Too many layouts found')
 
-    fs = fingering_system.make(loaded[bases[0]])
-    msg = f'Found {len(fs.buttons)} buttons and {len(fs.fingerings)} fingerings'
-    print(msg, file=sys.stderr)
-    if not layouts:
-        return
+    return bases + non_styles + styles
 
-    layout = Layout.make(loaded[non_styles[0]], fs.to_button)
-    if styles:
-        # We need to be able to override existing styles
-        sd = {}
-        for i in (non_styles[0], *styles):
-            for line in loaded[i].styles.split('\n'):
-                if line := line.strip():
-                    name, _, value = line.partition(' ')
-                    sd[name] = value
-        layout = dc.replace(layout, styles='\n'.join('{k} {v}' for k, v in sd.items()))
-    r = Renderer(layout, fs.fingerings)
-    print(_xml_to_str(r()))
+
+def load(p: Path) -> tomlkit.TOMLDocument | str:
+    try:
+        with p.open() as fp:
+            return tomlkit.load(fp)
+    except Exception as e:
+        return ' '.join(e.args)
+
+
+class Exit(Exception):
+    pass
+
+
+def exit(*msgs: Any) -> Never:
+    raise Exit(' '.join(str(i) for i in ('ERROR:', *msgs)))
 
 
 def _xml_to_str(e: ET.Element) -> str:
@@ -76,4 +88,4 @@ def _xml_to_str(e: ET.Element) -> str:
 
     f = StringIO()
     ET.ElementTree(e).write(f, encoding='unicode', xml_declaration=True)
-    return f.getvalue() + '\n'
+    return f.getvalue()
