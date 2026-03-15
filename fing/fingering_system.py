@@ -3,7 +3,7 @@ from __future__ import annotations
 import dataclasses as dc
 from collections.abc import Sequence
 from functools import cached_property
-from typing import Any, TypeAlias
+from typing import TypeAlias
 
 import tomlkit
 
@@ -134,11 +134,8 @@ class FingeringSystem:
         return {k: v for k, v in d.items() if len(v) > 1}
 
 
-def make(filename: str, check_button_order: bool = True) -> FingeringSystem:
+def make(doc: tomlkit.TOMLDocument, check_button_order: bool = True) -> FingeringSystem:
     with ErrorMaker() as err:
-        with open(filename) as fp:
-            doc: dict[str, Any] = tomlkit.load(fp)
-
         fix_input_variables(doc, FingeringSystem)
         names = {f.name for f in dc.fields(FingeringSystem)}
         if bad := [k for k in doc if k == 'document' or k not in names]:

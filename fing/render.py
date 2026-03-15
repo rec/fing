@@ -52,7 +52,8 @@ class Renderer:
         svg = Element('svg', {'viewBox': f'0 0 {s.width} {s.height}'} | _SVG)
         self._add(svg, 'defs').extend(self.layout.defs)
 
-        styles = '\n    '.join(('', *self.layout.styles.strip().split('\n'))) + '\n  '
+        slines = [v for i in self.layout.styles.strip().split('\n') if (v := i.strip())]
+        styles = '\n    '.join(('', *slines)) + '\n  '
         self._add(svg, 'style').text = styles
         return svg
 

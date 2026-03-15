@@ -7,6 +7,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 import pytest
+import tomlkit
 
 from fing import fingering_system
 from fing.layout import Layout
@@ -20,8 +21,15 @@ TEST_FINGERINGS_BELOW = ROOT / 'recorder-fingerings-below.svg'
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 SIZES_FILE = Path(__file__).parent / 'sizes.json'
 
-FS = fingering_system.make('fingerings/recorder-fingering.toml')
-LAYOUT = Layout.make('fingerings/recorder-fingering.layout.toml', FS.to_button)
+
+def load(f):
+    with open(f) as fp:
+        return tomlkit.load(fp)
+
+
+FS = fingering_system.make(load('fingerings/recorder-fingering.toml'))
+
+LAYOUT = Layout.make(load('fingerings/recorder-fingering.layout.toml'), FS.to_button)
 
 
 def _xml_to_str(e: ET.element) -> str:

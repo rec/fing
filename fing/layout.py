@@ -115,10 +115,7 @@ class Layout:
         return fromstring(self.title_)
 
     @staticmethod
-    def make(filename: str, to_button: dict[str, Any]) -> Layout:
-        with open(filename) as fp:
-            data = tomlkit.load(fp)
-
+    def make(data: tomlkit.TOMLDocument, to_button: dict[str, Any]) -> Layout:
         with ErrorMaker(reraise=True) as err:
             if not isinstance(d := data.get('layout'), dict):
                 raise err.fail('No layout dictionary')

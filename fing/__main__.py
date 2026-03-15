@@ -1,33 +1,84 @@
+import dataclasses as dc
 import sys
+from io import StringIO
+from pathlib import Path
+from typing import Any
+from xml.etree import ElementTree as ET
 
-from tomlkit import exceptions, load
+import tomlkit
+import tyro
+from typing_extensions import Never
+
+from . import fingering_system
+from .layout import Layout
+from .render import Renderer
 
 
-def check(files: list[str]) -> int | None:
-    def check(f: str) -> str | None:
+def tyro_main(config_files: list[Path], /) -> None:
+    def exit(*msgs: Any) -> Never:
+        sys.exit(' '.join(str(i) for i in ('ERROR:', *msgs)))
+
+    def load(p: Path) -> tomlkit.TOMLDocument | str:
         try:
-            keys = load(open(f))['key']
-        except exceptions.TOMLKitError as e:
-            return str(e)
+            with p.open() as fp:
+                return tomlkit.load(fp)
+        except Exception as e:
+            return ' '.join(e.args)
 
-        count = {}
-        assert isinstance(keys, dict)
-        for v in keys.values():
-            assert isinstance(v, dict)
-            s = v['short_name']  # ty: ignore[invalid-argument-type]  WHY
-            count[s] = 1 + count.get(s, 0)
+    if not config_files:
+        exit('No files')
 
-        if dupes := [k for k, v in count.items() if v > 1]:
-            return f'Duplicate keys {dupes}'
+    if missing := [f for f in config_files if not f.exists()]:
+        exit(f'FileNotFound: {", ".join(str(i) for i in missing)}')
 
-    errors = [f'ERROR: {f}: {v}' for f in files if (v := check(f))]
-    print(*(errors or ['ok']), sep='\n', file=sys.stderr)
-    return bool(errors)
+    loaded: dict[Path, Any] = {Path(p): load(p) for p in config_files}
+    if len(loaded) != len(config_files):
+        print('WARNING: duplicate input files', file=sys.stderr)
+    if errors := {k: v for k, v in loaded.items() if isinstance(v, str)}:
+        msgs = '\n'.join(f'{k}: {v}' for k, v in errors.items())
+        e = len(errors) != 1
+        s, n = 's' * e, '\n' * e
+        exit(f'TOML error{s}: {n}{msgs}')
+
+    bases = [k for k, v in loaded.items() if list(v) != ['layout']]
+    layouts = [k for k, v in loaded.items() if list(v) == ['layout']]
+    styles = [k for k in layouts if list(loaded[k]) == ['styles']]
+    non_styles = [k for k in layouts if list(loaded[k]) != ['styles']]
+
+    if len(bases) != 1:
+        exit(f'{len(bases)} fingering files found')
+    if layouts and not non_styles:
+        exit('Styles without layouts found')
+    if layouts and len(non_styles) > 1:
+        exit('Too many layouts found')
+
+    fs = fingering_system.make(loaded[bases[0]])
+    msg = f'Found {len(fs.buttons)} buttons and {len(fs.fingerings)} fingerings'
+    print(msg, file=sys.stderr)
+    if not layouts:
+        return
+
+    layout = Layout.make(loaded[non_styles[0]], fs.to_button)
+    if styles:
+        # We need to be able to override existing styles
+        sd = {}
+        for i in (non_styles[0], *styles):
+            for line in loaded[i].styles.split('\n'):
+                if line := line.strip():
+                    name, _, value = line.partition(' ')
+                    sd[name] = value
+        layout = dc.replace(layout, styles='\n'.join('{k} {v}' for k, v in sd.items()))
+    r = Renderer(layout, fs.fingerings)
+    print(_xml_to_str(r()))
 
 
 def main():
-    sys.exit(check(sys.argv[1:]))
+    tyro.cli(tyro_main)
 
 
-if __name__ == '__main__':
-    main()
+def _xml_to_str(e: ET.Element) -> str:
+    ET.indent(e)
+
+    f = StringIO()
+    ET.ElementTree(e).write(f, encoding='unicode', xml_declaration=True)
+    return f.getvalue() + '\n'
