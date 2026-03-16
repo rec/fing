@@ -9,4 +9,4 @@ def main():
     try:
         tyro.cli(render_chart)
     except Exit as e:
-        print(*e.args, file=sys.stderr)
+        print('ERROR:', *e.args, file=sys.stderr)
