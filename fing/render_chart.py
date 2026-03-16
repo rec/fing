@@ -5,14 +5,13 @@ from typing import Any
 from xml.etree import ElementTree as ET
 
 import tomlkit
-from typing_extensions import Never
 
 from fing import fingering_system
 from fing.layout import Layout
-from fing.render import Renderer
+from fing.renderer import Renderer
 
 
-def process_files(config_files: list[Path], /) -> None:
+def render_chart(config_files: list[Path]) -> None:
     fingering, *layouts = _get_configs(config_files)
 
     fs = fingering_system.make(fingering)
@@ -32,8 +31,8 @@ def process_files(config_files: list[Path], /) -> None:
     lay['layout']['styles'] = '\n'.join(f'{k} {v}' for k, v in sd.items())
 
     layout = Layout.make(lay, fs.to_button)
-    r = Renderer(layout, fs.fingerings)
-    print(_xml_to_str(r()))
+    svg = Renderer(layout, fs.fingerings)()
+    print(_xml_to_str(svg))
 
 
 def _get_configs(config_files: list[Path]) -> list[Any]:
@@ -77,10 +76,6 @@ def load(p: Path) -> tomlkit.TOMLDocument | str:
 
 class Exit(Exception):
     pass
-
-
-def exit(*msgs: Any) -> Never:
-    raise Exit(' '.join(str(i) for i in ('ERROR:', *msgs)))
 
 
 def _xml_to_str(e: ET.Element) -> str:

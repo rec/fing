@@ -113,7 +113,9 @@ class Renderer:
             pieces.extend(piece.render(fingering))
 
         g = self._add(note_fingering, 'g', 'caption')
-        text = self._add(g, 'text', x=self.layout.caption.x)
+        text = self._add(
+            g, 'text', x=self.layout.caption.x, y=self.layout.caption.y - 30
+        )
         text.text = str(note).center(NOTE_WIDTH)
 
         if self.layout.caption_above:

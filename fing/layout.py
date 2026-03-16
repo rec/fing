@@ -20,6 +20,7 @@ Dims: TypeAlias = int | tuple[int, int]
 class Caption:
     height: int = 70
     x: int = 80
+    y: int = 30
 
 
 class XY(NamedTuple):

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 
-from fing.render import Renderer
+from fing.renderer import Renderer
 from fing.sizes import Sizes
 from test import constants
 
