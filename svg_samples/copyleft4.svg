@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg viewBox="0 0 400 15" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+<svg id="copyleft">
+  <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M 2.23,4.37 H 3.57 a 1.53,1.53 0 1 1 0,1.28 H 2.23 a 2.81,2.81 0 1 0 0-1.28 z"/>
+</svg>
+  </defs>
+  <text font-size="11" font-family="monospace" x="0" y="12">
+    Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
+  </text>
+  <use href="#copyleft" width="10" height="10" x="58" y="3"/>
+</svg>
