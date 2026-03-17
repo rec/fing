@@ -18,9 +18,9 @@ Dims: TypeAlias = int | tuple[int, int]
 
 @dc.dataclass(frozen=True)
 class Caption:
-    height: int = 70
+    height: int = 100
     x: int = 80
-    y: int = 30
+    y: int = 45
 
 
 class XY(NamedTuple):
@@ -34,7 +34,7 @@ class Inset:
     body: XY = XY(30, 30)
     charts: XY = XY(30, 30)
     note_fingering: XY = XY(30, 30)
-    fingering: XY = XY(30, 30)
+    fingering: XY = XY(30, 80)
 
 
 @dc.dataclass(frozen=True)

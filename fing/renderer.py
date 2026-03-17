@@ -108,18 +108,12 @@ class Renderer:
         x = self.layout.width * column
         y = (self.layout.height + self.layout.fingering_pad) * row
         note_fingering = self._add(self.charts, 'svg', 'note-fingering', x=x, y=y)
-        pieces = self._add(note_fingering, 'svg', 'fingering')
+        pieces = self._add(
+            note_fingering, 'svg', 'fingering', y=self.layout.caption.height
+        )
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))
 
         g = self._add(note_fingering, 'g', 'caption')
-        text = self._add(
-            g, 'text', x=self.layout.caption.x, y=self.layout.caption.y - 30
-        )
+        text = self._add(g, 'text', x=self.layout.caption.x, y=self.layout.caption.y)
         text.text = str(note).center(NOTE_WIDTH)
-
-        if self.layout.caption_above:
-            text.set('y', str(self.layout.caption.height))
-            pieces.set('y', str(self.layout.caption.height))
-        else:
-            text.set('y', str(self.layout.height))

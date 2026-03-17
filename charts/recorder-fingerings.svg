@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 2970 3415" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2970 3735" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <svg id="copyleft">
       <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1" />
@@ -13,10 +13,10 @@
   </defs>
   <style>
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
-    .caption { fill: black; font-size: 40; font-family: monospace; text-anchor: middle; }
+    .caption { fill: black; font-size: 40; font-family: monospace; text-anchor: middle}
   </style>
-  <svg class="body" x="30" y="30" width="2850" height="3295">
-    <svg class="page" x="30" y="30" width="2910" height="3355">
+  <svg class="body" x="30" y="30" width="2850" height="3615">
+    <svg class="page" x="30" y="30" width="2910" height="3675">
       <svg>
         <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
         Fingering chart for the Baroque family of recorders
@@ -26,9 +26,9 @@
   </text>
         <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
       </svg>
-      <svg y="255" class="charts" x="30" width="2790" height="3010">
+      <svg y="255" class="charts" x="30" width="2790" height="3330">
         <svg x="0" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -43,11 +43,11 @@
             <use x="1" y="1081" href="#big-hole" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  C1  </text>
+            <text x="80" y="45">  C1  </text>
           </g>
         </svg>
         <svg x="135" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -62,11 +62,11 @@
             <use x="1" y="1081" href="#big-hole" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">C♯/D♭1</text>
+            <text x="80" y="45">C♯/D♭1</text>
           </g>
         </svg>
         <svg x="270" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -81,11 +81,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  D1  </text>
+            <text x="80" y="45">  D1  </text>
           </g>
         </svg>
         <svg x="405" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -100,11 +100,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">D♯/E♭1</text>
+            <text x="80" y="45">D♯/E♭1</text>
           </g>
         </svg>
         <svg x="540" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -119,11 +119,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  E1  </text>
+            <text x="80" y="45">  E1  </text>
           </g>
         </svg>
         <svg x="675" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -138,11 +138,11 @@
             <use x="1" y="1081" href="#big-hole" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  F1  </text>
+            <text x="80" y="45">  F1  </text>
           </g>
         </svg>
         <svg x="810" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -157,11 +157,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">F♯/G♭1</text>
+            <text x="80" y="45">F♯/G♭1</text>
           </g>
         </svg>
         <svg x="945" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -176,11 +176,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  G1  </text>
+            <text x="80" y="45">  G1  </text>
           </g>
         </svg>
         <svg x="1080" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -195,11 +195,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">G♯/A♭1</text>
+            <text x="80" y="45">G♯/A♭1</text>
           </g>
         </svg>
         <svg x="1215" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -214,11 +214,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  A1  </text>
+            <text x="80" y="45">  A1  </text>
           </g>
         </svg>
         <svg x="1350" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -233,11 +233,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">A♯/B♭1</text>
+            <text x="80" y="45">A♯/B♭1</text>
           </g>
         </svg>
         <svg x="1485" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -252,11 +252,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  B1  </text>
+            <text x="80" y="45">  B1  </text>
           </g>
         </svg>
         <svg x="1620" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" class="outline" />
@@ -271,11 +271,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  C2  </text>
+            <text x="80" y="45">  C2  </text>
           </g>
         </svg>
         <svg x="1755" y="0" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" />
@@ -290,11 +290,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">C♯/D♭2</text>
+            <text x="80" y="45">C♯/D♭2</text>
           </g>
         </svg>
-        <svg x="0" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="0" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" class="outline" />
@@ -309,11 +309,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  D2  </text>
+            <text x="80" y="45">  D2  </text>
           </g>
         </svg>
-        <svg x="135" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="135" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="121" href="#horizontal-line" />
             <use x="1" y="241" href="#pad" class="outline" />
@@ -328,11 +328,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">D♯/E♭2</text>
+            <text x="80" y="45">D♯/E♭2</text>
           </g>
         </svg>
-        <svg x="270" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="270" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -348,11 +348,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  E2  </text>
+            <text x="80" y="45">  E2  </text>
           </g>
         </svg>
-        <svg x="405" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="405" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -368,11 +368,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  F2  </text>
+            <text x="80" y="45">  F2  </text>
           </g>
         </svg>
-        <svg x="540" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="540" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -388,11 +388,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">F♯/G♭2</text>
+            <text x="80" y="45">F♯/G♭2</text>
           </g>
         </svg>
-        <svg x="675" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="675" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -408,11 +408,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  G2  </text>
+            <text x="80" y="45">  G2  </text>
           </g>
         </svg>
-        <svg x="810" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="810" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -428,11 +428,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">G♯/A♭2</text>
+            <text x="80" y="45">G♯/A♭2</text>
           </g>
         </svg>
-        <svg x="945" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="945" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -448,11 +448,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  A2  </text>
+            <text x="80" y="45">  A2  </text>
           </g>
         </svg>
-        <svg x="1080" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="1080" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -468,11 +468,11 @@
             <use x="1" y="1081" href="#big-hole" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">A♯/B♭2</text>
+            <text x="80" y="45">A♯/B♭2</text>
           </g>
         </svg>
-        <svg x="1215" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="1215" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -488,11 +488,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  B2  </text>
+            <text x="80" y="45">  B2  </text>
           </g>
         </svg>
-        <svg x="1350" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="1350" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -508,11 +508,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  C3  </text>
+            <text x="80" y="45">  C3  </text>
           </g>
         </svg>
-        <svg x="1485" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="1485" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -528,11 +528,11 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">C♯/D♭3</text>
+            <text x="80" y="45">C♯/D♭3</text>
           </g>
         </svg>
-        <svg x="1620" y="1420" class="note-fingering">
-          <svg class="fingering" x="30" y="70" width="135" height="1270">
+        <svg x="1620" y="1450" class="note-fingering">
+          <svg y="80" class="fingering" x="30" width="135" height="1300">
             <use x="1" y="1" href="#pad" class="outline" />
             <use x="1" y="1" href="#octave" />
             <use x="1" y="121" href="#horizontal-line" />
@@ -548,10 +548,10 @@
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
           <g class="caption">
-            <text x="80" y="70">  D3  </text>
+            <text x="80" y="45">  D3  </text>
           </g>
         </svg>
-        <rect y="1340" width="1960" height="3" class="large-separator" />
+        <rect y="1370" width="1960" height="3" class="large-separator" />
       </svg>
     </svg>
   </svg>
