@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 2970 3340" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2970 3415" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <svg id="copyleft">
       <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1" />
@@ -15,12 +15,18 @@
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
     .caption { fill: black; font-size: 40; font-family: monospace; text-anchor: middle; }
   </style>
-  <svg class="body" x="30" y="30" width="2850" height="3220">
-    <svg class="page" x="30" y="30" width="2910" height="3280">
-      <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
-      Fingering chart for the Baroque family of recorders
-</text>
-      <svg y="180" class="charts" x="30" width="2790" height="3010">
+  <svg class="body" x="30" y="30" width="2850" height="3295">
+    <svg class="page" x="30" y="30" width="2910" height="3355">
+      <svg>
+        <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
+        Fingering chart for the Baroque family of recorders
+  </text>
+        <text font-size="30" font-family="monospace" text-anchor="middle" x="1000" y="170">
+      Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
+  </text>
+        <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
+      </svg>
+      <svg y="255" class="charts" x="30" width="2790" height="3010">
         <svg x="0" y="0" class="note-fingering">
           <svg class="fingering" x="30" y="70" width="135" height="1270">
             <use x="1" y="1" href="#pad" />

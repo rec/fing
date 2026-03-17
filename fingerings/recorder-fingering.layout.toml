@@ -4,9 +4,15 @@ styles = '''
 .caption { fill: black; font-size: 40; font-family: monospace; text-anchor: middle; }
 '''
 title = '''
-<text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
-      Fingering chart for the Baroque family of recorders
-</text>
+<svg>
+  <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
+        Fingering chart for the Baroque family of recorders
+  </text>
+  <text font-size="30" font-family="monospace" text-anchor="middle" x="1000" y="170">
+      Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
+  </text>
+  <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
+</svg>
 '''
 
 [layout.caption]

@@ -52,7 +52,7 @@ class Layout:
 
     button_height: int = 120
     width: int = 135
-    title_height: int = 150
+    title_height: int = 225
     fingering_pad: int = 150
 
     inset: Inset = Inset()
