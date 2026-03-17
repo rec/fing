@@ -65,7 +65,7 @@ class Layout:
     @cached_property
     def defs(self) -> list[Element]:
         defs = []
-        for k, v in self.defs_.items():
+        for k, v in (_BUILTIN_DEFS | self.defs_).items():
             try:
                 defs.append(fromstring(v))
             except Exception as e:
@@ -130,4 +130,17 @@ _REQUIRED = {
     f.name
     for f in dc.fields(Layout)
     if f.default == dc.MISSING and f.default_factory == dc.MISSING
+}
+
+_COPYLEFT = """
+<svg id="copyleft">
+  <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1"/>
+  <path
+    d="M 2.23,4.37 H 3.57 a 1.53,1.53 0 1 1 0,1.28 H 2.23 a 2.81,2.81 0 1 0 0-1.28 z"
+  />
+</svg>
+"""
+
+_BUILTIN_DEFS = {
+    'copyleft': _COPYLEFT,
 }

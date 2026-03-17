@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg viewBox="0 0 2970 3340" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <svg id="copyleft">
+      <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1" />
+      <path d="M 2.23,4.37 H 3.57 a 1.53,1.53 0 1 1 0,1.28 H 2.23 a 2.81,2.81 0 1 0 0-1.28 z" />
+    </svg>
     <circle cx="50" cy="50" r="50" id="pad" />
     <circle cx="80" cy="55" r="20" id="little-hole" />
     <circle cx="30" cy="30" r="30" id="big-hole" />
