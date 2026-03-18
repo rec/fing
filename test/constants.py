@@ -15,6 +15,7 @@ def load(f):
 
 
 TEST_FINGERINGS = Path('charts/recorder-fingerings.svg')
+TEST_FINGERINGS_COLOR = Path('charts/recorder-fingerings.color.svg')
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
 SIZES_FILE = Path('test/sizes.json')
 
@@ -24,3 +25,4 @@ FS_FILE = ROOT / 'recorder-fingering.toml'
 FS = fingering_system.make(load(FS_FILE))
 LAYOUT_FILE = ROOT / 'recorder-fingering.layout.toml'
 LAYOUT = Layout.make(load(LAYOUT_FILE), FS.to_button)
+COLOR_FILE = ROOT / 'recorder-fingering.colors.toml'
