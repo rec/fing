@@ -23,17 +23,12 @@ def render_chart(config_files: list[Path]) -> None:
     if not layouts:
         return
 
-    sd = {}
-    for la in layouts:
-        for line in la['layout'].get('styles', '').split('\n'):
-            if line := line.strip():
-                name, _, value = line.partition(' ')
-                sd[name] = value
+    lo = layouts[0]
+    styles = lo['layout'].setdefault('styles', {})
+    for s in layouts[1:]:
+        styles.update(s['layout'].get('styles', {}))
 
-    lay = layouts[0]
-    lay['layout']['styles'] = '\n'.join(f'{k} {v}' for k, v in sd.items())
-
-    layout = Layout.make(lay, fs.to_button)
+    layout = Layout.make(lo, fs.to_button)
     svg = Renderer(layout, fs.fingerings)()
     print(xml_to_str(svg))
 

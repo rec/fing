@@ -42,7 +42,7 @@ class Layout:
     defs_: dict[str, Any]
     pieces_: dict[str, dict[str, Any]]
     to_button: dict[str, Button]
-    styles: str = ''
+    styles: dict[str, dict[str, str]] = dc.field(default_factory=dict)
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     caption_above: bool = True
     title_: str = ''

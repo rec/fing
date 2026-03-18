@@ -52,9 +52,12 @@ class Renderer:
         svg = Element('svg', {'viewBox': f'0 0 {s.width} {s.height}'} | _SVG)
         self._add(svg, 'defs').extend(self.layout.defs)
 
-        slines = [v for i in self.layout.styles.strip().split('\n') if (v := i.strip())]
-        styles = '\n    '.join(('', *slines)) + '\n  '
-        self._add(svg, 'style').text = styles
+        def render_style(name: str, d: dict[str, Any]) -> str:
+            parts = ' '.join(f'{k}: {v};' for k, v in d.items())
+            return f'  .{name} {{ {parts} }}'
+
+        styles = '\n  '.join(render_style(k, v) for k, v in self.layout.styles.items())
+        self._add(svg, 'style').text = '\n  ' + styles + '\n  '
         return svg
 
     @cached_property
