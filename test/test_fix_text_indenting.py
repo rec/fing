@@ -1,4 +1,4 @@
-from fing.fix_text_indenting import fix_text_indenting
+from fing.xml_to_str import fix_text_indenting
 
 
 def test_fix_text_indenting():

@@ -1,3 +1,15 @@
+from io import StringIO
+from xml.etree import ElementTree as ET
+
+
+def xml_to_str(e: ET.Element) -> str:
+    ET.indent(e)
+
+    f = StringIO()
+    ET.ElementTree(e).write(f, encoding='unicode', xml_declaration=True)
+    return fix_text_indenting(f.getvalue())
+
+
 def fix_text_indenting(s: str) -> str:
     # Simple hack, won't work in the general case
 

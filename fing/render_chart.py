@@ -1,15 +1,17 @@
 import sys
-from io import StringIO
 from pathlib import Path
 from typing import Any
-from xml.etree import ElementTree as ET
 
 import tomlkit
 
 from fing import fingering_system
-from fing.fix_text_indenting import fix_text_indenting
 from fing.layout import Layout
 from fing.renderer import Renderer
+from fing.xml_to_str import xml_to_str
+
+
+class Exit(Exception):
+    pass
 
 
 def render_chart(config_files: list[Path]) -> None:
@@ -33,15 +35,15 @@ def render_chart(config_files: list[Path]) -> None:
 
     layout = Layout.make(lay, fs.to_button)
     svg = Renderer(layout, fs.fingerings)()
-    print(_xml_to_str(svg))
+    print(xml_to_str(svg))
 
 
 def _get_configs(config_files: list[Path]) -> list[Any]:
     if not config_files:
-        exit('No files')
+        raise Exit('No files')
 
     if missing := [f for f in config_files if not f.exists()]:
-        exit(f'FileNotFound: {", ".join(str(i) for i in missing)}')
+        raise Exit(f'FileNotFound: {", ".join(str(i) for i in missing)}')
 
     loaded: dict[Path, Any] = {Path(p): load(p) for p in config_files}
     if len(loaded) != len(config_files):
@@ -50,7 +52,7 @@ def _get_configs(config_files: list[Path]) -> list[Any]:
         msgs = '\n'.join(f'{k}: {v}' for k, v in errors.items())
         e = len(errors) != 1
         s, n = 's' * e, '\n' * e
-        exit(f'TOML error{s}: {n}{msgs}')
+        raise Exit(f'TOML error{s}: {n}{msgs}')
 
     bases = [v for v in loaded.values() if list(v) != ['layout']]
     layouts = [v for v in loaded.values() if list(v) == ['layout']]
@@ -58,11 +60,11 @@ def _get_configs(config_files: list[Path]) -> list[Any]:
     styles = [v for v in layouts if list(v) == ['styles']]
 
     if len(bases) != 1:
-        exit(f'{len(bases)} fingering files found')
+        raise Exit(f'{len(bases)} fingering files found')
     if layouts and not non_styles:
-        exit('Styles without layouts found')
+        raise Exit('Styles without layouts found')
     if layouts and len(non_styles) > 1:
-        exit('Too many layouts found')
+        raise Exit('Too many layouts found')
 
     return bases + non_styles + styles
 
@@ -73,15 +75,3 @@ def load(p: Path) -> tomlkit.TOMLDocument | str:
             return tomlkit.load(fp)
     except Exception as e:
         return ' '.join(e.args)
-
-
-class Exit(Exception):
-    pass
-
-
-def _xml_to_str(e: ET.Element) -> str:
-    ET.indent(e)
-
-    f = StringIO()
-    ET.ElementTree(e).write(f, encoding='unicode', xml_declaration=True)
-    return fix_text_indenting(f.getvalue())
