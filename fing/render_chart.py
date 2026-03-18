@@ -14,7 +14,7 @@ class Exit(Exception):
     pass
 
 
-def render_chart(config_files: list[Path]) -> None:
+def render_chart(config_files: list[Path], /) -> None:
     fingering, *layouts = _get_configs(config_files)
 
     fs = fingering_system.make(fingering)
@@ -51,15 +51,15 @@ def _get_configs(config_files: list[Path]) -> list[Any]:
 
     bases = [v for v in loaded.values() if list(v) != ['layout']]
     layouts = [v for v in loaded.values() if list(v) == ['layout']]
-    non_styles = [v for v in layouts if list(v) != ['styles']]
-    styles = [v for v in layouts if list(v) == ['styles']]
+    non_styles = [v for v in layouts if list(v['layout']) != ['styles']]
+    styles = [v for v in layouts if list(v['layout']) == ['styles']]
 
     if len(bases) != 1:
         raise Exit(f'{len(bases)} fingering files found')
     if layouts and not non_styles:
         raise Exit('Styles without layouts found')
     if layouts and len(non_styles) > 1:
-        raise Exit('Too many layouts found')
+        raise Exit(f'Too many layouts found: {len(non_styles)=} {non_styles=}')
 
     return bases + non_styles + styles
 

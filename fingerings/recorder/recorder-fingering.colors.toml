@@ -1,0 +1,14 @@
+[layout.styles.page_background]
+fill = 'pink'
+
+[layout.styles.body_background]
+fill = 'lightgreen'
+
+[layout.styles.charts_background]
+fill = 'lightblue'
+
+[layout.styles.note-fingering_background]
+fill = 'lightgray'
+
+[layout.styles.fingering_background]
+fill =  'orange'

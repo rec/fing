@@ -80,15 +80,16 @@ class Renderer:
         if classes:
             kwargs['class'] = ' '.join(classes)
             if size := getattr(self.sizes, classes[0], None):
-                assert all(a not in kwargs for a in 'x y width height'.split()), (
-                    kwargs,
-                    classes,
-                )
-                kwargs = kwargs | dc.asdict(size)
+                kwargs = kwargs | dc.asdict(size)  # TODO: reverse?
         r = SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
-        if tag == 'svg' and self.highlight_svgs:
-            color = CONTAINERS.get(classes[0], 'gray')
-            SubElement(r, 'rect', {'width': '100%', 'height': '100%', 'fill': color})
+        if tag == 'svg':
+            if self.highlight_svgs:
+                ka = {'fill': CONTAINERS.get(classes[0], 'gray')}
+            elif (style := classes[0] + '_background') in self.layout.styles:
+                ka = {'class': style}
+            else:
+                ka = {'fill': 'transparent'}
+            SubElement(r, 'rect', {'width': '100%', 'height': '100%'} | ka)
         return r
 
     def __call__(self) -> Element:
