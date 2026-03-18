@@ -14,12 +14,13 @@ def load(f):
         return tomlkit.load(fp)
 
 
-ROOT = Path(__file__).parents[1] / 'charts'
-TEST_FINGERINGS = ROOT / 'recorder-fingerings.svg'
-TEST_FINGERINGS_BELOW = ROOT / 'recorder-fingerings-below.svg'
+TEST_FINGERINGS = Path('charts/recorder-fingerings.svg')
 REWRITE_TEST_DATA = os.environ.get('REWRITE_TEST_DATA')
-SIZES_FILE = Path(__file__).parent / 'sizes.json'
-FS_FILE = Path('fingerings/recorder-fingering.toml')
+SIZES_FILE = Path('test/sizes.json')
+
+ROOT = Path('fingerings/recorder')
+
+FS_FILE = ROOT / 'recorder-fingering.toml'
 FS = fingering_system.make(load(FS_FILE))
-LAYOUT_FILE = Path('fingerings/recorder-fingering.layout.toml')
+LAYOUT_FILE = ROOT / 'recorder-fingering.layout.toml'
 LAYOUT = Layout.make(load(LAYOUT_FILE), FS.to_button)
