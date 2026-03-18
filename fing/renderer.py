@@ -70,7 +70,7 @@ class Renderer:
 
     @cached_property
     def charts(self) -> Element:
-        return self._add(self.page, 'svg', 'charts', y=self.layout.title_height)
+        return self._add(self.page, 'svg', 'charts')
 
     @cached_property
     def sizes(self) -> Sizes:
@@ -80,6 +80,10 @@ class Renderer:
         if classes:
             kwargs['class'] = ' '.join(classes)
             if size := getattr(self.sizes, classes[0], None):
+                assert all(a not in kwargs for a in 'x y width height'.split()), (
+                    kwargs,
+                    classes,
+                )
                 kwargs = kwargs | dc.asdict(size)
         r = SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
         if tag == 'svg' and self.highlight_svgs:
