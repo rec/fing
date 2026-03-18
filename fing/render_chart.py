@@ -7,6 +7,7 @@ from xml.etree import ElementTree as ET
 import tomlkit
 
 from fing import fingering_system
+from fing.fix_text_indenting import fix_text_indenting
 from fing.layout import Layout
 from fing.renderer import Renderer
 
@@ -83,4 +84,4 @@ def _xml_to_str(e: ET.Element) -> str:
 
     f = StringIO()
     ET.ElementTree(e).write(f, encoding='unicode', xml_declaration=True)
-    return f.getvalue()
+    return fix_text_indenting(f.getvalue())

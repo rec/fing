@@ -2,11 +2,7 @@ from fing.fix_text_indenting import fix_text_indenting
 
 
 def test_fix_text_indenting():
-    actual = ''.join(fix_text_indenting(LINES.splitlines(keepends=True)))
-    print('----------------------')
-    print(actual)
-    print('----------------------')
-    assert EXPECTED == actual
+    assert EXPECTED == fix_text_indenting(LINES)
 
 
 LINES = """
@@ -14,6 +10,7 @@ LINES = """
 <svg viewBox="0 0 2970 3735" xmlns="http://www.w3.org/2000/svg">
   <svg class="body" x="30" y="30" width="2850" height="3615">
     <svg class="page" x="30" y="30" width="2910" height="3675">
+      <text x="80" y="45">D♯/E♭1</text>
       <svg>
         <text font-size="60" x="1000" y="100">
         Fingering chart for the Baroque family of recorders
@@ -30,6 +27,7 @@ EXPECTED = """
 <svg viewBox="0 0 2970 3735" xmlns="http://www.w3.org/2000/svg">
   <svg class="body" x="30" y="30" width="2850" height="3615">
     <svg class="page" x="30" y="30" width="2910" height="3675">
+      <text x="80" y="45">D♯/E♭1</text>
       <svg>
         <text font-size="60" x="1000" y="100">
           Fingering chart for the Baroque family of recorders

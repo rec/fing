@@ -19,11 +19,11 @@
     <svg class="page" x="30" y="30" width="2910" height="3675">
       <svg>
         <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
-        Fingering chart for the Baroque family of recorders
-  </text>
+          Fingering chart for the Baroque family of recorders
+        </text>
         <text font-size="30" font-family="monospace" text-anchor="middle" x="1000" y="170">
-      Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
-  </text>
+          Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
+        </text>
         <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
       </svg>
       <svg y="255" class="charts" x="30" width="2790" height="3330">
