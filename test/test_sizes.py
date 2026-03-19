@@ -4,7 +4,7 @@ import json
 
 from fing.renderer import Renderer
 from fing.sizes import Sizes
-from test import constants
+from test import clean_json, constants
 
 
 def test_size():
@@ -14,7 +14,7 @@ def test_size():
 
     if constants.REWRITE_TEST_DATA or not constants.SIZES_FILE.exists():
         with constants.SIZES_FILE.open('w') as fp:
-            print(json.dumps(actual, indent=2), file=fp)
+            fp.writelines(clean_json.dumps(actual, indent=2))
     else:
         with constants.SIZES_FILE.open() as fp:
             expected = json.load(fp)
