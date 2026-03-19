@@ -122,6 +122,11 @@ class Renderer:
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))
 
-        g = self._add(note_fingering, 'g', 'caption')
-        text = self._add(g, 'text', x=self.layout.caption.x, y=self.layout.caption.y)
+        text = self._add(
+            note_fingering,
+            'text',
+            'caption',
+            x=self.layout.caption.x,
+            y=self.layout.caption.y,
+        )
         text.text = str(note).center(NOTE_WIDTH)

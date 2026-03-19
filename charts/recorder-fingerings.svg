@@ -13,17 +13,17 @@
   </defs>
   <style>
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
-    .caption { fill: black; font-size: 40; font-family: monospace; text-anchor: middle; }
+    .caption { fill: black; font-size: 40px; font-family: monospace; text-anchor: middle; }
   </style>
   <svg class="body" x="30" y="30" width="2850" height="3615">
     <rect width="100%" height="100%" fill="transparent" />
     <svg class="page" x="30" y="30" width="2910" height="3675">
       <rect width="100%" height="100%" fill="transparent" />
       <svg>
-        <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
+        <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
           Fingering chart for the Baroque family of recorders
         </text>
-        <text font-size="30" font-family="monospace" text-anchor="middle" x="1000" y="170">
+        <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
           Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
         </text>
         <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
@@ -47,9 +47,7 @@
             <use x="1" y="1081" href="#little-hole" />
             <use x="1" y="1081" href="#big-hole" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  C1  </text>
-          </g>
+          <text x="80" y="45" class="caption">  C1  </text>
         </svg>
         <svg x="135" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -68,9 +66,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">C♯/D♭1</text>
-          </g>
+          <text x="80" y="45" class="caption">C♯/D♭1</text>
         </svg>
         <svg x="270" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -89,9 +85,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  D1  </text>
-          </g>
+          <text x="80" y="45" class="caption">  D1  </text>
         </svg>
         <svg x="405" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -110,9 +104,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">D♯/E♭1</text>
-          </g>
+          <text x="80" y="45" class="caption">D♯/E♭1</text>
         </svg>
         <svg x="540" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -131,9 +123,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  E1  </text>
-          </g>
+          <text x="80" y="45" class="caption">  E1  </text>
         </svg>
         <svg x="675" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -152,9 +142,7 @@
             <use x="1" y="1081" href="#little-hole" />
             <use x="1" y="1081" href="#big-hole" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  F1  </text>
-          </g>
+          <text x="80" y="45" class="caption">  F1  </text>
         </svg>
         <svg x="810" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -173,9 +161,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">F♯/G♭1</text>
-          </g>
+          <text x="80" y="45" class="caption">F♯/G♭1</text>
         </svg>
         <svg x="945" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -194,9 +180,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  G1  </text>
-          </g>
+          <text x="80" y="45" class="caption">  G1  </text>
         </svg>
         <svg x="1080" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -215,9 +199,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">G♯/A♭1</text>
-          </g>
+          <text x="80" y="45" class="caption">G♯/A♭1</text>
         </svg>
         <svg x="1215" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -236,9 +218,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  A1  </text>
-          </g>
+          <text x="80" y="45" class="caption">  A1  </text>
         </svg>
         <svg x="1350" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -257,9 +237,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">A♯/B♭1</text>
-          </g>
+          <text x="80" y="45" class="caption">A♯/B♭1</text>
         </svg>
         <svg x="1485" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -278,9 +256,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  B1  </text>
-          </g>
+          <text x="80" y="45" class="caption">  B1  </text>
         </svg>
         <svg x="1620" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -299,9 +275,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  C2  </text>
-          </g>
+          <text x="80" y="45" class="caption">  C2  </text>
         </svg>
         <svg x="1755" y="0" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -320,9 +294,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">C♯/D♭2</text>
-          </g>
+          <text x="80" y="45" class="caption">C♯/D♭2</text>
         </svg>
         <svg x="0" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -341,9 +313,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  D2  </text>
-          </g>
+          <text x="80" y="45" class="caption">  D2  </text>
         </svg>
         <svg x="135" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -362,9 +332,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">D♯/E♭2</text>
-          </g>
+          <text x="80" y="45" class="caption">D♯/E♭2</text>
         </svg>
         <svg x="270" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -384,9 +352,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  E2  </text>
-          </g>
+          <text x="80" y="45" class="caption">  E2  </text>
         </svg>
         <svg x="405" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -406,9 +372,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  F2  </text>
-          </g>
+          <text x="80" y="45" class="caption">  F2  </text>
         </svg>
         <svg x="540" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -428,9 +392,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">F♯/G♭2</text>
-          </g>
+          <text x="80" y="45" class="caption">F♯/G♭2</text>
         </svg>
         <svg x="675" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -450,9 +412,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  G2  </text>
-          </g>
+          <text x="80" y="45" class="caption">  G2  </text>
         </svg>
         <svg x="810" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -472,9 +432,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">G♯/A♭2</text>
-          </g>
+          <text x="80" y="45" class="caption">G♯/A♭2</text>
         </svg>
         <svg x="945" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -494,9 +452,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  A2  </text>
-          </g>
+          <text x="80" y="45" class="caption">  A2  </text>
         </svg>
         <svg x="1080" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -516,9 +472,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">A♯/B♭2</text>
-          </g>
+          <text x="80" y="45" class="caption">A♯/B♭2</text>
         </svg>
         <svg x="1215" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -538,9 +492,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  B2  </text>
-          </g>
+          <text x="80" y="45" class="caption">  B2  </text>
         </svg>
         <svg x="1350" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -560,9 +512,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  C3  </text>
-          </g>
+          <text x="80" y="45" class="caption">  C3  </text>
         </svg>
         <svg x="1485" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -582,9 +532,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">C♯/D♭3</text>
-          </g>
+          <text x="80" y="45" class="caption">C♯/D♭3</text>
         </svg>
         <svg x="1620" y="1450" class="note-fingering">
           <rect width="100%" height="100%" fill="transparent" />
@@ -604,9 +552,7 @@
             <use x="1" y="1081" href="#little-hole" class="outline" />
             <use x="1" y="1081" href="#big-hole" class="outline" />
           </svg>
-          <g class="caption">
-            <text x="80" y="45">  D3  </text>
-          </g>
+          <text x="80" y="45" class="caption">  D3  </text>
         </svg>
         <rect y="1370" width="1960" height="3" class="large-separator" />
       </svg>

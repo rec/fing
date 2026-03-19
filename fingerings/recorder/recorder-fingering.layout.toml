@@ -1,10 +1,10 @@
 [layout]
 title = '''
 <svg>
-  <text font-size="60" font-family="monospace" text-anchor="middle" x="1000" y="100">
+  <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
         Fingering chart for the Baroque family of recorders
   </text>
-  <text font-size="30" font-family="monospace" text-anchor="middle" x="1000" y="170">
+  <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
       Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
   </text>
   <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
@@ -13,7 +13,7 @@ title = '''
 
 [layout.styles]
 outline = {fill = 'white', stroke = 'black', stroke-width = 1.5}
-caption = {fill = 'black', font-size = 40, font-family = 'monospace', text-anchor = 'middle'}
+caption = {fill = 'black', font-size = "40px", font-family = 'monospace', text-anchor = 'middle'}
 
 [layout.defs]
 pad = '<circle cx="50" cy="50" r="50" />'
