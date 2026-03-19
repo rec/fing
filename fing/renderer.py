@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import dataclasses as dc
-import os
 from collections.abc import Sequence
 from functools import cached_property
 from typing import Any
@@ -12,16 +11,6 @@ from .layout import Inset, Layout
 from .note import Note
 from .sizes import Sizes
 
-HIGHLIGHT_SVGS = 'HIGHLIGHT_SVGS' in os.environ
-
-CONTAINERS = {
-    'page': 'pink',
-    'body': 'lightgreen',
-    'charts': 'lightblue',
-    'note-fingering': 'lightgray',
-    'fingering:': 'orange',
-}
-COLOR = 0
 NOTE_WIDTH = len('C#/D-1')
 _SVG = {'xmlns': 'http://www.w3.org/2000/svg'}
 
@@ -30,7 +19,6 @@ _SVG = {'xmlns': 'http://www.w3.org/2000/svg'}
 class Renderer:
     layout: Layout
     fingerings: Fingerings
-    highlight_svgs: bool = HIGHLIGHT_SVGS
 
     @cached_property
     def columns(self) -> int:
@@ -62,15 +50,15 @@ class Renderer:
 
     @cached_property
     def body(self) -> Element:
-        return self._add(self.svg, 'svg', 'body')
+        return self._add_svg(self.svg, 'body')
 
     @cached_property
     def page(self) -> Element:
-        return self._add(self.body, 'svg', 'page')
+        return self._add_svg(self.body, 'page')
 
     @cached_property
     def charts(self) -> Element:
-        return self._add(self.page, 'svg', 'charts')
+        return self._add_svg(self.page, 'charts')
 
     @cached_property
     def sizes(self) -> Sizes:
@@ -78,18 +66,20 @@ class Renderer:
 
     def _add(self, parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
         if classes:
-            kwargs['class'] = ' '.join(classes)
-            if size := getattr(self.sizes, classes[0], None):
-                kwargs = kwargs | dc.asdict(size)  # TODO: reverse?
-        r = SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
-        if tag == 'svg':
-            if self.highlight_svgs:
-                ka = {'fill': CONTAINERS.get(classes[0], 'gray')}
-            elif (style := classes[0] + '_background') in self.layout.styles:
-                ka = {'class': style}
-            else:
-                ka = {'fill': 'transparent'}
-            SubElement(r, 'rect', {'width': '100%', 'height': '100%'} | ka)
+            kwargs = {'class': ' '.join(classes)} | kwargs
+        return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
+
+    def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:
+        # TODO: get rid of kwargs - get all spacing through Insets
+        if size := getattr(self.sizes, class_, None):
+            kwargs |= dc.asdict(size)
+
+        r = self._add(parent, 'svg', class_, **kwargs)
+        if (style := class_ + '_background') in self.layout.styles:
+            ka = {'class': style}
+        else:
+            ka = {'fill': 'transparent'}
+        SubElement(r, 'rect', ka | {'width': '100%', 'height': '100%'})
         return r
 
     def __call__(self) -> Element:
@@ -115,18 +105,13 @@ class Renderer:
         row, column = divmod(i, self.columns)
         x = self.layout.width * column
         y = (self.layout.height + self.layout.fingering_pad) * row
-        note_fingering = self._add(self.charts, 'svg', 'note-fingering', x=x, y=y)
-        pieces = self._add(
-            note_fingering, 'svg', 'fingering', y=self.layout.caption.height
+        note_fingering = self._add_svg(self.charts, 'note-fingering', x=x, y=y)
+        pieces = self._add_svg(
+            note_fingering, 'fingering', y=self.layout.caption.height
         )
         for piece in self.layout.pieces:
             pieces.extend(piece.render(fingering))
 
-        text = self._add(
-            note_fingering,
-            'text',
-            'caption',
-            x=self.layout.caption.x,
-            y=self.layout.caption.y,
-        )
+        caption = dc.asdict(self.layout.caption)
+        text = self._add(note_fingering, 'text', 'caption', **caption)
         text.text = str(note).center(NOTE_WIDTH)
