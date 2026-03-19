@@ -51,7 +51,7 @@ class Layout:
     rows: int = 2
 
     button_height: int = 120
-    width: int = 135
+    width: int = 102
     title_height: int = 225
     fingering_pad: int = 150
 
@@ -101,7 +101,7 @@ class Layout:
 
     @cached_property
     def height(self) -> int:
-        return sum(p.height for p in self.pieces) + self.caption.height
+        return sum(p.height for p in self.pieces)
 
     @cached_property
     def title(self) -> Element:

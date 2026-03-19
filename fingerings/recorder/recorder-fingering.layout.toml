@@ -17,8 +17,8 @@ caption = {fill = 'black', font-size = "40px", font-family = 'monospace', text-a
 
 [layout.defs]
 pad = '<circle cx="50" cy="50" r="50" />'
-little-hole = '<circle cx="80" cy="55" r="20" />'
-big-hole = '<circle cx="30" cy="30" r="30" />'
+little-hole = '<circle cx="80" cy="95" r="20" />'
+big-hole = '<circle cx="30" cy="70" r="30" />'
 
 horizontal-line = '<rect x="0" y="50" width="120" height="1" style="fill: black;"/>'
 octave = '<path d="  M 0,50   A 50,50 0 0 0 100,50   Z  " fill="black" />'

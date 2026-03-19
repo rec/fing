@@ -92,6 +92,8 @@ class Renderer:
         return self.svg
 
     def _draw_rules(self):
+        if True:
+            return
         for row in range(1, self.rows):
             y = row * (self.layout.height + self.layout.fingering_pad)
             width = self.sizes.page.width
@@ -103,7 +105,7 @@ class Renderer:
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
-        x = self.layout.width * column
+        x = self.sizes.note_fingering.width * column
         y = (self.layout.height + self.layout.fingering_pad) * row
         note_fingering = self._add_svg(self.charts, 'note-fingering', x=x, y=y)
         pieces = self._add_svg(

@@ -39,6 +39,7 @@ class Sizes:
 
     @cached_property
     def charts(self) -> Rect:
+        assert (self.columns, self.rows) == (14, 2)
         r = self.note_fingering
         dw, dh = self.inset.note_fingering
         w = r.width * self.columns + 2 * dw
