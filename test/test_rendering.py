@@ -1,9 +1,9 @@
 from __future__ import annotations
 
+import constants
 import pytest
 
 from fing.render_chart import render_chart
-from test import constants
 
 
 @pytest.mark.parametrize('use_colors', (False, True))

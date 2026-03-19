@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import dataclasses as dc
+from enum import StrEnum, auto
 from functools import cached_property
 
 from .layout import Inset, Layout
@@ -12,6 +13,15 @@ class Rect:
     y: int
     width: int
     height: int
+
+
+class Region(StrEnum):
+    document = auto()
+    page = auto()
+    body = auto()
+    charts = auto()
+    note_fingering = auto()
+    fingering = auto()
 
 
 @dc.dataclass(frozen=True)
@@ -61,3 +71,8 @@ class Sizes:
         r = getattr(self, name)
         dw, dh = getattr(self.inset, name)
         return r.width * columns + 2 * dw, r.height * rows + 2 * dh
+
+
+_REGIONS = {s.name for s in Region}
+_PROPERTIES = {k for k, v in vars(Sizes).items() if isinstance(v, cached_property)}
+assert _REGIONS | {'inset'} == _PROPERTIES, (_REGIONS, _PROPERTIES)

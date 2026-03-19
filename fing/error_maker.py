@@ -2,9 +2,7 @@ from __future__ import annotations
 
 import dataclasses as dc
 from collections.abc import Iterable
-from typing import Any
-
-from typing_extensions import Never
+from typing import Any, Never
 
 
 class ErrorMakerException(ValueError):

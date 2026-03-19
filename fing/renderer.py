@@ -64,24 +64,6 @@ class Renderer:
     def sizes(self) -> Sizes:
         return Sizes(self.layout, self.columns, self.rows)
 
-    def _add(self, parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
-        if classes:
-            kwargs = {'class': ' '.join(classes)} | kwargs
-        return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
-
-    def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:
-        # TODO: get rid of kwargs - get all spacing through Insets
-        if size := getattr(self.sizes, class_, None):
-            kwargs |= dc.asdict(size)
-
-        r = self._add(parent, 'svg', class_, **kwargs)
-        if (style := class_ + '_background') in self.layout.styles:
-            ka = {'class': style}
-        else:
-            ka = {'fill': 'transparent'}
-        SubElement(r, 'rect', ka | {'width': '100%', 'height': '100%'})
-        return r
-
     def __call__(self) -> Element:
         self.page.append(self.layout.title)
 
@@ -117,3 +99,21 @@ class Renderer:
         caption = dc.asdict(self.layout.caption)
         text = self._add(note_fingering, 'text', 'caption', **caption)
         text.text = str(note).center(NOTE_WIDTH)
+
+    def _add(self, parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
+        if classes:
+            kwargs = {'class': ' '.join(classes)} | kwargs
+        return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
+
+    def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:
+        # TODO: get rid of kwargs - get all spacing through Insets
+        if size := getattr(self.sizes, class_, None):
+            kwargs |= dc.asdict(size)
+
+        r = self._add(parent, 'svg', class_, **kwargs)
+        if (style := class_ + '_background') in self.layout.styles:
+            ka = {'class': style}
+        else:
+            ka = {'fill': 'transparent'}
+        SubElement(r, 'rect', ka | {'width': '100%', 'height': '100%'})
+        return r

@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from constants import FS
+
 from fing import fingering_system
-from test.constants import FS
 
 
 def test_fingerings():

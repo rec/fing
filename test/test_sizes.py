@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import json
 
+import clean_json
+import constants
+
 from fing.renderer import Renderer
 from fing.sizes import Sizes
-from test import clean_json, constants
 
 
 def test_size():
