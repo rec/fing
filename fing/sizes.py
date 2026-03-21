@@ -41,24 +41,23 @@ class Sizes:
     @cached_property
     def page(self) -> Rect:
         dw, dh = self.inset.body
-        return Rect(
-            *self.inset.page, self.body.width + 2 * dw, self.body.height + 2 * dh
-        )
+        w = self.body.width + 2 * dw
+        h = self.body.height + 2 * dh
+        return Rect(*self.inset.page, w, h)
 
     @cached_property
     def body(self) -> Rect:
         dw, dh = self.inset.charts
-        w, h = self.charts.width + 2 * dw, self.charts.height + 2 * dh
-        return Rect(*self.inset.body, w, h + self.layout.title_height)
+        w = self.charts.width + 2 * dw
+        h = self.charts.height + 2 * dh + self.layout.title_height
+        return Rect(*self.inset.body, w, h)
 
     @cached_property
     def charts(self) -> Rect:
         w = self.note_fingering.width * self.columns
-        h = self.note_fingering.height * self.rows + self.layout.fingering_pad * (
-            self.rows - 1
-        )
+        pad = self.layout.fingering_pad * (self.rows - 1)
+        h = self.note_fingering.height * self.rows + pad
         x, y = self.inset.charts
-
         return Rect(x, y + self.layout.title_height, w, h)
 
     @cached_property

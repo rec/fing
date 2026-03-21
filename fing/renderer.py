@@ -53,16 +53,16 @@ class Renderer:
         return svg
 
     @cached_property
-    def body(self) -> Element:
-        return self._add_svg(self.svg, 'body')
+    def page(self) -> Element:
+        return self._add_svg(self.svg, 'page')
 
     @cached_property
-    def page(self) -> Element:
-        return self._add_svg(self.body, 'page')
+    def body(self) -> Element:
+        return self._add_svg(self.page, 'body')
 
     @cached_property
     def charts(self) -> Element:
-        return self._add_svg(self.page, 'charts')
+        return self._add_svg(self.body, 'charts')
 
     @cached_property
     def sizes(self) -> Sizes:

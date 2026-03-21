@@ -20,19 +20,19 @@
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
     .caption { fill: black; font-size: 40px; font-family: monospace; text-anchor: middle; }
   </style>
-  <svg class="body" x="30" y="30" width="2328" height="3355">
+  <svg class="page" x="30" y="30" width="2388" height="3415">
     <rect fill="transparent" width="100%" height="100%" />
-    <svg class="page" x="30" y="30" width="2388" height="3415">
+    <svg>
+      <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
+        Fingering chart for the Baroque family of recorders
+      </text>
+      <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
+        Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
+      </text>
+      <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
+    </svg>
+    <svg class="body" x="30" y="30" width="2328" height="3355">
       <rect fill="transparent" width="100%" height="100%" />
-      <svg>
-        <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
-          Fingering chart for the Baroque family of recorders
-        </text>
-        <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
-          Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
-        </text>
-        <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
-      </svg>
       <svg class="charts" x="30" y="255" width="2268" height="3070">
         <rect fill="transparent" width="100%" height="100%" />
         <svg class="note_fingering" x="0" y="0" width="162" height="1460">
