@@ -16,7 +16,6 @@ class Rect:
 
 
 class Region(StrEnum):
-    document = auto()
     page = auto()
     body = auto()
     charts = auto()
@@ -49,11 +48,9 @@ class Sizes:
 
     @cached_property
     def charts(self) -> Rect:
-        assert (self.columns, self.rows) == (14, 2)
         r = self.note_fingering
-        dw, dh = self.inset.note_fingering
-        w = r.width * self.columns + 2 * dw
-        h = r.height * self.rows + 2 * dh + self.layout.fingering_pad * (self.rows - 1)
+        w = r.width * self.columns
+        h = r.height * self.rows + self.layout.fingering_pad * (self.rows - 1)
         x, y = self.inset.charts
 
         return Rect(x, y + self.layout.title_height, w, h)
@@ -67,12 +64,12 @@ class Sizes:
     def fingering(self) -> Rect:
         return Rect(*self.inset.fingering, self.layout.width, self.layout.height)
 
-    def _col_row(self, name: str, columns: int = 1, rows: int = 1) -> tuple[int, int]:
+    def _col_row(self, name: str) -> tuple[int, int]:
         r = getattr(self, name)
         dw, dh = getattr(self.inset, name)
-        return r.width * columns + 2 * dw, r.height * rows + 2 * dh
+        return r.width + 2 * dw, r.height + 2 * dh
 
 
 _REGIONS = {s.name for s in Region}
 _PROPERTIES = {k for k, v in vars(Sizes).items() if isinstance(v, cached_property)}
-assert _REGIONS | {'inset'} == _PROPERTIES, (_REGIONS, _PROPERTIES)
+assert _REGIONS | {'inset', 'document'} == _PROPERTIES, (_REGIONS, _PROPERTIES)

@@ -14,9 +14,7 @@ from .sizes import Region, Sizes
 NOTE_WIDTH = len('C#/D-1')
 _SVG = {'xmlns': 'http://www.w3.org/2000/svg'}
 
-DEFAULT_STYLES = {
-    f'{k}_background': {'fill': 'transparent'} for k in Region if k != Region.document
-}
+DEFAULT_STYLES = {f'{k}_background': {'fill': 'transparent'} for k in Region}
 
 
 @dc.dataclass(frozen=True)

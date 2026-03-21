@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 2508 3535" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2448 3475" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <svg id="copyleft">
       <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1" />
@@ -21,9 +21,9 @@
     .caption { fill: black; font-size: 40px; font-family: monospace; text-anchor: middle; }
     .note-fingering_background { fill: lightgray; }
   </style>
-  <svg class="body" x="30" y="30" width="2388" height="3415">
+  <svg class="body" x="30" y="30" width="2328" height="3355">
     <rect class="body_background" width="100%" height="100%" />
-    <svg class="page" x="30" y="30" width="2448" height="3475">
+    <svg class="page" x="30" y="30" width="2388" height="3415">
       <rect class="page_background" width="100%" height="100%" />
       <svg>
         <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
@@ -34,7 +34,7 @@
         </text>
         <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
       </svg>
-      <svg class="charts" x="30" y="255" width="2328" height="3130">
+      <svg class="charts" x="30" y="255" width="2268" height="3070">
         <rect class="charts_background" width="100%" height="100%" />
         <svg class="note_fingering" x="0" y="0" width="162" height="1460">
           <rect fill="transparent" width="100%" height="100%" />
