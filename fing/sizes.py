@@ -35,15 +35,24 @@ class Sizes:
 
     @cached_property
     def document(self) -> Rect:
-        return Rect(0, 0, *self._col_row('page'))
+        r = self.page
+        dw, dh = self.inset.page
+        result = r.width + 2 * dw, r.height + 2 * dh
+        return Rect(0, 0, *result)
 
     @cached_property
     def page(self) -> Rect:
-        return Rect(*self.inset.page, *self._col_row('body'))
+        r = self.body
+        dw, dh = self.inset.body
+        result = r.width + 2 * dw, r.height + 2 * dh
+        return Rect(*self.inset.page, *result)
 
     @cached_property
     def body(self) -> Rect:
-        w, h = self._col_row('charts')
+        r = self.charts
+        dw, dh = self.inset.charts
+        result = r.width + 2 * dw, r.height + 2 * dh
+        w, h = result
         return Rect(*self.inset.body, w, h + self.layout.title_height)
 
     @cached_property
@@ -57,17 +66,15 @@ class Sizes:
 
     @cached_property
     def note_fingering(self) -> Rect:
-        w, h = self._col_row('fingering')
+        r = self.fingering
+        dw, dh = self.inset.fingering
+        result = r.width + 2 * dw, r.height + 2 * dh
+        w, h = result
         return Rect(*self.inset.note_fingering, w, h + self.layout.caption.height)
 
     @cached_property
     def fingering(self) -> Rect:
         return Rect(*self.inset.fingering, self.layout.width, self.layout.height)
-
-    def _col_row(self, name: str) -> tuple[int, int]:
-        r = getattr(self, name)
-        dw, dh = getattr(self.inset, name)
-        return r.width + 2 * dw, r.height + 2 * dh
 
 
 _REGIONS = {s.name for s in Region}
