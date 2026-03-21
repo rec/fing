@@ -35,41 +35,36 @@ class Sizes:
 
     @cached_property
     def document(self) -> Rect:
-        r = self.page
         dw, dh = self.inset.page
-        result = r.width + 2 * dw, r.height + 2 * dh
-        return Rect(0, 0, *result)
+        return Rect(0, 0, self.page.width + 2 * dw, self.page.height + 2 * dh)
 
     @cached_property
     def page(self) -> Rect:
-        r = self.body
         dw, dh = self.inset.body
-        result = r.width + 2 * dw, r.height + 2 * dh
-        return Rect(*self.inset.page, *result)
+        return Rect(
+            *self.inset.page, self.body.width + 2 * dw, self.body.height + 2 * dh
+        )
 
     @cached_property
     def body(self) -> Rect:
-        r = self.charts
         dw, dh = self.inset.charts
-        result = r.width + 2 * dw, r.height + 2 * dh
-        w, h = result
+        w, h = self.charts.width + 2 * dw, self.charts.height + 2 * dh
         return Rect(*self.inset.body, w, h + self.layout.title_height)
 
     @cached_property
     def charts(self) -> Rect:
-        r = self.note_fingering
-        w = r.width * self.columns
-        h = r.height * self.rows + self.layout.fingering_pad * (self.rows - 1)
+        w = self.note_fingering.width * self.columns
+        h = self.note_fingering.height * self.rows + self.layout.fingering_pad * (
+            self.rows - 1
+        )
         x, y = self.inset.charts
 
         return Rect(x, y + self.layout.title_height, w, h)
 
     @cached_property
     def note_fingering(self) -> Rect:
-        r = self.fingering
         dw, dh = self.inset.fingering
-        result = r.width + 2 * dw, r.height + 2 * dh
-        w, h = result
+        w, h = self.fingering.width + 2 * dw, self.fingering.height + 2 * dh
         return Rect(*self.inset.note_fingering, w, h + self.layout.caption.height)
 
     @cached_property
