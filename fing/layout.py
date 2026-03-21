@@ -30,11 +30,10 @@ class XY(NamedTuple):
 
 @dc.dataclass(frozen=True)
 class Inset:
-    page: XY = XY(30, 30)
     body: XY = XY(30, 30)
     charts: XY = XY(30, 30)
     note_fingering: XY = XY(30, 30)
-    fingering: XY = XY(30, 80)
+    fingering: XY = XY(30, 30)
 
 
 @dc.dataclass(frozen=True)
@@ -52,7 +51,7 @@ class Layout:
 
     button_height: int = 120
     width: int = 102
-    title_height: int = 225
+    title_height: int = 250
     fingering_pad: int = 150
 
     inset: Inset = Inset()

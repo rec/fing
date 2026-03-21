@@ -14,9 +14,7 @@ from .sizes import Region, Sizes
 NOTE_WIDTH = len('C#/D-1')
 _SVG = {'xmlns': 'http://www.w3.org/2000/svg'}
 
-DEFAULT_STYLES = {
-    f'{k}_background': {'fill': 'transparent'} for k in Region if k != Region.document
-}
+DEFAULT_STYLES = {f'{k}_background': {'fill': 'transparent'} for k in Region}
 
 
 @dc.dataclass(frozen=True)
@@ -32,7 +30,7 @@ class Renderer:
 
     @cached_property
     def inset(self) -> Inset:
-        return self.inset
+        return self.layout.inset
 
     @cached_property
     def rows(self) -> int:
@@ -59,19 +57,15 @@ class Renderer:
         return self._add_svg(self.svg, 'body')
 
     @cached_property
-    def page(self) -> Element:
-        return self._add_svg(self.body, 'page')
-
-    @cached_property
     def charts(self) -> Element:
-        return self._add_svg(self.page, 'charts')
+        return self._add_svg(self.body, 'charts')
 
     @cached_property
     def sizes(self) -> Sizes:
         return Sizes(self.layout, self.columns, self.rows)
 
     def __call__(self) -> Element:
-        self.page.append(self.layout.title)
+        self.body.append(self.layout.title)
 
         for i, (note, fingering) in enumerate(self.fingerings.items()):
             self._note_fingering(i, note, fingering)
@@ -84,7 +78,7 @@ class Renderer:
             return
         for row in range(1, self.rows):
             y = row * (self.layout.height + self.layout.fingering_pad)
-            width = self.sizes.page.width
+            width = self.sizes.charts.width
             y -= 80  # HACK!
             width -= 950  # HACK!
             self._add(
@@ -93,8 +87,9 @@ class Renderer:
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
-        x = self.sizes.note_fingering.width * column
-        y = (self.layout.height + self.layout.fingering_pad) * row
+        dx, dy = self.inset.note_fingering
+        x = self.sizes.note_fingering.width * column + dy
+        y = (self.layout.height + self.layout.fingering_pad) * row + dy
         note_fingering = self._add_svg(self.charts, 'note_fingering', x=x, y=y)
         pieces = self._add_svg(
             note_fingering, 'fingering', y=self.layout.caption.height

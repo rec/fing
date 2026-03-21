@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 2508 3535" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2448 3300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <svg id="copyleft">
       <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1" />
@@ -12,7 +12,7 @@
     <path d="  M 0,50   A 50,50 0 0 0 100,50   Z  " fill="black" id="octave" />
   </defs>
   <style>
-    .page_background { fill: transparent; }
+    .document_background { fill: transparent; }
     .body_background { fill: transparent; }
     .charts_background { fill: transparent; }
     .note_fingering_background { fill: transparent; }
@@ -20,545 +20,542 @@
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
     .caption { fill: black; font-size: 40px; font-family: monospace; text-anchor: middle; }
   </style>
-  <svg class="body" x="30" y="30" width="2388" height="3415">
+  <svg class="body" x="30" y="30" width="2388" height="3240">
     <rect fill="transparent" width="100%" height="100%" />
-    <svg class="page" x="30" y="30" width="2448" height="3475">
+    <svg>
+      <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
+        Fingering chart for the Baroque family of recorders
+      </text>
+      <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
+        Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
+      </text>
+      <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
+    </svg>
+    <svg class="charts" x="30" y="280" width="2328" height="2930">
       <rect fill="transparent" width="100%" height="100%" />
-      <svg>
-        <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
-          Fingering chart for the Baroque family of recorders
-        </text>
-        <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
-          Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
-        </text>
-        <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
-      </svg>
-      <svg class="charts" x="30" y="255" width="2328" height="3130">
+      <svg class="note_fingering" x="30" y="30" width="162" height="1360">
         <rect fill="transparent" width="100%" height="100%" />
-        <svg class="note_fingering" x="0" y="0" width="162" height="1460">
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" />
-            <use x="1" y="1081" href="#big-hole" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  C1  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" />
+          <use x="1" y="1081" href="#big-hole" />
         </svg>
-        <svg class="note_fingering" x="162" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  C1  </text>
+      </svg>
+      <svg class="note_fingering" x="192" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">C♯/D♭1</text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" />
         </svg>
-        <svg class="note_fingering" x="324" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">C♯/D♭1</text>
+      </svg>
+      <svg class="note_fingering" x="354" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  D1  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="486" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  D1  </text>
+      </svg>
+      <svg class="note_fingering" x="516" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">D♯/E♭1</text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="648" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">D♯/E♭1</text>
+      </svg>
+      <svg class="note_fingering" x="678" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  E1  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="810" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  E1  </text>
+      </svg>
+      <svg class="note_fingering" x="840" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" />
-            <use x="1" y="1081" href="#big-hole" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  F1  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" />
+          <use x="1" y="1081" href="#big-hole" />
         </svg>
-        <svg class="note_fingering" x="972" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  F1  </text>
+      </svg>
+      <svg class="note_fingering" x="1002" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">F♯/G♭1</text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1134" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">F♯/G♭1</text>
+      </svg>
+      <svg class="note_fingering" x="1164" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  G1  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1296" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  G1  </text>
+      </svg>
+      <svg class="note_fingering" x="1326" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">G♯/A♭1</text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1458" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">G♯/A♭1</text>
+      </svg>
+      <svg class="note_fingering" x="1488" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  A1  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1620" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  A1  </text>
+      </svg>
+      <svg class="note_fingering" x="1650" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">A♯/B♭1</text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1782" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">A♯/B♭1</text>
+      </svg>
+      <svg class="note_fingering" x="1812" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" class="outline" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  B1  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" class="outline" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1944" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  B1  </text>
+      </svg>
+      <svg class="note_fingering" x="1974" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" class="outline" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  C2  </text>
+          <use x="1" y="1" href="#pad" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" class="outline" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="2106" y="0" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  C2  </text>
+      </svg>
+      <svg class="note_fingering" x="2136" y="30" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">C♯/D♭2</text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="0" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">C♯/D♭2</text>
+      </svg>
+      <svg class="note_fingering" x="30" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" class="outline" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  D2  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" class="outline" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="162" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  D2  </text>
+      </svg>
+      <svg class="note_fingering" x="192" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" class="outline" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">D♯/E♭2</text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" class="outline" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="324" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">D♯/E♭2</text>
+      </svg>
+      <svg class="note_fingering" x="354" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  E2  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="486" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  E2  </text>
+      </svg>
+      <svg class="note_fingering" x="516" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  F2  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="648" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  F2  </text>
+      </svg>
+      <svg class="note_fingering" x="678" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">F♯/G♭2</text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="810" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">F♯/G♭2</text>
+      </svg>
+      <svg class="note_fingering" x="840" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  G2  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="972" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  G2  </text>
+      </svg>
+      <svg class="note_fingering" x="1002" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">G♯/A♭2</text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1134" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">G♯/A♭2</text>
+      </svg>
+      <svg class="note_fingering" x="1164" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  A2  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1296" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  A2  </text>
+      </svg>
+      <svg class="note_fingering" x="1326" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" class="outline" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">A♯/B♭2</text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" class="outline" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" />
         </svg>
-        <svg class="note_fingering" x="1458" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">A♯/B♭2</text>
+      </svg>
+      <svg class="note_fingering" x="1488" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  B2  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1620" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  B2  </text>
+      </svg>
+      <svg class="note_fingering" x="1650" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" class="outline" />
-            <use x="1" y="481" href="#pad" class="outline" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" />
-            <use x="1" y="961" href="#little-hole" class="outline" />
-            <use x="1" y="961" href="#big-hole" class="outline" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  C3  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" class="outline" />
+          <use x="1" y="481" href="#pad" class="outline" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" />
+          <use x="1" y="961" href="#little-hole" class="outline" />
+          <use x="1" y="961" href="#big-hole" class="outline" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1782" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">  C3  </text>
+      </svg>
+      <svg class="note_fingering" x="1812" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" class="outline" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">C♯/D♭3</text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" class="outline" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
-        <svg class="note_fingering" x="1944" y="1350" width="162" height="1460">
+        <text class="caption" height="100" x="80" y="45">C♯/D♭3</text>
+      </svg>
+      <svg class="note_fingering" x="1974" y="1380" width="162" height="1360">
+        <rect fill="transparent" width="100%" height="100%" />
+        <svg class="fingering" x="30" y="100" width="102" height="1200">
           <rect fill="transparent" width="100%" height="100%" />
-          <svg class="fingering" x="30" y="100" width="102" height="1200">
-            <rect fill="transparent" width="100%" height="100%" />
-            <use x="1" y="1" href="#pad" class="outline" />
-            <use x="1" y="1" href="#octave" />
-            <use x="1" y="121" href="#horizontal-line" />
-            <use x="1" y="241" href="#pad" />
-            <use x="1" y="361" href="#pad" class="outline" />
-            <use x="1" y="481" href="#pad" />
-            <use x="1" y="601" href="#horizontal-line" />
-            <use x="1" y="721" href="#pad" />
-            <use x="1" y="841" href="#pad" class="outline" />
-            <use x="1" y="961" href="#little-hole" />
-            <use x="1" y="961" href="#big-hole" />
-            <use x="1" y="1081" href="#little-hole" class="outline" />
-            <use x="1" y="1081" href="#big-hole" class="outline" />
-          </svg>
-          <text class="caption" height="100" x="80" y="45">  D3  </text>
+          <use x="1" y="1" href="#pad" class="outline" />
+          <use x="1" y="1" href="#octave" />
+          <use x="1" y="121" href="#horizontal-line" />
+          <use x="1" y="241" href="#pad" />
+          <use x="1" y="361" href="#pad" class="outline" />
+          <use x="1" y="481" href="#pad" />
+          <use x="1" y="601" href="#horizontal-line" />
+          <use x="1" y="721" href="#pad" />
+          <use x="1" y="841" href="#pad" class="outline" />
+          <use x="1" y="961" href="#little-hole" />
+          <use x="1" y="961" href="#big-hole" />
+          <use x="1" y="1081" href="#little-hole" class="outline" />
+          <use x="1" y="1081" href="#big-hole" class="outline" />
         </svg>
+        <text class="caption" height="100" x="80" y="45">  D3  </text>
       </svg>
     </svg>
   </svg>

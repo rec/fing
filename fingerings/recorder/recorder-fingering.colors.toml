@@ -5,9 +5,9 @@ fill = 'pink'
 fill = 'lightgreen'
 
 [layout.styles.charts_background]
-fill = 'lightblue'
+fill = 'pink'
 
-[layout.styles.note-fingering_background]
+[layout.styles.note_fingering_background]
 fill = 'lightgray'
 
 [layout.styles.fingering_background]
