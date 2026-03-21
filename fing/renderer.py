@@ -9,10 +9,14 @@ from xml.etree.ElementTree import Element, SubElement
 from .fingering_system import Button, Fingerings
 from .layout import Inset, Layout
 from .note import Note
-from .sizes import Sizes
+from .sizes import Region, Sizes
 
 NOTE_WIDTH = len('C#/D-1')
 _SVG = {'xmlns': 'http://www.w3.org/2000/svg'}
+
+DEFAULT_STYLES = {
+    f'{k}_background': {'fill': 'transparent'} for k in Region if k != Region.document
+}
 
 
 @dc.dataclass(frozen=True)
@@ -44,7 +48,9 @@ class Renderer:
             parts = ' '.join(f'{k}: {v};' for k, v in d.items())
             return f'  .{name} {{ {parts} }}'
 
-        styles = '\n  '.join(render_style(k, v) for k, v in self.layout.styles.items())
+        styles = DEFAULT_STYLES | self.layout.styles
+        styles = '\n  '.join(render_style(k, v) for k, v in styles.items())
+
         self._add(svg, 'style').text = '\n  ' + styles + '\n  '
         return svg
 
@@ -89,7 +95,7 @@ class Renderer:
         row, column = divmod(i, self.columns)
         x = self.sizes.note_fingering.width * column
         y = (self.layout.height + self.layout.fingering_pad) * row
-        note_fingering = self._add_svg(self.charts, 'note-fingering', x=x, y=y)
+        note_fingering = self._add_svg(self.charts, 'note_fingering', x=x, y=y)
         pieces = self._add_svg(
             note_fingering, 'fingering', y=self.layout.caption.height
         )
@@ -106,9 +112,8 @@ class Renderer:
         return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
 
     def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:
-        # TODO: get rid of kwargs - get all spacing through Insets
         if size := getattr(self.sizes, class_, None):
-            kwargs |= dc.asdict(size)
+            kwargs = dc.asdict(size) | kwargs
 
         r = self._add(parent, 'svg', class_, **kwargs)
         if (style := class_ + '_background') in self.layout.styles:
