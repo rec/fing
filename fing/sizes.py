@@ -8,9 +8,7 @@ from .layout import Inset, Layout
 
 
 @dc.dataclass
-class Rect:
-    x: int
-    y: int
+class Size:
     width: int
     height: int
 
@@ -34,36 +32,34 @@ class Sizes:
         return self.layout.inset
 
     @cached_property
-    def document(self) -> Rect:
+    def document(self) -> Size:
         dw, dh = self.inset.body
-        return Rect(0, 0, self.body.width + 2 * dw, self.body.height + 2 * dh)
+        return Size(self.body.width + 2 * dw, self.body.height + 2 * dh)
 
     @cached_property
-    def body(self) -> Rect:
+    def body(self) -> Size:
         dw, dh = self.inset.charts
         w = self.charts.width + 2 * dw
         h = self.charts.height + 2 * dh + self.layout.title_height
-        x, y = self.inset.body
-        return Rect(x, y, w, h)
+        return Size(w, h)
 
     @cached_property
-    def charts(self) -> Rect:
+    def charts(self) -> Size:
         dw, dh = self.inset.note_fingering
         w = self.note_fingering.width * self.columns + 2 * dw
         pad = self.layout.fingering_pad * (self.rows - 1)
         h = self.note_fingering.height * self.rows + pad + 2 * dh
-        x, y = self.inset.charts
-        return Rect(x, y + self.layout.title_height, w, h)
+        return Size(w, h)
 
     @cached_property
-    def note_fingering(self) -> Rect:
+    def note_fingering(self) -> Size:
         dw, dh = self.inset.fingering
         w, h = self.fingering.width + 2 * dw, self.fingering.height + 2 * dh
-        return Rect(*self.inset.note_fingering, w, h + self.layout.caption.height)
+        return Size(w, h + self.layout.caption.height)
 
     @cached_property
-    def fingering(self) -> Rect:
-        return Rect(*self.inset.fingering, self.layout.width, self.layout.height)
+    def fingering(self) -> Size:
+        return Size(self.layout.width, self.layout.height)
 
 
 _REGIONS = {s.name for s in Region}

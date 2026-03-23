@@ -108,7 +108,10 @@ class Renderer:
 
     def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:
         if size := getattr(self.sizes, class_, None):
-            kwargs = dc.asdict(size) | kwargs
+            x, y = getattr(self.inset, class_)
+            if class_ == 'charts':
+                y += self.layout.title_height
+            kwargs = {'x': x, 'y': y} | dc.asdict(size) | kwargs
 
         r = self._add(parent, 'svg', class_, **kwargs)
         if (style := class_ + '_background') in self.layout.styles:

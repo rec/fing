@@ -9,7 +9,7 @@ from fing.sizes import Region, Sizes
 def test_size():
     sizes = Renderer(constants.LAYOUT, constants.FS.fingerings).sizes
     it = ((k, getattr(sizes, k)) for k in dir(Sizes) if not k.startswith('_'))
-    actual = {k: [v.x, v.y, v.width, v.height] for k, v in it if k != 'inset'}
+    actual = {k: [v.width, v.height] for k, v in it if k != 'inset'}
 
     if not constants.REWRITE_TEST_DATA:
         assert actual == SIZES
@@ -29,9 +29,9 @@ def test_size():
 
 
 SIZES = {
-    'document': [0, 0, 2448, 3300],
-    'body': [30, 30, 2388, 3240],
-    'charts': [30, 280, 2328, 2930],
-    'note_fingering': [30, 30, 162, 1360],
-    'fingering': [30, 30, 102, 1200],
+    'document': [2448, 3300],
+    'body': [2388, 3240],
+    'charts': [2328, 2930],
+    'note_fingering': [162, 1360],
+    'fingering': [102, 1200],
 }
