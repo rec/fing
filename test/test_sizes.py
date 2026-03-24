@@ -29,9 +29,9 @@ def test_size():
 
 
 SIZES = {
-    'document': [2448, 3300],
-    'body': [2388, 3240],
-    'chart': [2328, 2930],
+    'document': [2448, 3360],
+    'body': [2388, 3300],
+    'chart': [2328, 1420],
     'note_fingering': [162, 1360],
     'fingering': [102, 1200],
 }

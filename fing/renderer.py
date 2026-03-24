@@ -61,32 +61,35 @@ class Renderer:
         return self._add_svg(self.svg, 'body')
 
     @cached_property
-    def chart(self) -> Element:
-        return self._add_svg(self.body, 'chart')
-
-    @cached_property
     def sizes(self) -> Sizes:
         return Sizes(self.layout, self.columns, self.rows)
 
     def __call__(self) -> Element:
         self.body.append(self.layout.title)
 
-        for i, (note, fingering) in enumerate(self.fingerings.items()):
-            self._note_fingering(i, note, fingering)
+        fingerings = list(self.fingerings.items())
+        height = self.sizes.chart.height + self.layout.fingering_pad
+        for row in range(self.rows):
+            chart = self._add_svg(
+                self.body, 'chart', y=self.layout.title_height + row * height
+            )
+            row_items = fingerings[row * self.columns : (row + 1) * self.columns]
+            for column, (note, fingering) in enumerate(row_items):
+                self._note_fingering(chart, column, note, fingering)
 
         return self.svg
 
-    def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
-        row, column = divmod(i, self.columns)
+    def _note_fingering(
+        self, chart: Element, column: int, note: Note, fingering: Sequence[Button]
+    ) -> None:
         dx, dy = self.inset.note_fingering
-        x = self.sizes.note_fingering.width * column + dy
-        y = (self.layout.height + self.layout.fingering_pad) * row + dy
-        note_fingering = self._add_svg(self.chart, 'note_fingering', x=x, y=y)
-        pieces = self._add_svg(
+        x = self.sizes.note_fingering.width * column + dx
+        note_fingering = self._add_svg(chart, 'note_fingering', x=x)
+        fingering_ = self._add_svg(
             note_fingering, 'fingering', y=self.layout.caption.height
         )
-        for piece in self.layout.pieces:
-            pieces.extend(piece.render(fingering))
+        for p in self.layout.pieces:
+            fingering_.extend(p.render(fingering))
 
         caption = dc.asdict(self.layout.caption)
         text = self._add(note_fingering, 'text', 'caption', **caption)

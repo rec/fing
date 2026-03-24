@@ -43,14 +43,14 @@ class Sizes:
 
     @cached_property
     def body(self) -> Size:
-        return self._size('chart').add(height=self.layout.title_height)
+        height = (self.chart.height + self.layout.fingering_pad) * (self.rows - 1)
+        return self._size('chart').add(height=height + self.layout.title_height)
 
     @cached_property
     def chart(self) -> Size:
-        w, h = self.note_fingering
-        h += self.layout.fingering_pad
-        width, height = w * (self.columns - 1), h * (self.rows - 1)
-        return self._size('note_fingering').add(width=width, height=height)
+        # A single row
+        width = self.note_fingering.width * (self.columns - 1)
+        return self._size('note_fingering').add(width=width)
 
     @cached_property
     def note_fingering(self) -> Size:
