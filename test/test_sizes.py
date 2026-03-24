@@ -31,7 +31,7 @@ def test_size():
 SIZES = {
     'document': [2448, 3300],
     'body': [2388, 3240],
-    'charts': [2328, 2930],
+    'chart': [2328, 2930],
     'note_fingering': [162, 1360],
     'fingering': [102, 1200],
 }

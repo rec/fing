@@ -16,7 +16,7 @@ class Size:
 class Region(StrEnum):
     document = auto()
     body = auto()
-    charts = auto()
+    chart = auto()
     note_fingering = auto()
     fingering = auto()
 
@@ -38,13 +38,13 @@ class Sizes:
 
     @cached_property
     def body(self) -> Size:
-        dw, dh = self.inset.charts
-        w = self.charts.width + 2 * dw
-        h = self.charts.height + 2 * dh + self.layout.title_height
+        dw, dh = self.inset.chart
+        w = self.chart.width + 2 * dw
+        h = self.chart.height + 2 * dh + self.layout.title_height
         return Size(w, h)
 
     @cached_property
-    def charts(self) -> Size:
+    def chart(self) -> Size:
         dw, dh = self.inset.note_fingering
         w = self.note_fingering.width * self.columns + 2 * dw
         pad = self.layout.fingering_pad * (self.rows - 1)

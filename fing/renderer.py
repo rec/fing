@@ -57,8 +57,8 @@ class Renderer:
         return self._add_svg(self.svg, 'body')
 
     @cached_property
-    def charts(self) -> Element:
-        return self._add_svg(self.body, 'charts')
+    def chart(self) -> Element:
+        return self._add_svg(self.body, 'chart')
 
     @cached_property
     def sizes(self) -> Sizes:
@@ -78,19 +78,17 @@ class Renderer:
             return
         for row in range(1, self.rows):
             y = row * (self.layout.height + self.layout.fingering_pad)
-            width = self.sizes.charts.width
+            width = self.sizes.chart.width
             y -= 80  # HACK!
             width -= 950  # HACK!
-            self._add(
-                self.charts, 'rect', 'large-separator', y=y, width=width, height=3
-            )
+            self._add(self.chart, 'rect', 'large-separator', y=y, width=width, height=3)
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
         dx, dy = self.inset.note_fingering
         x = self.sizes.note_fingering.width * column + dy
         y = (self.layout.height + self.layout.fingering_pad) * row + dy
-        note_fingering = self._add_svg(self.charts, 'note_fingering', x=x, y=y)
+        note_fingering = self._add_svg(self.chart, 'note_fingering', x=x, y=y)
         pieces = self._add_svg(
             note_fingering, 'fingering', y=self.layout.caption.height
         )
@@ -109,7 +107,7 @@ class Renderer:
     def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:
         if size := getattr(self.sizes, class_, None):
             x, y = getattr(self.inset, class_)
-            if class_ == 'charts':
+            if class_ == 'chart':
                 y += self.layout.title_height
             kwargs = {'x': x, 'y': y} | dc.asdict(size) | kwargs
 

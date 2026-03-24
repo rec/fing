@@ -14,7 +14,7 @@
   <style>
     .document_background { fill: transparent; }
     .body_background { fill: transparent; }
-    .charts_background { fill: transparent; }
+    .chart_background { fill: transparent; }
     .note_fingering_background { fill: transparent; }
     .fingering_background { fill: transparent; }
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
@@ -31,7 +31,7 @@
       </text>
       <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
     </svg>
-    <svg class="charts" x="30" y="280" width="2328" height="2930">
+    <svg class="chart" x="30" y="280" width="2328" height="2930">
       <rect fill="transparent" width="100%" height="100%" />
       <svg class="note_fingering" x="30" y="30" width="162" height="1360">
         <rect fill="transparent" width="100%" height="100%" />

@@ -31,7 +31,7 @@ class XY(NamedTuple):
 @dc.dataclass(frozen=True)
 class Inset:
     body: XY = XY(30, 30)
-    charts: XY = XY(30, 30)
+    chart: XY = XY(30, 30)
     note_fingering: XY = XY(30, 30)
     fingering: XY = XY(30, 30)
 

@@ -4,7 +4,7 @@ fill = 'pink'
 [layout.styles.body_background]
 fill = 'lightgreen'
 
-[layout.styles.charts_background]
+[layout.styles.chart_background]
 fill = 'pink'
 
 [layout.styles.note_fingering_background]
