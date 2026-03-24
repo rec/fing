@@ -74,18 +74,7 @@ class Renderer:
         for i, (note, fingering) in enumerate(self.fingerings.items()):
             self._note_fingering(i, note, fingering)
 
-        self._draw_rules()
         return self.svg
-
-    def _draw_rules(self):
-        if True:
-            return
-        for row in range(1, self.rows):
-            y = row * (self.layout.height + self.layout.fingering_pad)
-            width = self.sizes.chart.width
-            y -= 80  # HACK!
-            width -= 950  # HACK!
-            self._add(self.chart, 'rect', 'large-separator', y=y, width=width, height=3)
 
     def _note_fingering(self, i: int, note: Note, fingering: Sequence[Button]) -> None:
         row, column = divmod(i, self.columns)
