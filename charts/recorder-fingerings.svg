@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg viewBox="0 0 2448 3360" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2448 3485" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <svg id="copyleft">
       <circle cx="5" cy="5" r="4.49" fill="none" stroke="#000" stroke-width="1" />
@@ -19,16 +19,16 @@
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
     .caption { fill: black; font-size: 40px; font-family: monospace; text-anchor: middle; }
   </style>
-  <svg class="body" x="30" y="30" width="2388" height="3300">
+  <svg class="body" x="30" y="30" width="2388" height="3425">
     <rect class="body_background" width="100%" height="100%" />
     <svg>
-      <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
+      <text font-size="60px" font-family="monospace" text-anchor="middle" x="1200" y="100">
         Fingering chart for the Baroque family of recorders
       </text>
-      <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
+      <text font-size="35px" font-family="monospace" text-anchor="middle" x="1200" y="190">
         Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
       </text>
-      <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
+      <use href="#copyleft" x="283" y="54" transform="scale(3, 3)" />
     </svg>
     <svg class="chart" x="30" y="250" width="2328" height="1420">
       <rect class="chart_background" width="100%" height="100%" />
@@ -560,5 +560,8 @@
         <text class="caption" height="100" x="80" y="45">  D3  </text>
       </svg>
     </svg>
+    <text font-size="35px" font-family="monospace" text-anchor="middle" x="1200" y="3300">
+      For more information about how to make charts like this, see https://github.com/rec/fing
+    </text>
   </svg>
 </svg>

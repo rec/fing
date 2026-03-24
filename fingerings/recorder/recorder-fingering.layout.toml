@@ -1,14 +1,20 @@
 [layout]
 title = '''
 <svg>
-  <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
+  <text font-size="60px" font-family="monospace" text-anchor="middle" x="1200" y="100">
         Fingering chart for the Baroque family of recorders
   </text>
-  <text font-size="30px" font-family="monospace" text-anchor="middle" x="1000" y="170">
+  <text font-size="35px" font-family="monospace" text-anchor="middle" x="1200" y="190">
       Copyleft <tspan fill="transparent">©</tspan> 2026, Tom Ritchford. No rights reserved.
   </text>
-  <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
+  <use href="#copyleft" x="283" y="54" transform="scale(3, 3)" />
 </svg>
+'''
+
+footer = '''
+<text font-size="35px" font-family="monospace" text-anchor="middle" x="1200" y="3300">
+  For more information about how to make charts like this, see https://github.com/rec/fing
+</text>
 '''
 
 [layout.styles]

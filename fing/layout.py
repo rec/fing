@@ -45,6 +45,7 @@ class Layout:
     caption_: dict[str, int | bool] = dc.field(default_factory=dict)
     caption_above: bool = True
     title_: str = ''
+    footer_: str = ''
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
 
     rows: int = 2
@@ -52,6 +53,7 @@ class Layout:
     button_height: int = 120
     width: int = 102
     title_height: int = 250
+    footer_height: int = 125
     fingering_pad: int = 150
 
     inset: Inset = Inset()
@@ -105,6 +107,10 @@ class Layout:
     @cached_property
     def title(self) -> Element:
         return fromstring(self.title_)
+
+    @cached_property
+    def footer(self) -> Element:
+        return fromstring(self.footer_)
 
     @staticmethod
     def make(data: tomlkit.TOMLDocument, to_button: dict[str, Any]) -> Layout:

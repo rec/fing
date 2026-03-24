@@ -44,7 +44,8 @@ class Sizes:
     @cached_property
     def body(self) -> Size:
         height = (self.chart.height + self.layout.fingering_pad) * (self.rows - 1)
-        return self._size('chart').add(height=height + self.layout.title_height)
+        height += self.layout.title_height + self.layout.footer_height
+        return self._size('chart').add(height=height)
 
     @cached_property
     def chart(self) -> Size:

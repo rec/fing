@@ -77,6 +77,7 @@ class Renderer:
             for column, (note, fingering) in enumerate(row_items):
                 self._note_fingering(chart, column, note, fingering)
 
+        self.body.append(self.layout.footer)
         return self.svg
 
     def _note_fingering(
