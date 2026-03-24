@@ -15,24 +15,24 @@ language = 'en'
 
 [buttons.left-thumb]
 short_name = 'lt'
-press = "left-thumb"
+press = "Left thumb"
 
 [buttons.octave]
 short_name = 'oct'
-press = "left-thumb"
+press = "Left thumb"
 description = 'Half-cover the thumb hole with the nail'
 
 [buttons.left-1]
 short_name = 'l1'
-press = "left-1"
+press = "Left index finger"
 
 [buttons.left-2]
 short_name = 'l2'
-press = "left-2"
+press = "Left middle finger"
 
 [buttons.left-3]
 short_name = 'l3'
-press = "left-3"
+press = "Left ring finger"
 
 #
 #            ******* Right hand *******
@@ -40,33 +40,33 @@ press = "left-3"
 
 [buttons.right-1]
 short_name = 'r1'
-press = "right-1"
+press = "Right index finger"
 
 [buttons.right-2]
 short_name = 'r2'
-press = "right-2"
+press = "Right middle finger"
 
 [buttons.right-3]
 short_name = 'r3'
-press = "right-3"
+press = "Right ring finger"
 
 [buttons.right-3-half]
 short_name = 'r3h'
-press = "right-3"
+press = "Right ring finger"
 description = 'Slide the right ring finger back to only close the large hole'
 
 [buttons.right-4]
 short_name = 'r4'
-press = "right-4"
+press = "Right little finger"
 
 [buttons.right-4-half]
 short_name = 'r4h'
-press = "right-4"
+press = "Right little finger"
 description = 'Slide the right little finger back to only close the large hole'
 
 [buttons.cover-bell]
 short_name = 'cb'
-press = 'knee'
+press = 'Knee'
 description = 'Partly cover the bell of the instrument with the knee'
 
 # Here's where the real action is: the fingering chart.
