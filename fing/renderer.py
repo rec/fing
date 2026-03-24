@@ -44,7 +44,7 @@ class Renderer:
     def svg(self) -> Element:
         s = self.sizes.document
         svg = Element('svg', {'viewBox': f'0 0 {s.width} {s.height}'} | _SVG)
-        self._add(svg, 'defs').extend(self.layout.defs)
+        _add(svg, 'defs').extend(self.layout.defs)
 
         def render_style(name: str, d: dict[str, Any]) -> str:
             parts = ' '.join(f'{k}: {v};' for k, v in d.items())
@@ -53,7 +53,7 @@ class Renderer:
         styles = DEFAULT_STYLES | self.layout.styles
         styles = '\n  '.join(render_style(k, v) for k, v in styles.items())
 
-        self._add(svg, 'style').text = '\n  ' + styles + '\n  '
+        _add(svg, 'style').text = '\n  ' + styles + '\n  '
         return svg
 
     @cached_property
@@ -93,13 +93,8 @@ class Renderer:
             fingering_.extend(p.render(fingering))
 
         caption = dc.asdict(self.layout.caption)
-        text = self._add(note_fingering, 'text', 'caption', **caption)
+        text = _add(note_fingering, 'text', 'caption', **caption)
         text.text = str(note).center(NOTE_WIDTH)
-
-    def _add(self, parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
-        if classes:
-            kwargs = {'class': ' '.join(classes)} | kwargs
-        return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
 
     def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:
         if size := getattr(self.sizes, class_, None):
@@ -108,7 +103,12 @@ class Renderer:
                 y += self.layout.title_height
             kwargs = {'x': x, 'y': y} | size.asdict() | kwargs
 
-        r = self._add(parent, 'svg', class_, **kwargs)
-        ka = {'class': class_ + '_background', 'width': '100%', 'height': '100%'}
-        SubElement(r, 'rect', ka)
+        r = _add(parent, 'svg', class_, **kwargs)
+        _add(r, 'rect', class_ + '_background', width='100%', height='100%')
         return r
+
+
+def _add(parent: Element, tag: str, *classes: str, **kwargs: Any) -> Element:
+    if classes:
+        kwargs = {'class': ' '.join(classes)} | kwargs
+    return SubElement(parent, tag, {k: str(v) for k, v in kwargs.items()})
