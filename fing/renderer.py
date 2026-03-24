@@ -93,7 +93,7 @@ class Renderer:
         self, chart: Element, column: int, note: Note, fingering: Sequence[Button]
     ) -> None:
         dx, dy = self.inset.note_fingering
-        x = self.sizes.note_fingering.width * column + dx
+        x = self.sizes.note_fingering.width * column + dx + self.layout.caption_width
         note_fingering = self._add_svg(chart, 'note_fingering', x=x)
         fingering_ = self._add_svg(
             note_fingering, 'fingering', y=self.layout.note_label.height

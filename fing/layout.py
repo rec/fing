@@ -56,6 +56,7 @@ class Layout:
     fingering_pad: int = 150
     rule_x: int = 10
     rule_y: int = -100
+    caption_width: int = 150
 
     inset: Inset = Inset()
 

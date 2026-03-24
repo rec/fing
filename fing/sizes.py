@@ -50,8 +50,8 @@ class Sizes:
     @cached_property
     def chart(self) -> Size:
         # A single row
-        width = self.note_fingering.width * (self.columns - 1)
-        return self._size('note_fingering').add(width=width)
+        w = self.note_fingering.width * (self.columns - 1) + self.layout.caption_width
+        return self._size('note_fingering').add(width=w)
 
     @cached_property
     def note_fingering(self) -> Size:
