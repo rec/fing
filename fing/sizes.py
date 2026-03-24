@@ -3,14 +3,20 @@ from __future__ import annotations
 import dataclasses as dc
 from enum import StrEnum, auto
 from functools import cached_property
+from typing import NamedTuple
 
 from .layout import Inset, Layout
 
 
-@dc.dataclass
-class Size:
+class Size(NamedTuple):
     width: int
     height: int
+
+    def add(self, width: int = 0, height: int = 0) -> Size:
+        return Size(self.width + width, self.height + height)
+
+    def asdict(self) -> dict[str, int]:
+        return {'width': self.width, 'height': self.height}
 
 
 class SizedRegion(StrEnum):
@@ -33,33 +39,31 @@ class Sizes:
 
     @cached_property
     def document(self) -> Size:
-        dw, dh = self.inset.body
-        return Size(self.body.width + 2 * dw, self.body.height + 2 * dh)
+        return self._size('body')
 
     @cached_property
     def body(self) -> Size:
-        dw, dh = self.inset.chart
-        w = self.chart.width + 2 * dw
-        h = self.chart.height + 2 * dh + self.layout.title_height
-        return Size(w, h)
+        return self._size('chart').add(height=self.layout.title_height)
 
     @cached_property
     def chart(self) -> Size:
-        dw, dh = self.inset.note_fingering
-        w = self.note_fingering.width * self.columns + 2 * dw
-        pad = self.layout.fingering_pad * (self.rows - 1)
-        h = self.note_fingering.height * self.rows + pad + 2 * dh
-        return Size(w, h)
+        w, h = self.note_fingering
+        h += self.layout.fingering_pad
+        width, height = w * (self.columns - 1), h * (self.rows - 1)
+        return self._size('note_fingering').add(width=width, height=height)
 
     @cached_property
     def note_fingering(self) -> Size:
-        dw, dh = self.inset.fingering
-        w, h = self.fingering.width + 2 * dw, self.fingering.height + 2 * dh
-        return Size(w, h + self.layout.caption.height)
+        return self._size('fingering').add(height=self.layout.caption.height)
 
     @cached_property
     def fingering(self) -> Size:
         return Size(self.layout.width, self.layout.height)
+
+    def _size(self, name: str) -> Size:
+        w, h = getattr(self, name)
+        dw, dh = getattr(self.inset, name)
+        return Size(w + 2 * dw, h + 2 * dh)
 
 
 _REGIONS = {s.name for s in SizedRegion}

@@ -102,7 +102,7 @@ class Renderer:
             x, y = getattr(self.inset, class_)
             if class_ == 'chart':
                 y += self.layout.title_height
-            kwargs = {'x': x, 'y': y} | dc.asdict(size) | kwargs
+            kwargs = {'x': x, 'y': y} | size.asdict() | kwargs
 
         r = self._add(parent, 'svg', class_, **kwargs)
         ka = {'class': class_ + '_background', 'width': '100%', 'height': '100%'}
