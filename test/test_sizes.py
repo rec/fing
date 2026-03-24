@@ -3,7 +3,7 @@ from __future__ import annotations
 import constants
 
 from fing.renderer import Renderer
-from fing.sizes import Region, Sizes
+from fing.sizes import SizedRegion, Sizes
 
 
 def test_size():
@@ -22,7 +22,7 @@ def test_size():
         for line in lines:
             fp.write(line)
             if line.startswith('SIZES = {'):
-                for k in Region:
+                for k in SizedRegion:
                     fp.write(f"    '{k}': {actual[k]},\n")
                 fp.write('}\n')
                 break

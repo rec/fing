@@ -9,12 +9,16 @@ from xml.etree.ElementTree import Element, SubElement
 from .fingering_system import Button, Fingerings
 from .layout import Inset, Layout
 from .note import Note
-from .sizes import Region, Sizes
+from .sizes import SizedRegion, Sizes
 
 NOTE_WIDTH = len('C#/D-1')
 _SVG = {'xmlns': 'http://www.w3.org/2000/svg'}
 
-DEFAULT_STYLES = {f'{k}_background': {'fill': 'transparent'} for k in Region}
+DEFAULT_STYLES = {
+    f'{k}_background': {'fill': 'transparent'}
+    for k in SizedRegion
+    if k is not SizedRegion.document
+}
 
 
 @dc.dataclass(frozen=True)
@@ -112,9 +116,6 @@ class Renderer:
             kwargs = {'x': x, 'y': y} | dc.asdict(size) | kwargs
 
         r = self._add(parent, 'svg', class_, **kwargs)
-        if (style := class_ + '_background') in self.layout.styles:
-            ka = {'class': style}
-        else:
-            ka = {'fill': 'transparent'}
-        SubElement(r, 'rect', ka | {'width': '100%', 'height': '100%'})
+        ka = {'class': class_ + '_background', 'width': '100%', 'height': '100%'}
+        SubElement(r, 'rect', ka)
         return r

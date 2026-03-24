@@ -12,7 +12,6 @@
     <path d="  M 0,50   A 50,50 0 0 0 100,50   Z  " fill="black" id="octave" />
   </defs>
   <style>
-    .document_background { fill: transparent; }
     .body_background { fill: transparent; }
     .chart_background { fill: transparent; }
     .note_fingering_background { fill: transparent; }
@@ -21,7 +20,7 @@
     .caption { fill: black; font-size: 40px; font-family: monospace; text-anchor: middle; }
   </style>
   <svg class="body" x="30" y="30" width="2388" height="3240">
-    <rect fill="transparent" width="100%" height="100%" />
+    <rect class="body_background" width="100%" height="100%" />
     <svg>
       <text font-size="60px" font-family="monospace" text-anchor="middle" x="1000" y="100">
         Fingering chart for the Baroque family of recorders
@@ -32,11 +31,11 @@
       <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
     </svg>
     <svg class="chart" x="30" y="280" width="2328" height="2930">
-      <rect fill="transparent" width="100%" height="100%" />
+      <rect class="chart_background" width="100%" height="100%" />
       <svg class="note_fingering" x="30" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -53,9 +52,9 @@
         <text class="caption" height="100" x="80" y="45">  C1  </text>
       </svg>
       <svg class="note_fingering" x="192" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -72,9 +71,9 @@
         <text class="caption" height="100" x="80" y="45">C♯/D♭1</text>
       </svg>
       <svg class="note_fingering" x="354" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -91,9 +90,9 @@
         <text class="caption" height="100" x="80" y="45">  D1  </text>
       </svg>
       <svg class="note_fingering" x="516" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -110,9 +109,9 @@
         <text class="caption" height="100" x="80" y="45">D♯/E♭1</text>
       </svg>
       <svg class="note_fingering" x="678" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -129,9 +128,9 @@
         <text class="caption" height="100" x="80" y="45">  E1  </text>
       </svg>
       <svg class="note_fingering" x="840" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -148,9 +147,9 @@
         <text class="caption" height="100" x="80" y="45">  F1  </text>
       </svg>
       <svg class="note_fingering" x="1002" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -167,9 +166,9 @@
         <text class="caption" height="100" x="80" y="45">F♯/G♭1</text>
       </svg>
       <svg class="note_fingering" x="1164" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -186,9 +185,9 @@
         <text class="caption" height="100" x="80" y="45">  G1  </text>
       </svg>
       <svg class="note_fingering" x="1326" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -205,9 +204,9 @@
         <text class="caption" height="100" x="80" y="45">G♯/A♭1</text>
       </svg>
       <svg class="note_fingering" x="1488" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -224,9 +223,9 @@
         <text class="caption" height="100" x="80" y="45">  A1  </text>
       </svg>
       <svg class="note_fingering" x="1650" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -243,9 +242,9 @@
         <text class="caption" height="100" x="80" y="45">A♯/B♭1</text>
       </svg>
       <svg class="note_fingering" x="1812" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -262,9 +261,9 @@
         <text class="caption" height="100" x="80" y="45">  B1  </text>
       </svg>
       <svg class="note_fingering" x="1974" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" class="outline" />
@@ -281,9 +280,9 @@
         <text class="caption" height="100" x="80" y="45">  C2  </text>
       </svg>
       <svg class="note_fingering" x="2136" y="30" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" />
@@ -300,9 +299,9 @@
         <text class="caption" height="100" x="80" y="45">C♯/D♭2</text>
       </svg>
       <svg class="note_fingering" x="30" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" class="outline" />
@@ -319,9 +318,9 @@
         <text class="caption" height="100" x="80" y="45">  D2  </text>
       </svg>
       <svg class="note_fingering" x="192" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="121" href="#horizontal-line" />
           <use x="1" y="241" href="#pad" class="outline" />
@@ -338,9 +337,9 @@
         <text class="caption" height="100" x="80" y="45">D♯/E♭2</text>
       </svg>
       <svg class="note_fingering" x="354" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -358,9 +357,9 @@
         <text class="caption" height="100" x="80" y="45">  E2  </text>
       </svg>
       <svg class="note_fingering" x="516" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -378,9 +377,9 @@
         <text class="caption" height="100" x="80" y="45">  F2  </text>
       </svg>
       <svg class="note_fingering" x="678" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -398,9 +397,9 @@
         <text class="caption" height="100" x="80" y="45">F♯/G♭2</text>
       </svg>
       <svg class="note_fingering" x="840" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -418,9 +417,9 @@
         <text class="caption" height="100" x="80" y="45">  G2  </text>
       </svg>
       <svg class="note_fingering" x="1002" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -438,9 +437,9 @@
         <text class="caption" height="100" x="80" y="45">G♯/A♭2</text>
       </svg>
       <svg class="note_fingering" x="1164" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -458,9 +457,9 @@
         <text class="caption" height="100" x="80" y="45">  A2  </text>
       </svg>
       <svg class="note_fingering" x="1326" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -478,9 +477,9 @@
         <text class="caption" height="100" x="80" y="45">A♯/B♭2</text>
       </svg>
       <svg class="note_fingering" x="1488" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -498,9 +497,9 @@
         <text class="caption" height="100" x="80" y="45">  B2  </text>
       </svg>
       <svg class="note_fingering" x="1650" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -518,9 +517,9 @@
         <text class="caption" height="100" x="80" y="45">  C3  </text>
       </svg>
       <svg class="note_fingering" x="1812" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />
@@ -538,9 +537,9 @@
         <text class="caption" height="100" x="80" y="45">C♯/D♭3</text>
       </svg>
       <svg class="note_fingering" x="1974" y="1380" width="162" height="1360">
-        <rect fill="transparent" width="100%" height="100%" />
+        <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">
-          <rect fill="transparent" width="100%" height="100%" />
+          <rect class="fingering_background" width="100%" height="100%" />
           <use x="1" y="1" href="#pad" class="outline" />
           <use x="1" y="1" href="#octave" />
           <use x="1" y="121" href="#horizontal-line" />

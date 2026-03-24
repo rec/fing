@@ -12,15 +12,13 @@
     <path d="  M 0,50   A 50,50 0 0 0 100,50   Z  " fill="black" id="octave" />
   </defs>
   <style>
-    .document_background { fill: transparent; }
     .body_background { fill: lightgreen; }
-    .chart_background { fill: transparent; }
+    .chart_background { fill: pink; }
     .note_fingering_background { fill: lightgray; }
     .fingering_background { fill: orange; }
     .outline { fill: white; stroke: black; stroke-width: 1.5; }
     .caption { fill: black; font-size: 40px; font-family: monospace; text-anchor: middle; }
     .page_background { fill: pink; }
-    .charts_background { fill: pink; }
   </style>
   <svg class="body" x="30" y="30" width="2388" height="3240">
     <rect class="body_background" width="100%" height="100%" />
@@ -34,7 +32,7 @@
       <use href="#copyleft" x="232" y="48" transform="scale(3, 3)" />
     </svg>
     <svg class="chart" x="30" y="280" width="2328" height="2930">
-      <rect fill="transparent" width="100%" height="100%" />
+      <rect class="chart_background" width="100%" height="100%" />
       <svg class="note_fingering" x="30" y="30" width="162" height="1360">
         <rect class="note_fingering_background" width="100%" height="100%" />
         <svg class="fingering" x="30" y="100" width="102" height="1200">

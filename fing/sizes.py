@@ -13,7 +13,7 @@ class Size:
     height: int
 
 
-class Region(StrEnum):
+class SizedRegion(StrEnum):
     document = auto()
     body = auto()
     chart = auto()
@@ -62,6 +62,6 @@ class Sizes:
         return Size(self.layout.width, self.layout.height)
 
 
-_REGIONS = {s.name for s in Region}
+_REGIONS = {s.name for s in SizedRegion}
 _PROPERTIES = {k for k, v in vars(Sizes).items() if isinstance(v, cached_property)}
 assert _REGIONS | {'inset'} == _PROPERTIES, (_REGIONS, _PROPERTIES)
