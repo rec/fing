@@ -561,6 +561,7 @@
         <text class="caption" height="100" x="80" y="45">  D3  </text>
       </svg>
     </svg>
+    <rect class="large-separator" x="10" y="1720" width="2368" height="3" />
     <text font-size="35px" font-family="monospace" text-anchor="middle" x="1200" y="3300">
       For more information about how to make charts like this, see https://github.com/rec/fing
     </text>

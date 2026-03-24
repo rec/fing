@@ -70,9 +70,18 @@ class Renderer:
         fingerings = list(self.fingerings.items())
         height = self.sizes.chart.height + self.layout.fingering_pad
         for row in range(self.rows):
-            chart = self._add_svg(
-                self.body, 'chart', y=self.layout.title_height + row * height
-            )
+            y = self.layout.title_height + row * height
+            chart = self._add_svg(self.body, 'chart', y=y)
+            if row:
+                _add(
+                    self.body,
+                    'rect',
+                    'large-separator',
+                    x=self.layout.rule_x,
+                    y=y + self.layout.rule_y,
+                    width=self.sizes.body.width - 2 * self.layout.rule_x,
+                    height=3,
+                )
             row_items = fingerings[row * self.columns : (row + 1) * self.columns]
             for column, (note, fingering) in enumerate(row_items):
                 self._note_fingering(chart, column, note, fingering)

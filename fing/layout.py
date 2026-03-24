@@ -55,6 +55,8 @@ class Layout:
     title_height: int = 250
     footer_height: int = 125
     fingering_pad: int = 150
+    rule_x: int = 10
+    rule_y: int = -100
 
     inset: Inset = Inset()
 
