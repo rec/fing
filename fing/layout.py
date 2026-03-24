@@ -17,7 +17,7 @@ Dims: TypeAlias = int | tuple[int, int]
 
 
 @dc.dataclass(frozen=True)
-class Caption:
+class NoteLabel:
     height: int = 100
     x: int = 80
     y: int = 45
@@ -42,8 +42,7 @@ class Layout:
     pieces_: dict[str, dict[str, Any]]
     to_button: dict[str, Button]
     styles: dict[str, dict[str, str]] = dc.field(default_factory=dict)
-    caption_: dict[str, int | bool] = dc.field(default_factory=dict)
-    caption_above: bool = True
+    note_label_: dict[str, int | bool] = dc.field(default_factory=dict)
     title_: str = ''
     footer_: str = ''
     err: ErrorMaker = dc.field(default_factory=ErrorMaker)
@@ -61,9 +60,9 @@ class Layout:
     inset: Inset = Inset()
 
     @cached_property
-    def caption(self) -> Caption:
+    def note_label(self) -> NoteLabel:
         ## TODO: more checking or more general checking
-        return Caption(**self.caption_)
+        return NoteLabel(**self.note_label_)
 
     @cached_property
     def defs(self) -> list[Element]:

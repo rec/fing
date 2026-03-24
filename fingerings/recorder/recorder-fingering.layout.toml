@@ -19,7 +19,7 @@ footer = '''
 
 [layout.styles]
 outline = {fill = 'white', stroke = 'black', stroke-width = 1.5}
-caption = {fill = 'black', font-size = "40px", font-family = 'monospace', text-anchor = 'middle'}
+note_label = {fill = 'black', font-size = "40px", font-family = 'monospace', text-anchor = 'middle'}
 
 [layout.defs]
 pad = '<circle cx="50" cy="50" r="50" />'

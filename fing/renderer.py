@@ -96,13 +96,13 @@ class Renderer:
         x = self.sizes.note_fingering.width * column + dx
         note_fingering = self._add_svg(chart, 'note_fingering', x=x)
         fingering_ = self._add_svg(
-            note_fingering, 'fingering', y=self.layout.caption.height
+            note_fingering, 'fingering', y=self.layout.note_label.height
         )
         for p in self.layout.pieces:
             fingering_.extend(p.render(fingering))
 
-        caption = dc.asdict(self.layout.caption)
-        text = _add(note_fingering, 'text', 'caption', **caption)
+        note_label = dc.asdict(self.layout.note_label)
+        text = _add(note_fingering, 'text', 'note_label', **note_label)
         text.text = str(note).center(NOTE_WIDTH)
 
     def _add_svg(self, parent: Element, class_: str, **kwargs: Any) -> Element:

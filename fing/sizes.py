@@ -55,7 +55,7 @@ class Sizes:
 
     @cached_property
     def note_fingering(self) -> Size:
-        return self._size('fingering').add(height=self.layout.caption.height)
+        return self._size('fingering').add(height=self.layout.note_label.height)
 
     @cached_property
     def fingering(self) -> Size:
