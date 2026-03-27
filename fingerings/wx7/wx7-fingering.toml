@@ -14,116 +14,133 @@ language = 'en'
 # left:
 
 [buttons.'B key']
-short_name = 'B'
+short_name = 'L1'
 press = 'left-1'
 
 [buttons.'A# key']
-short_name = 'A#'
+short_name = 'L2b'
 press = 'left-2'
 # Just for that one purpose
 
 [buttons.'A key']
-short_name = 'A'
+short_name = 'L2'
 press = 'left-2'
 
 [buttons.'G key']
-short_name = 'G'
+short_name = 'L3'
 press = 'left-3'
 
+# NOTE: also takes F-G#, F#-G#, aside from the lift
 [buttons.'G# key']
-short_name = 'G#'
+short_name = 'L4a'
 press = 'left-4'
-# Modifier +1 but only for G, A, B, C
+# Modifier +1 but only for C1, G1, A1, B1, C2, C#2
 
 [buttons.'Low B key']
-short_name = 'LB'
+short_name = 'L4b'
 press = 'left-4'
-# Make G go to G#
-# No effect for notes above G or E and F
-# Down *a fifth* for D# to Bb
-# Down *to B* for D and C
+# G -> G#
+# D# -> Bb
+# D -> B
+# C -> B
+
 
 #
 # Right hand
 #
 
 [buttons.'Whole tone up key']
-short_name = '+2'
+short_name = 'R1b'
 press = 'right-1'
 modifer = +2
 
 [buttons.'Semitone tone up key']
-short_name = '+1'
+short_name = 'R2b'
 press = 'right-2'
 modifier = +1
 
 [buttons.'F key']
-short_name = 'F'
+short_name = 'R1'
 press = 'right-1'
 
 [buttons.'E key']
-short_name = 'E'
+short_name = 'R2'
 press = 'right-2'
 
 [buttons.'F# key']
-short_name = 'F#'
+short_name = 'R3b'
 press = 'right-3'
 modifier = +1
 
 [buttons.'D key']
-short_name = 'D'
+short_name = 'R3'
 press = 'right-3'
+# Note: also used for F# SPECIAL
 
 [buttons.'D# key']
-short_name = 'D#'
+short_name = 'R4b'
 press = 'right-4'
 modifier = -1
 
 [buttons.'C key']
-short_name = 'C'
+short_name = 'R4'
 press = 'right-4'
 modifier = -2
+# Does not work with R4b! :-D SPECIAL
 
-# +3, +2, +1, -1, -2
+[buttons.'Octave +3']
+short_name = '+3'
+press = 'left-thumb'
+octave = +3
 
-# The "G#" key has two dramatically different meanings.
-# There's a secret use of the left second finger!!
+[buttons.'Octave +2']
+short_name = '+2'
+press = 'left-thumb'
+octave = +2
 
-# No apparent limit to stacking modifier keys
+[buttons.'Octave +1']
+short_name = '+1'
+press = 'left-thumb'
+octave = +1
 
-# Octave modifers work as "any highest trumps all lowest"
-# and "closest to zero wins"
+[buttons.'Octave -1']
+short_name = '-1'
+press = 'left-thumb'
+octave = -1
+
+[buttons.'Octave -2']
+short_name = '-2'
+press = 'left-thumb'
+octave = -2
+
+[octaves]
+# What happens if two octave buttons on the same side are pressed?
+overlap = 'biggest'
+
+# What happens if two octave buttons, one plus, one minus, are pressed?
+priority = 'plus'
+
+# A lift is a fingering that is missing some fingers
+
+[[lifts]]
+# If any two of these buttons are up, in a position where they were all down
+# then go up by an octave - except for Bb it goes to B, 13 semitones. :-D
+buttons = 'L1 L2 L3'
+count = 2
+modifier = +12
+special = {'Bb0': +13}
 
 [fingerings]
-all = 'oct lt l1 l2 l3 r1 r2 r3 r3h r4 r4h cb  '
 
-C_1 = 'lt  l1  l2  l3  r1  r2  r3  r4      '
-Db1 = 'lt  l1  l2  l3  r1  r2  r3  r4h     '
-D_1 = 'lt  l1  l2  l3  r1  r2  r3          '
-Eb1 = 'lt  l1  l2  l3  r1  r2  r3h         '
-E_1 = 'lt  l1  l2  l3  r1  r2              '
-F_1 = 'lt  l1  l2  l3  r1      r3  r4      '
-Gb1 = 'lt  l1  l2  l3      r2  r3          '
-G_1 = 'lt  l1  l2  l3                      '
-Ab1 = 'lt  l1  l2      r1  r2  r3h         '
-A_1 = 'lt  l1  l2                          '
-Bb1 = 'lt  l1  l2      r1                  '
-B_1 = 'lt  l1                              '
-C_2 = 'lt      l2                          '
-Db2 = '    l1  l2                          '
-D_2 = '        l2                          '
-Eb2 = '        l2  l3  r1  r2  r3          '
-E_2 = 'oct l1  l2  l3  r1  r2              '
-F_2 = 'oct l1  l2  l3  r1      r3          '
-Gb2 = 'oct l1  l2  l3      r2              '
-G_2 = 'oct l1  l2  l3                      '
-Ab2 = 'oct l1  l2      r1                  '
-A_2 = 'oct l1  l2                          '
-Bb2 = 'oct l1  l2          r2  r3  r4h     '
-B_2 = 'oct l1  l2      r1  r2              '
-C_3 = 'oct l1          r1  r2              '
-Db3 = 'oct l1      l3  r1      r3      cb  '
-D_3 = 'oct l1      l3  r1      r3          '
-
-
-# No "lowest_c" means it's entirely driven by the octave keys
+C_1 = 'L1  L2  L3      R1  R2  R3  R4  '
+Db1 = 'L1  L2  L3      R1  R2  R3  R4  '
+D_1 = 'L1  L2  L3      R1  R2  R3      '
+E_1 = 'L1  L2  L3      R1  R2          '
+F_1 = 'L1  L2  L3      R1              '
+Gb1 = 'L1  L2  L3          R2          '
+G_1 = 'L1  L2  L3                      '
+A_1 = 'L1  L2                          '
+Bb1 = 'L1  L2b                         '
+B_1 = 'L1                              '
+C_2 = '    L2                          '
+Db1 = '                                '
