@@ -1,0 +1,129 @@
+# This file contains a formal specification for the fingering of the
+# Yamaha WX-7 electronic wind instrument, based on the original
+# manual and experimentation
+
+# It is a permissive fingering: all fingerings result in a note
+
+[metadata]
+author = 'Tom Ritchford (tom@swirly.com)'
+version = 'v0.1.0'
+name = 'Fingering system for the Yamaha WX7 electronic wind instrument'
+tags = ['WX7', 'Yamaha', 'WX', 'YamahaWX']
+language = 'en'
+
+# left:
+
+[buttons.'B key']
+short_name = 'B'
+press = 'left-1'
+
+[buttons.'A# key']
+short_name = 'A#'
+press = 'left-2'
+# Just for that one purpose
+
+[buttons.'A key']
+short_name = 'A'
+press = 'left-2'
+
+[buttons.'G key']
+short_name = 'G'
+press = 'left-3'
+
+[buttons.'G# key']
+short_name = 'G#'
+press = 'left-4'
+# Modifier +1 but only for G, A, B, C
+
+[buttons.'Low B key']
+short_name = 'LB'
+press = 'left-4'
+# Make G go to G#
+# No effect for notes above G or E and F
+# Down *a fifth* for D# to Bb
+# Down *to B* for D and C
+
+#
+# Right hand
+#
+
+[buttons.'Whole tone up key']
+short_name = '+2'
+press = 'right-1'
+modifer = +2
+
+[buttons.'Semitone tone up key']
+short_name = '+1'
+press = 'right-2'
+modifier = +1
+
+[buttons.'F key']
+short_name = 'F'
+press = 'right-1'
+
+[buttons.'E key']
+short_name = 'E'
+press = 'right-2'
+
+[buttons.'F# key']
+short_name = 'F#'
+press = 'right-3'
+modifier = +1
+
+[buttons.'D key']
+short_name = 'D'
+press = 'right-3'
+
+[buttons.'D# key']
+short_name = 'D#'
+press = 'right-4'
+modifier = -1
+
+[buttons.'C key']
+short_name = 'C'
+press = 'right-4'
+modifier = -2
+
+# +3, +2, +1, -1, -2
+
+# The "G#" key has two dramatically different meanings.
+# There's a secret use of the left second finger!!
+
+# No apparent limit to stacking modifier keys
+
+# Octave modifers work as "any highest trumps all lowest"
+# and "closest to zero wins"
+
+[fingerings]
+all = 'oct lt l1 l2 l3 r1 r2 r3 r3h r4 r4h cb  '
+
+C_1 = 'lt  l1  l2  l3  r1  r2  r3  r4      '
+Db1 = 'lt  l1  l2  l3  r1  r2  r3  r4h     '
+D_1 = 'lt  l1  l2  l3  r1  r2  r3          '
+Eb1 = 'lt  l1  l2  l3  r1  r2  r3h         '
+E_1 = 'lt  l1  l2  l3  r1  r2              '
+F_1 = 'lt  l1  l2  l3  r1      r3  r4      '
+Gb1 = 'lt  l1  l2  l3      r2  r3          '
+G_1 = 'lt  l1  l2  l3                      '
+Ab1 = 'lt  l1  l2      r1  r2  r3h         '
+A_1 = 'lt  l1  l2                          '
+Bb1 = 'lt  l1  l2      r1                  '
+B_1 = 'lt  l1                              '
+C_2 = 'lt      l2                          '
+Db2 = '    l1  l2                          '
+D_2 = '        l2                          '
+Eb2 = '        l2  l3  r1  r2  r3          '
+E_2 = 'oct l1  l2  l3  r1  r2              '
+F_2 = 'oct l1  l2  l3  r1      r3          '
+Gb2 = 'oct l1  l2  l3      r2              '
+G_2 = 'oct l1  l2  l3                      '
+Ab2 = 'oct l1  l2      r1                  '
+A_2 = 'oct l1  l2                          '
+Bb2 = 'oct l1  l2          r2  r3  r4h     '
+B_2 = 'oct l1  l2      r1  r2              '
+C_3 = 'oct l1          r1  r2              '
+Db3 = 'oct l1      l3  r1      r3      cb  '
+D_3 = 'oct l1      l3  r1      r3          '
+
+
+# No "lowest_c" means it's entirely driven by the octave keys
