@@ -24,12 +24,12 @@ fingering patterns.
 
 Here's a full specification of the Baroque fingerings for the recorder family:
 
-https://github.com/rec/fing/blob/main/fingerings/recorder-fingering.toml
+[recorder-fingering.toml](https://github.com/rec/fing/blob/main/fingerings/recorder/recorder-fingering.toml)
 
-It's written in a format called TOML designed to be straight-forward for both humans
-and computers to read and write.
+(It's written in a format called TOML designed to be straight-forward for both humans
+and computers to read and write.)
 
-[This short layout document](https://github.com/rec/fing/blob/main/fingerings/recorder-fingering.layout.toml)
+[This short layout document](https://github.com/rec/fing/blob/main/fingerings/recorder/recorder-fingering.layout.toml)
 together with the specification above, created this image:
 
 ![Complete but sparse fingering chart for the recorder](https://github.com/rec/fing/blob/main/charts/recorder-fingerings.svg?raw=True)
@@ -83,9 +83,33 @@ The resulting SVG can be displayed in any browser or web page, edited by hand as
 with free and open source tools, embeded in a PDF, Illustrator, Photoshop or other
 graphical document, and printed at any resolution.
 
-## Development roadmap
+## Development roadmap/diary
 
-### A change of plans
+### As of late March
+
+Most of the below is done.
+
+In particular, the fingering system of the Yamaha WX7 seems to have been mostly or perhaps completely specified, 
+though it needs some new software features before it can be fully verified and aggressively tested.
+
+I have been playing the WX7 since it came out in 1987, and yet I discovered quite a few interesting fingerings 
+that don't appear in the manual and that I didn't know about.
+
+The most entertaining one: there is a "lift" (what I'm calling "buttons left unpressed from a standard fingering") 
+which raises several notes by a full octave, but one note, Bb, by an octave _and a semitone_.
+
+My intuition that it's a bug, or more precisely, an emergent behavior from their permissive fingering system. 
+(I define a _permissive fingering system_ as one where any combination of buttons held down always generates a "note". 
+"Note" could be very generally defined, but in the WX7 it's literally a MIDI note number).
+
+That same intuition says there's one special rule for the lift, another special rule for the Bb key, and no one 
+investigated their interaction because you'd really have to be deep-deep into their fingering system
+to even think about it.
+
+It's quite amazing how well this device stands up almost 40 years later. [Its founder](https://en.wikipedia.org/wiki/Genichi_Kawakami)
+hoped that after WW2, humans would lose interest in war and spend their resources on leisure and self-improvement, particularly music.
+
+### March: a change of plans
 
 As of this writing, the representation of `Fingering` is stable and unlikely to change
 in such a way as to break existing things.
